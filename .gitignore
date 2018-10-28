@@ -1,0 +1,10 @@
+**/.DS_Store
+Lima.xcworkspace/xcuserdata
+Lima-iOS/build
+Lima-iOS/Lima-iOS.xcodeproj/xcuserdata/
+Lima-iOS/Lima-iOS.xcodeproj/project.xcworkspace/xcuserdata/
+Lima-iOS.tar.gz
+Lima-tvOS/build
+Lima-tvOS/Lima-tvOS.xcodeproj/xcuserdata/
+Lima-tvOS/Lima-tvOS.xcodeproj/project.xcworkspace/xcuserdata/
+Lima-tvOS.tar.gz
