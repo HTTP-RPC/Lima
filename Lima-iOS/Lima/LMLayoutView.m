@@ -123,9 +123,4 @@ static NSString * const kHiddenKey = @"hidden";
     return view;
 }
 
-- (void)appendMarkupElementView:(UIView *)view
-{
-    [self addSubview:view];
-}
-
 @end

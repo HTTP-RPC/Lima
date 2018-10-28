@@ -107,14 +107,14 @@
                     if (@available(iOS 11, tvOS 11, *)) {
                         NSLayoutConstraint *constraint = [[subview topAnchor] constraintEqualToSystemSpacingBelowAnchor:[previousSubview bottomAnchor] multiplier:1];
 
-                        [constraint setConstant:[constraint constant] + [previousSubview bottomSpacing] + [subview topSpacing]];
+                        [constraint setConstant:[constraint constant]];
 
                         [constraints addObject:constraint];
                     }
                 } else {
                     [constraints addObject:[NSLayoutConstraint constraintWithItem:subview attribute:NSLayoutAttributeTop
                         relatedBy:NSLayoutRelationEqual toItem:previousSubview attribute:NSLayoutAttributeBottom
-                        multiplier:1 constant:spacing + [previousSubview bottomSpacing] + [subview topSpacing]]];
+                        multiplier:1 constant:spacing]];
                 }
             }
         }

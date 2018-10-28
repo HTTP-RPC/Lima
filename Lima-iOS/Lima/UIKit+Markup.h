@@ -88,56 +88,6 @@ typedef NS_OPTIONS(NSUInteger, LMAnchor) {
 @property (nonatomic) CGFloat weight;
 
 /**
- * The top layout margin.
- */
-@property (nonatomic) CGFloat layoutMarginTop;
-
-/**
- * The left layout margin.
- */
-@property (nonatomic) CGFloat layoutMarginLeft;
-
-/**
- * The bottom layout margin.
- */
-@property (nonatomic) CGFloat layoutMarginBottom;
-
-/**
- * The right layout margin.
- */
-@property (nonatomic) CGFloat layoutMarginRight;
-
-/**
- * The leading layout margin.
- */
-@property (nonatomic) CGFloat layoutMarginLeading;
-
-/**
- * The trailing layout margin.
- */
-@property (nonatomic) CGFloat layoutMarginTrailing;
-
-/**
- * The amount of space to reserve above the view. The default is 0.
- */
-@property (nonatomic) CGFloat topSpacing;
-
-/**
- * The amount of space to reserve below the view. The default is 0.
- */
-@property (nonatomic) CGFloat bottomSpacing;
-
-/**
- * The amount of space to reserve at the view's leading edge. The default is 0.
- */
-@property (nonatomic) CGFloat leadingSpacing;
-
-/**
- * The amount of space to reserve at the view's trailing edge. The default is 0.
- */
-@property (nonatomic) CGFloat trailingSpacing;
-
-/**
  * The view's anchors.
  */
 @property (nonatomic) LMAnchor anchor;
