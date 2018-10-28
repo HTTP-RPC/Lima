@@ -7,6 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		373EB522218618CB001FE0C9 /* LMLayoutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 373EB520218618CA001FE0C9 /* LMLayoutView.m */; };
+		373EB523218618CB001FE0C9 /* LMLayoutView.h in Headers */ = {isa = PBXBuildFile; fileRef = 373EB521218618CB001FE0C9 /* LMLayoutView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		373EB526218618D4001FE0C9 /* LMBoxView.m in Sources */ = {isa = PBXBuildFile; fileRef = 373EB524218618D3001FE0C9 /* LMBoxView.m */; };
+		373EB527218618D4001FE0C9 /* LMBoxView.h in Headers */ = {isa = PBXBuildFile; fileRef = 373EB525218618D3001FE0C9 /* LMBoxView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		373EB52A218618DD001FE0C9 /* LMColumnView.m in Sources */ = {isa = PBXBuildFile; fileRef = 373EB528218618DD001FE0C9 /* LMColumnView.m */; };
+		373EB52B218618DD001FE0C9 /* LMColumnView.h in Headers */ = {isa = PBXBuildFile; fileRef = 373EB529218618DD001FE0C9 /* LMColumnView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		373EB52E218618E6001FE0C9 /* LMRowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 373EB52C218618E6001FE0C9 /* LMRowView.m */; };
+		373EB52F218618E6001FE0C9 /* LMRowView.h in Headers */ = {isa = PBXBuildFile; fileRef = 373EB52D218618E6001FE0C9 /* LMRowView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		373EB532218618EF001FE0C9 /* LMAnchorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 373EB530218618EF001FE0C9 /* LMAnchorView.m */; };
+		373EB533218618EF001FE0C9 /* LMAnchorView.h in Headers */ = {isa = PBXBuildFile; fileRef = 373EB531218618EF001FE0C9 /* LMAnchorView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		373EB536218618FA001FE0C9 /* LMSpacer.h in Headers */ = {isa = PBXBuildFile; fileRef = 373EB534218618FA001FE0C9 /* LMSpacer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		373EB537218618FA001FE0C9 /* LMSpacer.m in Sources */ = {isa = PBXBuildFile; fileRef = 373EB535218618FA001FE0C9 /* LMSpacer.m */; };
+		373EB53A21861953001FE0C9 /* UIKit+Markup.m in Sources */ = {isa = PBXBuildFile; fileRef = 373EB53821861953001FE0C9 /* UIKit+Markup.m */; };
+		373EB53B21861953001FE0C9 /* UIKit+Markup.h in Headers */ = {isa = PBXBuildFile; fileRef = 373EB53921861953001FE0C9 /* UIKit+Markup.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		376DD5CA2186132B00A981C7 /* Lima.h in Headers */ = {isa = PBXBuildFile; fileRef = 376DD5C82186132B00A981C7 /* Lima.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		37E750262186169900B06374 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E750252186169900B06374 /* AppDelegate.swift */; };
 		37E750282186169900B06374 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E750272186169900B06374 /* ViewController.swift */; };
@@ -42,6 +56,20 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		373EB520218618CA001FE0C9 /* LMLayoutView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMLayoutView.m; sourceTree = "<group>"; };
+		373EB521218618CB001FE0C9 /* LMLayoutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMLayoutView.h; sourceTree = "<group>"; };
+		373EB524218618D3001FE0C9 /* LMBoxView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMBoxView.m; sourceTree = "<group>"; };
+		373EB525218618D3001FE0C9 /* LMBoxView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMBoxView.h; sourceTree = "<group>"; };
+		373EB528218618DD001FE0C9 /* LMColumnView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMColumnView.m; sourceTree = "<group>"; };
+		373EB529218618DD001FE0C9 /* LMColumnView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMColumnView.h; sourceTree = "<group>"; };
+		373EB52C218618E6001FE0C9 /* LMRowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMRowView.m; sourceTree = "<group>"; };
+		373EB52D218618E6001FE0C9 /* LMRowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMRowView.h; sourceTree = "<group>"; };
+		373EB530218618EF001FE0C9 /* LMAnchorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMAnchorView.m; sourceTree = "<group>"; };
+		373EB531218618EF001FE0C9 /* LMAnchorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMAnchorView.h; sourceTree = "<group>"; };
+		373EB534218618FA001FE0C9 /* LMSpacer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMSpacer.h; sourceTree = "<group>"; };
+		373EB535218618FA001FE0C9 /* LMSpacer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMSpacer.m; sourceTree = "<group>"; };
+		373EB53821861953001FE0C9 /* UIKit+Markup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIKit+Markup.m"; sourceTree = "<group>"; };
+		373EB53921861953001FE0C9 /* UIKit+Markup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIKit+Markup.h"; sourceTree = "<group>"; };
 		376DD5C52186132B00A981C7 /* Lima.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Lima.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		376DD5C82186132B00A981C7 /* Lima.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Lima.h; sourceTree = "<group>"; };
 		376DD5C92186132B00A981C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -95,6 +123,20 @@
 			isa = PBXGroup;
 			children = (
 				376DD5C82186132B00A981C7 /* Lima.h */,
+				373EB521218618CB001FE0C9 /* LMLayoutView.h */,
+				373EB520218618CA001FE0C9 /* LMLayoutView.m */,
+				373EB525218618D3001FE0C9 /* LMBoxView.h */,
+				373EB524218618D3001FE0C9 /* LMBoxView.m */,
+				373EB529218618DD001FE0C9 /* LMColumnView.h */,
+				373EB528218618DD001FE0C9 /* LMColumnView.m */,
+				373EB52D218618E6001FE0C9 /* LMRowView.h */,
+				373EB52C218618E6001FE0C9 /* LMRowView.m */,
+				373EB531218618EF001FE0C9 /* LMAnchorView.h */,
+				373EB530218618EF001FE0C9 /* LMAnchorView.m */,
+				373EB534218618FA001FE0C9 /* LMSpacer.h */,
+				373EB535218618FA001FE0C9 /* LMSpacer.m */,
+				373EB53921861953001FE0C9 /* UIKit+Markup.h */,
+				373EB53821861953001FE0C9 /* UIKit+Markup.m */,
 				376DD5C92186132B00A981C7 /* Info.plist */,
 			);
 			path = Lima;
@@ -121,6 +163,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				376DD5CA2186132B00A981C7 /* Lima.h in Headers */,
+				373EB523218618CB001FE0C9 /* LMLayoutView.h in Headers */,
+				373EB527218618D4001FE0C9 /* LMBoxView.h in Headers */,
+				373EB52B218618DD001FE0C9 /* LMColumnView.h in Headers */,
+				373EB52F218618E6001FE0C9 /* LMRowView.h in Headers */,
+				373EB533218618EF001FE0C9 /* LMAnchorView.h in Headers */,
+				373EB536218618FA001FE0C9 /* LMSpacer.h in Headers */,
+				373EB53B21861953001FE0C9 /* UIKit+Markup.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,6 +275,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				373EB522218618CB001FE0C9 /* LMLayoutView.m in Sources */,
+				373EB526218618D4001FE0C9 /* LMBoxView.m in Sources */,
+				373EB52A218618DD001FE0C9 /* LMColumnView.m in Sources */,
+				373EB52E218618E6001FE0C9 /* LMRowView.m in Sources */,
+				373EB532218618EF001FE0C9 /* LMAnchorView.m in Sources */,
+				373EB537218618FA001FE0C9 /* LMSpacer.m in Sources */,
+				373EB53A21861953001FE0C9 /* UIKit+Markup.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
