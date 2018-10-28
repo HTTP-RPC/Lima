@@ -8,12 +8,50 @@
 
 /* Begin PBXBuildFile section */
 		376DD5CA2186132B00A981C7 /* Lima.h in Headers */ = {isa = PBXBuildFile; fileRef = 376DD5C82186132B00A981C7 /* Lima.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		37E750262186169900B06374 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E750252186169900B06374 /* AppDelegate.swift */; };
+		37E750282186169900B06374 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E750272186169900B06374 /* ViewController.swift */; };
+		37E7502B2186169900B06374 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37E750292186169900B06374 /* Main.storyboard */; };
+		37E7502D2186169900B06374 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37E7502C2186169900B06374 /* Assets.xcassets */; };
+		37E750302186169900B06374 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37E7502E2186169900B06374 /* LaunchScreen.storyboard */; };
+		37E75035218616A100B06374 /* Lima.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 376DD5C52186132B00A981C7 /* Lima.framework */; };
+		37E75036218616A100B06374 /* Lima.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 376DD5C52186132B00A981C7 /* Lima.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		37E75037218616A100B06374 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 376DD5BC2186132B00A981C7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 376DD5C42186132B00A981C7;
+			remoteInfo = Lima;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		37E75039218616A100B06374 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				37E75036218616A100B06374 /* Lima.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		376DD5C52186132B00A981C7 /* Lima.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Lima.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		376DD5C82186132B00A981C7 /* Lima.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Lima.h; sourceTree = "<group>"; };
 		376DD5C92186132B00A981C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		37E750232186169900B06374 /* LimaTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LimaTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		37E750252186169900B06374 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		37E750272186169900B06374 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		37E7502A2186169900B06374 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		37E7502C2186169900B06374 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		37E7502F2186169900B06374 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		37E750312186169900B06374 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -24,6 +62,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		37E750202186169900B06374 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37E75035218616A100B06374 /* Lima.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -31,6 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				376DD5C72186132B00A981C7 /* Lima */,
+				37E750242186169900B06374 /* LimaTest */,
 				376DD5C62186132B00A981C7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -39,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				376DD5C52186132B00A981C7 /* Lima.framework */,
+				37E750232186169900B06374 /* LimaTest.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -50,6 +98,19 @@
 				376DD5C92186132B00A981C7 /* Info.plist */,
 			);
 			path = Lima;
+			sourceTree = "<group>";
+		};
+		37E750242186169900B06374 /* LimaTest */ = {
+			isa = PBXGroup;
+			children = (
+				37E750252186169900B06374 /* AppDelegate.swift */,
+				37E750272186169900B06374 /* ViewController.swift */,
+				37E750292186169900B06374 /* Main.storyboard */,
+				37E7502C2186169900B06374 /* Assets.xcassets */,
+				37E7502E2186169900B06374 /* LaunchScreen.storyboard */,
+				37E750312186169900B06374 /* Info.plist */,
+			);
+			path = LimaTest;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -84,26 +145,50 @@
 			productReference = 376DD5C52186132B00A981C7 /* Lima.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		37E750222186169900B06374 /* LimaTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 37E750342186169900B06374 /* Build configuration list for PBXNativeTarget "LimaTest" */;
+			buildPhases = (
+				37E7501F2186169900B06374 /* Sources */,
+				37E750202186169900B06374 /* Frameworks */,
+				37E750212186169900B06374 /* Resources */,
+				37E75039218616A100B06374 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				37E75038218616A100B06374 /* PBXTargetDependency */,
+			);
+			name = LimaTest;
+			productName = LimaTest;
+			productReference = 37E750232186169900B06374 /* LimaTest.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		376DD5BC2186132B00A981C7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 1000;
 				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = Lima;
 				TargetAttributes = {
 					376DD5C42186132B00A981C7 = {
 						CreatedOnToolsVersion = 10.0;
 					};
+					37E750222186169900B06374 = {
+						CreatedOnToolsVersion = 10.0;
+					};
 				};
 			};
-			buildConfigurationList = 376DD5BF2186132B00A981C7 /* Build configuration list for PBXProject "Lima" */;
+			buildConfigurationList = 376DD5BF2186132B00A981C7 /* Build configuration list for PBXProject "Lima-iOS" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 376DD5BB2186132B00A981C7;
 			productRefGroup = 376DD5C62186132B00A981C7 /* Products */;
@@ -111,6 +196,7 @@
 			projectRoot = "";
 			targets = (
 				376DD5C42186132B00A981C7 /* Lima */,
+				37E750222186169900B06374 /* LimaTest */,
 			);
 		};
 /* End PBXProject section */
@@ -120,6 +206,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		37E750212186169900B06374 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37E750302186169900B06374 /* LaunchScreen.storyboard in Resources */,
+				37E7502D2186169900B06374 /* Assets.xcassets in Resources */,
+				37E7502B2186169900B06374 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,7 +229,43 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		37E7501F2186169900B06374 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37E750282186169900B06374 /* ViewController.swift in Sources */,
+				37E750262186169900B06374 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		37E75038218616A100B06374 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 376DD5C42186132B00A981C7 /* Lima */;
+			targetProxy = 37E75037218616A100B06374 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		37E750292186169900B06374 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				37E7502A2186169900B06374 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		37E7502E2186169900B06374 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				37E7502F2186169900B06374 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		376DD5CB2186132B00A981C7 /* Debug */ = {
@@ -308,10 +440,46 @@
 			};
 			name = Release;
 		};
+		37E750322186169900B06374 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FBUU23VBFN;
+				INFOPLIST_FILE = LimaTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = org.gkbrown.LimaTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		37E750332186169900B06374 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FBUU23VBFN;
+				INFOPLIST_FILE = LimaTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = org.gkbrown.LimaTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		376DD5BF2186132B00A981C7 /* Build configuration list for PBXProject "Lima" */ = {
+		376DD5BF2186132B00A981C7 /* Build configuration list for PBXProject "Lima-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				376DD5CB2186132B00A981C7 /* Debug */,
@@ -325,6 +493,15 @@
 			buildConfigurations = (
 				376DD5CE2186132B00A981C7 /* Debug */,
 				376DD5CF2186132B00A981C7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		37E750342186169900B06374 /* Build configuration list for PBXNativeTarget "LimaTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				37E750322186169900B06374 /* Debug */,
+				37E750332186169900B06374 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
