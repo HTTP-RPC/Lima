@@ -12,11 +12,11 @@
 // limitations under the License.
 //
 
-#import "UIKit+Markup.h"
+#import "UIKit+Lima.h"
 
 #import <objc/message.h>
 
-@implementation UIView (Markup)
+@implementation UIView (Lima)
 
 - (CGFloat)width
 {

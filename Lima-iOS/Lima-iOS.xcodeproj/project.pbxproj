@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		371163772187B391004B8162 /* LMRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371163762187B391004B8162 /* LMRowView.swift */; };
+		371163792187B5F8004B8162 /* UIKit+Lima.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371163782187B5F8004B8162 /* UIKit+Lima.swift */; };
 		373EB522218618CB001FE0C9 /* LMLayoutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 373EB520218618CA001FE0C9 /* LMLayoutView.m */; };
 		373EB523218618CB001FE0C9 /* LMLayoutView.h in Headers */ = {isa = PBXBuildFile; fileRef = 373EB521218618CB001FE0C9 /* LMLayoutView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		373EB526218618D4001FE0C9 /* LMBoxView.m in Sources */ = {isa = PBXBuildFile; fileRef = 373EB524218618D3001FE0C9 /* LMBoxView.m */; };
@@ -19,12 +21,14 @@
 		373EB533218618EF001FE0C9 /* LMAnchorView.h in Headers */ = {isa = PBXBuildFile; fileRef = 373EB531218618EF001FE0C9 /* LMAnchorView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		373EB536218618FA001FE0C9 /* LMSpacer.h in Headers */ = {isa = PBXBuildFile; fileRef = 373EB534218618FA001FE0C9 /* LMSpacer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		373EB537218618FA001FE0C9 /* LMSpacer.m in Sources */ = {isa = PBXBuildFile; fileRef = 373EB535218618FA001FE0C9 /* LMSpacer.m */; };
-		373EB53A21861953001FE0C9 /* UIKit+Markup.m in Sources */ = {isa = PBXBuildFile; fileRef = 373EB53821861953001FE0C9 /* UIKit+Markup.m */; };
-		373EB53B21861953001FE0C9 /* UIKit+Markup.h in Headers */ = {isa = PBXBuildFile; fileRef = 373EB53921861953001FE0C9 /* UIKit+Markup.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		373EB53A21861953001FE0C9 /* UIKit+Lima.m in Sources */ = {isa = PBXBuildFile; fileRef = 373EB53821861953001FE0C9 /* UIKit+Lima.m */; };
+		373EB53B21861953001FE0C9 /* UIKit+Lima.h in Headers */ = {isa = PBXBuildFile; fileRef = 373EB53921861953001FE0C9 /* UIKit+Lima.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		374C67C32187B1EA009BF473 /* LMColumnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374C67C22187B1EA009BF473 /* LMColumnView.swift */; };
+		374C67C62187B252009BF473 /* LMRootView.m in Sources */ = {isa = PBXBuildFile; fileRef = 374C67C42187B252009BF473 /* LMRootView.m */; };
+		374C67C72187B252009BF473 /* LMRootView.h in Headers */ = {isa = PBXBuildFile; fileRef = 374C67C52187B252009BF473 /* LMRootView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		376DD5CA2186132B00A981C7 /* Lima.h in Headers */ = {isa = PBXBuildFile; fileRef = 376DD5C82186132B00A981C7 /* Lima.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		37E750262186169900B06374 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E750252186169900B06374 /* AppDelegate.swift */; };
 		37E750282186169900B06374 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E750272186169900B06374 /* ViewController.swift */; };
-		37E7502B2186169900B06374 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37E750292186169900B06374 /* Main.storyboard */; };
 		37E7502D2186169900B06374 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37E7502C2186169900B06374 /* Assets.xcassets */; };
 		37E750302186169900B06374 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37E7502E2186169900B06374 /* LaunchScreen.storyboard */; };
 		37E75035218616A100B06374 /* Lima.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 376DD5C52186132B00A981C7 /* Lima.framework */; };
@@ -56,6 +60,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		371163762187B391004B8162 /* LMRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMRowView.swift; sourceTree = "<group>"; };
+		371163782187B5F8004B8162 /* UIKit+Lima.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIKit+Lima.swift"; sourceTree = "<group>"; };
 		373EB520218618CA001FE0C9 /* LMLayoutView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMLayoutView.m; sourceTree = "<group>"; };
 		373EB521218618CB001FE0C9 /* LMLayoutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMLayoutView.h; sourceTree = "<group>"; };
 		373EB524218618D3001FE0C9 /* LMBoxView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMBoxView.m; sourceTree = "<group>"; };
@@ -68,15 +74,17 @@
 		373EB531218618EF001FE0C9 /* LMAnchorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMAnchorView.h; sourceTree = "<group>"; };
 		373EB534218618FA001FE0C9 /* LMSpacer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMSpacer.h; sourceTree = "<group>"; };
 		373EB535218618FA001FE0C9 /* LMSpacer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMSpacer.m; sourceTree = "<group>"; };
-		373EB53821861953001FE0C9 /* UIKit+Markup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIKit+Markup.m"; sourceTree = "<group>"; };
-		373EB53921861953001FE0C9 /* UIKit+Markup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIKit+Markup.h"; sourceTree = "<group>"; };
+		373EB53821861953001FE0C9 /* UIKit+Lima.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIKit+Lima.m"; sourceTree = "<group>"; };
+		373EB53921861953001FE0C9 /* UIKit+Lima.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIKit+Lima.h"; sourceTree = "<group>"; };
+		374C67C22187B1EA009BF473 /* LMColumnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMColumnView.swift; sourceTree = "<group>"; };
+		374C67C42187B252009BF473 /* LMRootView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMRootView.m; sourceTree = "<group>"; };
+		374C67C52187B252009BF473 /* LMRootView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMRootView.h; sourceTree = "<group>"; };
 		376DD5C52186132B00A981C7 /* Lima.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Lima.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		376DD5C82186132B00A981C7 /* Lima.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Lima.h; sourceTree = "<group>"; };
 		376DD5C92186132B00A981C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		37E750232186169900B06374 /* LimaTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LimaTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37E750252186169900B06374 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37E750272186169900B06374 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		37E7502A2186169900B06374 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		37E7502C2186169900B06374 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		37E7502F2186169900B06374 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		37E750312186169900B06374 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -129,14 +137,19 @@
 				373EB524218618D3001FE0C9 /* LMBoxView.m */,
 				373EB529218618DD001FE0C9 /* LMColumnView.h */,
 				373EB528218618DD001FE0C9 /* LMColumnView.m */,
+				374C67C22187B1EA009BF473 /* LMColumnView.swift */,
 				373EB52D218618E6001FE0C9 /* LMRowView.h */,
 				373EB52C218618E6001FE0C9 /* LMRowView.m */,
+				371163762187B391004B8162 /* LMRowView.swift */,
 				373EB531218618EF001FE0C9 /* LMAnchorView.h */,
 				373EB530218618EF001FE0C9 /* LMAnchorView.m */,
+				374C67C52187B252009BF473 /* LMRootView.h */,
+				374C67C42187B252009BF473 /* LMRootView.m */,
 				373EB534218618FA001FE0C9 /* LMSpacer.h */,
 				373EB535218618FA001FE0C9 /* LMSpacer.m */,
-				373EB53921861953001FE0C9 /* UIKit+Markup.h */,
-				373EB53821861953001FE0C9 /* UIKit+Markup.m */,
+				373EB53921861953001FE0C9 /* UIKit+Lima.h */,
+				373EB53821861953001FE0C9 /* UIKit+Lima.m */,
+				371163782187B5F8004B8162 /* UIKit+Lima.swift */,
 				376DD5C92186132B00A981C7 /* Info.plist */,
 			);
 			path = Lima;
@@ -147,7 +160,6 @@
 			children = (
 				37E750252186169900B06374 /* AppDelegate.swift */,
 				37E750272186169900B06374 /* ViewController.swift */,
-				37E750292186169900B06374 /* Main.storyboard */,
 				37E7502C2186169900B06374 /* Assets.xcassets */,
 				37E7502E2186169900B06374 /* LaunchScreen.storyboard */,
 				37E750312186169900B06374 /* Info.plist */,
@@ -168,8 +180,9 @@
 				373EB52B218618DD001FE0C9 /* LMColumnView.h in Headers */,
 				373EB52F218618E6001FE0C9 /* LMRowView.h in Headers */,
 				373EB533218618EF001FE0C9 /* LMAnchorView.h in Headers */,
+				374C67C72187B252009BF473 /* LMRootView.h in Headers */,
 				373EB536218618FA001FE0C9 /* LMSpacer.h in Headers */,
-				373EB53B21861953001FE0C9 /* UIKit+Markup.h in Headers */,
+				373EB53B21861953001FE0C9 /* UIKit+Lima.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,6 +238,7 @@
 				TargetAttributes = {
 					376DD5C42186132B00A981C7 = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1000;
 					};
 					37E750222186169900B06374 = {
 						CreatedOnToolsVersion = 10.0;
@@ -264,7 +278,6 @@
 			files = (
 				37E750302186169900B06374 /* LaunchScreen.storyboard in Resources */,
 				37E7502D2186169900B06374 /* Assets.xcassets in Resources */,
-				37E7502B2186169900B06374 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,13 +288,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				371163772187B391004B8162 /* LMRowView.swift in Sources */,
 				373EB522218618CB001FE0C9 /* LMLayoutView.m in Sources */,
 				373EB526218618D4001FE0C9 /* LMBoxView.m in Sources */,
 				373EB52A218618DD001FE0C9 /* LMColumnView.m in Sources */,
 				373EB52E218618E6001FE0C9 /* LMRowView.m in Sources */,
 				373EB532218618EF001FE0C9 /* LMAnchorView.m in Sources */,
+				374C67C62187B252009BF473 /* LMRootView.m in Sources */,
 				373EB537218618FA001FE0C9 /* LMSpacer.m in Sources */,
-				373EB53A21861953001FE0C9 /* UIKit+Markup.m in Sources */,
+				371163792187B5F8004B8162 /* UIKit+Lima.swift in Sources */,
+				373EB53A21861953001FE0C9 /* UIKit+Lima.m in Sources */,
+				374C67C32187B1EA009BF473 /* LMColumnView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,14 +322,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		37E750292186169900B06374 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				37E7502A2186169900B06374 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		37E7502E2186169900B06374 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -449,6 +458,7 @@
 		376DD5CE2186132B00A981C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -466,6 +476,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.gkbrown.Lima;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -474,6 +485,7 @@
 		376DD5CF2186132B00A981C7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -499,6 +511,7 @@
 		37E750322186169900B06374 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FBUU23VBFN;
@@ -517,6 +530,7 @@
 		37E750332186169900B06374 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FBUU23VBFN;

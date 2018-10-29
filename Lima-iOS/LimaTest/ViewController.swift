@@ -1,20 +1,37 @@
 //
-//  ViewController.swift
-//  LimaTest
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
 //
-//  Created by Greg Brown on 10/28/18.
-//  Copyright © 2018 Lima. All rights reserved.
+//    http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
 //
 
 import UIKit
+import Lima
 
 class ViewController: UIViewController {
+    var columnView: LMColumnView!
+
+    override func loadView() {
+        view = LMColumnView(spacing: 16, [
+            LMSpacer(),
+            UILabel(text: "One", textAlignment: .center, textColor: .red),
+            UILabel(text: "Two", textAlignment: .center, textColor: .green),
+            UILabel(text: "Three", textAlignment: .center, textColor: .blue),
+            LMSpacer()
+        ]) { self.columnView = $0}
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        title = "Lima Test"
     }
-
-
 }
 

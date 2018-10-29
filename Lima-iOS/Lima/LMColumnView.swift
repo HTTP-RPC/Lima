@@ -12,20 +12,22 @@
 // limitations under the License.
 //
 
-#import <UIKit/UIKit.h>
+import UIKit
 
-//! Project version number for Lima.
-FOUNDATION_EXPORT double LimaVersionNumber;
+public extension LMColumnView {
+    public convenience init(spacing: CGFloat = 0,
+        _ subviews: [UIView] = [],
+        _ callback: ((LMColumnView) -> Void)? = nil) {
+        self.init()
 
-//! Project version string for Lima.
-FOUNDATION_EXPORT const unsigned char LimaVersionString[];
+        self.spacing = spacing
 
-// Public framework headers
-#import <Lima/LMLayoutView.h>
-#import <Lima/LMBoxView.h>
-#import <Lima/LMColumnView.h>
-#import <Lima/LMRowView.h>
-#import <Lima/LMAnchorView.h>
-#import <Lima/LMRootView.h>
-#import <Lima/LMSpacer.h>
-#import <Lima/UIKit+Lima.h>
+        // TODO
+
+        for view in subviews {
+            addSubview(view)
+        }
+
+        callback?(self)
+    }
+}

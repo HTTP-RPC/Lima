@@ -45,7 +45,7 @@ typedef NS_OPTIONS(NSUInteger, LMAnchor) {
     LMAnchorAll = LMAnchorTop | LMAnchorBottom | LMAnchorLeading | LMAnchorTrailing
 };
 
-@interface UIView (Markup)
+@interface UIView (Lima)
 
 /**
  * The view's width, or <code>NaN</code> for no explicit width.

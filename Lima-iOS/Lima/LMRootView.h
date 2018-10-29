@@ -12,20 +12,25 @@
 // limitations under the License.
 //
 
-#import <UIKit/UIKit.h>
+#import "LMLayoutView.h"
 
-//! Project version number for Lima.
-FOUNDATION_EXPORT double LimaVersionNumber;
+NS_ASSUME_NONNULL_BEGIN
 
-//! Project version string for Lima.
-FOUNDATION_EXPORT const unsigned char LimaVersionString[];
+/**
+ * Layout view that provides a margin-independent root for a view hierarchy.
+ */
+@interface LMRootView : LMLayoutView
 
-// Public framework headers
-#import <Lima/LMLayoutView.h>
-#import <Lima/LMBoxView.h>
-#import <Lima/LMColumnView.h>
-#import <Lima/LMRowView.h>
-#import <Lima/LMAnchorView.h>
-#import <Lima/LMRootView.h>
-#import <Lima/LMSpacer.h>
-#import <Lima/UIKit+Lima.h>
+/**
+ * The amount of space to reserve at the top of the view. The default is 0.
+ */
+@property (nonatomic) CGFloat topPadding;
+
+/**
+ * The amount of space to reserve at the bottom of the view. The default is 0.
+ */
+@property (nonatomic) CGFloat bottomPadding;
+
+@end
+
+NS_ASSUME_NONNULL_END

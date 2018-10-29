@@ -12,20 +12,21 @@
 // limitations under the License.
 //
 
-#import <UIKit/UIKit.h>
+import UIKit
 
-//! Project version number for Lima.
-FOUNDATION_EXPORT double LimaVersionNumber;
+public extension UILabel {
+    public convenience init(text: String? = nil,
+        textAlignment: NSTextAlignment = .left,
+        textColor: UIColor? = nil,
+        _ callback: ((UILabel) -> Void)? = nil) {
+        self.init()
 
-//! Project version string for Lima.
-FOUNDATION_EXPORT const unsigned char LimaVersionString[];
+        self.text = text
+        self.textAlignment = textAlignment
+        self.textColor = textColor
 
-// Public framework headers
-#import <Lima/LMLayoutView.h>
-#import <Lima/LMBoxView.h>
-#import <Lima/LMColumnView.h>
-#import <Lima/LMRowView.h>
-#import <Lima/LMAnchorView.h>
-#import <Lima/LMRootView.h>
-#import <Lima/LMSpacer.h>
-#import <Lima/UIKit+Lima.h>
+        // TODO
+
+        callback?(self)
+    }
+}
