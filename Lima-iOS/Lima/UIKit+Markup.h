@@ -53,34 +53,9 @@ typedef NS_OPTIONS(NSUInteger, LMAnchor) {
 @property (nonatomic) CGFloat width;
 
 /**
- * The view's minimum width, or <code>NaN</code> for no explicit minimum width.
- */
-@property (nonatomic) CGFloat minimumWidth;
-
-/**
- * The view's maximum width, or <code>NaN</code> for no explicit maximum width.
- */
-@property (nonatomic) CGFloat maximumWidth;
-
-/**
  * The view's height, or <code>NaN</code> for no explicit height.
  */
 @property (nonatomic) CGFloat height;
-
-/**
- * The view's minimum height, or <code>NaN</code> for no explicit minimum height.
- */
-@property (nonatomic) CGFloat minimumHeight;
-
-/**
- * The view's maximum height, or <code>NaN</code> for no explicit maximum height.
- */
-@property (nonatomic) CGFloat maximumHeight;
-
-/**
- * The view's aspect ratio, or <code>NaN</code> for no explicit aspect ratio.
- */
-@property (nonatomic) CGFloat aspectRatio;
 
 /**
  * The view's weight, or <code>NaN</code> for no weight.
