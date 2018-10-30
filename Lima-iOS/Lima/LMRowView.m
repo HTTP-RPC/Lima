@@ -18,8 +18,7 @@
 
 @implementation LMRowView
 
-- (void)setHorizontalAlignment:(LMHorizontalAlignment)horizontalAlignment
-{
+- (void)setHorizontalAlignment:(LMHorizontalAlignment)horizontalAlignment {
     if (horizontalAlignment == LMHorizontalAlignmentCenter) {
         [NSException raise:NSInvalidArgumentException format:@"Invalid horizontal alignment."];
     }
@@ -27,15 +26,13 @@
     [super setHorizontalAlignment:horizontalAlignment];
 }
 
-- (void)setBaseline:(LMBaseline)baseline
-{
+- (void)setBaseline:(LMBaseline)baseline {
     _baseline = baseline;
 
     [self setNeedsUpdateConstraints];
 }
 
-- (void)layoutSubviews
-{
+- (void)layoutSubviews {
     LMVerticalAlignment verticalAlignment = [self verticalAlignment];
 
     for (UIView * subview in [self subviews]) {
@@ -63,8 +60,7 @@
     [super layoutSubviews];
 }
 
-- (NSArray *)createConstraints
-{
+- (NSArray *)createConstraints {
     NSMutableArray *constraints = [NSMutableArray new];
 
     LMHorizontalAlignment horizontalAlignment = [self horizontalAlignment];
@@ -210,8 +206,7 @@
     return constraints;
 }
 
-- (CGSize)intrinsicContentSize
-{
+- (CGSize)intrinsicContentSize {
     for (UIView *subview in [self subviews]) {
         if ([subview displayable]) {
             return [super intrinsicContentSize];

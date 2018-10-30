@@ -16,8 +16,7 @@
 
 @implementation LMBoxView
 
-- (instancetype)initWithFrame:(CGRect)frame
-{
+- (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
 
     if (self) {
@@ -31,29 +30,25 @@
     return self;
 }
 
-- (void)setHorizontalAlignment:(LMHorizontalAlignment)horizontalAlignment
-{
+- (void)setHorizontalAlignment:(LMHorizontalAlignment)horizontalAlignment {
     _horizontalAlignment = horizontalAlignment;
 
     [self setNeedsUpdateConstraints];
 }
 
-- (void)setVerticalAlignment:(LMVerticalAlignment)verticalAlignment
-{
+- (void)setVerticalAlignment:(LMVerticalAlignment)verticalAlignment {
     _verticalAlignment = verticalAlignment;
 
     [self setNeedsUpdateConstraints];
 }
 
-- (void)setSpacing:(CGFloat)spacing
-{
+- (void)setSpacing:(CGFloat)spacing {
     _spacing = spacing;
 
     [self setNeedsUpdateConstraints];
 }
 
-- (void)setAlignToBaseline:(BOOL)alignToBaseline
-{
+- (void)setAlignToBaseline:(BOOL)alignToBaseline {
     _alignToBaseline = alignToBaseline;
 
     [self setNeedsUpdateConstraints];

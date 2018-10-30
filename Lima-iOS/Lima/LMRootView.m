@@ -17,27 +17,23 @@
 
 @implementation LMRootView
 
-- (id)awakeAfterUsingCoder:(NSCoder *)decoder
-{
+- (id)awakeAfterUsingCoder:(NSCoder *)decoder {
     return self;
 }
 
-- (void)setTopPadding:(CGFloat)topPadding
-{
+- (void)setTopPadding:(CGFloat)topPadding {
     _topPadding = topPadding;
 
     [self setNeedsUpdateConstraints];
 }
 
-- (void)setBottomPadding:(CGFloat)bottomPadding
-{
+- (void)setBottomPadding:(CGFloat)bottomPadding {
     _bottomPadding = bottomPadding;
 
     [self setNeedsUpdateConstraints];
 }
 
-- (void)layoutSubviews
-{
+- (void)layoutSubviews {
     // Ensure that subviews resize
     for (UIView * subview in [self subviews]) {
         if (![subview displayable]) {
@@ -54,8 +50,7 @@
     [super layoutSubviews];
 }
 
-- (NSArray *)createConstraints
-{
+- (NSArray *)createConstraints {
     NSMutableArray *constraints = [NSMutableArray new];
 
     // Align subview edges to layer view edges

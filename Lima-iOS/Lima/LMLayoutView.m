@@ -15,18 +15,15 @@
 #import "LMLayoutView.h"
 #import "UIKit+Lima.h"
 
-@implementation LMLayoutView
-{
+@implementation LMLayoutView {
     NSArray *_constraints;
 }
 
-+ (BOOL)requiresConstraintBasedLayout
-{
++ (BOOL)requiresConstraintBasedLayout {
     return YES;
 }
 
-- (instancetype)initWithFrame:(CGRect)frame
-{
+- (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
 
     if (self) {
@@ -36,13 +33,11 @@
     return self;
 }
 
-- (id)awakeAfterUsingCoder:(NSCoder *)decoder
-{
+- (id)awakeAfterUsingCoder:(NSCoder *)decoder {
     return nil;
 }
 
-- (void)didAddSubview:(UIView *)subview
-{
+- (void)didAddSubview:(UIView *)subview {
     [super didAddSubview:subview];
 
     [subview setTranslatesAutoresizingMaskIntoConstraints:NO];
@@ -50,29 +45,25 @@
     [self setNeedsUpdateConstraints];
 }
 
-- (void)willRemoveSubview:(UIView *)subview
-{
+- (void)willRemoveSubview:(UIView *)subview {
     [super willRemoveSubview:subview];
 
     [self setNeedsUpdateConstraints];
 }
 
-- (UIView *)viewForFirstBaselineLayout
-{
+- (UIView *)viewForFirstBaselineLayout {
     NSArray *subviews = [self subviews];
 
     return ([subviews count] == 0) ? [super viewForFirstBaselineLayout] : [[subviews firstObject] viewForFirstBaselineLayout];
 }
 
-- (UIView *)viewForLastBaselineLayout
-{
+- (UIView *)viewForLastBaselineLayout {
     NSArray *subviews = [self subviews];
 
     return ([subviews count] == 0) ? [super viewForLastBaselineLayout] : [[subviews lastObject] viewForLastBaselineLayout];
 }
 
-- (void)setNeedsUpdateConstraints
-{
+- (void)setNeedsUpdateConstraints {
     if (_constraints != nil) {
         [NSLayoutConstraint deactivateConstraints:_constraints];
 
@@ -82,8 +73,7 @@
     [super setNeedsUpdateConstraints];
 }
 
-- (void)updateConstraints
-{
+- (void)updateConstraints {
     if (_constraints == nil) {
         _constraints = [self createConstraints];
 
@@ -95,13 +85,11 @@
     [super updateConstraints];
 }
 
-- (NSArray *)createConstraints
-{
+- (NSArray *)createConstraints {
     return nil;
 }
 
-- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event
-{
+- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
     UIView *view = [super hitTest:point withEvent:event];
 
     if (view == self && [self backgroundColor] == nil) {

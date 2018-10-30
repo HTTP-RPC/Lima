@@ -18,15 +18,13 @@
 
 @implementation UIView (Lima)
 
-- (CGFloat)width
-{
+- (CGFloat)width {
     NSLayoutConstraint *constraint = objc_getAssociatedObject(self, @selector(width));
 
     return (constraint == nil) ? NAN : [constraint constant];
 }
 
-- (void)setWidth:(CGFloat)width
-{
+- (void)setWidth:(CGFloat)width {
     NSLayoutConstraint *constraint = objc_getAssociatedObject(self, @selector(width));
 
     [constraint setActive:NO];
@@ -44,15 +42,13 @@
     objc_setAssociatedObject(self, @selector(width), constraint, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (CGFloat)height
-{
+- (CGFloat)height {
     NSLayoutConstraint *constraint = objc_getAssociatedObject(self, @selector(height));
 
     return (constraint == nil) ? NAN : [constraint constant];
 }
 
-- (void)setHeight:(CGFloat)height
-{
+- (void)setHeight:(CGFloat)height {
     NSLayoutConstraint *constraint = objc_getAssociatedObject(self, @selector(height));
 
     [constraint setActive:NO];
@@ -70,30 +66,26 @@
     objc_setAssociatedObject(self, @selector(height), constraint, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (CGFloat)weight
-{
+- (CGFloat)weight {
     NSNumber *weight = objc_getAssociatedObject(self, @selector(weight));
 
     return (weight == nil) ? NAN : [weight floatValue];
 }
 
-- (void)setWeight:(CGFloat)weight
-{
+- (void)setWeight:(CGFloat)weight {
     objc_setAssociatedObject(self, @selector(weight), isnan(weight) ? nil : [NSNumber numberWithFloat:weight],
         OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 
     [[self superview] setNeedsUpdateConstraints];
 }
 
-- (LMAnchor)anchor
-{
+- (LMAnchor)anchor {
     NSNumber *anchor = objc_getAssociatedObject(self, @selector(anchor));
 
     return (anchor == nil) ? 0 : [anchor unsignedIntegerValue];
 }
 
-- (void)setAnchor:(LMAnchor)anchor
-{
+- (void)setAnchor:(LMAnchor)anchor {
     objc_setAssociatedObject(self, @selector(anchor), [NSNumber numberWithUnsignedInteger:anchor],
         OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 
@@ -104,8 +96,7 @@
     return ![self isHidden];
 }
 
-- (void)setDisplayable:(BOOL)displayable
-{
+- (void)setDisplayable:(BOOL)displayable {
     [self setHidden:!displayable];
 }
 

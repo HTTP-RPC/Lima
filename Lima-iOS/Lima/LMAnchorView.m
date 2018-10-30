@@ -17,8 +17,7 @@
 
 @implementation LMAnchorView
 
-- (void)layoutSubviews
-{
+- (void)layoutSubviews {
     // Ensure that subviews resize
     for (UIView *subview in [self subviews]) {
         if (![subview displayable]) {
@@ -48,8 +47,7 @@
     [super layoutSubviews];
 }
 
-- (NSArray *)createConstraints
-{
+- (NSArray *)createConstraints {
     NSMutableArray *constraints = [NSMutableArray new];
 
     // Align subview edges to anchor view edges

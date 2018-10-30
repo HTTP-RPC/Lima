@@ -17,8 +17,7 @@
 
 @implementation LMSpacer
 
-- (instancetype)initWithFrame:(CGRect)frame
-{
+- (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
 
     if (self) {
@@ -28,18 +27,15 @@
     return self;
 }
 
-- (id)awakeAfterUsingCoder:(NSCoder *)decoder
-{
+- (id)awakeAfterUsingCoder:(NSCoder *)decoder {
     return nil;
 }
 
-- (CGSize)intrinsicContentSize
-{
+- (CGSize)intrinsicContentSize {
     return CGSizeZero;
 }
 
-- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event
-{
+- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
     return ([self backgroundColor] == nil) ? nil : [super hitTest:point withEvent:event];
 }
 

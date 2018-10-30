@@ -18,8 +18,7 @@
 
 @implementation LMColumnView
 
-- (void)setVerticalAlignment:(LMVerticalAlignment)verticalAlignment
-{
+- (void)setVerticalAlignment:(LMVerticalAlignment)verticalAlignment {
     if (verticalAlignment == LMVerticalAlignmentCenter) {
         [NSException raise:NSInvalidArgumentException format:@"Invalid vertical alignment."];
     }
@@ -27,15 +26,13 @@
     [super setVerticalAlignment:verticalAlignment];
 }
 
-- (void)setAlignToGrid:(BOOL)alignToGrid
-{
+- (void)setAlignToGrid:(BOOL)alignToGrid {
     _alignToGrid = alignToGrid;
 
     [self setNeedsUpdateConstraints];
 }
 
-- (void)layoutSubviews
-{
+- (void)layoutSubviews {
     LMHorizontalAlignment horizontalAlignment = [self horizontalAlignment];
 
     for (UIView * subview in [self subviews]) {
@@ -63,8 +60,7 @@
     [super layoutSubviews];
 }
 
-- (NSArray *)createConstraints
-{
+- (NSArray *)createConstraints {
     NSMutableArray *constraints = [NSMutableArray new];
 
     LMHorizontalAlignment horizontalAlignment = [self horizontalAlignment];
@@ -201,8 +197,7 @@
     return constraints;
 }
 
-- (CGSize)intrinsicContentSize
-{
+- (CGSize)intrinsicContentSize {
     for (UIView *subview in [self subviews]) {
         if ([subview displayable]) {
             return [super intrinsicContentSize];
