@@ -20,8 +20,6 @@
     NSArray *_constraints;
 }
 
-static NSString * const kHiddenKey = @"hidden";
-
 + (BOOL)requiresConstraintBasedLayout
 {
     return YES;
@@ -48,7 +46,6 @@ static NSString * const kHiddenKey = @"hidden";
     [super didAddSubview:subview];
 
     [subview setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [subview addObserver:self forKeyPath:kHiddenKey options:0 context:nil];
 
     [self setNeedsUpdateConstraints];
 }
@@ -57,16 +54,7 @@ static NSString * const kHiddenKey = @"hidden";
 {
     [super willRemoveSubview:subview];
 
-    [subview removeObserver:self forKeyPath:kHiddenKey];
-
     [self setNeedsUpdateConstraints];
-}
-
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
-{
-    if ([keyPath isEqual:kHiddenKey]) {
-        [self setNeedsUpdateConstraints];
-    }
 }
 
 - (UIView *)viewForFirstBaselineLayout

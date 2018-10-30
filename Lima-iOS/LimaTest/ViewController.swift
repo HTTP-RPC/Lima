@@ -22,7 +22,9 @@ class ViewController: UIViewController {
         view = LMColumnView(spacing: 16, [
             LMSpacer(),
             UILabel(text: "One", textAlignment: .center, textColor: .red),
-            UILabel(text: "Two", textAlignment: .center, textColor: .green),
+            UILabel(text: "Two", textAlignment: .center, textColor: .green) {
+                $0.isDisplayable = false                
+            },
             UILabel(text: "Three", textAlignment: .center, textColor: .blue),
             LMSpacer()
         ]) { self.columnView = $0}
