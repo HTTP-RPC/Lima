@@ -18,7 +18,6 @@ Feedback is welcome and encouraged. Please feel free to [contact me](mailto:gk_b
     * [LMAnchorView](#lmanchorview)
     * [LMRootView](#lmrootview)
     * [LMScrollView](#lmscrollview)
-    * [LMPageView](#lmpageview)
     * [LMTableViewCell and LMTableViewHeaderFooterView](#lmtableviewcell-and-lmtableviewheaderfooterview)
     * [LMCollectionViewCell](#lmcollectionviewcell)
 * [Deployment](#deployment)
@@ -54,9 +53,6 @@ TODO
 TODO
 
 ## LMScrollView
-TODO
-
-## LMPageView
 TODO
 
 ## LMTableViewCell and LMTableViewHeaderFooterView

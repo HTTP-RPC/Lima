@@ -26,6 +26,8 @@ class ViewController: UIViewController {
                 $0.isDisplayable = false                
             },
             UILabel(text: "Three", textAlignment: .center, textColor: .blue),
+            LMSpacer(height: 0.5, backgroundColor: .gray),
+            UIButton(type: .system, title: "Press Me"),
             LMSpacer()
         ]) { self.columnView = $0}
     }
