@@ -39,7 +39,7 @@
     LMHorizontalAlignment horizontalAlignment = [self horizontalAlignment];
 
     for (UIView * subview in [self subviews]) {
-        if ([subview isHidden]) {
+        if (![subview displayable]) {
             continue;
         }
 
@@ -80,7 +80,7 @@
     LMRowView *previousRowView = nil;
 
     for (UIView *subview in [self subviews]) {
-        if ([subview isHidden]) {
+        if (![subview displayable]) {
             continue;
         }
 
@@ -204,7 +204,7 @@
 - (CGSize)intrinsicContentSize
 {
     for (UIView *subview in [self subviews]) {
-        if (![subview isHidden]) {
+        if ([subview displayable]) {
             return [super intrinsicContentSize];
         }
     }

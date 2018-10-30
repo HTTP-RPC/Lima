@@ -21,7 +21,7 @@
 {
     // Ensure that subviews resize
     for (UIView *subview in [self subviews]) {
-        if ([subview isHidden]) {
+        if (![subview displayable]) {
             continue;
         }
 
@@ -54,7 +54,7 @@
 
     // Align subview edges to anchor view edges
     for (UIView *subview in [self subviews]) {
-        if ([subview isHidden]) {
+        if (![subview displayable]) {
             continue;
         }
 

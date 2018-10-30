@@ -67,6 +67,11 @@ typedef NS_OPTIONS(NSUInteger, LMAnchor) {
  */
 @property (nonatomic) LMAnchor anchor;
 
+/**
+ * The view's displayable flag.
+ */
+@property (nonatomic) BOOL displayable NS_SWIFT_NAME(isDisplayable);
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -100,4 +100,13 @@
     [[self superview] setNeedsUpdateConstraints];
 }
 
+- (BOOL)displayable {
+    return ![self isHidden];
+}
+
+- (void)setDisplayable:(BOOL)displayable
+{
+    [self setHidden:!displayable];
+}
+
 @end

@@ -39,7 +39,7 @@
     LMVerticalAlignment verticalAlignment = [self verticalAlignment];
 
     for (UIView * subview in [self subviews]) {
-        if ([subview isHidden]) {
+        if (![subview displayable]) {
             continue;
         }
 
@@ -78,7 +78,7 @@
     UIView *previousWeightedSubview = nil;
 
     for (UIView *subview in [self subviews]) {
-        if ([subview isHidden]) {
+        if (![subview displayable]) {
             continue;
         }
 
@@ -213,7 +213,7 @@
 - (CGSize)intrinsicContentSize
 {
     for (UIView *subview in [self subviews]) {
-        if (![subview isHidden]) {
+        if ([subview displayable]) {
             return [super intrinsicContentSize];
         }
     }
