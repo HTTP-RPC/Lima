@@ -181,13 +181,12 @@ public extension UIProgressView {
 }
 
 public extension UITextView {
-    public convenience init(text: String? = nil,
+    public convenience init(textContainer: NSTextContainer? = nil,
         isEditable: Bool = true, isSelectable: Bool = true,
         textAlignment: NSTextAlignment = .natural, textColor: UIColor? = nil, font: UIFont? = nil,
         _ callback: ((UITextView) -> Void)? = nil) {
-        self.init()
+        self.init(frame: CGRect(), textContainer: textContainer)
 
-        self.text = text
         self.isEditable = isEditable
         self.isSelectable = isSelectable
         self.textAlignment = textAlignment
