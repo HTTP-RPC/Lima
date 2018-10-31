@@ -98,6 +98,8 @@
 
 - (void)setDisplayable:(BOOL)displayable {
     [self setHidden:!displayable];
+
+    [[self superview] setNeedsUpdateConstraints];
 }
 
 @end

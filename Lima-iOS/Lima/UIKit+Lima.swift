@@ -129,7 +129,8 @@ public extension UISlider {
 }
 
 public extension UIStepper {
-    public convenience init(minimumValue: Double = 0.0, maximumValue: Double = 100.0, stepValue: Double = 1.0,
+    public convenience init(minimumValue: Double = 0.0, maximumValue: Double = 100.0,
+        stepValue: Double = 1.0,
         _ callback: ((UIStepper) -> Void)? = nil) {
         self.init()
 
@@ -174,6 +175,24 @@ public extension UIProgressView {
 
         self.progressTintColor = progressTintColor
         self.trackTintColor = trackTintColor
+
+        callback?(self)
+    }
+}
+
+public extension UITextView {
+    public convenience init(text: String? = nil,
+        isEditable: Bool = true, isSelectable: Bool = true,
+        textAlignment: NSTextAlignment = .natural, textColor: UIColor? = nil, font: UIFont? = nil,
+        _ callback: ((UITextView) -> Void)? = nil) {
+        self.init()
+
+        self.text = text
+        self.isEditable = isEditable
+        self.isSelectable = isSelectable
+        self.textAlignment = textAlignment
+        self.textColor = textColor
+        self.font = font
 
         callback?(self)
     }
