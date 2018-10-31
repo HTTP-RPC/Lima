@@ -15,14 +15,29 @@
 import UIKit
 
 public extension LMColumnView {
-    public convenience init(spacing: CGFloat = 0,
+    public convenience init(margin: CGFloat? = .nan,
+        topMargin: CGFloat? = .nan,
+        leadingMargin: CGFloat? = .nan,
+        bottomMargin: CGFloat? = .nan,
+        trailingMargin: CGFloat? = .nan,
+        horizontalAlignment: LMHorizontalAlignment = .fill,
+        verticalAlignment: LMVerticalAlignment = .fill,
+        spacing: CGFloat = 0,
+        isAlignToBaseline: Bool = false,
+        isAlignToGrid: Bool = false,
         _ subviews: [UIView] = [],
         _ callback: ((LMColumnView) -> Void)? = nil) {
-        self.init()
+        self.init(margin: margin,
+            topMargin: topMargin,
+            leadingMargin: leadingMargin,
+            bottomMargin: bottomMargin,
+            trailingMargin: trailingMargin)
 
+        self.horizontalAlignment = horizontalAlignment
+        self.verticalAlignment = verticalAlignment
         self.spacing = spacing
-
-        // TODO
+        self.isAlignToBaseline = isAlignToBaseline
+        self.isAlignToGrid = isAlignToGrid
 
         for view in subviews {
             addSubview(view)

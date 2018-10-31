@@ -15,5 +15,34 @@
 import UIKit
 
 public extension LMRowView {
-    // TODO
+    public convenience init(margin: CGFloat? = .nan,
+        topMargin: CGFloat? = .nan,
+        leadingMargin: CGFloat? = .nan,
+        bottomMargin: CGFloat? = .nan,
+        trailingMargin: CGFloat? = .nan,
+        horizontalAlignment: LMHorizontalAlignment = .fill,
+        verticalAlignment: LMVerticalAlignment = .fill,
+        spacing: CGFloat = 0,
+        isAlignToBaseline: Bool = false,
+        baseline: LMBaseline = .first,
+        _ subviews: [UIView] = [],
+        _ callback: ((LMRowView) -> Void)? = nil) {
+        self.init(margin: margin,
+            topMargin: topMargin,
+            leadingMargin: leadingMargin,
+            bottomMargin: bottomMargin,
+            trailingMargin: trailingMargin)
+
+        self.horizontalAlignment = horizontalAlignment
+        self.verticalAlignment = verticalAlignment
+        self.spacing = spacing
+        self.isAlignToBaseline = isAlignToBaseline
+        self.baseline = baseline
+
+        for view in subviews {
+            addSubview(view)
+        }
+
+        callback?(self)
+    }
 }

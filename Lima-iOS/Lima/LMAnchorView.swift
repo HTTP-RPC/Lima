@@ -15,5 +15,23 @@
 import UIKit
 
 public extension LMAnchorView {
-    // TODO
+    public convenience init(margin: CGFloat? = .nan,
+        topMargin: CGFloat? = .nan,
+        leadingMargin: CGFloat? = .nan,
+        bottomMargin: CGFloat? = .nan,
+        trailingMargin: CGFloat? = .nan,
+        _ subviews: [UIView] = [],
+        _ callback: ((LMAnchorView) -> Void)? = nil) {
+        self.init(margin: margin,
+            topMargin: topMargin,
+            leadingMargin: leadingMargin,
+            bottomMargin: bottomMargin,
+            trailingMargin: trailingMargin)
+
+        for view in subviews {
+            addSubview(view)
+        }
+
+        callback?(self)
+    }
 }

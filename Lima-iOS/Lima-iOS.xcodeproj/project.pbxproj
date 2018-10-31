@@ -29,7 +29,6 @@
 		376DD5CA2186132B00A981C7 /* Lima.h in Headers */ = {isa = PBXBuildFile; fileRef = 376DD5C82186132B00A981C7 /* Lima.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		377907D8218900F0007FD152 /* LMSpacer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377907D7218900F0007FD152 /* LMSpacer.swift */; };
 		377907DA21890CEF007FD152 /* LMLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377907D921890CEF007FD152 /* LMLayoutView.swift */; };
-		377907DC21890CFC007FD152 /* LMBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377907DB21890CFC007FD152 /* LMBoxView.swift */; };
 		377907DE21890D0A007FD152 /* LMAnchorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377907DD21890D0A007FD152 /* LMAnchorView.swift */; };
 		377907E021890D17007FD152 /* LMRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377907DF21890D17007FD152 /* LMRootView.swift */; };
 		37E750262186169900B06374 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E750252186169900B06374 /* AppDelegate.swift */; };
@@ -89,7 +88,6 @@
 		376DD5C92186132B00A981C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		377907D7218900F0007FD152 /* LMSpacer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMSpacer.swift; sourceTree = "<group>"; };
 		377907D921890CEF007FD152 /* LMLayoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMLayoutView.swift; sourceTree = "<group>"; };
-		377907DB21890CFC007FD152 /* LMBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMBoxView.swift; sourceTree = "<group>"; };
 		377907DD21890D0A007FD152 /* LMAnchorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMAnchorView.swift; sourceTree = "<group>"; };
 		377907DF21890D17007FD152 /* LMRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMRootView.swift; sourceTree = "<group>"; };
 		37E750232186169900B06374 /* LimaTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LimaTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -146,7 +144,6 @@
 				377907D921890CEF007FD152 /* LMLayoutView.swift */,
 				373EB525218618D3001FE0C9 /* LMBoxView.h */,
 				373EB524218618D3001FE0C9 /* LMBoxView.m */,
-				377907DB21890CFC007FD152 /* LMBoxView.swift */,
 				373EB529218618DD001FE0C9 /* LMColumnView.h */,
 				373EB528218618DD001FE0C9 /* LMColumnView.m */,
 				374C67C22187B1EA009BF473 /* LMColumnView.swift */,
@@ -314,7 +311,6 @@
 				374C67C62187B252009BF473 /* LMRootView.m in Sources */,
 				373EB537218618FA001FE0C9 /* LMSpacer.m in Sources */,
 				377907DA21890CEF007FD152 /* LMLayoutView.swift in Sources */,
-				377907DC21890CFC007FD152 /* LMBoxView.swift in Sources */,
 				377907D8218900F0007FD152 /* LMSpacer.swift in Sources */,
 				371163792187B5F8004B8162 /* UIKit+Lima.swift in Sources */,
 				373EB53A21861953001FE0C9 /* UIKit+Lima.m in Sources */,
