@@ -14,22 +14,26 @@
 
 #import <UIKit/UIKit.h>
 
-//! Project version number for Lima.
-FOUNDATION_EXPORT double LimaVersionNumber;
+NS_ASSUME_NONNULL_BEGIN
 
-//! Project version string for Lima.
-FOUNDATION_EXPORT const unsigned char LimaVersionString[];
+/**
+ * Table view header/footer view that hosts custom content.
+ */
+@interface LMTableViewHeaderFooterView : UITableViewHeaderFooterView
 
-// Public framework headers
-#import "LMLayoutView.h"
-#import "LMBoxView.h"
-#import "LMColumnView.h"
-#import "LMRowView.h"
-#import "LMAnchorView.h"
-#import "LMRootView.h"
-#import "LMSpacer.h"
-#import "LMScrollView.h"
-#import "LMTableViewCell.h"
-#import "LMTableViewHeaderFooterView.h"
-#import "LMCollectionViewCell.h"
-#import "UIKit+Lima.h"
+/**
+ * Returns the view's content.
+ */
+- (UIView *)content;
+
+/**
+ * Sets the view's content.
+ *
+ * @param content The view's content.
+ * @param ignoreLayoutMargins Indicates that the view's layout margins should be ignored.
+ */
+- (void)setContent:(UIView *)content ignoreLayoutMargins:(BOOL)ignoreLayoutMargins;
+
+@end
+
+NS_ASSUME_NONNULL_END

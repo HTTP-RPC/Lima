@@ -14,22 +14,26 @@
 
 #import <UIKit/UIKit.h>
 
-//! Project version number for Lima.
-FOUNDATION_EXPORT double LimaVersionNumber;
+NS_ASSUME_NONNULL_BEGIN
 
-//! Project version string for Lima.
-FOUNDATION_EXPORT const unsigned char LimaVersionString[];
+/**
+ * Collection view cell that hosts custom content.
+ */
+@interface LMCollectionViewCell : UICollectionViewCell
 
-// Public framework headers
-#import "LMLayoutView.h"
-#import "LMBoxView.h"
-#import "LMColumnView.h"
-#import "LMRowView.h"
-#import "LMAnchorView.h"
-#import "LMRootView.h"
-#import "LMSpacer.h"
-#import "LMScrollView.h"
-#import "LMTableViewCell.h"
-#import "LMTableViewHeaderFooterView.h"
-#import "LMCollectionViewCell.h"
-#import "UIKit+Lima.h"
+/**
+ * Returns the cell's content.
+ */
+- (UIView *)content;
+
+/**
+ * Sets the cell's content.
+ *
+ * @param content The cell's content.
+ * @param ignoreLayoutMargins Indicates that the cell's layout margins should be ignored.
+ */
+- (void)setContent:(UIView *)content ignoreLayoutMargins:(BOOL)ignoreLayoutMargins;
+
+@end
+
+NS_ASSUME_NONNULL_END

@@ -9,6 +9,14 @@
 /* Begin PBXBuildFile section */
 		371163772187B391004B8162 /* LMRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371163762187B391004B8162 /* LMRowView.swift */; };
 		371163792187B5F8004B8162 /* UIKit+Lima.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371163782187B5F8004B8162 /* UIKit+Lima.swift */; };
+		37319151218A6548003BA813 /* LMScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3731914F218A6548003BA813 /* LMScrollView.m */; };
+		37319152218A6548003BA813 /* LMScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = 37319150218A6548003BA813 /* LMScrollView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		37319157218A6558003BA813 /* LMTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 37319153218A6558003BA813 /* LMTableViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		37319158218A6558003BA813 /* LMTableViewHeaderFooterView.h in Headers */ = {isa = PBXBuildFile; fileRef = 37319154218A6558003BA813 /* LMTableViewHeaderFooterView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		37319159218A6558003BA813 /* LMTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 37319155218A6558003BA813 /* LMTableViewCell.m */; };
+		3731915A218A6558003BA813 /* LMTableViewHeaderFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37319156218A6558003BA813 /* LMTableViewHeaderFooterView.m */; };
+		3731915D218A6563003BA813 /* LMCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3731915B218A6563003BA813 /* LMCollectionViewCell.m */; };
+		3731915E218A6563003BA813 /* LMCollectionViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 3731915C218A6563003BA813 /* LMCollectionViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		373EB522218618CB001FE0C9 /* LMLayoutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 373EB520218618CA001FE0C9 /* LMLayoutView.m */; };
 		373EB523218618CB001FE0C9 /* LMLayoutView.h in Headers */ = {isa = PBXBuildFile; fileRef = 373EB521218618CB001FE0C9 /* LMLayoutView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		373EB526218618D4001FE0C9 /* LMBoxView.m in Sources */ = {isa = PBXBuildFile; fileRef = 373EB524218618D3001FE0C9 /* LMBoxView.m */; };
@@ -66,6 +74,14 @@
 /* Begin PBXFileReference section */
 		371163762187B391004B8162 /* LMRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMRowView.swift; sourceTree = "<group>"; };
 		371163782187B5F8004B8162 /* UIKit+Lima.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIKit+Lima.swift"; sourceTree = "<group>"; };
+		3731914F218A6548003BA813 /* LMScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMScrollView.m; sourceTree = "<group>"; };
+		37319150218A6548003BA813 /* LMScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMScrollView.h; sourceTree = "<group>"; };
+		37319153218A6558003BA813 /* LMTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMTableViewCell.h; sourceTree = "<group>"; };
+		37319154218A6558003BA813 /* LMTableViewHeaderFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMTableViewHeaderFooterView.h; sourceTree = "<group>"; };
+		37319155218A6558003BA813 /* LMTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMTableViewCell.m; sourceTree = "<group>"; };
+		37319156218A6558003BA813 /* LMTableViewHeaderFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMTableViewHeaderFooterView.m; sourceTree = "<group>"; };
+		3731915B218A6563003BA813 /* LMCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMCollectionViewCell.m; sourceTree = "<group>"; };
+		3731915C218A6563003BA813 /* LMCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMCollectionViewCell.h; sourceTree = "<group>"; };
 		373EB520218618CA001FE0C9 /* LMLayoutView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMLayoutView.m; sourceTree = "<group>"; };
 		373EB521218618CB001FE0C9 /* LMLayoutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMLayoutView.h; sourceTree = "<group>"; };
 		373EB524218618D3001FE0C9 /* LMBoxView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMBoxView.m; sourceTree = "<group>"; };
@@ -159,6 +175,14 @@
 				373EB534218618FA001FE0C9 /* LMSpacer.h */,
 				373EB535218618FA001FE0C9 /* LMSpacer.m */,
 				377907D7218900F0007FD152 /* LMSpacer.swift */,
+				37319150218A6548003BA813 /* LMScrollView.h */,
+				3731914F218A6548003BA813 /* LMScrollView.m */,
+				37319153218A6558003BA813 /* LMTableViewCell.h */,
+				37319155218A6558003BA813 /* LMTableViewCell.m */,
+				37319154218A6558003BA813 /* LMTableViewHeaderFooterView.h */,
+				37319156218A6558003BA813 /* LMTableViewHeaderFooterView.m */,
+				3731915C218A6563003BA813 /* LMCollectionViewCell.h */,
+				3731915B218A6563003BA813 /* LMCollectionViewCell.m */,
 				373EB53921861953001FE0C9 /* UIKit+Lima.h */,
 				373EB53821861953001FE0C9 /* UIKit+Lima.m */,
 				371163782187B5F8004B8162 /* UIKit+Lima.swift */,
@@ -186,11 +210,15 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3731915E218A6563003BA813 /* LMCollectionViewCell.h in Headers */,
 				376DD5CA2186132B00A981C7 /* Lima.h in Headers */,
 				373EB523218618CB001FE0C9 /* LMLayoutView.h in Headers */,
+				37319158218A6558003BA813 /* LMTableViewHeaderFooterView.h in Headers */,
 				373EB527218618D4001FE0C9 /* LMBoxView.h in Headers */,
+				37319152218A6548003BA813 /* LMScrollView.h in Headers */,
 				373EB52B218618DD001FE0C9 /* LMColumnView.h in Headers */,
 				373EB52F218618E6001FE0C9 /* LMRowView.h in Headers */,
+				37319157218A6558003BA813 /* LMTableViewCell.h in Headers */,
 				373EB533218618EF001FE0C9 /* LMAnchorView.h in Headers */,
 				374C67C72187B252009BF473 /* LMRootView.h in Headers */,
 				373EB536218618FA001FE0C9 /* LMSpacer.h in Headers */,
@@ -306,12 +334,16 @@
 				377907E021890D17007FD152 /* LMRootView.swift in Sources */,
 				373EB52A218618DD001FE0C9 /* LMColumnView.m in Sources */,
 				373EB52E218618E6001FE0C9 /* LMRowView.m in Sources */,
+				37319159218A6558003BA813 /* LMTableViewCell.m in Sources */,
 				377907DE21890D0A007FD152 /* LMAnchorView.swift in Sources */,
 				373EB532218618EF001FE0C9 /* LMAnchorView.m in Sources */,
 				374C67C62187B252009BF473 /* LMRootView.m in Sources */,
 				373EB537218618FA001FE0C9 /* LMSpacer.m in Sources */,
+				3731915A218A6558003BA813 /* LMTableViewHeaderFooterView.m in Sources */,
 				377907DA21890CEF007FD152 /* LMLayoutView.swift in Sources */,
+				3731915D218A6563003BA813 /* LMCollectionViewCell.m in Sources */,
 				377907D8218900F0007FD152 /* LMSpacer.swift in Sources */,
+				37319151218A6548003BA813 /* LMScrollView.m in Sources */,
 				371163792187B5F8004B8162 /* UIKit+Lima.swift in Sources */,
 				373EB53A21861953001FE0C9 /* UIKit+Lima.m in Sources */,
 				374C67C32187B1EA009BF473 /* LMColumnView.swift in Sources */,
