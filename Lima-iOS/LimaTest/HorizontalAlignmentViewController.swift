@@ -24,7 +24,7 @@ class HorizontalAlignmentViewController: UIViewController {
         view = LMScrollView(isFitToWidth: true, backgroundColor: UIColor.white,
             content: LMColumnView(margin: 8, subviews: [
                 // Leading alignment
-                UILabel(text: "Leading", font: UIFont.systemFont(ofSize: 20)),
+                UILabel(text: "Leading", font: UIFont.systemFont(ofSize: 14)),
 
                 LMRowView(margin: 8, horizontalAlignment: .leading, subviews: [
                     UIImageView(image: emailIcon, tintColor: UIColor.black),
@@ -41,7 +41,7 @@ class HorizontalAlignmentViewController: UIViewController {
                 LMSpacer(height: 0.5, backgroundColor: UIColor.gray),
 
                 // Trailing alignment
-                UILabel(text: "Trailing", font: UIFont.systemFont(ofSize: 20)),
+                UILabel(text: "Trailing", font: UIFont.systemFont(ofSize: 14)),
 
                 LMRowView(margin: 8, horizontalAlignment: .trailing, subviews: [
                     UIImageView(image: emailIcon, tintColor: UIColor.black),
@@ -58,7 +58,7 @@ class HorizontalAlignmentViewController: UIViewController {
                 LMSpacer(height: 0.5, backgroundColor: UIColor.gray),
 
                 // Center alignment
-                UILabel(text: "Center", font: UIFont.systemFont(ofSize: 20)),
+                UILabel(text: "Center", font: UIFont.systemFont(ofSize: 14)),
 
                 LMColumnView(margin: 8, horizontalAlignment: .center, subviews: [
                     UIImageView(image: emailIcon, tintColor: UIColor.black),
@@ -69,7 +69,7 @@ class HorizontalAlignmentViewController: UIViewController {
                 LMSpacer(height: 0.5, backgroundColor: UIColor.gray),
 
                 // Fill alignment
-                UILabel(text: "Fill", font: UIFont.systemFont(ofSize: 20)),
+                UILabel(text: "Fill", font: UIFont.systemFont(ofSize: 14)),
 
                 LMRowView(margin: 8, horizontalAlignment: .fill, subviews: [
                     UIImageView(image: emailIcon, contentMode: .center, tintColor: UIColor.black, weight: 1),

@@ -25,7 +25,7 @@ class VerticalAlignmentViewController: UIViewController {
             content: LMRowView(margin:8, subviews: [
                 // Top alignment
                 LMColumnView(subviews: [
-                    UILabel(text: "Top", font: UIFont.systemFont(ofSize: 20)),
+                    UILabel(text: "Top", font: UIFont.systemFont(ofSize: 14)),
 
                     LMRowView(weight: 1, subviews: [
                         LMColumnView(margin: 8, verticalAlignment: .top, subviews: [
@@ -46,7 +46,7 @@ class VerticalAlignmentViewController: UIViewController {
 
                 // Bottom alignment
                 LMColumnView(subviews: [
-                    UILabel(text: "Bottom", font: UIFont.systemFont(ofSize: 20)),
+                    UILabel(text: "Bottom", font: UIFont.systemFont(ofSize: 14)),
 
                     LMRowView(weight: 1, subviews: [
                         LMColumnView(margin: 8, verticalAlignment: .bottom, subviews: [
@@ -67,7 +67,7 @@ class VerticalAlignmentViewController: UIViewController {
 
                 // Center alignment
                 LMColumnView(subviews: [
-                    UILabel(text: "Center", font: UIFont.systemFont(ofSize: 20)),
+                    UILabel(text: "Center", font: UIFont.systemFont(ofSize: 14)),
 
                     LMRowView(margin: 8, verticalAlignment: .center, weight: 1, subviews: [
                         UIImageView(image: emailIcon, tintColor: UIColor.black),
@@ -80,7 +80,7 @@ class VerticalAlignmentViewController: UIViewController {
 
                 // Fill alignment
                 LMColumnView(subviews: [
-                    UILabel(text: "Fill", font: UIFont.systemFont(ofSize: 20)),
+                    UILabel(text: "Fill", font: UIFont.systemFont(ofSize: 14)),
 
                     LMColumnView(margin: 8, subviews: [
                         UIImageView(image: emailIcon, contentMode: .center, tintColor: UIColor.black, weight: 1),
