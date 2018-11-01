@@ -25,6 +25,10 @@ public extension LMColumnView {
         spacing: CGFloat = 0,
         isAlignToBaseline: Bool = false,
         isAlignToGrid: Bool = false,
+        backgroundColor: UIColor? = nil,
+        borderColor: UIColor? = nil,
+        borderWidth: CGFloat = 0,
+        cornerRadius: CGFloat = 0,
         _ subviews: [UIView] = [],
         _ callback: ((LMColumnView) -> Void)? = nil) {
         self.init(margin: margin,
@@ -38,6 +42,12 @@ public extension LMColumnView {
         self.spacing = spacing
         self.isAlignToBaseline = isAlignToBaseline
         self.isAlignToGrid = isAlignToGrid
+
+        self.backgroundColor = backgroundColor
+
+        layer.borderColor = borderColor?.cgColor
+        layer.borderWidth = borderWidth
+        layer.cornerRadius = cornerRadius
 
         for view in subviews {
             addSubview(view)

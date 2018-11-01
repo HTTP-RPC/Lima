@@ -25,6 +25,10 @@ public extension LMRowView {
         spacing: CGFloat = 0,
         isAlignToBaseline: Bool = false,
         baseline: LMBaseline = .first,
+        backgroundColor: UIColor? = nil,
+        borderColor: UIColor? = nil,
+        borderWidth: CGFloat = 0,
+        cornerRadius: CGFloat = 0,
         _ subviews: [UIView] = [],
         _ callback: ((LMRowView) -> Void)? = nil) {
         self.init(margin: margin,
@@ -38,6 +42,12 @@ public extension LMRowView {
         self.spacing = spacing
         self.isAlignToBaseline = isAlignToBaseline
         self.baseline = baseline
+
+        self.backgroundColor = backgroundColor
+
+        layer.borderColor = borderColor?.cgColor
+        layer.borderWidth = borderWidth
+        layer.cornerRadius = cornerRadius
 
         for view in subviews {
             addSubview(view)

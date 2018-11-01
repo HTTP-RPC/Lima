@@ -20,6 +20,10 @@ public extension LMAnchorView {
         leadingMargin: CGFloat? = .nan,
         bottomMargin: CGFloat? = .nan,
         trailingMargin: CGFloat? = .nan,
+        backgroundColor: UIColor? = nil,
+        borderColor: UIColor? = nil,
+        borderWidth: CGFloat = 0,
+        cornerRadius: CGFloat = 0,
         _ subviews: [UIView] = [],
         _ callback: ((LMAnchorView) -> Void)? = nil) {
         self.init(margin: margin,
@@ -27,6 +31,12 @@ public extension LMAnchorView {
             leadingMargin: leadingMargin,
             bottomMargin: bottomMargin,
             trailingMargin: trailingMargin)
+
+        self.backgroundColor = backgroundColor
+
+        layer.borderColor = borderColor?.cgColor
+        layer.borderWidth = borderWidth
+        layer.cornerRadius = cornerRadius
 
         for view in subviews {
             addSubview(view)
