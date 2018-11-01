@@ -26,7 +26,7 @@
     return _content;
 }
 
-- (void)setContent:(UIView *)content ignoreLayoutMargins:(BOOL)ignoreLayoutMargins {
+- (void)setContent:(UIView *)content ignoreMargins:(BOOL)ignoreMargins {
     [_content removeFromSuperview];
 
     _content = content;
@@ -46,7 +46,7 @@
 
         // Pin content to cell edges
         NSLayoutAttribute topAttribute, bottomAttribute, leftAttribute, rightAttribute;
-        if (ignoreLayoutMargins) {
+        if (ignoreMargins) {
             topAttribute = NSLayoutAttributeTop;
             bottomAttribute = NSLayoutAttributeBottom;
             leftAttribute = NSLayoutAttributeLeft;

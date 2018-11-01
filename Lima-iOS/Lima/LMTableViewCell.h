@@ -30,9 +30,9 @@ NS_ASSUME_NONNULL_BEGIN
  * Sets the cell's content.
  *
  * @param content The cell's content.
- * @param ignoreLayoutMargins Indicates that the cell's layout margins should be ignored.
+ * @param ignoreMargins Indicates that the cell's layout margins should be ignored.
  */
-- (void)setContent:(UIView *)content ignoreLayoutMargins:(BOOL)ignoreLayoutMargins;
+- (void)setContent:(nullable UIView *)content ignoreMargins:(BOOL)ignoreMargins;
 
 @end
 

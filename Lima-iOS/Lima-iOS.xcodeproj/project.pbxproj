@@ -34,6 +34,8 @@
 		374C67C32187B1EA009BF473 /* LMColumnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374C67C22187B1EA009BF473 /* LMColumnView.swift */; };
 		374C67C62187B252009BF473 /* LMRootView.m in Sources */ = {isa = PBXBuildFile; fileRef = 374C67C42187B252009BF473 /* LMRootView.m */; };
 		374C67C72187B252009BF473 /* LMRootView.h in Headers */ = {isa = PBXBuildFile; fileRef = 374C67C52187B252009BF473 /* LMRootView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		374D720B218B06830037E83C /* LMTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374D720A218B06830037E83C /* LMTableViewCell.swift */; };
+		374D720D218B06980037E83C /* LMTableViewHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374D720C218B06980037E83C /* LMTableViewHeaderFooterView.swift */; };
 		375724B0218A7B6E00E4E9AC /* LMScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375724AF218A7B6E00E4E9AC /* LMScrollView.swift */; };
 		375724B5218A80C100E4E9AC /* AnchorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375724B1218A80C100E4E9AC /* AnchorViewController.swift */; };
 		375724B6218A80C100E4E9AC /* GridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375724B2218A80C100E4E9AC /* GridViewController.swift */; };
@@ -104,6 +106,8 @@
 		374C67C22187B1EA009BF473 /* LMColumnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMColumnView.swift; sourceTree = "<group>"; };
 		374C67C42187B252009BF473 /* LMRootView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMRootView.m; sourceTree = "<group>"; };
 		374C67C52187B252009BF473 /* LMRootView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMRootView.h; sourceTree = "<group>"; };
+		374D720A218B06830037E83C /* LMTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMTableViewCell.swift; sourceTree = "<group>"; };
+		374D720C218B06980037E83C /* LMTableViewHeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMTableViewHeaderFooterView.swift; sourceTree = "<group>"; };
 		375724AF218A7B6E00E4E9AC /* LMScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMScrollView.swift; sourceTree = "<group>"; };
 		375724B1218A80C100E4E9AC /* AnchorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnchorViewController.swift; sourceTree = "<group>"; };
 		375724B2218A80C100E4E9AC /* GridViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridViewController.swift; sourceTree = "<group>"; };
@@ -190,8 +194,10 @@
 				375724AF218A7B6E00E4E9AC /* LMScrollView.swift */,
 				37319153218A6558003BA813 /* LMTableViewCell.h */,
 				37319155218A6558003BA813 /* LMTableViewCell.m */,
+				374D720A218B06830037E83C /* LMTableViewCell.swift */,
 				37319154218A6558003BA813 /* LMTableViewHeaderFooterView.h */,
 				37319156218A6558003BA813 /* LMTableViewHeaderFooterView.m */,
+				374D720C218B06980037E83C /* LMTableViewHeaderFooterView.swift */,
 				3731915C218A6563003BA813 /* LMCollectionViewCell.h */,
 				3731915B218A6563003BA813 /* LMCollectionViewCell.m */,
 				373EB53921861953001FE0C9 /* UIKit+Lima.h */,
@@ -348,6 +354,7 @@
 				373EB526218618D4001FE0C9 /* LMBoxView.m in Sources */,
 				377907E021890D17007FD152 /* LMRootView.swift in Sources */,
 				373EB52A218618DD001FE0C9 /* LMColumnView.m in Sources */,
+				374D720D218B06980037E83C /* LMTableViewHeaderFooterView.swift in Sources */,
 				373EB52E218618E6001FE0C9 /* LMRowView.m in Sources */,
 				37319159218A6558003BA813 /* LMTableViewCell.m in Sources */,
 				377907DE21890D0A007FD152 /* LMAnchorView.swift in Sources */,
@@ -362,6 +369,7 @@
 				37319151218A6548003BA813 /* LMScrollView.m in Sources */,
 				371163792187B5F8004B8162 /* UIKit+Lima.swift in Sources */,
 				373EB53A21861953001FE0C9 /* UIKit+Lima.m in Sources */,
+				374D720B218B06830037E83C /* LMTableViewCell.swift in Sources */,
 				374C67C32187B1EA009BF473 /* LMColumnView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

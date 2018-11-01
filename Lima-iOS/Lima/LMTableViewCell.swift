@@ -14,18 +14,13 @@
 
 import UIKit
 
-public extension LMSpacer {
-    public convenience init(width: CGFloat = .nan, height: CGFloat = .nan,
-        weight: CGFloat = .nan,
-        backgroundColor: UIColor? = nil,
-        _ callback: ((LMSpacer) -> Void)? = nil) {
+public extension LMTableViewCell {
+    public convenience init(ignoreMargins: Bool = false,
+        _ content: UIView? = nil,
+        _ callback: ((LMTableViewCell) -> Void)? = nil) {
         self.init()
 
-        self.width = width
-        self.height = height
-        self.weight = weight
-
-        self.backgroundColor = backgroundColor
+        setContent(content, ignoreMargins: ignoreMargins)
 
         callback?(self)
     }

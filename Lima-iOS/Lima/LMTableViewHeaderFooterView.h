@@ -30,9 +30,9 @@ NS_ASSUME_NONNULL_BEGIN
  * Sets the view's content.
  *
  * @param content The view's content.
- * @param ignoreLayoutMargins Indicates that the view's layout margins should be ignored.
+ * @param ignoreMargins Indicates that the view's layout margins should be ignored.
  */
-- (void)setContent:(UIView *)content ignoreLayoutMargins:(BOOL)ignoreLayoutMargins;
+- (void)setContent:(nullable UIView *)content ignoreMargins:(BOOL)ignoreMargins;
 
 @end
 
