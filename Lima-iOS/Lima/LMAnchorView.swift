@@ -23,7 +23,7 @@ public extension LMAnchorView {
         backgroundColor: UIColor? = nil,
         weight: CGFloat = .nan,
         anchor: LMAnchor = [],
-        _ subviews: [UIView] = [],
+        subviews: [UIView] = [],
         _ callback: ((LMAnchorView) -> Void)? = nil) {
         self.init(margin: margin,
             topMargin: topMargin,

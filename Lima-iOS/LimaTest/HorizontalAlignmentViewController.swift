@@ -22,55 +22,59 @@ class HorizontalAlignmentViewController: UIViewController {
 
     override func loadView() {
         view = LMScrollView(isFitToWidth: true, backgroundColor: UIColor.white,
-            LMColumnView(margin: 8, [
-                UILabel(text: "Leading"),
+            content: LMColumnView(margin: 8, subviews: [
+                // Leading alignment
+                UILabel(text: "Leading", font: UIFont.systemFont(ofSize: 20)),
 
-                LMRowView(margin: 8, horizontalAlignment: .leading, [
-                    UIImageView(image: emailIcon),
-                    UIImageView(image: faxIcon),
-                    UIImageView(image: phoneIcon)
+                LMRowView(margin: 8, horizontalAlignment: .leading, subviews: [
+                    UIImageView(image: emailIcon, tintColor: UIColor.black),
+                    UIImageView(image: faxIcon, tintColor: UIColor.black),
+                    UIImageView(image: phoneIcon, tintColor: UIColor.black)
                 ]) { $0.layer.borderWidth = 0.5; $0.layer.borderColor = UIColor.lightGray.cgColor },
 
-                LMColumnView(margin: 8, horizontalAlignment: .leading, [
-                    UIImageView(image: emailIcon),
-                    UIImageView(image: faxIcon),
-                    UIImageView(image: phoneIcon)
-                ]) { $0.layer.borderWidth = 0.5; $0.layer.borderColor = UIColor.lightGray.cgColor },
-
-                LMSpacer(height: 0.5, backgroundColor: UIColor.gray),
-
-                UILabel(text: "Trailing"),
-
-                LMRowView(margin: 8, horizontalAlignment: .trailing, [
-                    UIImageView(image: emailIcon),
-                    UIImageView(image: faxIcon),
-                    UIImageView(image: phoneIcon)
-                ]) { $0.layer.borderWidth = 0.5; $0.layer.borderColor = UIColor.lightGray.cgColor },
-
-                LMColumnView(margin: 8, horizontalAlignment: .trailing, [
-                    UIImageView(image: emailIcon),
-                    UIImageView(image: faxIcon),
-                    UIImageView(image: phoneIcon)
+                LMColumnView(margin: 8, horizontalAlignment: .leading, subviews: [
+                    UIImageView(image: emailIcon, tintColor: UIColor.black),
+                    UIImageView(image: faxIcon, tintColor: UIColor.black),
+                    UIImageView(image: phoneIcon, tintColor: UIColor.black)
                 ]) { $0.layer.borderWidth = 0.5; $0.layer.borderColor = UIColor.lightGray.cgColor },
 
                 LMSpacer(height: 0.5, backgroundColor: UIColor.gray),
 
-                UILabel(text: "Center"),
+                // Trailing alignment
+                UILabel(text: "Trailing", font: UIFont.systemFont(ofSize: 20)),
 
-                LMColumnView(margin: 8, horizontalAlignment: .center, [
-                    UIImageView(image: emailIcon),
-                    UIImageView(image: faxIcon),
-                    UIImageView(image: phoneIcon)
+                LMRowView(margin: 8, horizontalAlignment: .trailing, subviews: [
+                    UIImageView(image: emailIcon, tintColor: UIColor.black),
+                    UIImageView(image: faxIcon, tintColor: UIColor.black),
+                    UIImageView(image: phoneIcon, tintColor: UIColor.black)
+                ]) { $0.layer.borderWidth = 0.5; $0.layer.borderColor = UIColor.lightGray.cgColor },
+
+                LMColumnView(margin: 8, horizontalAlignment: .trailing, subviews: [
+                    UIImageView(image: emailIcon, tintColor: UIColor.black),
+                    UIImageView(image: faxIcon, tintColor: UIColor.black),
+                    UIImageView(image: phoneIcon, tintColor: UIColor.black)
                 ]) { $0.layer.borderWidth = 0.5; $0.layer.borderColor = UIColor.lightGray.cgColor },
 
                 LMSpacer(height: 0.5, backgroundColor: UIColor.gray),
 
-                UILabel(text: "Fill"),
+                // Center alignment
+                UILabel(text: "Center", font: UIFont.systemFont(ofSize: 20)),
 
-                LMRowView(margin: 8, horizontalAlignment: .fill, [
-                    UIImageView(image: emailIcon, contentMode: .center, weight: 1),
-                    UIImageView(image: faxIcon, contentMode: .center, weight: 1),
-                    UIImageView(image: phoneIcon, contentMode: .center, weight: 1)
+                LMColumnView(margin: 8, horizontalAlignment: .center, subviews: [
+                    UIImageView(image: emailIcon, tintColor: UIColor.black),
+                    UIImageView(image: faxIcon, tintColor: UIColor.black),
+                    UIImageView(image: phoneIcon, tintColor: UIColor.black)
+                ]) { $0.layer.borderWidth = 0.5; $0.layer.borderColor = UIColor.lightGray.cgColor },
+
+                LMSpacer(height: 0.5, backgroundColor: UIColor.gray),
+
+                // Fill alignment
+                UILabel(text: "Fill", font: UIFont.systemFont(ofSize: 20)),
+
+                LMRowView(margin: 8, horizontalAlignment: .fill, subviews: [
+                    UIImageView(image: emailIcon, contentMode: .center, tintColor: UIColor.black, weight: 1),
+                    UIImageView(image: faxIcon, contentMode: .center, tintColor: UIColor.black, weight: 1),
+                    UIImageView(image: phoneIcon, contentMode: .center, tintColor: UIColor.black, weight: 1)
                 ]) { $0.layer.borderWidth = 0.5; $0.layer.borderColor = UIColor.lightGray.cgColor }
             ])
         )

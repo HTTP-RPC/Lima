@@ -16,16 +16,14 @@ import UIKit
 
 public extension LMRootView {
     public convenience init(topPadding: CGFloat = 0, bottomPadding: CGFloat = 0,
-        _ subviews: [UIView] = [],
+        subview: UIView,
         _ callback: ((LMRootView) -> Void)? = nil) {
         self.init()
 
         self.topPadding = topPadding
         self.bottomPadding = bottomPadding
 
-        for view in subviews {
-            addSubview(view)
-        }
+        addSubview(subview)
 
         callback?(self)
     }

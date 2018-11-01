@@ -16,7 +16,7 @@ import UIKit
 
 public extension LMTableViewCell {
     public convenience init(accessoryType: UITableViewCell.AccessoryType = .none,
-        _ content: UIView? = nil,
+        content: UIView? = nil,
         _ callback: ((LMTableViewCell) -> Void)? = nil) {
         self.init()
 

@@ -17,7 +17,7 @@ import UIKit
 public extension LMScrollView {
     public convenience init(isFitToWidth: Bool = false, isFitToHeight: Bool = false,
         backgroundColor: UIColor? = nil,
-        _ content: UIView? = nil,
+        content: UIView? = nil,
         _ callback: ((LMScrollView) -> Void)? = nil) {
         self.init()
 
