@@ -26,6 +26,18 @@
     return nil;
 }
 
+- (void)setFitToWidth:(BOOL)fitToWidth {
+    _fitToWidth = fitToWidth;
+
+    [self setNeedsUpdateConstraints];
+}
+
+- (void)setFitToHeight:(BOOL)fitToHeight {
+    _fitToHeight = fitToHeight;
+
+    [self setNeedsUpdateConstraints];
+}
+
 - (void)setContent:(UIView *)content {
     [_content removeFromSuperview];
 
@@ -36,18 +48,6 @@
 
         [_content setTranslatesAutoresizingMaskIntoConstraints:NO];
     }
-
-    [self setNeedsUpdateConstraints];
-}
-
-- (void)setFitToWidth:(BOOL)fitToWidth {
-    _fitToWidth = fitToWidth;
-
-    [self setNeedsUpdateConstraints];
-}
-
-- (void)setFitToHeight:(BOOL)fitToHeight {
-    _fitToHeight = fitToHeight;
 
     [self setNeedsUpdateConstraints];
 }

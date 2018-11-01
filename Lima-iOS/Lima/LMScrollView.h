@@ -22,11 +22,6 @@ NS_ASSUME_NONNULL_BEGIN
 @interface LMScrollView : UIScrollView
 
 /**
- * The scroll view's content.
- */
-@property (nonatomic, nullable) UIView *content;
-
-/**
  * Indicates that the width of the scroll view's content should match the scroll view's width.
  * The default value is <code>NO</code>.
  */
@@ -37,6 +32,11 @@ NS_ASSUME_NONNULL_BEGIN
  * The default value is <code>NO</code>.
  */
 @property (nonatomic) BOOL fitToHeight NS_SWIFT_NAME(isFitToHeight);
+
+/**
+ * The scroll view's content.
+ */
+@property (nonatomic, nullable) UIView *content;
 
 @end
 

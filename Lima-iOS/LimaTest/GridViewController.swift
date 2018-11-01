@@ -13,20 +13,20 @@
 //
 
 import UIKit
+import Lima
 
-public extension LMRootView {
-    public convenience init(topPadding: CGFloat = 0, bottomPadding: CGFloat = 0,
-        _ subviews: [UIView] = [],
-        _ callback: ((LMRootView) -> Void)? = nil) {
-        self.init()
+class GridViewController: UIViewController {
+    override func loadView() {
+        // TODO
+        view = UIView()
+        view.backgroundColor = UIColor.white
+    }
 
-        self.topPadding = topPadding
-        self.bottomPadding = bottomPadding
+    override func viewDidLoad() {
+        super.viewDidLoad()
 
-        for view in subviews {
-            addSubview(view)
-        }
-
-        callback?(self)
+        title = "Grid View"
+        
+        edgesForExtendedLayout = UIRectEdge()
     }
 }

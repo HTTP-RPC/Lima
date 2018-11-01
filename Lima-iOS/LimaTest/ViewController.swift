@@ -15,27 +15,79 @@
 import UIKit
 import Lima
 
-class ViewController: UIViewController {
-    var columnView: LMColumnView!
-
-    override func loadView() {
-        view = LMColumnView(spacing: 16, [
-            LMSpacer(),
-            UILabel(text: "One", textAlignment: .center, textColor: .red),
-            UILabel(text: "Two", textAlignment: .center, textColor: .green) {
-                $0.isDisplayable = false                
-            },
-            UILabel(text: "Three", textAlignment: .center, textColor: .blue),
-            LMSpacer(height: 0.5, backgroundColor: .gray),
-            UIButton(type: .system, title: "Press Me"),
-            LMSpacer()
-        ]) { self.columnView = $0}
+class ViewController: UITableViewController {
+    enum Example: Int, CaseIterable {
+        case horizontalAlignment
+        case verticalAlignment
+        case anchorView
+        case gridView
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         title = "Lima Test"
+
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+    }
+
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return Example.allCases.count
+    }
+
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let example = Example(rawValue: indexPath.row) else {
+            fatalError()
+        }
+
+        let cellIdentifier = "cell"
+
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) ?? UITableViewCell(style: .default, reuseIdentifier: cellIdentifier)
+
+        switch example {
+        case .horizontalAlignment:
+            cell.textLabel?.text = "Horizontal Alignment"
+
+        case .verticalAlignment:
+            cell.textLabel?.text = "Vertical Alignment"
+
+        case .anchorView:
+            cell.textLabel?.text = "Anchor View"
+
+        case .gridView:
+            cell.textLabel?.text = "Grid View"
+        }
+
+        cell.accessoryType = .disclosureIndicator
+
+        return cell
+    }
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let example = Example(rawValue: indexPath.row) else {
+            fatalError()
+        }
+
+        let viewController: UIViewController
+        switch example {
+        case .horizontalAlignment:
+            viewController = HorizontalAlignmentViewController()
+
+        case .verticalAlignment:
+            viewController = VerticalAlignmentViewController()
+
+        case .anchorView:
+            viewController = AnchorViewController()
+
+        case .gridView:
+            viewController = GridViewController()
+        }
+
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
 }
 

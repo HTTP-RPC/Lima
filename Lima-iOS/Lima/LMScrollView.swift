@@ -14,18 +14,16 @@
 
 import UIKit
 
-public extension LMRootView {
-    public convenience init(topPadding: CGFloat = 0, bottomPadding: CGFloat = 0,
-        _ subviews: [UIView] = [],
-        _ callback: ((LMRootView) -> Void)? = nil) {
+public extension LMScrollView {
+    public convenience init(isFitToWidth: Bool = false, isFitToHeight: Bool = false,
+        _ content: UIView? = nil,
+        _ callback: ((LMScrollView) -> Void)? = nil) {
         self.init()
 
-        self.topPadding = topPadding
-        self.bottomPadding = bottomPadding
+        self.isFitToWidth = isFitToWidth
+        self.isFitToHeight = isFitToHeight
 
-        for view in subviews {
-            addSubview(view)
-        }
+        self.content = content
 
         callback?(self)
     }
