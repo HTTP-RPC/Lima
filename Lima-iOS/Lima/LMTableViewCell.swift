@@ -15,12 +15,14 @@
 import UIKit
 
 public extension LMTableViewCell {
-    public convenience init(ignoreMargins: Bool = false,
+    public convenience init(accessoryType: UITableViewCell.AccessoryType = .none,
         _ content: UIView? = nil,
         _ callback: ((LMTableViewCell) -> Void)? = nil) {
         self.init()
 
-        setContent(content, ignoreMargins: ignoreMargins)
+        setContent(content, ignoreMargins: false)
+
+        self.accessoryType = accessoryType
 
         callback?(self)
     }

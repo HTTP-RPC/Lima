@@ -15,20 +15,19 @@
 import UIKit
 
 public extension LMColumnView {
-    public convenience init(margin: CGFloat? = .nan,
-        topMargin: CGFloat? = .nan,
-        leadingMargin: CGFloat? = .nan,
-        bottomMargin: CGFloat? = .nan,
-        trailingMargin: CGFloat? = .nan,
+    public convenience init(margin: CGFloat? = nil,
+        topMargin: CGFloat? = nil,
+        leadingMargin: CGFloat? = nil,
+        bottomMargin: CGFloat? = nil,
+        trailingMargin: CGFloat? = nil,
         horizontalAlignment: LMHorizontalAlignment = .fill,
         verticalAlignment: LMVerticalAlignment = .fill,
-        spacing: CGFloat = 0,
+        spacing: CGFloat = .nan,
         isAlignToBaseline: Bool = false,
         isAlignToGrid: Bool = false,
         backgroundColor: UIColor? = nil,
-        borderColor: UIColor? = nil,
-        borderWidth: CGFloat = 0,
-        cornerRadius: CGFloat = 0,
+        weight: CGFloat = .nan,
+        anchor: LMAnchor = [],
         _ subviews: [UIView] = [],
         _ callback: ((LMColumnView) -> Void)? = nil) {
         self.init(margin: margin,
@@ -45,9 +44,8 @@ public extension LMColumnView {
 
         self.backgroundColor = backgroundColor
 
-        layer.borderColor = borderColor?.cgColor
-        layer.borderWidth = borderWidth
-        layer.cornerRadius = cornerRadius
+        self.weight = weight
+        self.anchor = anchor
 
         for view in subviews {
             addSubview(view)

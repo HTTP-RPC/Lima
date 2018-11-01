@@ -266,3 +266,30 @@ public extension UITextView {
         callback?(self)
     }
 }
+
+public extension UITableViewCell {
+    public convenience init(text: String? = nil, detailText: String? = nil,
+        accessoryType: UITableViewCell.AccessoryType = .none,
+        _ callback: ((UITableViewCell) -> Void)? = nil) {
+        self.init()
+
+        textLabel?.text = text
+        detailTextLabel?.text = text
+
+        self.accessoryType = accessoryType
+
+        callback?(self)
+    }
+}
+
+public extension UITableViewHeaderFooterView {
+    public convenience init(text: String? = nil, detailText: String? = nil,
+        _ callback: ((UITableViewHeaderFooterView) -> Void)? = nil) {
+        self.init()
+
+        textLabel?.text = text
+        detailTextLabel?.text = text
+
+        callback?(self)
+    }
+}

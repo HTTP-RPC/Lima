@@ -15,15 +15,14 @@
 import UIKit
 
 public extension LMAnchorView {
-    public convenience init(margin: CGFloat? = .nan,
-        topMargin: CGFloat? = .nan,
-        leadingMargin: CGFloat? = .nan,
-        bottomMargin: CGFloat? = .nan,
-        trailingMargin: CGFloat? = .nan,
+    public convenience init(margin: CGFloat? = nil,
+        topMargin: CGFloat? = nil,
+        leadingMargin: CGFloat? = nil,
+        bottomMargin: CGFloat? = nil,
+        trailingMargin: CGFloat? = nil,
         backgroundColor: UIColor? = nil,
-        borderColor: UIColor? = nil,
-        borderWidth: CGFloat = 0,
-        cornerRadius: CGFloat = 0,
+        weight: CGFloat = .nan,
+        anchor: LMAnchor = [],
         _ subviews: [UIView] = [],
         _ callback: ((LMAnchorView) -> Void)? = nil) {
         self.init(margin: margin,
@@ -34,9 +33,8 @@ public extension LMAnchorView {
 
         self.backgroundColor = backgroundColor
 
-        layer.borderColor = borderColor?.cgColor
-        layer.borderWidth = borderWidth
-        layer.cornerRadius = cornerRadius
+        self.weight = weight
+        self.anchor = anchor
 
         for view in subviews {
             addSubview(view)

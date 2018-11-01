@@ -16,10 +16,64 @@ import UIKit
 import Lima
 
 class HorizontalAlignmentViewController: UIViewController {
+    let emailIcon = UIImage(named: "EmailIcon")
+    let faxIcon = UIImage(named: "FaxIcon")
+    let phoneIcon = UIImage(named: "PhoneIcon")
+
     override func loadView() {
-        // TODO
-        view = UIView()
-        view.backgroundColor = UIColor.white
+        view = LMScrollView(isFitToWidth: true, backgroundColor: UIColor.white,
+            LMColumnView(margin: 8, [
+                UILabel(text: "Leading"),
+
+                LMRowView(margin: 8, horizontalAlignment: .leading, [
+                    UIImageView(image: emailIcon),
+                    UIImageView(image: faxIcon),
+                    UIImageView(image: phoneIcon)
+                ]) { $0.layer.borderWidth = 0.5; $0.layer.borderColor = UIColor.lightGray.cgColor },
+
+                LMColumnView(margin: 8, horizontalAlignment: .leading, [
+                    UIImageView(image: emailIcon),
+                    UIImageView(image: faxIcon),
+                    UIImageView(image: phoneIcon)
+                ]) { $0.layer.borderWidth = 0.5; $0.layer.borderColor = UIColor.lightGray.cgColor },
+
+                LMSpacer(height: 0.5, backgroundColor: UIColor.gray),
+
+                UILabel(text: "Trailing"),
+
+                LMRowView(margin: 8, horizontalAlignment: .trailing, [
+                    UIImageView(image: emailIcon),
+                    UIImageView(image: faxIcon),
+                    UIImageView(image: phoneIcon)
+                ]) { $0.layer.borderWidth = 0.5; $0.layer.borderColor = UIColor.lightGray.cgColor },
+
+                LMColumnView(margin: 8, horizontalAlignment: .trailing, [
+                    UIImageView(image: emailIcon),
+                    UIImageView(image: faxIcon),
+                    UIImageView(image: phoneIcon)
+                ]) { $0.layer.borderWidth = 0.5; $0.layer.borderColor = UIColor.lightGray.cgColor },
+
+                LMSpacer(height: 0.5, backgroundColor: UIColor.gray),
+
+                UILabel(text: "Center"),
+
+                LMColumnView(margin: 8, horizontalAlignment: .center, [
+                    UIImageView(image: emailIcon),
+                    UIImageView(image: faxIcon),
+                    UIImageView(image: phoneIcon)
+                ]) { $0.layer.borderWidth = 0.5; $0.layer.borderColor = UIColor.lightGray.cgColor },
+
+                LMSpacer(height: 0.5, backgroundColor: UIColor.gray),
+
+                UILabel(text: "Fill"),
+
+                LMRowView(margin: 8, horizontalAlignment: .fill, [
+                    UIImageView(image: emailIcon, contentMode: .center, weight: 1),
+                    UIImageView(image: faxIcon, contentMode: .center, weight: 1),
+                    UIImageView(image: phoneIcon, contentMode: .center, weight: 1)
+                ]) { $0.layer.borderWidth = 0.5; $0.layer.borderColor = UIColor.lightGray.cgColor }
+            ])
+        )
     }
 
     override func viewDidLoad() {

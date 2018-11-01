@@ -15,12 +15,11 @@
 import UIKit
 
 public extension LMTableViewHeaderFooterView {
-    public convenience init(ignoreMargins: Bool = false,
-        _ content: UIView? = nil,
+    public convenience init(_ content: UIView? = nil,
         _ callback: ((LMTableViewHeaderFooterView) -> Void)? = nil) {
         self.init()
 
-        setContent(content, ignoreMargins: ignoreMargins)
+        setContent(content, ignoreMargins: false)
 
         callback?(self)
     }
