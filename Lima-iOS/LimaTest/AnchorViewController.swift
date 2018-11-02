@@ -17,9 +17,59 @@ import Lima
 
 class AnchorViewController: UIViewController {
     override func loadView() {
-        // TODO
-        view = UIView()
-        view.backgroundColor = UIColor.white
+        view = LMRootView(backgroundColor: UIColor.white,
+            subview: LMAnchorView(margin: 16, subviews: [
+                // All
+                UILabel(anchor: [.all]) {
+                    $0.layer.borderWidth = 0.5
+                    $0.layer.borderColor = UIColor.lightGray.cgColor
+                },
+
+                // Top
+                UILabel(text: "Top Leading", anchor: [.top, .leading]) {
+                    $0.layer.borderWidth = 0.5
+                    $0.layer.borderColor = UIColor.lightGray.cgColor
+                },
+                UILabel(text: "Top", anchor: [.top]) {
+                    $0.layer.borderWidth = 0.5
+                    $0.layer.borderColor = UIColor.lightGray.cgColor
+                },
+                UILabel(text: "Top Trailing", anchor: [.top, .trailing]) {
+                    $0.layer.borderWidth = 0.5
+                    $0.layer.borderColor = UIColor.lightGray.cgColor
+                },
+
+                // Middle
+                UILabel(text: "Leading", anchor: [.leading]) {
+                    $0.layer.borderWidth = 0.5
+                    $0.layer.borderColor = UIColor.lightGray.cgColor
+                },
+
+                UILabel(text: "None", anchor: []) {
+                    $0.layer.borderWidth = 0.5
+                    $0.layer.borderColor = UIColor.lightGray.cgColor
+                },
+
+                UILabel(text: "Trailing", anchor: [.trailing]) {
+                    $0.layer.borderWidth = 0.5
+                    $0.layer.borderColor = UIColor.lightGray.cgColor
+                },
+
+                // Bottom
+                UILabel(text: "Bottom Leading", anchor: [.bottom, .leading]) {
+                    $0.layer.borderWidth = 0.5
+                    $0.layer.borderColor = UIColor.lightGray.cgColor
+                },
+                UILabel(text: "Bottom", anchor: [.bottom]) {
+                    $0.layer.borderWidth = 0.5
+                    $0.layer.borderColor = UIColor.lightGray.cgColor
+                },
+                UILabel(text: "Bottom Trailing", anchor: [.bottom, .trailing]) {
+                    $0.layer.borderWidth = 0.5
+                    $0.layer.borderColor = UIColor.lightGray.cgColor
+                }
+            ])
+        )
     }
 
     override func viewDidLoad() {
