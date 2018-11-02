@@ -22,6 +22,12 @@ class ViewController: UITableViewController {
         case verticalAlignment
         case anchorView
         case gridView
+        case scrollView
+        case tableViewCell
+        case collectionViewCell
+        case webView
+        case mapView
+        case animation
     }
 
     override func viewDidLoad() {
@@ -64,6 +70,24 @@ class ViewController: UITableViewController {
 
         case .gridView:
             cell.textLabel?.text = "Grid View"
+
+        case .scrollView:
+            cell.textLabel?.text = "Scroll View"
+
+        case .tableViewCell:
+            cell.textLabel?.text = "Table View Cell"
+
+        case .collectionViewCell:
+            cell.textLabel?.text = "Collection View Cell"
+
+        case .webView:
+            cell.textLabel?.text = "Web View"
+
+        case .mapView:
+            cell.textLabel?.text = "Map View"
+
+        case .animation:
+            cell.textLabel?.text = "Animation"
         }
 
         cell.accessoryType = .disclosureIndicator
@@ -92,6 +116,24 @@ class ViewController: UITableViewController {
 
         case .gridView:
             viewController = GridViewController()
+
+        case .scrollView:
+            viewController = ScrollViewController()
+
+        case .tableViewCell:
+            viewController = TableViewCellController()
+
+        case .collectionViewCell:
+            viewController = CollectionViewCellController()
+
+        case .webView:
+            viewController = WebViewController()
+
+        case .mapView:
+            viewController = MapViewController()
+
+        case .animation:
+            viewController = AnimationViewController()
         }
 
         viewController.title = tableView.cellForRow(at: indexPath)?.textLabel?.text
