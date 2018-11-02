@@ -29,7 +29,7 @@ public extension LMRowView {
         weight: CGFloat = .nan,
         anchor: LMAnchor = [],
         subviews: [UIView] = [],
-        _ callback: ((LMRowView) -> Void)? = nil) {
+        with: ((LMRowView) -> Void)? = nil) {
         self.init(margin: margin,
             topMargin: topMargin,
             leadingMargin: leadingMargin,
@@ -51,6 +51,6 @@ public extension LMRowView {
             addSubview(view)
         }
 
-        callback?(self)
+        with?(self)
     }
 }

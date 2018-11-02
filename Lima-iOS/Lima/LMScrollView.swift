@@ -18,7 +18,7 @@ public extension LMScrollView {
     public convenience init(isFitToWidth: Bool = false, isFitToHeight: Bool = false,
         backgroundColor: UIColor? = nil,
         content: UIView? = nil,
-        _ callback: ((LMScrollView) -> Void)? = nil) {
+        with: ((LMScrollView) -> Void)? = nil) {
         self.init()
 
         self.isFitToWidth = isFitToWidth
@@ -28,6 +28,6 @@ public extension LMScrollView {
         
         self.content = content
 
-        callback?(self)
+        with?(self)
     }
 }

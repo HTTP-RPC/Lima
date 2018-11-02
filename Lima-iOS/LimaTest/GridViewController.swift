@@ -19,44 +19,34 @@ class GridViewController: UIViewController {
     let text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
 
     override func loadView() {
+        let cellStyle = { (cell: UIView) in
+            cell.layer.borderWidth = 0.5
+            cell.layer.borderColor = UIColor.lightGray.cgColor
+        }
+
         view = LMScrollView(isFitToWidth: true, backgroundColor: UIColor.white,
             content: LMColumnView(margin: 16, subviews: [
                 // Fill
-                UILabel(text: text, numberOfLines: 0) {
-                    $0.layer.borderWidth = 0.5
-                    $0.layer.borderColor = UIColor.lightGray.cgColor
-                },
+                UILabel(text: text, numberOfLines: 0, with: cellStyle),
 
                 // Baselines
                 LMColumnView(isAlignToGrid: true, subviews: [
                     LMRowView(isAlignToBaseline: true, subviews: [
-                        UILabel(text: "First Baseline", textAlignment: .right) {
-                            $0.layer.borderWidth = 0.5
-                            $0.layer.borderColor = UIColor.lightGray.cgColor
-                        },
+                        UILabel(text: "First Baseline", textAlignment: .right, with: cellStyle),
 
                         LMColumnView(weight: 1, subviews: [
                             UILabel(text: text, numberOfLines: 0),
                             UILabel(text: text, numberOfLines: 0)
-                        ]) {
-                            $0.layer.borderWidth = 0.5
-                            $0.layer.borderColor = UIColor.lightGray.cgColor
-                        }
+                        ], with: cellStyle)
                     ]),
 
                     LMRowView(isAlignToBaseline: true, baseline: .last, subviews: [
-                        UILabel(text: "Last Baseline", textAlignment: .right) {
-                            $0.layer.borderWidth = 0.5
-                            $0.layer.borderColor = UIColor.lightGray.cgColor
-                        },
-
+                        UILabel(text: "Last Baseline", textAlignment: .right, with: cellStyle),
+                        
                         LMColumnView(weight: 1, subviews: [
                             UILabel(text: text, numberOfLines: 0),
                             UILabel(text: text, numberOfLines: 0)
-                        ]) {
-                            $0.layer.borderWidth = 0.5
-                            $0.layer.borderColor = UIColor.lightGray.cgColor
-                        }
+                        ], with: cellStyle)
                     ])
                 ]),
 
@@ -65,15 +55,9 @@ class GridViewController: UIViewController {
                     LMColumnView(weight: 2, subviews: [
                         UILabel(text: text, numberOfLines: 0),
                         LMSpacer()
-                    ]) {
-                        $0.layer.borderWidth = 0.5
-                        $0.layer.borderColor = UIColor.lightGray.cgColor
-                    },
+                    ], with: cellStyle),
 
-                    UILabel(text: text, numberOfLines: 0, weight: 1) {
-                        $0.layer.borderWidth = 0.5
-                        $0.layer.borderColor = UIColor.lightGray.cgColor
-                    }
+                    UILabel(text: text, numberOfLines: 0, weight: 1, with: cellStyle)
                 ])
             ])
         )

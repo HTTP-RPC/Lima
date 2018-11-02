@@ -24,7 +24,7 @@ public extension LMAnchorView {
         weight: CGFloat = .nan,
         anchor: LMAnchor = [],
         subviews: [UIView] = [],
-        _ callback: ((LMAnchorView) -> Void)? = nil) {
+        with: ((LMAnchorView) -> Void)? = nil) {
         self.init(margin: margin,
             topMargin: topMargin,
             leadingMargin: leadingMargin,
@@ -40,6 +40,6 @@ public extension LMAnchorView {
             addSubview(view)
         }
 
-        callback?(self)
+        with?(self)
     }
 }

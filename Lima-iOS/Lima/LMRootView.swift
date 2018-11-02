@@ -18,7 +18,7 @@ public extension LMRootView {
     public convenience init(topPadding: CGFloat = 0, bottomPadding: CGFloat = 0,
         backgroundColor: UIColor? = nil,
         subview: UIView,
-        _ callback: ((LMRootView) -> Void)? = nil) {
+        with: ((LMRootView) -> Void)? = nil) {
         self.init()
 
         self.topPadding = topPadding
@@ -28,6 +28,6 @@ public extension LMRootView {
 
         addSubview(subview)
 
-        callback?(self)
+        with?(self)
     }
 }

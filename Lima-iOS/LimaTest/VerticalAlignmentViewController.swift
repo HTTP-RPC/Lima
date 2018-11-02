@@ -16,11 +16,16 @@ import UIKit
 import Lima
 
 class VerticalAlignmentViewController: UIViewController {
-    let emailIcon = UIImage(named: "EmailIcon")
-    let faxIcon = UIImage(named: "FaxIcon")
-    let phoneIcon = UIImage(named: "PhoneIcon")
-
     override func loadView() {
+        let emailIcon = UIImage(named: "EmailIcon")
+        let faxIcon = UIImage(named: "FaxIcon")
+        let phoneIcon = UIImage(named: "PhoneIcon")
+
+        let cellStyle = { (cell: UIView) in
+            cell.layer.borderWidth = 0.5
+            cell.layer.borderColor = UIColor.lightGray.cgColor
+        }
+
         view = LMScrollView(isFitToHeight: true, backgroundColor: UIColor.white,
             content: LMRowView(margin:8, subviews: [
                 // Top alignment
@@ -32,13 +37,13 @@ class VerticalAlignmentViewController: UIViewController {
                             UIImageView(image: emailIcon, tintColor: UIColor.black),
                             UIImageView(image: faxIcon, tintColor: UIColor.black),
                             UIImageView(image: phoneIcon, tintColor: UIColor.black)
-                        ]) { $0.layer.borderWidth = 0.5; $0.layer.borderColor = UIColor.lightGray.cgColor },
+                        ], with: cellStyle),
 
                         LMRowView(margin: 8, verticalAlignment: .top, subviews: [
                             UIImageView(image: emailIcon, tintColor: UIColor.black),
                             UIImageView(image: faxIcon, tintColor: UIColor.black),
                             UIImageView(image: phoneIcon, tintColor: UIColor.black)
-                        ]) { $0.layer.borderWidth = 0.5; $0.layer.borderColor = UIColor.lightGray.cgColor }
+                        ], with: cellStyle)
                     ])
                 ]),
 
@@ -53,13 +58,13 @@ class VerticalAlignmentViewController: UIViewController {
                             UIImageView(image: emailIcon, tintColor: UIColor.black),
                             UIImageView(image: faxIcon, tintColor: UIColor.black),
                             UIImageView(image: phoneIcon, tintColor: UIColor.black)
-                        ]) { $0.layer.borderWidth = 0.5; $0.layer.borderColor = UIColor.lightGray.cgColor },
+                        ], with: cellStyle),
 
                         LMRowView(margin: 8, verticalAlignment: .bottom, subviews: [
                             UIImageView(image: emailIcon, tintColor: UIColor.black),
                             UIImageView(image: faxIcon, tintColor: UIColor.black),
                             UIImageView(image: phoneIcon, tintColor: UIColor.black)
-                        ]) { $0.layer.borderWidth = 0.5; $0.layer.borderColor = UIColor.lightGray.cgColor }
+                        ], with: cellStyle)
                     ])
                 ]),
 
@@ -73,7 +78,7 @@ class VerticalAlignmentViewController: UIViewController {
                         UIImageView(image: emailIcon, tintColor: UIColor.black),
                         UIImageView(image: faxIcon, tintColor: UIColor.black),
                         UIImageView(image: phoneIcon, tintColor: UIColor.black)
-                    ]) { $0.layer.borderWidth = 0.5; $0.layer.borderColor = UIColor.lightGray.cgColor }
+                    ], with: cellStyle)
                 ]),
 
                 LMSpacer(width: 0.5, backgroundColor: UIColor.gray),
@@ -86,7 +91,7 @@ class VerticalAlignmentViewController: UIViewController {
                         UIImageView(image: emailIcon, contentMode: .center, tintColor: UIColor.black, weight: 1),
                         UIImageView(image: faxIcon, contentMode: .center, tintColor: UIColor.black, weight: 1),
                         UIImageView(image: phoneIcon, contentMode: .center, tintColor: UIColor.black, weight: 1)
-                    ]) { $0.layer.borderWidth = 0.5; $0.layer.borderColor = UIColor.lightGray.cgColor }
+                    ], with: cellStyle)
                 ])
             ])
         )

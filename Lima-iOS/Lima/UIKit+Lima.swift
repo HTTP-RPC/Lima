@@ -20,7 +20,7 @@ public extension UILabel {
         numberOfLines: Int = 1,
         weight: CGFloat = .nan,
         anchor: LMAnchor = [],
-        _ callback: ((UILabel) -> Void)? = nil) {
+        with: ((UILabel) -> Void)? = nil) {
         self.init()
 
         self.text = text
@@ -32,7 +32,7 @@ public extension UILabel {
         self.weight = weight
         self.anchor = anchor
 
-        callback?(self)
+        with?(self)
     }
 }
 
@@ -43,7 +43,7 @@ public extension UIImageView {
         width: CGFloat = .nan, height: CGFloat = .nan,
         weight: CGFloat = .nan,
         anchor: LMAnchor = [],
-        _ callback: ((UIImageView) -> Void)? = nil) {
+        with: ((UIImageView) -> Void)? = nil) {
         self.init()
 
         self.image = image
@@ -55,7 +55,7 @@ public extension UIImageView {
         self.weight = weight
         self.anchor = anchor
 
-        callback?(self)
+        with?(self)
     }
 }
 
@@ -65,7 +65,7 @@ public extension UIButton {
         tintColor: UIColor? = nil,
         weight: CGFloat = .nan,
         anchor: LMAnchor = [],
-        _ callback: ((UIButton) -> Void)? = nil) {
+        with: ((UIButton) -> Void)? = nil) {
         self.init(type: type)
 
         setTitle(title, for: .normal)
@@ -76,7 +76,7 @@ public extension UIButton {
         self.weight = weight
         self.anchor = anchor
 
-        callback?(self)
+        with?(self)
     }
 }
 
@@ -90,7 +90,7 @@ public extension UITextField {
         width: CGFloat = .nan,
         weight: CGFloat = .nan,
         anchor: LMAnchor = [],
-        _ callback: ((UITextField) -> Void)? = nil) {
+        with: ((UITextField) -> Void)? = nil) {
         self.init()
 
         self.placeholder = placeholder
@@ -104,7 +104,7 @@ public extension UITextField {
         self.weight = weight
         self.anchor = anchor
 
-        callback?(self)
+        with?(self)
     }
 }
 
@@ -113,7 +113,7 @@ public extension UIDatePicker {
         height: CGFloat = .nan,
         weight: CGFloat = .nan,
         anchor: LMAnchor = [],
-        _ callback: ((UIDatePicker) -> Void)? = nil) {
+        with: ((UIDatePicker) -> Void)? = nil) {
         self.init()
 
         self.datePickerMode = datePickerMode
@@ -122,20 +122,20 @@ public extension UIDatePicker {
         self.weight = weight
         self.anchor = anchor
 
-        callback?(self)
+        with?(self)
     }
 }
 
 public extension UISwitch {
     public convenience init(tintColor: UIColor? = nil,
         onTintColor: UIColor? = nil,
-        _ callback: ((UISwitch) -> Void)? = nil) {
+        with: ((UISwitch) -> Void)? = nil) {
         self.init()
 
         self.tintColor = tintColor
         self.onTintColor = onTintColor
 
-        callback?(self)
+        with?(self)
     }
 }
 
@@ -143,7 +143,7 @@ public extension UISegmentedControl {
     public convenience init(tintColor: UIColor? = nil,
         weight: CGFloat = .nan,
         anchor: LMAnchor = [],
-        _ callback: ((UISegmentedControl) -> Void)? = nil) {
+        with: ((UISegmentedControl) -> Void)? = nil) {
         self.init()
 
         self.tintColor = tintColor
@@ -151,7 +151,7 @@ public extension UISegmentedControl {
         self.weight = weight
         self.anchor = anchor
 
-        callback?(self)
+        with?(self)
     }
 }
 
@@ -159,7 +159,7 @@ public extension UISlider {
     public convenience init(minimumValue: Float = 0.0, maximumValue: Float = 1.0,
         weight: CGFloat = .nan,
         anchor: LMAnchor = [],
-        _ callback: ((UISlider) -> Void)? = nil) {
+        with: ((UISlider) -> Void)? = nil) {
         self.init()
 
         self.minimumValue = minimumValue
@@ -168,7 +168,7 @@ public extension UISlider {
         self.weight = weight
         self.anchor = anchor
 
-        callback?(self)
+        with?(self)
     }
 }
 
@@ -177,7 +177,7 @@ public extension UIStepper {
         stepValue: Double = 1.0,
         weight: CGFloat = .nan,
         anchor: LMAnchor = [],
-        _ callback: ((UIStepper) -> Void)? = nil) {
+        with: ((UIStepper) -> Void)? = nil) {
         self.init()
 
         self.minimumValue = minimumValue
@@ -187,7 +187,7 @@ public extension UIStepper {
         self.weight = weight
         self.anchor = anchor
 
-        callback?(self)
+        with?(self)
     }
 }
 
@@ -196,7 +196,7 @@ public extension UIPageControl {
         currentPageIndicatorTintColor: UIColor? = nil,
         weight: CGFloat = .nan,
         anchor: LMAnchor = [],
-        _ callback: ((UIPageControl) -> Void)? = nil) {
+        with: ((UIPageControl) -> Void)? = nil) {
         self.init()
 
         self.pageIndicatorTintColor = pageIndicatorTintColor
@@ -205,7 +205,7 @@ public extension UIPageControl {
         self.weight = weight
         self.anchor = anchor
 
-        callback?(self)
+        with?(self)
     }
 }
 
@@ -214,7 +214,7 @@ public extension UIActivityIndicatorView {
         color: UIColor? = nil,
         weight: CGFloat = .nan,
         anchor: LMAnchor = [],
-        _ callback: ((UIActivityIndicatorView) -> Void)? = nil) {
+        with: ((UIActivityIndicatorView) -> Void)? = nil) {
         self.init(style: style)
 
         self.color = color
@@ -222,7 +222,7 @@ public extension UIActivityIndicatorView {
         self.weight = weight
         self.anchor = anchor
 
-        callback?(self)
+        with?(self)
     }
 }
 
@@ -231,7 +231,7 @@ public extension UIProgressView {
         trackTintColor: UIColor? = nil,
         weight: CGFloat = .nan,
         anchor: LMAnchor = [],
-        _ callback: ((UIProgressView) -> Void)? = nil) {
+        with: ((UIProgressView) -> Void)? = nil) {
         self.init()
 
         self.progressTintColor = progressTintColor
@@ -240,7 +240,7 @@ public extension UIProgressView {
         self.weight = weight
         self.anchor = anchor
 
-        callback?(self)
+        with?(self)
     }
 }
 
@@ -251,7 +251,7 @@ public extension UITextView {
         width: CGFloat = .nan, height: CGFloat = .nan,
         weight: CGFloat = .nan,
         anchor: LMAnchor = [],
-        _ callback: ((UITextView) -> Void)? = nil) {
+        with: ((UITextView) -> Void)? = nil) {
         self.init(frame: CGRect(), textContainer: textContainer)
 
         self.isEditable = isEditable
@@ -265,14 +265,14 @@ public extension UITextView {
         self.weight = weight
         self.anchor = anchor
 
-        callback?(self)
+        with?(self)
     }
 }
 
 public extension UITableViewCell {
     public convenience init(text: String? = nil, detailText: String? = nil,
         accessoryType: UITableViewCell.AccessoryType = .none,
-        _ callback: ((UITableViewCell) -> Void)? = nil) {
+        with: ((UITableViewCell) -> Void)? = nil) {
         self.init()
 
         textLabel?.text = text
@@ -280,18 +280,18 @@ public extension UITableViewCell {
 
         self.accessoryType = accessoryType
 
-        callback?(self)
+        with?(self)
     }
 }
 
 public extension UITableViewHeaderFooterView {
     public convenience init(text: String? = nil, detailText: String? = nil,
-        _ callback: ((UITableViewHeaderFooterView) -> Void)? = nil) {
+        with: ((UITableViewHeaderFooterView) -> Void)? = nil) {
         self.init()
 
         textLabel?.text = text
         detailTextLabel?.text = text
 
-        callback?(self)
+        with?(self)
     }
 }

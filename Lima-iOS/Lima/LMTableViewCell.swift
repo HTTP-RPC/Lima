@@ -17,13 +17,13 @@ import UIKit
 public extension LMTableViewCell {
     public convenience init(accessoryType: UITableViewCell.AccessoryType = .none,
         content: UIView? = nil,
-        _ callback: ((LMTableViewCell) -> Void)? = nil) {
+        with: ((LMTableViewCell) -> Void)? = nil) {
         self.init()
 
         setContent(content, ignoreMargins: false)
 
         self.accessoryType = accessoryType
 
-        callback?(self)
+        with?(self)
     }
 }
