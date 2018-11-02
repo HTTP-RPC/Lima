@@ -22,6 +22,7 @@ class ViewController: UITableViewController {
         case verticalAlignment
         case anchorView
         case gridView
+        case periodicTable
         case scrollView
         case tableViewCell
         case collectionViewCell
@@ -71,6 +72,9 @@ class ViewController: UITableViewController {
         case .gridView:
             cell.textLabel?.text = "Grid View"
 
+        case .periodicTable:
+            cell.textLabel?.text = "Periodic Table"
+
         case .scrollView:
             cell.textLabel?.text = "Scroll View"
 
@@ -116,6 +120,9 @@ class ViewController: UITableViewController {
 
         case .gridView:
             viewController = GridViewController()
+
+        case .periodicTable:
+            viewController = PeriodicTableViewController();
 
         case .scrollView:
             viewController = ScrollViewController()

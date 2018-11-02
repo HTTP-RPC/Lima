@@ -54,6 +54,7 @@
 		378008C4218C5BD7009D3C05 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378008C3218C5BD7009D3C05 /* WebViewController.swift */; };
 		378008C6218C5BDF009D3C05 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378008C5218C5BDF009D3C05 /* MapViewController.swift */; };
 		378008C8218C5BF1009D3C05 /* AnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378008C7218C5BF1009D3C05 /* AnimationViewController.swift */; };
+		37AC84B7218CFDB300BBD0CF /* PeriodicTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AC84B6218CFDB300BBD0CF /* PeriodicTableViewController.swift */; };
 		37E750262186169900B06374 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E750252186169900B06374 /* AppDelegate.swift */; };
 		37E750282186169900B06374 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E750272186169900B06374 /* ViewController.swift */; };
 		37E7502D2186169900B06374 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37E7502C2186169900B06374 /* Assets.xcassets */; };
@@ -136,6 +137,7 @@
 		378008C3218C5BD7009D3C05 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		378008C5218C5BDF009D3C05 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		378008C7218C5BF1009D3C05 /* AnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationViewController.swift; sourceTree = "<group>"; };
+		37AC84B6218CFDB300BBD0CF /* PeriodicTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodicTableViewController.swift; sourceTree = "<group>"; };
 		37E750232186169900B06374 /* LimaTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LimaTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37E750252186169900B06374 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37E750272186169900B06374 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -234,6 +236,7 @@
 				375724B4218A80C100E4E9AC /* VerticalAlignmentViewController.swift */,
 				375724B1218A80C100E4E9AC /* AnchorViewController.swift */,
 				375724B2218A80C100E4E9AC /* GridViewController.swift */,
+				37AC84B6218CFDB300BBD0CF /* PeriodicTableViewController.swift */,
 				378008BD218C5B96009D3C05 /* ScrollViewController.swift */,
 				378008BF218C5BA7009D3C05 /* TableViewCellController.swift */,
 				378008C1218C5BB6009D3C05 /* CollectionViewCellController.swift */,
@@ -362,8 +365,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				37E750302186169900B06374 /* LaunchScreen.storyboard in Resources */,
-				37309683218CFA9600F5F329 /* Icons.xcassets in Resources */,
 				37E7502D2186169900B06374 /* Assets.xcassets in Resources */,
+				37309683218CFA9600F5F329 /* Icons.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,6 +413,7 @@
 				375724B8218A80C100E4E9AC /* VerticalAlignmentViewController.swift in Sources */,
 				375724B5218A80C100E4E9AC /* AnchorViewController.swift in Sources */,
 				375724B6218A80C100E4E9AC /* GridViewController.swift in Sources */,
+				37AC84B7218CFDB300BBD0CF /* PeriodicTableViewController.swift in Sources */,
 				378008BE218C5B96009D3C05 /* ScrollViewController.swift in Sources */,
 				378008C0218C5BA7009D3C05 /* TableViewCellController.swift in Sources */,
 				378008C2218C5BB6009D3C05 /* CollectionViewCellController.swift in Sources */,
@@ -626,6 +630,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FBUU23VBFN;
 				INFOPLIST_FILE = LimaTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -645,6 +650,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FBUU23VBFN;
 				INFOPLIST_FILE = LimaTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
