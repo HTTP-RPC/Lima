@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		371163772187B391004B8162 /* LMRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371163762187B391004B8162 /* LMRowView.swift */; };
 		371163792187B5F8004B8162 /* UIKit+Lima.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371163782187B5F8004B8162 /* UIKit+Lima.swift */; };
+		37309683218CFA9600F5F329 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37309682218CFA9600F5F329 /* Icons.xcassets */; };
 		37319151218A6548003BA813 /* LMScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3731914F218A6548003BA813 /* LMScrollView.m */; };
 		37319152218A6548003BA813 /* LMScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = 37319150218A6548003BA813 /* LMScrollView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		37319157218A6558003BA813 /* LMTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 37319153218A6558003BA813 /* LMTableViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -88,6 +89,7 @@
 /* Begin PBXFileReference section */
 		371163762187B391004B8162 /* LMRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMRowView.swift; sourceTree = "<group>"; };
 		371163782187B5F8004B8162 /* UIKit+Lima.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIKit+Lima.swift"; sourceTree = "<group>"; };
+		37309682218CFA9600F5F329 /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
 		3731914F218A6548003BA813 /* LMScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMScrollView.m; sourceTree = "<group>"; };
 		37319150218A6548003BA813 /* LMScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMScrollView.h; sourceTree = "<group>"; };
 		37319153218A6558003BA813 /* LMTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMTableViewCell.h; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 				378008C5218C5BDF009D3C05 /* MapViewController.swift */,
 				378008C7218C5BF1009D3C05 /* AnimationViewController.swift */,
 				37E7502C2186169900B06374 /* Assets.xcassets */,
+				37309682218CFA9600F5F329 /* Icons.xcassets */,
 				37E7502E2186169900B06374 /* LaunchScreen.storyboard */,
 				37E750312186169900B06374 /* Info.plist */,
 			);
@@ -359,6 +362,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				37E750302186169900B06374 /* LaunchScreen.storyboard in Resources */,
+				37309683218CFA9600F5F329 /* Icons.xcassets in Resources */,
 				37E7502D2186169900B06374 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -399,19 +403,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				375724B6218A80C100E4E9AC /* GridViewController.swift in Sources */,
-				378008C4218C5BD7009D3C05 /* WebViewController.swift in Sources */,
-				375724B5218A80C100E4E9AC /* AnchorViewController.swift in Sources */,
+				37E750262186169900B06374 /* AppDelegate.swift in Sources */,
 				37E750282186169900B06374 /* ViewController.swift in Sources */,
-				378008BE218C5B96009D3C05 /* ScrollViewController.swift in Sources */,
 				378008BC218C55A3009D3C05 /* ControlsViewController.swift in Sources */,
 				375724B7218A80C100E4E9AC /* HorizontalAlignmentViewController.swift in Sources */,
-				378008C6218C5BDF009D3C05 /* MapViewController.swift in Sources */,
-				378008C2218C5BB6009D3C05 /* CollectionViewCellController.swift in Sources */,
 				375724B8218A80C100E4E9AC /* VerticalAlignmentViewController.swift in Sources */,
-				378008C8218C5BF1009D3C05 /* AnimationViewController.swift in Sources */,
+				375724B5218A80C100E4E9AC /* AnchorViewController.swift in Sources */,
+				375724B6218A80C100E4E9AC /* GridViewController.swift in Sources */,
+				378008BE218C5B96009D3C05 /* ScrollViewController.swift in Sources */,
 				378008C0218C5BA7009D3C05 /* TableViewCellController.swift in Sources */,
-				37E750262186169900B06374 /* AppDelegate.swift in Sources */,
+				378008C2218C5BB6009D3C05 /* CollectionViewCellController.swift in Sources */,
+				378008C4218C5BD7009D3C05 /* WebViewController.swift in Sources */,
+				378008C6218C5BDF009D3C05 /* MapViewController.swift in Sources */,
+				378008C8218C5BF1009D3C05 /* AnimationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -572,6 +576,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Lima/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -599,6 +604,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Lima/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
