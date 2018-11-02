@@ -17,6 +17,7 @@ import UIKit
 public extension UILabel {
     public convenience init(text: String? = nil,
         textAlignment: NSTextAlignment = .natural, textColor: UIColor? = nil, font: UIFont? = nil,
+        numberOfLines: Int = 1,
         weight: CGFloat = .nan,
         anchor: LMAnchor = [],
         _ callback: ((UILabel) -> Void)? = nil) {
@@ -26,6 +27,7 @@ public extension UILabel {
         self.textAlignment = textAlignment
         self.textColor = textColor
         self.font = font
+        self.numberOfLines = numberOfLines
 
         self.weight = weight
         self.anchor = anchor

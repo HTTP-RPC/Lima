@@ -16,17 +16,66 @@ import UIKit
 import Lima
 
 class GridViewController: UIViewController {
+    let text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+
     override func loadView() {
-        // TODO
-        view = UIView()
-        view.backgroundColor = UIColor.white
-    }
+        view = LMScrollView(isFitToWidth: true, backgroundColor: UIColor.white,
+            content: LMColumnView(margin: 16, subviews: [
+                // Fill
+                UILabel(text: text, numberOfLines: 0) {
+                    $0.layer.borderWidth = 0.5
+                    $0.layer.borderColor = UIColor.lightGray.cgColor
+                },
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+                // Baselines
+                LMColumnView(isAlignToGrid: true, subviews: [
+                    LMRowView(isAlignToBaseline: true, subviews: [
+                        UILabel(text: "First Baseline", textAlignment: .right) {
+                            $0.layer.borderWidth = 0.5
+                            $0.layer.borderColor = UIColor.lightGray.cgColor
+                        },
 
-        title = "Grid View"
-        
-        edgesForExtendedLayout = UIRectEdge()
+                        LMColumnView(weight: 1, subviews: [
+                            UILabel(text: text, numberOfLines: 0),
+                            UILabel(text: text, numberOfLines: 0)
+                        ]) {
+                            $0.layer.borderWidth = 0.5
+                            $0.layer.borderColor = UIColor.lightGray.cgColor
+                        }
+                    ]),
+
+                    LMRowView(isAlignToBaseline: true, baseline: .last, subviews: [
+                        UILabel(text: "Last Baseline", textAlignment: .right) {
+                            $0.layer.borderWidth = 0.5
+                            $0.layer.borderColor = UIColor.lightGray.cgColor
+                        },
+
+                        LMColumnView(weight: 1, subviews: [
+                            UILabel(text: text, numberOfLines: 0),
+                            UILabel(text: text, numberOfLines: 0)
+                        ]) {
+                            $0.layer.borderWidth = 0.5
+                            $0.layer.borderColor = UIColor.lightGray.cgColor
+                        }
+                    ])
+                ]),
+
+                // Weights
+                LMRowView(weight: 2, subviews: [
+                    LMColumnView(weight: 2, subviews: [
+                        UILabel(text: text, numberOfLines: 0),
+                        LMSpacer()
+                    ]) {
+                        $0.layer.borderWidth = 0.5
+                        $0.layer.borderColor = UIColor.lightGray.cgColor
+                    },
+
+                    UILabel(text: text, numberOfLines: 0, weight: 1) {
+                        $0.layer.borderWidth = 0.5
+                        $0.layer.borderColor = UIColor.lightGray.cgColor
+                    }
+                ])
+            ])
+        )
     }
 }

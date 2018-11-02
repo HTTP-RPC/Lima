@@ -46,6 +46,7 @@
 		377907DA21890CEF007FD152 /* LMLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377907D921890CEF007FD152 /* LMLayoutView.swift */; };
 		377907DE21890D0A007FD152 /* LMAnchorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377907DD21890D0A007FD152 /* LMAnchorView.swift */; };
 		377907E021890D17007FD152 /* LMRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377907DF21890D17007FD152 /* LMRootView.swift */; };
+		378008BC218C55A3009D3C05 /* ControlsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378008BB218C55A3009D3C05 /* ControlsViewController.swift */; };
 		37E750262186169900B06374 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E750252186169900B06374 /* AppDelegate.swift */; };
 		37E750282186169900B06374 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E750272186169900B06374 /* ViewController.swift */; };
 		37E7502D2186169900B06374 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37E7502C2186169900B06374 /* Assets.xcassets */; };
@@ -120,6 +121,7 @@
 		377907D921890CEF007FD152 /* LMLayoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMLayoutView.swift; sourceTree = "<group>"; };
 		377907DD21890D0A007FD152 /* LMAnchorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMAnchorView.swift; sourceTree = "<group>"; };
 		377907DF21890D17007FD152 /* LMRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMRootView.swift; sourceTree = "<group>"; };
+		378008BB218C55A3009D3C05 /* ControlsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlsViewController.swift; sourceTree = "<group>"; };
 		37E750232186169900B06374 /* LimaTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LimaTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37E750252186169900B06374 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37E750272186169900B06374 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 			children = (
 				37E750252186169900B06374 /* AppDelegate.swift */,
 				37E750272186169900B06374 /* ViewController.swift */,
+				378008BB218C55A3009D3C05 /* ControlsViewController.swift */,
 				375724B3218A80C100E4E9AC /* HorizontalAlignmentViewController.swift */,
 				375724B4218A80C100E4E9AC /* VerticalAlignmentViewController.swift */,
 				375724B1218A80C100E4E9AC /* AnchorViewController.swift */,
@@ -381,6 +384,7 @@
 				375724B6218A80C100E4E9AC /* GridViewController.swift in Sources */,
 				375724B5218A80C100E4E9AC /* AnchorViewController.swift in Sources */,
 				37E750282186169900B06374 /* ViewController.swift in Sources */,
+				378008BC218C55A3009D3C05 /* ControlsViewController.swift in Sources */,
 				375724B7218A80C100E4E9AC /* HorizontalAlignmentViewController.swift in Sources */,
 				375724B8218A80C100E4E9AC /* VerticalAlignmentViewController.swift in Sources */,
 				37E750262186169900B06374 /* AppDelegate.swift in Sources */,

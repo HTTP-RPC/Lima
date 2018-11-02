@@ -71,12 +71,4 @@ class AnchorViewController: UIViewController {
             ])
         )
     }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        title = "Anchor View"
-        
-        edgesForExtendedLayout = UIRectEdge()
-    }
 }

@@ -17,6 +17,7 @@ import Lima
 
 class ViewController: UITableViewController {
     enum Example: Int, CaseIterable {
+        case controls
         case horizontalAlignment
         case verticalAlignment
         case anchorView
@@ -49,6 +50,9 @@ class ViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) ?? UITableViewCell(style: .default, reuseIdentifier: cellIdentifier)
 
         switch example {
+        case .controls:
+            cell.textLabel?.text = "Controls"
+
         case .horizontalAlignment:
             cell.textLabel?.text = "Horizontal Alignment"
 
@@ -74,6 +78,9 @@ class ViewController: UITableViewController {
 
         let viewController: UIViewController
         switch example {
+        case .controls:
+            viewController = ControlsViewController()
+            
         case .horizontalAlignment:
             viewController = HorizontalAlignmentViewController()
 
@@ -87,6 +94,9 @@ class ViewController: UITableViewController {
             viewController = GridViewController()
         }
 
+        viewController.title = tableView.cellForRow(at: indexPath)?.textLabel?.text
+        viewController.edgesForExtendedLayout = UIRectEdge()
+        
         self.navigationController?.pushViewController(viewController, animated: true)
     }
 }

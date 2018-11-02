@@ -79,12 +79,4 @@ class HorizontalAlignmentViewController: UIViewController {
             ])
         )
     }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        title = "Horizontal Alignment"         
-
-        edgesForExtendedLayout = UIRectEdge()
-    }
 }

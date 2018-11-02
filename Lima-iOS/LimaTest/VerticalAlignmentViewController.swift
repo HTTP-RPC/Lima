@@ -91,12 +91,4 @@ class VerticalAlignmentViewController: UIViewController {
             ])
         )
     }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        title = "Vertical Alignment"
-
-        edgesForExtendedLayout = UIRectEdge()
-    }
 }
