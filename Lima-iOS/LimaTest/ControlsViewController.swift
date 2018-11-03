@@ -16,12 +16,10 @@ import UIKit
 import Lima
 
 class ControlsViewController: UITableViewController {
-    #if os(iOS)
     @IBOutlet var stepper: UIStepper!
     @IBOutlet var slider: UISlider!
     @IBOutlet var pageControl: UIPageControl!
     @IBOutlet var progressView: UIProgressView!
-    #endif
 
     struct Section {
         let heading: String
@@ -80,11 +78,8 @@ class ControlsViewController: UITableViewController {
                         LMSpacer()
                     )
                 )
-            ])
-        ]
+            ]),
 
-        #if os(iOS)
-        sections.append(contentsOf: [
             // Date picker
             Section(heading: "Date Picker", cells: [
                 LMTableViewCell(selectionStyle: .none,
@@ -141,19 +136,16 @@ class ControlsViewController: UITableViewController {
                     )
                 )
             ])
-        ])
-        #endif
+        ]
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        #if os(iOS)
         slider.minimumValue = Float(stepper.minimumValue)
         slider.maximumValue = Float(stepper.maximumValue)
 
         stepperValueChanged(stepper)
-        #endif
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -180,7 +172,6 @@ class ControlsViewController: UITableViewController {
         present(alertController, animated: true)
     }
 
-    #if os(iOS)
     @objc func stepperValueChanged(_ sender: UIStepper) {
         slider.value = Float(sender.value)
 
@@ -199,5 +190,4 @@ class ControlsViewController: UITableViewController {
         pageControl.currentPage = Int(round(value * 10))
         progressView.progress = value
     }
-    #endif
 }

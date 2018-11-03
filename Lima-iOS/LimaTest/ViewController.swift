@@ -17,17 +17,23 @@ import Lima
 
 class ViewController: UITableViewController {
     enum Example: Int, CaseIterable {
+        #if os(iOS)
         case controls
+        #endif
         case horizontalAlignment
         case verticalAlignment
         case anchorView
         case gridView
+        #if os(iOS)
         case scrollView
+        #endif
         case tableViewCell
+        #if os(iOS)
         case collectionViewCell
         case webView
         case mapView
         case animation
+        #endif
     }
 
     override func viewDidLoad() {
@@ -35,7 +41,9 @@ class ViewController: UITableViewController {
         
         title = "Lima Test"
 
+        #if os(iOS)
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        #endif
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -56,8 +64,10 @@ class ViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) ?? UITableViewCell(style: .default, reuseIdentifier: cellIdentifier)
 
         switch example {
+        #if os(iOS)
         case .controls:
             cell.textLabel?.text = "Controls"
+        #endif
 
         case .horizontalAlignment:
             cell.textLabel?.text = "Horizontal Alignment"
@@ -71,12 +81,15 @@ class ViewController: UITableViewController {
         case .gridView:
             cell.textLabel?.text = "Grid View"
 
+        #if os(iOS)
         case .scrollView:
             cell.textLabel?.text = "Scroll View"
+        #endif
 
         case .tableViewCell:
             cell.textLabel?.text = "Table View Cell"
 
+        #if os(iOS)
         case .collectionViewCell:
             cell.textLabel?.text = "Collection View Cell"
 
@@ -88,6 +101,7 @@ class ViewController: UITableViewController {
 
         case .animation:
             cell.textLabel?.text = "Animation"
+        #endif
         }
 
         cell.accessoryType = .disclosureIndicator
@@ -102,8 +116,10 @@ class ViewController: UITableViewController {
 
         let viewController: UIViewController
         switch example {
+        #if os(iOS)
         case .controls:
             viewController = ControlsViewController(style: .grouped)
+        #endif
             
         case .horizontalAlignment:
             viewController = HorizontalAlignmentViewController()
@@ -117,12 +133,15 @@ class ViewController: UITableViewController {
         case .gridView:
             viewController = GridViewController()
 
+        #if os(iOS)
         case .scrollView:
             viewController = ScrollViewController()
+        #endif
 
         case .tableViewCell:
             viewController = TableViewCellController()
 
+        #if os(iOS)
         case .collectionViewCell:
             let collectionViewLayout = UICollectionViewFlowLayout()
 
@@ -139,6 +158,7 @@ class ViewController: UITableViewController {
 
         case .animation:
             viewController = AnimationViewController()
+        #endif
         }
 
         viewController.title = tableView.cellForRow(at: indexPath)?.textLabel?.text
