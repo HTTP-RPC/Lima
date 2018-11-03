@@ -279,21 +279,6 @@ public extension UITextView {
     }
 }
 
-public extension UITableViewCell {
-    public convenience init(text: String? = nil, detailText: String? = nil,
-        accessoryType: UITableViewCell.AccessoryType = .none,
-        with: ((UITableViewCell) -> Void)? = nil) {
-        self.init()
-
-        textLabel?.text = text
-        detailTextLabel?.text = text
-
-        self.accessoryType = accessoryType
-
-        with?(self)
-    }
-}
-
 public extension UITableViewHeaderFooterView {
     public convenience init(text: String? = nil, detailText: String? = nil,
         with: ((UITableViewHeaderFooterView) -> Void)? = nil) {
@@ -301,6 +286,23 @@ public extension UITableViewHeaderFooterView {
 
         textLabel?.text = text
         detailTextLabel?.text = text
+
+        with?(self)
+    }
+}
+
+public extension UITableViewCell {
+    public convenience init(text: String? = nil, detailText: String? = nil,
+        accessoryType: UITableViewCell.AccessoryType = .none,
+        selectionStyle: UITableViewCell.SelectionStyle = .blue,
+        with: ((UITableViewCell) -> Void)? = nil) {
+        self.init()
+
+        textLabel?.text = text
+        detailTextLabel?.text = text
+
+        self.accessoryType = accessoryType
+        self.selectionStyle = selectionStyle
 
         with?(self)
     }

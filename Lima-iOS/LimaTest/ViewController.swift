@@ -22,7 +22,6 @@ class ViewController: UITableViewController {
         case verticalAlignment
         case anchorView
         case gridView
-        case periodicTable
         case scrollView
         case tableViewCell
         case collectionViewCell
@@ -72,9 +71,6 @@ class ViewController: UITableViewController {
         case .gridView:
             cell.textLabel?.text = "Grid View"
 
-        case .periodicTable:
-            cell.textLabel?.text = "Periodic Table"
-
         case .scrollView:
             cell.textLabel?.text = "Scroll View"
 
@@ -107,7 +103,7 @@ class ViewController: UITableViewController {
         let viewController: UIViewController
         switch example {
         case .controls:
-            viewController = ControlsViewController()
+            viewController = ControlsViewController(style: .grouped)
             
         case .horizontalAlignment:
             viewController = HorizontalAlignmentViewController()
@@ -120,9 +116,6 @@ class ViewController: UITableViewController {
 
         case .gridView:
             viewController = GridViewController()
-
-        case .periodicTable:
-            viewController = PeriodicTableViewController();
 
         case .scrollView:
             viewController = ScrollViewController()
@@ -152,6 +145,10 @@ class ViewController: UITableViewController {
         viewController.edgesForExtendedLayout = UIRectEdge()
         
         self.navigationController?.pushViewController(viewController, animated: true)
+    }
+
+    override func tableView(_ tableView: UITableView, canFocusRowAt indexPath: IndexPath) -> Bool {
+        return true
     }
 }
 
