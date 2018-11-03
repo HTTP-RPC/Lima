@@ -77,18 +77,14 @@ class WebViewController: UIViewController, UITextFieldDelegate {
     }
 
     @objc func keyboardWillShow(_ notification: Notification) {
-        guard let rootView = view as? LMRootView,
-            let frame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect else {
-            return
-        }
+        let rootView = view as! LMRootView
+        let frame = notification.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! CGRect
 
         rootView.bottomPadding = frame.height
     }
 
     @objc func keyboardWillHide(_ notification: Notification) {
-        guard let rootView = view as? LMRootView else {
-            return
-        }
+        let rootView = view as! LMRootView
 
         rootView.bottomPadding = 0
     }

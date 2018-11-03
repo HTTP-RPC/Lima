@@ -16,13 +16,13 @@ import UIKit
 import Lima
 
 class GridViewController: UIViewController {
-    let text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-
     override func loadView() {
         let cellStyle = { (cell: UIView) in
             cell.layer.borderWidth = 0.5
             cell.layer.borderColor = UIColor.lightGray.cgColor
         }
+
+        let text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
 
         view = LMScrollView(isFitToWidth: true, backgroundColor: UIColor.white,
             content: LMColumnView(margin: 16, subviews: [

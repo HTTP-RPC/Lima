@@ -56,6 +56,7 @@
 		378008C8218C5BF1009D3C05 /* AnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378008C7218C5BF1009D3C05 /* AnimationViewController.swift */; };
 		379F3A38218DBC56002EA5B0 /* sample.txt in Resources */ = {isa = PBXBuildFile; fileRef = 379F3A37218DBC56002EA5B0 /* sample.txt */; };
 		379F3A3A218DBFA4002EA5B0 /* pharmacies.json in Resources */ = {isa = PBXBuildFile; fileRef = 379F3A39218DBFA4002EA5B0 /* pharmacies.json */; };
+		379F3A3C218DC6AD002EA5B0 /* daisies.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 379F3A3B218DC6AD002EA5B0 /* daisies.jpg */; };
 		37AC84B7218CFDB300BBD0CF /* PeriodicTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AC84B6218CFDB300BBD0CF /* PeriodicTableViewController.swift */; };
 		37E750262186169900B06374 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E750252186169900B06374 /* AppDelegate.swift */; };
 		37E750282186169900B06374 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E750272186169900B06374 /* ViewController.swift */; };
@@ -141,6 +142,7 @@
 		378008C7218C5BF1009D3C05 /* AnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationViewController.swift; sourceTree = "<group>"; };
 		379F3A37218DBC56002EA5B0 /* sample.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sample.txt; sourceTree = "<group>"; };
 		379F3A39218DBFA4002EA5B0 /* pharmacies.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pharmacies.json; sourceTree = "<group>"; };
+		379F3A3B218DC6AD002EA5B0 /* daisies.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = daisies.jpg; sourceTree = "<group>"; };
 		37AC84B6218CFDB300BBD0CF /* PeriodicTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodicTableViewController.swift; sourceTree = "<group>"; };
 		37E750232186169900B06374 /* LimaTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LimaTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37E750252186169900B06374 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -253,6 +255,7 @@
 				37E750312186169900B06374 /* Info.plist */,
 				379F3A37218DBC56002EA5B0 /* sample.txt */,
 				379F3A39218DBFA4002EA5B0 /* pharmacies.json */,
+				379F3A3B218DC6AD002EA5B0 /* daisies.jpg */,
 			);
 			path = LimaTest;
 			sourceTree = "<group>";
@@ -372,6 +375,7 @@
 			files = (
 				37E750302186169900B06374 /* LaunchScreen.storyboard in Resources */,
 				37E7502D2186169900B06374 /* Assets.xcassets in Resources */,
+				379F3A3C218DC6AD002EA5B0 /* daisies.jpg in Resources */,
 				379F3A38218DBC56002EA5B0 /* sample.txt in Resources */,
 				379F3A3A218DBFA4002EA5B0 /* pharmacies.json in Resources */,
 				37309683218CFA9600F5F329 /* Icons.xcassets in Resources */,
