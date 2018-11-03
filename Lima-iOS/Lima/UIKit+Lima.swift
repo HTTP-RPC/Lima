@@ -18,6 +18,7 @@ public extension UILabel {
     public convenience init(text: String? = nil,
         textAlignment: NSTextAlignment = .natural, textColor: UIColor? = nil, font: UIFont? = nil,
         numberOfLines: Int = 1,
+        lineBreakMode: NSLineBreakMode = .byTruncatingTail,
         weight: CGFloat = .nan,
         anchor: LMAnchor = [],
         with: ((UILabel) -> Void)? = nil) {
@@ -83,6 +84,7 @@ public extension UIButton {
 public extension UITextField {
     public convenience init(placeholder: String? = nil,
         textAlignment: NSTextAlignment = .natural, textColor: UIColor? = nil, font: UIFont? = nil,
+        borderStyle: UITextField.BorderStyle = .none,
         keyboardType: UIKeyboardType = .default,
         autocorrectionType: UITextAutocorrectionType = .default,
         autocapitalizationType: UITextAutocapitalizationType = .sentences,
@@ -95,6 +97,7 @@ public extension UITextField {
 
         self.placeholder = placeholder
         self.textAlignment = textAlignment
+        self.borderStyle = borderStyle
         self.keyboardType = keyboardType
         self.autocorrectionType = autocorrectionType
         self.autocapitalizationType = autocapitalizationType

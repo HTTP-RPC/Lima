@@ -13,9 +13,73 @@
 //
 
 import UIKit
+import Lima
 
 class ScrollViewController: UIViewController {
+    var label1: UILabel!
+    var label2: UILabel!
+
+    let dispatchQueue = DispatchQueue(label: "Dispatch Queue")
+
     override func loadView() {
-        // TODO
+        view = LMRootView(backgroundColor: UIColor.white,
+            subview: LMAnchorView(subviews: [
+                LMScrollView(isFitToWidth: true, anchor: [.all],
+                    content: LMColumnView(margin: 10, spacing: 10, subviews: [
+                        UILabel(numberOfLines: 0, lineBreakMode: .byWordWrapping) { self.label1 = $0 },
+                        UILabel(numberOfLines: 0, lineBreakMode: .byWordWrapping) { self.label2 = $0 }
+                    ])
+                ) { scrollView in
+                    let refreshControl = UIRefreshControl()
+
+                    refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
+
+                    scrollView.refreshControl = refreshControl
+                },
+
+                LMColumnView(margin: 20, anchor: [.bottom, .left, .right], subviews: [
+                    UIButton(type: .system, title: "Press Me!") { button in
+                        button.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.9)
+                        button.contentEdgeInsets = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
+
+                        button.layer.borderWidth = 0.5
+                        button.layer.borderColor = UIColor.gray.cgColor
+                        button.layer.cornerRadius = 6
+
+                        button.addTarget(self, action: #selector(self.showGreeting), for: .primaryActionTriggered)
+                    }
+                ])
+            ])
+        )
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        guard let textPath = Bundle.main.path(forResource: "sample", ofType: "txt"),
+            let text = try? String(contentsOfFile: textPath, encoding: String.Encoding.ascii) else {
+            fatalError()
+        }
+
+        label1.text = text
+        label2.text = text
+    }
+
+    @objc func showGreeting() {
+        let alertController = UIAlertController(title: "Greeting", message: "Hello!", preferredStyle: .alert)
+
+        alertController.addAction(UIAlertAction(title: "OK", style: .default))
+
+        present(alertController, animated: true)
+    }
+
+    @objc func refresh(_ sender: UIRefreshControl) {
+        dispatchQueue.async {
+            Thread.sleep(forTimeInterval: 2)
+
+            OperationQueue.main.addOperation() {
+                sender.endRefreshing()
+            }
+        }
     }
 }
