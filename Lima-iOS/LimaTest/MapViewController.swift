@@ -31,9 +31,9 @@ class MapViewController: UIViewController, UITextFieldDelegate {
         mapView.layer.borderColor = UIColor.lightGray.cgColor
 
         view = LMRootView(backgroundColor: UIColor.white,
-            subview: LMColumnView(margin: 16, subviews: [
+            LMColumnView(margin: 16,
                 mapView,
-                LMRowView(subviews: [
+                LMRowView(
                     UITextField(placeholder: "Latitude",
                         borderStyle: .roundedRect,
                         keyboardType: .numbersAndPunctuation,
@@ -46,11 +46,11 @@ class MapViewController: UIViewController, UITextFieldDelegate {
                         autocorrectionType: .no,
                         autocapitalizationType: .none,
                         weight: 1) { self.longitudeTextField = $0 }
-                ]),
+                ),
                 UIButton(type: .system, title: "Go") { button in
                     button.addTarget(self, action: #selector(self.showLocation), for: .primaryActionTriggered)
                 }
-            ])
+            )
         )
     }
 

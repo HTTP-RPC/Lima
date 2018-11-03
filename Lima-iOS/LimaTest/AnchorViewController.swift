@@ -23,7 +23,7 @@ class AnchorViewController: UIViewController {
         }
 
         view = LMRootView(backgroundColor: UIColor.white,
-            subview: LMAnchorView(margin: 16, subviews: [
+            LMAnchorView(margin: 16,
                 // All
                 UILabel(anchor: [.all], with: cellStyle),
 
@@ -41,7 +41,7 @@ class AnchorViewController: UIViewController {
                 UILabel(text: "Bottom Leading", anchor: [.bottom, .leading], with: cellStyle),
                 UILabel(text: "Bottom", anchor: [.bottom], with: cellStyle),
                 UILabel(text: "Bottom Trailing", anchor: [.bottom, .trailing], with: cellStyle)
-            ])
+            )
         )
     }
 }

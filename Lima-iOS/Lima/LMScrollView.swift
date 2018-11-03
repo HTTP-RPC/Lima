@@ -19,7 +19,7 @@ public extension LMScrollView {
         backgroundColor: UIColor? = nil,
         weight: CGFloat = .nan,
         anchor: LMAnchor = [],
-        content: UIView? = nil,
+        _ content: UIView? = nil,
         with: ((LMScrollView) -> Void)? = nil) {
         self.init()
 

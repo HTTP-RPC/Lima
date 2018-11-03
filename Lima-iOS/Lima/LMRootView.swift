@@ -17,7 +17,7 @@ import UIKit
 public extension LMRootView {
     public convenience init(topPadding: CGFloat = 0, bottomPadding: CGFloat = 0,
         backgroundColor: UIColor? = nil,
-        subview: UIView,
+        _ subview: UIView,
         with: ((LMRootView) -> Void)? = nil) {
         self.init()
 

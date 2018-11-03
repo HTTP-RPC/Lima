@@ -23,12 +23,12 @@ class ScrollViewController: UIViewController {
 
     override func loadView() {
         view = LMRootView(backgroundColor: UIColor.white,
-            subview: LMAnchorView(subviews: [
+            LMAnchorView(
                 LMScrollView(isFitToWidth: true, anchor: [.all],
-                    content: LMColumnView(margin: 10, spacing: 10, subviews: [
+                    LMColumnView(margin: 10, spacing: 10,
                         UILabel(numberOfLines: 0, lineBreakMode: .byWordWrapping) { self.label1 = $0 },
                         UILabel(numberOfLines: 0, lineBreakMode: .byWordWrapping) { self.label2 = $0 }
-                    ])
+                    )
                 ) { scrollView in
                     let refreshControl = UIRefreshControl()
 
@@ -37,7 +37,7 @@ class ScrollViewController: UIViewController {
                     scrollView.refreshControl = refreshControl
                 },
 
-                LMColumnView(margin: 20, anchor: [.bottom, .left, .right], subviews: [
+                LMColumnView(margin: 20, anchor: [.bottom, .left, .right],
                     UIButton(type: .system, title: "Press Me!") { button in
                         button.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.9)
                         button.contentEdgeInsets = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
@@ -48,8 +48,8 @@ class ScrollViewController: UIViewController {
 
                         button.addTarget(self, action: #selector(self.showGreeting), for: .primaryActionTriggered)
                     }
-                ])
-            ])
+                )
+            )
         )
     }
 

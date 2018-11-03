@@ -25,41 +25,46 @@ class GridViewController: UIViewController {
         let text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
 
         view = LMScrollView(isFitToWidth: true, backgroundColor: UIColor.white,
-            content: LMColumnView(margin: 16, subviews: [
+            LMColumnView(margin: 16,
                 // Fill
                 UILabel(text: text, numberOfLines: 0, with: cellStyle),
 
                 // Baselines
-                LMColumnView(isAlignToGrid: true, subviews: [
-                    LMRowView(isAlignToBaseline: true, subviews: [
-                        UILabel(text: "First Baseline", textAlignment: .right, with: cellStyle),
-
-                        LMColumnView(weight: 1, subviews: [
+                LMColumnView(isAlignToGrid: true,
+                    LMRowView(isAlignToBaseline: true,
+                        UILabel(text: "First Baseline", textAlignment: .right,
+                            with: cellStyle),
+                        LMColumnView(weight: 1,
                             UILabel(text: text, numberOfLines: 0),
-                            UILabel(text: text, numberOfLines: 0)
-                        ], with: cellStyle)
-                    ]),
-
-                    LMRowView(isAlignToBaseline: true, baseline: .last, subviews: [
-                        UILabel(text: "Last Baseline", textAlignment: .right, with: cellStyle),
-                        
-                        LMColumnView(weight: 1, subviews: [
                             UILabel(text: text, numberOfLines: 0),
-                            UILabel(text: text, numberOfLines: 0)
-                        ], with: cellStyle)
-                    ])
-                ]),
+                            with: cellStyle
+                        )
+                    ),
+
+                    LMRowView(isAlignToBaseline: true, baseline: .last,
+                        UILabel(text: "Last Baseline", textAlignment: .right,
+                            with: cellStyle),
+
+                        LMColumnView(weight: 1,
+                            UILabel(text: text, numberOfLines: 0),
+                            UILabel(text: text, numberOfLines: 0),
+                            with: cellStyle
+                        )
+                    )
+                ),
 
                 // Weights
-                LMRowView(weight: 2, subviews: [
-                    LMColumnView(weight: 2, subviews: [
+                LMRowView(weight: 2,
+                    LMColumnView(weight: 2,
                         UILabel(text: text, numberOfLines: 0),
-                        LMSpacer()
-                    ], with: cellStyle),
+                        LMSpacer(),
+                        with: cellStyle
+                    ),
 
-                    UILabel(text: text, numberOfLines: 0, weight: 1, with: cellStyle)
-                ])
-            ])
+                    UILabel(text: text, numberOfLines: 0, weight: 1,
+                        with: cellStyle)
+                )
+            )
         )
     }
 }

@@ -28,7 +28,7 @@ class WebViewController: UIViewController, UITextFieldDelegate {
         webView.layer.borderColor = UIColor.lightGray.cgColor
 
         view = LMRootView(backgroundColor: UIColor.white,
-            subview: LMColumnView(margin: 16, subviews: [
+            LMColumnView(margin: 16,
                 webView,
                 UITextField(borderStyle: .roundedRect,
                     keyboardType: .URL,
@@ -37,7 +37,7 @@ class WebViewController: UIViewController, UITextFieldDelegate {
                 UIButton(type: .system, title: "Go") { button in
                     button.addTarget(self, action: #selector(self.loadURL), for: .primaryActionTriggered)
                 }
-            ])
+            )
         )
     }
 
