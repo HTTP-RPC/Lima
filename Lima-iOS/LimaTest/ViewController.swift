@@ -131,7 +131,12 @@ class ViewController: UITableViewController {
             viewController = TableViewCellController()
 
         case .collectionViewCell:
-            viewController = CollectionViewCellController()
+            let collectionViewLayout = UICollectionViewFlowLayout()
+
+            collectionViewLayout.itemSize = CGSize(width: 80, height: 120)
+            collectionViewLayout.sectionInset = UIEdgeInsets(top: 12, left: 12, bottom: 12, right: 12)
+
+            viewController = CollectionViewCellController(collectionViewLayout: collectionViewLayout)
 
         case .webView:
             viewController = WebViewController()
