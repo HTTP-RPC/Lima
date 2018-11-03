@@ -16,22 +16,134 @@ import UIKit
 import Lima
 
 class TableViewCellController: UITableViewController {
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // TODO
-        return 0
+    var pharmacies: [Pharmacy]!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        tableView.estimatedRowHeight = 2
+
+        tableView.register(PharmacyCell.self, forCellReuseIdentifier: PharmacyCell.description())
+
+        let jsonDecoder = JSONDecoder()
+
+        guard let url = Bundle.main.url(forResource: "pharmacies", withExtension: "json"),
+            let data = try? Data(contentsOf: url),
+            let pharmacies = try? jsonDecoder.decode([Pharmacy].self, from: data) else {
+            fatalError()
+        }
+
+        self.pharmacies = pharmacies
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // TODO
-        return 0
+        return pharmacies.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // TODO
-        return UITableViewCell(style: .default, reuseIdentifier: nil)
+        let pharmacyCell = tableView.dequeueReusableCell(withIdentifier: PharmacyCell.description(), for: indexPath) as! PharmacyCell
+
+        pharmacyCell.pharmacy = pharmacies[indexPath.row]
+
+        return pharmacyCell
+    }
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
+class Pharmacy: Decodable {
+    let name: String
+
+    let street: String
+    let city: String
+    let state: String
+    let zipCode: String
+
+    var address: String {
+        return String(format: "%@\n%@ %@ %@", street, city, state, zipCode)
+    }
+
+    let phone: String
+    let fax: String
+    let email: String
+    let distance: Double
+}
+
 class PharmacyCell: LMTableViewCell {
-    // TODO
+    var nameLabel: UILabel!
+    var distanceLabel: UILabel!
+    var addressLabel: UILabel!
+    var phoneLabel: UILabel!
+    var faxLabel: UILabel!
+    var emailLabel: UILabel!
+
+    let distanceFormatter = MeasurementFormatter()
+    let phoneNumberFormatter = PhoneNumberFormatter();
+
+    var pharmacy: Pharmacy! {
+        didSet {
+            nameLabel.text = pharmacy.name
+            distanceLabel.text = distanceFormatter.string(for: Measurement(value: pharmacy.distance, unit: UnitLength.miles))
+            addressLabel.text = pharmacy.address
+            phoneLabel.text = phoneNumberFormatter.string(for: pharmacy.phone)
+            faxLabel.text = phoneNumberFormatter.string(for: pharmacy.fax)
+            emailLabel.text = pharmacy.email
+        }
+    }
+
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+
+        let phoneIcon = UIImage(named: "PhoneIcon")
+        let faxIcon = UIImage(named: "FaxIcon")
+        let emailIcon = UIImage(named: "EmailIcon")
+
+        setContent(LMColumnView(spacing: 4,
+            LMRowView(spacing: 4, isAlignToBaseline: true,
+                UILabel(font: UIFont.preferredFont(forTextStyle: .headline), weight: 1) { self.nameLabel = $0 },
+                UILabel(textColor: UIColor.gray, font: UIFont.preferredFont(forTextStyle: .body)) { self.distanceLabel = $0 }
+            ),
+
+            UILabel(font: UIFont.preferredFont(forTextStyle: .body), numberOfLines: 0) { self.addressLabel = $0 },
+
+            LMColumnView(spacing: 4,
+                LMRowView(
+                    UIImageView(image: phoneIcon, contentMode: .scaleAspectFit, tintColor: UIColor.darkGray),
+                    UILabel(font: UIFont.preferredFont(forTextStyle: .caption1), weight: 1) { self.phoneLabel = $0 }
+                ),
+
+                LMRowView(
+                    UIImageView(image: faxIcon, contentMode: .scaleAspectFit, tintColor: UIColor.darkGray),
+                    UILabel(font: UIFont.preferredFont(forTextStyle: .caption1), weight: 1) { self.faxLabel = $0 }
+                ),
+
+                LMRowView(
+                    UIImageView(image: emailIcon, contentMode: .scaleAspectFit, tintColor: UIColor.darkGray),
+                    UILabel(font: UIFont.preferredFont(forTextStyle: .caption1), weight: 1) { self.emailLabel = $0 }
+                )
+            )
+        ), ignoreMargins: false)
+
+        distanceFormatter.unitStyle = .long
+    }
+
+    required init?(coder decoder: NSCoder) {
+        return nil
+    }
+}
+
+class PhoneNumberFormatter: Formatter {
+    override func string(for object: Any?) -> String? {
+        guard let value = object as? NSString else {
+            return nil
+        }
+
+        return String(format: "(%@) %@-%@",
+            value.substring(with: NSMakeRange(0, 3)),
+            value.substring(with: NSMakeRange(3, 3)),
+            value.substring(with: NSMakeRange(6, 4))
+        )
+    }
 }

@@ -17,9 +17,9 @@ import Lima
 
 class VerticalAlignmentViewController: UIViewController {
     override func loadView() {
-        let emailIcon = UIImage(named: "EmailIcon")
-        let faxIcon = UIImage(named: "FaxIcon")
         let phoneIcon = UIImage(named: "PhoneIcon")
+        let faxIcon = UIImage(named: "FaxIcon")
+        let emailIcon = UIImage(named: "EmailIcon")
 
         let cellStyle = { (cell: UIView) in
             cell.layer.borderWidth = 0.5
@@ -34,16 +34,16 @@ class VerticalAlignmentViewController: UIViewController {
 
                     LMRowView(weight: 1,
                         LMColumnView(margin: 8, verticalAlignment: .top,
-                            UIImageView(image: emailIcon, tintColor: UIColor.black),
-                            UIImageView(image: faxIcon, tintColor: UIColor.black),
                             UIImageView(image: phoneIcon, tintColor: UIColor.black),
+                            UIImageView(image: faxIcon, tintColor: UIColor.black),
+                            UIImageView(image: emailIcon, tintColor: UIColor.black),
                             with: cellStyle
                         ),
 
                         LMRowView(margin: 8, verticalAlignment: .top,
-                            UIImageView(image: emailIcon, tintColor: UIColor.black),
-                            UIImageView(image: faxIcon, tintColor: UIColor.black),
                             UIImageView(image: phoneIcon, tintColor: UIColor.black),
+                            UIImageView(image: faxIcon, tintColor: UIColor.black),
+                            UIImageView(image: emailIcon, tintColor: UIColor.black),
                             with: cellStyle
                         )
                     )
@@ -57,16 +57,16 @@ class VerticalAlignmentViewController: UIViewController {
 
                     LMRowView(weight: 1,
                         LMColumnView(margin: 8, verticalAlignment: .bottom,
-                            UIImageView(image: emailIcon, tintColor: UIColor.black),
-                            UIImageView(image: faxIcon, tintColor: UIColor.black),
                             UIImageView(image: phoneIcon, tintColor: UIColor.black),
+                            UIImageView(image: faxIcon, tintColor: UIColor.black),
+                            UIImageView(image: emailIcon, tintColor: UIColor.black),
                             with: cellStyle
                         ),
 
                         LMRowView(margin: 8, verticalAlignment: .bottom,
-                            UIImageView(image: emailIcon, tintColor: UIColor.black),
-                            UIImageView(image: faxIcon, tintColor: UIColor.black),
                             UIImageView(image: phoneIcon, tintColor: UIColor.black),
+                            UIImageView(image: faxIcon, tintColor: UIColor.black),
+                            UIImageView(image: emailIcon, tintColor: UIColor.black),
                             with: cellStyle
                         )
                     )
@@ -79,9 +79,9 @@ class VerticalAlignmentViewController: UIViewController {
                     UILabel(text: "Center", font: UIFont.systemFont(ofSize: 14)),
 
                     LMRowView(margin: 8, verticalAlignment: .center, weight: 1,
-                        UIImageView(image: emailIcon, tintColor: UIColor.black),
-                        UIImageView(image: faxIcon, tintColor: UIColor.black),
                         UIImageView(image: phoneIcon, tintColor: UIColor.black),
+                        UIImageView(image: faxIcon, tintColor: UIColor.black),
+                        UIImageView(image: emailIcon, tintColor: UIColor.black),
                         with: cellStyle
                     )
                 ),
@@ -93,9 +93,9 @@ class VerticalAlignmentViewController: UIViewController {
                     UILabel(text: "Fill", font: UIFont.systemFont(ofSize: 14)),
 
                     LMColumnView(margin: 8,
-                        UIImageView(image: emailIcon, contentMode: .center, tintColor: UIColor.black, weight: 1),
-                        UIImageView(image: faxIcon, contentMode: .center, tintColor: UIColor.black, weight: 1),
                         UIImageView(image: phoneIcon, contentMode: .center, tintColor: UIColor.black, weight: 1),
+                        UIImageView(image: faxIcon, contentMode: .center, tintColor: UIColor.black, weight: 1),
+                        UIImageView(image: emailIcon, contentMode: .center, tintColor: UIColor.black, weight: 1),
                         with: cellStyle
                     )
                 )
