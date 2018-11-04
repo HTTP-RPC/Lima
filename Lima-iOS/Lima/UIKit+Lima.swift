@@ -280,11 +280,12 @@ public extension UITextView {
 }
 
 public extension UITableViewCell {
-    public convenience init(text: String? = nil, detailText: String? = nil,
+    public convenience init(style: UITableViewCell.CellStyle,
+        text: String? = nil, detailText: String? = nil,
         accessoryType: UITableViewCell.AccessoryType = .none,
         selectionStyle: UITableViewCell.SelectionStyle = .blue,
         with: ((UITableViewCell) -> Void)? = nil) {
-        self.init()
+        self.init(style: style, reuseIdentifier: nil)
 
         textLabel?.text = text
         detailTextLabel?.text = text

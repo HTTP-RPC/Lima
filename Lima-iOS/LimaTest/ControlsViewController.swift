@@ -43,7 +43,7 @@ class ControlsViewController: UITableViewController {
 
             // Switch
             Section(heading: "Switch", cells: [
-                UITableViewCell(text: "On/Off", selectionStyle: .none) { tableViewCell in
+                UITableViewCell(style: .default, text: "On/Off", selectionStyle: .none) { tableViewCell in
                     tableViewCell.accessoryView = UISwitch()
                 }
             ]),
