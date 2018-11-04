@@ -67,7 +67,7 @@ Lima also provides the following view classes to simplify the use of some common
 * `LMTableViewHeaderFooterView` - extends `UITableViewHeaderFooterView` to automatically pin content to edges
 * `LMCollectionViewCell` - extends `UICollectionViewCell` to automatically pin content to edges
 
-Finally, Lima adds initializers to common UIKit views and controls to simplify their declaration in a view hieararchy. For example, the following code creates an instance of `LMColumnView` containing a `UIImageView` and a `UILabel`:
+Finally, Lima adds initializers to common UIKit views and controls to simplify their declaration in a view hieararchy. For example, the following Swift code creates an instance of `LMColumnView` containing a `UIImageView` and a `UILabel`:
 
 ```swift
 let columnView = LMColumnView(
@@ -97,7 +97,7 @@ columnView.addSubview(label)
 Although the two examples produce identical results, the first version is much more concise and easier to read.
 
 ## LMLayoutView
-`LMLayoutView` is the base class for all layout views in Lima. Among other things, it provides the following initializer, which can be used to define the view's layout margins:
+`LMLayoutView` is the base class for all layout views in Lima. Among other things, it provides the following initializer, which is used to define the view's layout margins:
 
 ```swift
 public convenience init(margin: CGFloat?,
@@ -124,7 +124,7 @@ public convenience init(margin: CGFloat? = nil,
 }
 ```
 
-This allows a layout view's margins to be conveniently defined in code. For example, this code creates a column view with top and bottom margins of 8 and leading/trailing margins of 12:
+This allows a layout view's margins to be conveniently established in code. For example:
 
 ```swift
 LMColumnView(margin: 8, leadingMargin: 12, trailingMargin: 12,
@@ -328,7 +328,7 @@ Weights in `LMRowView` are handled similarly, but in the horizontal direction.
 Note that explicitly defined width and height values take priority over weights. If a view has both a weight and a fixed dimension value, the weight value will be ignored.
 
 ## LMSpacer
-A common use for weights is to add flexible space around a view. For example, the following code could be used to center a label horizontally within a row view:
+A common use for weights is to add flexible space around a view. For example, the following code could be used to center a label horizontally within a row view (the closures used to initialize the view instances are discussed in more detail later):
 
 ```swift
 LMRowView(
@@ -353,7 +353,7 @@ Like layout views, spacer views do not consume touch events by default, so they 
 See [LMSpacer.h](https://github.com/gk-brown/Lima/blob/master/Lima-iOS/Lima/LMSpacer.h) for more information.
 
 ## LMAnchorView
-The `LMAnchorView` class optionally anchors subviews to one or more of its own edges. Although it is possible to achieve similar layouts using a combination of row, column, and spacer views, anchor views may offer a simpler alternative in some cases. 
+The `LMAnchorView` class optionally anchors subviews to one or more of its own edges. Although it is possible to achieve similar layouts using a combination of row, column, and spacer views, anchor views offer a simpler alternative in some cases. Anchor views are also the only layout container that supports Z-ordering. 
 
 Anchors are specified as an option set that defines the edges to which the view will be anchored within its parent. For example, the following code creates an anchor view containing four labels anchored to its top, left, right, and bottom edges. The labels will all be inset by 16 pixels:
 
@@ -414,7 +414,7 @@ See [LMRootView.h](https://github.com/gk-brown/Lima/blob/master/Lima-iOS/Lima/LM
 ## LMScrollView
 The `LMScrollView` class extends `UIScrollView` to simplify the declaration of scrollable content. It presents a single content view, optionally allowing the user to scroll in one or both directions.
 
-The scroll view's content is specified via its `content` property. The following `LMScrollView` properties determine how the content will be presented:
+The scroll view's content is specified via its `content` property. The following properties determine how the content will be presented:
 
 ```swift
 var isFitToWidth: Bool
@@ -573,7 +573,7 @@ public extension LMColumnView {
 }
 ```
 
-The variadic `subviews` argument allows view hierarchies to be constructed declaratively:
+The variadic `subviews` argument enables view hierarchies to be constructed declaratively:
 
 ```swift
 LMColumnView(
