@@ -97,7 +97,7 @@ columnView.addSubview(label)
 Although the two examples produce identical results, the first version is much more concise and easier to read.
 
 ## LMLayoutView
-`LMLayoutView` is the base class for all layout views in Lima. It provides the following initializer, which is used to specify its layout margins:
+`LMLayoutView` is the base class for all layout views in Lima. Among other things, it provides the following initializer, which can be used to define the view's layout margins:
 
 ```swift
 public convenience init(margin: CGFloat?,
@@ -111,7 +111,7 @@ public convenience init(margin: CGFloat?,
 
 The first argument specifies a value to apply to all margins. The remaining arguments specify the value for a particular edge. If no value is specified, the default is 0.
 
-Subclasses of `LMLayoutView`, such as `LMColumnView`, provide a default value of `nil` for all margin arguments:
+Subclasses of `LMLayoutView`, such as `LMColumnView`, provide a default of `nil` for all margin values:
 
 ```swift
 public convenience init(margin: CGFloat? = nil,
@@ -124,7 +124,7 @@ public convenience init(margin: CGFloat? = nil,
 }
 ```
 
-This allows a layout view's margins to be conveniently defined in code. For example, this code creates a column view with top and bottom margins of 8 pixels and leading/trailing margins of 12 pixels:
+This allows a layout view's margins to be conveniently defined in code. For example, this code creates a column view with top and bottom margins of 8 and leading/trailing margins of 12:
 
 ```swift
 LMColumnView(margin: 8, leadingMargin: 12, trailingMargin: 12,
@@ -134,7 +134,6 @@ LMColumnView(margin: 8, leadingMargin: 12, trailingMargin: 12,
 
 In iOS 11, the `leadingMargin` and `trailingMargin` properties map directly to the view's directional edge insets. In iOS 10, they are applied dynamically based on the system text direction.
 
-### Touch Interaction
 By default, layout views do not consume touch events. Touches that occur within the layout view but do not intersect with a subview are ignored, allowing the event to pass through the view. Assigning a non-`nil` background color to a layout view will cause the view to begin consuming events.
 
 See [LMLayoutView.h](https://github.com/gk-brown/Lima/blob/master/Lima-iOS/Lima/LMLayoutView.h) for more information.
@@ -413,9 +412,9 @@ Top and bottom layout guides are deprecated in iOS 11. Applications targeting iO
 See [LMRootView.h](https://github.com/gk-brown/Lima/blob/master/Lima-iOS/Lima/LMRootView.h) for more information.
 
 ## LMScrollView
-The `LMScrollView` class extends the standard `UIScrollView` class to simplify the declaration of scrollable content. It presents a single content view, optionally allowing the user to scroll in one or both directions.
+The `LMScrollView` class extends `UIScrollView` to simplify the declaration of scrollable content. It presents a single content view, optionally allowing the user to scroll in one or both directions.
 
-The scroll view's content is specified via the `contentView` property. The following `LMScrollView` properties determine how the content is presented:
+The scroll view's content is specified via its `content` property. The following `LMScrollView` properties determine how the content will be presented:
 
 ```swift
 var isFitToWidth: Bool
