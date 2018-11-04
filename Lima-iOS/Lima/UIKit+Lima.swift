@@ -288,7 +288,7 @@ public extension UITableViewCell {
         self.init(style: style, reuseIdentifier: nil)
 
         textLabel?.text = text
-        detailTextLabel?.text = text
+        detailTextLabel?.text = detailText
 
         self.accessoryType = accessoryType
         self.selectionStyle = selectionStyle
