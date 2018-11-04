@@ -52,11 +52,11 @@ These classes use layout constraints internally, allowing developers to easily t
 
 Lima adds the following properties to `UIView` to customize how subviews are sized and positioned within a parent view:
 
-- `width` - assigns a fixed width to a view
-- `height` - assigns a fixed height to a view
-- `weight` - when used with row and column views, determines how excess space is allocated within the parent
-- `anchor` - when used with anchor views, determines the edges to which the view will be anchored within the parent
-- `displayable` - determines whether the view will participate in auto layout (`true` by default)
+* `width` - assigns a fixed width to a view
+* `height` - assigns a fixed height to a view
+* `weight` - when used with row and column views, determines how excess space is allocated within the parent
+* `anchor` - when used with anchor views, determines the edges to which the view will be anchored within the parent
+* `displayable` - determines whether the view will participate in auto layout (`true` by default)
 
 Additionally, the `LMSpacer` class can be used to create fixed or flexible space between other views.
 
@@ -70,7 +70,7 @@ Lima also provides the following view classes to simplify the use of some common
 Finally, Lima adds initializers to common UIKit views and controls to simplify their declaration in a view hieararchy. For example, the following code creates an instance of `LMColumnView` containing a `UIImageView` and a `UILabel`:
 
 ```swift
-LMColumnView(
+let columnView = LMColumnView(
     UIImageView(image: UIImage(named: "world.png")),
     UILabel(text: "Hello, World!")
 )
@@ -444,13 +444,147 @@ Similarly, when `fitToHeight` is `true`, the scroll view will ensure that the he
 See [LMScrollView.h](https://github.com/gk-brown/Lima/blob/master/Lima-iOS/Lima/LMScrollView.h) for more information.
 
 ## LMTableViewCell and LMTableViewHeaderFooterView
-TODO
+The `LMTableViewCell` class facilitates the declaration of custom table view content. It can be used when the content options provided by the default `UITableViewCell` class are not sufficient. As noted earlier, `LMTableViewCell` automatically applies constraints to its content to enable self-sizing behavior.
+
+For example, the following code creates a table view cell containing a `UIDatePicker`. The date picker will be automatically sized to fill the width and height of the cell:
+
+```swift
+LMTableViewCell(
+    UIDatePicker(datePickerMode: .date)
+)
+```
+
+`LMTableViewCell` can also be used as the base class for custom table view cell classes. For example, the following initializer could be used by a custom cell that lays it content out in a vertical line, using a column view:
+
+```swift
+override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+    super.init(style: style, reuseIdentifier: reuseIdentifier)
+
+    setContent(LMColumnView(
+        ...
+    ), ignoreMargins: false)
+}
+```
+
+The `ignoreLayoutMargins` argument instructs the cell to pin the content to its edges instead of its layout margins. Since this value is `false` in the preceding example, the cells content will be pinned to its margins.
+
+When the `selectionStyle` property of an `LMTableViewCell` instance is set to `none`, the cell will not consume touch events. Touches that occur within the cell but do not intersect with a subview are ignored, preventing selection.
+
+Similarly, the `LMTableViewHeaderFooterView` class can be used when the content options provided by the default `UITableViewHeaderFooterView` class are not sufficient. For example, the following code creates a custom header/footer view containing a label and a switch:
+
+```swift
+LMTableViewHeaderFooterView(
+    LMRowView(
+        UILabel(text: "On/Off", weight: 1),
+        UISwitch()
+    )
+)
+```
+
+As with `LMTableViewCell`, `LMTableViewHeaderFooterView` can be used as the base class for custom table view header/footer view classes.
+
+See [LMTableView.h](https://github.com/gk-brown/Lima/blob/master/Lima-iOS/Lima/LMTableView.h) and [LMTableViewCell.h](https://github.com/gk-brown/Lima/blob/master/Lima-iOS/Lima/LMTableViewCell.h) for more information.
 
 ## LMCollectionViewCell
-TODO
+Similar to `LMTableViewCell`, the `LMCollectionViewCell` class facilitates the declaration of custom collection view content. It extends `UICollectionViewCell` and automatically applies constraints to its content to enable self-sizing behavior. For example:
+
+```swift
+override init(frame: CGRect) {
+    super.init(frame: frame)
+
+    content = LMColumnView(
+        ...
+    }
+}
+```
+
+See [LMCollectionViewCell.h](https://github.com/gk-brown/Lima/blob/master/Lima-iOS/Lima/LMCollectionViewCell.h) for more information.
 
 ## UIKit Extensions
-TODO
+In addition to the `UIView` extensions discussed earlier, Lima provides extenions to the following UIKit types to faciliate view hierarchy declaration:
+
+* `UILabel`
+* `UIImageView`
+* `UIButton`
+* `UITextField`
+* `UIDatePicker`
+* `UISwitch`
+* `UISegmentedControl`
+* `UISlider`
+* `UIStepper`
+* `UIPageControl`
+* `UIActivityIndicatorView`
+* `UIProgressView`
+* `UITextView`
+* `UITableViewCell`
+* `UITableViewHeaderFooterView`
+
+Each extension follows a similar pattern, adding an initializer that provides default values for common properties along with an optional callback that can be used to customize initialization. For example, the initializer for `UIButton` is defined as follows:
+
+```swift
+public extension UIButton {
+    public convenience init(type: UIButton.ButtonType,
+        title: String? = nil, image: UIImage? = nil,
+        tintColor: UIColor? = nil,
+        weight: CGFloat = .nan,
+        anchor: LMAnchor = [],
+        with: ((UIButton) -> Void)? = nil) {
+        ...
+    }
+}
+```
+
+This code creates a button with a title of "Press Me!", using a trailing closure to apply styling and register an event listener:
+
+```swift
+UIButton(type: .system, title: "Press Me!") { button in
+    button.contentEdgeInsets = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
+
+    button.layer.borderWidth = 0.5
+    button.layer.borderColor = UIColor.gray.cgColor
+    button.layer.cornerRadius = 6
+
+    button.addTarget(self, action: #selector(self.showGreeting), for: .primaryActionTriggered)
+}
+```
+
+Initialization callbacks are also commonly used to associate view instances with outlet variables.
+
+Extensions to Lima classes such as `LMRowView` and `LMColumnView` are also provided. For example:
+
+```swift
+public extension LMColumnView {
+    public convenience init(margin: CGFloat? = nil,
+        topMargin: CGFloat? = nil,
+        leadingMargin: CGFloat? = nil,
+        bottomMargin: CGFloat? = nil,
+        trailingMargin: CGFloat? = nil,
+        horizontalAlignment: LMHorizontalAlignment = .fill,
+        verticalAlignment: LMVerticalAlignment = .fill,
+        spacing: CGFloat = .nan,
+        isAlignToBaseline: Bool = false,
+        isAlignToGrid: Bool = false,
+        backgroundColor: UIColor? = nil,
+        weight: CGFloat = .nan,
+        anchor: LMAnchor = [],
+        _ subviews: UIView...,
+        with: ((LMColumnView) -> Void)? = nil) {
+        ...
+    }
+}
+```
+
+The variadic `subviews` argument allows view hierarchies to be constructed declaratively:
+
+```swift
+LMColumnView(
+    UILabel(text: "One"),
+    UILabel(text: "Two"),
+    UILabel(text: "Three")
+)
+```
+
+For more information, see the extension [source code](https://github.com/gk-brown/Lima/tree/master/Lima-iOS/Lima).
 
 # Deployment
 The Lima framework is a universal binary that must be "trimmed" prior to submission to the App Store:
