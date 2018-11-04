@@ -50,13 +50,6 @@ Auto layout in iOS is implemented primarily via layout constraints, which, while
 
 These classes use layout constraints internally, allowing developers to easily take advantage of auto layout while eliminating the need to manage constraints directly. They can be nested to create complex layouts that automatically adjust to orientation or screen size changes. 
 
-Lima also provides the following view classes to simplify the use of some common UIKit types:
- 
-* `LMScrollView` - extends `UIScrollView` to automatically adapt to content size
-* `LMTableViewCell` - extends `UITableViewCell` to automatically pin content to edges
-* `LMTableViewHeaderFooterView` - extends `UITableViewHeaderFooterView` to automatically pin content to edges
-* `LMCollectionViewCell` - extends `UICollectionViewCell` to automatically pin content to edges
-
 Lima adds the following properties to `UIView` to customize how subviews are sized and positioned within a parent view:
 
 - `width` - assigns a fixed width to a view
@@ -66,6 +59,13 @@ Lima adds the following properties to `UIView` to customize how subviews are siz
 - `displayable` - determines whether the view will participate in auto layout (`true` by default)
 
 Additionally, the `LMSpacer` class can be used to create fixed or flexible space between other views.
+
+Lima also provides the following view classes to simplify the use of some common UIKit types:
+ 
+* `LMScrollView` - extends `UIScrollView` to automatically adapt to content size
+* `LMTableViewCell` - extends `UITableViewCell` to automatically pin content to edges
+* `LMTableViewHeaderFooterView` - extends `UITableViewHeaderFooterView` to automatically pin content to edges
+* `LMCollectionViewCell` - extends `UICollectionViewCell` to automatically pin content to edges
 
 Finally, Lima adds initializers to common UIKit views and controls to simplify their declaration in a view hieararchy. For example, the following code creates an instance of `LMColumnView` containing a `UIImageView` and a `UILabel`:
 
