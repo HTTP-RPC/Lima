@@ -53,7 +53,7 @@ class TableViewCellController: UITableViewController {
     }
 }
 
-class Pharmacy: Decodable {
+struct Pharmacy: Decodable {
     let name: String
 
     let street: String
