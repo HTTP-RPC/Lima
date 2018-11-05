@@ -26,6 +26,7 @@ class ViewController: UITableViewController {
         case gridView
         #if os(iOS)
         case scrollView
+        case periodicTable
         #endif
         case tableViewCell
         #if os(iOS)
@@ -84,6 +85,9 @@ class ViewController: UITableViewController {
         #if os(iOS)
         case .scrollView:
             cell.textLabel?.text = "Scroll View"
+
+        case .periodicTable:
+            cell.textLabel?.text = "Periodic Table"
         #endif
 
         case .tableViewCell:
@@ -136,6 +140,9 @@ class ViewController: UITableViewController {
         #if os(iOS)
         case .scrollView:
             viewController = ScrollViewController()
+
+        case .periodicTable:
+            viewController = PeriodicTableViewController()
         #endif
 
         case .tableViewCell:

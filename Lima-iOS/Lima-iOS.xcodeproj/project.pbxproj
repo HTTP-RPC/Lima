@@ -57,6 +57,7 @@
 		379F3A38218DBC56002EA5B0 /* sample.txt in Resources */ = {isa = PBXBuildFile; fileRef = 379F3A37218DBC56002EA5B0 /* sample.txt */; };
 		379F3A3A218DBFA4002EA5B0 /* pharmacies.json in Resources */ = {isa = PBXBuildFile; fileRef = 379F3A39218DBFA4002EA5B0 /* pharmacies.json */; };
 		379F3A3C218DC6AD002EA5B0 /* daisies.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 379F3A3B218DC6AD002EA5B0 /* daisies.jpg */; };
+		37E0B96E2190FB7300AEF092 /* PeriodicTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E0B96D2190FB7300AEF092 /* PeriodicTableViewController.swift */; };
 		37E750262186169900B06374 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E750252186169900B06374 /* AppDelegate.swift */; };
 		37E750282186169900B06374 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E750272186169900B06374 /* ViewController.swift */; };
 		37E7502D2186169900B06374 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37E7502C2186169900B06374 /* Assets.xcassets */; };
@@ -142,6 +143,7 @@
 		379F3A37218DBC56002EA5B0 /* sample.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sample.txt; sourceTree = "<group>"; };
 		379F3A39218DBFA4002EA5B0 /* pharmacies.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pharmacies.json; sourceTree = "<group>"; };
 		379F3A3B218DC6AD002EA5B0 /* daisies.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = daisies.jpg; sourceTree = "<group>"; };
+		37E0B96D2190FB7300AEF092 /* PeriodicTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodicTableViewController.swift; sourceTree = "<group>"; };
 		37E750232186169900B06374 /* LimaTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LimaTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37E750252186169900B06374 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37E750272186169900B06374 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -240,6 +242,7 @@
 				375724B4218A80C100E4E9AC /* VerticalAlignmentViewController.swift */,
 				375724B1218A80C100E4E9AC /* AnchorViewController.swift */,
 				375724B2218A80C100E4E9AC /* GridViewController.swift */,
+				37E0B96D2190FB7300AEF092 /* PeriodicTableViewController.swift */,
 				378008BD218C5B96009D3C05 /* ScrollViewController.swift */,
 				378008BF218C5BA7009D3C05 /* TableViewCellController.swift */,
 				378008C1218C5BB6009D3C05 /* CollectionViewCellController.swift */,
@@ -427,6 +430,7 @@
 				378008C2218C5BB6009D3C05 /* CollectionViewCellController.swift in Sources */,
 				378008C4218C5BD7009D3C05 /* WebViewController.swift in Sources */,
 				378008C6218C5BDF009D3C05 /* MapViewController.swift in Sources */,
+				37E0B96E2190FB7300AEF092 /* PeriodicTableViewController.swift in Sources */,
 				378008C8218C5BF1009D3C05 /* AnimationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
