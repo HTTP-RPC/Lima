@@ -14,6 +14,15 @@
 
 import UIKit
 
+public extension UIColor {
+    public convenience init(_ rgb: Int, alpha: CGFloat = 1.0) {
+        self.init(red: CGFloat((rgb >> 16) & 0xff) / 255.0,
+            green: CGFloat((rgb >> 8) & 0xff) / 255.0,
+            blue: CGFloat(rgb & 0xff) / 255.0,
+            alpha: alpha)
+    }
+}
+
 public extension UILabel {
     public convenience init(text: String? = nil,
         textAlignment: NSTextAlignment = .natural, textColor: UIColor? = nil, font: UIFont? = nil,

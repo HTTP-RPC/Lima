@@ -90,7 +90,7 @@ class ColorCell: LMCollectionViewCell {
         super.init(frame: frame)
 
         selectedBackgroundView = UIView()
-        selectedBackgroundView?.backgroundColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 0.9)
+        selectedBackgroundView?.backgroundColor = UIColor(0xeeeeee, alpha: 0.9)
         selectedBackgroundView?.layer.cornerRadius = 8
 
         content = LMColumnView(

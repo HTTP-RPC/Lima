@@ -39,7 +39,7 @@ class ScrollViewController: UIViewController {
 
                 LMColumnView(margin: 20, anchor: [.bottom, .left, .right],
                     UIButton(type: .system, title: "Press Me!") { button in
-                        button.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.9)
+                        button.backgroundColor = UIColor(0xffffff, alpha: 0.9)
                         button.contentEdgeInsets = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
 
                         button.layer.borderWidth = 0.5
