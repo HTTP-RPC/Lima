@@ -52,7 +52,7 @@ These classes use layout constraints internally, allowing developers to easily t
 
 For example, the periodic table shown below was constructed using a combination of Lima's layout views and `UILabel` instances:
 
-<img src="README/periodic-table.png" width="820px"/>
+<img src="README/periodic-table.png" width="683px"/>
 
 Lima adds the following properties to `UIView` to customize how subviews are sized and positioned within a parent view:
 
@@ -80,7 +80,7 @@ let columnView = LMColumnView(
 )
 ```
 
-<img src="README/hello-world.png" width="300px"/>
+<img src="README/hello-world.png" width="250px"/>
 
 The same result could also be achieved as shown below:
 
@@ -154,7 +154,10 @@ var spacing: CGFloat
 var isAlignToBaseline: Bool
 ```
 
-The first two properties specify the horizontal and vertical alignment, respectively, of the box view's subviews. Horizontal alignment options include `fill`, `leading`, `trailing`, and `center`. Vertical alignment options include `fill`, `top`, `bottom`, and `center`. Both values are set to `fill` by default, which pins subviews along both of the box view's axes and ensures that there is no ambiguity regarding any subview's placement. Other values will cause subviews to be pinned to a single edge or centered along the given axis. 
+The first two properties specify the horizontal and vertical alignment, respectively, of the box view's subviews. Horizontal alignment options include `fill`, `leading`, `trailing`, and `center`. Vertical alignment options include `fill`, `top`, `bottom`, and `center`. Both values are set to `fill` by default, which pins subviews along both of the box view's axes and ensures that there is no ambiguity regarding any subview's placement. Other values will cause subviews to be pinned to a single edge or centered along the given axis:
+
+<img src="README/horizontal-alignment.png" width="267px"/>
+<img src="README/vertical-alignment.png" width="597px"/>
 
 For example, this code creates a row view containing three labels that are aligned horizontally to the row's leading edge and vertically to the top of the row:
 
@@ -357,7 +360,11 @@ Like layout views, spacer views do not consume touch events by default, so they 
 See [LMSpacer.h](https://github.com/gk-brown/Lima/blob/master/Lima-iOS/Lima/LMSpacer.h) for more information.
 
 ## LMAnchorView
-The `LMAnchorView` class optionally anchors subviews to one or more of its own edges. Although it is possible to achieve similar layouts using a combination of row, column, and spacer views, anchor views offer a simpler alternative in some cases. Anchor views are also the only layout container that supports Z-ordering. 
+The `LMAnchorView` class optionally anchors subviews to one or more of its own edges: 
+
+<img src="README/anchor-view.png" width="597px"/>
+
+Although it is possible to achieve similar layouts using a combination of row, column, and spacer views, anchor views offer a simpler alternative in some cases. Anchor views are also the only layout container that supports Z-ordering.
 
 Anchors are specified as an option set that defines the edges to which the view will be anchored within its parent. For example, the following code creates an anchor view containing four labels anchored to its top, left, right, and bottom edges. The labels will all be inset by 16 pixels:
 
