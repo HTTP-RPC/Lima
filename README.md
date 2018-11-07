@@ -364,7 +364,7 @@ Anchors are specified as an option set that defines the edges to which the view 
 LMAnchorView(margin: 16,
     UILabel(text: "Top", anchor: [.top]),
     UILabel(text: "Left", anchor: [.left]),
-    UILabel(text: "Right", anchor; [.right]),
+    UILabel(text: "Right", anchor: [.right]),
     UILabel(text: "Bottom", anchor: [.bottom])
 )
 ```
@@ -462,11 +462,11 @@ override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
 }
 ```
 
-The `ignoreLayoutMargins` argument instructs the cell to pin the content to its edges instead of its layout margins. Since this value is `false` in the preceding example, the cells content will be pinned to its margins.
+The `ignoreMargins` argument instructs the cell to pin the content to its edges instead of its layout margins. Since this value is `false` in the preceding example, the cells content will be pinned to its margins.
 
 When the `selectionStyle` property of an `LMTableViewCell` instance is set to `none`, the cell will not consume touch events. Touches that occur within the cell but do not intersect with a subview are ignored, preventing selection.
 
-Similarly, the `LMTableViewHeaderFooterView` class can be used when the content options provided by the default `UITableViewHeaderFooterView` class are not sufficient. For example, the following code creates a custom header/footer view containing a label and a switch:
+Like `LMTableViewCell`, the `LMTableViewHeaderFooterView` class can be used when the content options provided by the default `UITableViewHeaderFooterView` class are not sufficient. For example, the following code creates a custom header/footer view containing a label and a switch:
 
 ```swift
 LMTableViewHeaderFooterView(
@@ -477,7 +477,7 @@ LMTableViewHeaderFooterView(
 )
 ```
 
-As with `LMTableViewCell`, `LMTableViewHeaderFooterView` can be used as the base class for custom table view header/footer view classes.
+As with `LMTableViewCell`, `LMTableViewHeaderFooterView` can also be used as the base class for custom table view header/footer view classes.
 
 ## LMCollectionViewCell
 Similar to `LMTableViewCell`, the `LMCollectionViewCell` class facilitates the declaration of custom collection view content. It extends `UICollectionViewCell` and automatically applies constraints to its content to enable self-sizing behavior. For example:
@@ -566,7 +566,7 @@ public extension LMColumnView {
 }
 ```
 
-The variadic `subviews` argument enables view hierarchies to be constructed declaratively:
+Note that the variadic `subviews` argument is what enables view hierarchies to be constructed declaratively:
 
 ```swift
 LMColumnView(
