@@ -140,8 +140,6 @@ In iOS 11, the `leadingMargin` and `trailingMargin` properties map directly to t
 
 By default, layout views do not consume touch events. Touches that occur within the layout view but do not intersect with a subview are ignored, allowing the event to pass through the view. Assigning a non-`nil` background color to a layout view will cause the view to begin consuming events.
 
-See [LMLayoutView.h](https://github.com/gk-brown/Lima/blob/master/Lima-iOS/Lima/LMLayoutView.h) for more information.
-
 ## LMRowView and LMColumnView
 The `LMRowView` and `LMColumnView` classes lay out subviews in a horizontal or vertical line, respectively. Both classes extend the abstract `LMBoxView` class, which itself extends `LMLayoutView` and adds the following properties:
 
@@ -217,8 +215,6 @@ LMRowView(isAlignToBaseline: true, baseline: .last,
 )
 ```
 
-See [LMRowView.h](https://github.com/gk-brown/Lima/blob/master/Lima-iOS/Lima/LMRowView.h) for more information.
-
 ### LMColumnView
 The `LMColumnView` class arranges its subviews in a vertical line. Subviews are laid out from top to bottom in the order in which they are declared. For example, the following code creates a column view containing three labels:
 
@@ -272,8 +268,6 @@ LMColumnView(isAlignToGrid: true,
 ```
 
 Column view subviews that are not `LMRowView` instances are excluded from alignment. This allows them to be used as section breaks or headers, for example.
-
-See [LMColumnView.h](https://github.com/gk-brown/Lima/blob/master/Lima-iOS/Lima/LMColumnView.h) for more information.
 
 ### Fixed Dimensions
 Although views are typically arranged based on their intrinsic content sizes, it is occasionally necessary to assign a fixed value for a particular view dimension. Lima adds the following properties to `UIView` to support explicit size definition:
@@ -357,8 +351,6 @@ LMRowView(
 
 Like layout views, spacer views do not consume touch events by default, so they will not interfere with any user interface elements that appear underneath them. Assigning a non-`nil` background color to a spacer view causes the view to begin consuming events.
  
-See [LMSpacer.h](https://github.com/gk-brown/Lima/blob/master/Lima-iOS/Lima/LMSpacer.h) for more information.
-
 ## LMAnchorView
 The `LMAnchorView` class optionally anchors subviews to one or more of its own edges: 
 
@@ -397,8 +389,6 @@ LMAnchorView(margin: 16,
 
 If no anchor is specified for a given dimension, the subview will be centered within the anchor view for that dimension.
 
-See [LMAnchorView.h](https://github.com/gk-brown/Lima/blob/master/Lima-iOS/Lima/LMAnchorView.h) for more information.
-
 ## LMRootView
 In iOS 10, `UIKit` may in some cases assign system-defined, non-overridable values for a view's margins. In such cases, the `LMRootView` class can be used. This class always pins subviews to its edges instead of its margins, and provides the following properties that can be used to reserve additional space at the top and bottom of the view, respectively:
 
@@ -419,8 +409,6 @@ override func viewWillLayoutSubviews() {
 ```
 
 Top and bottom layout guides are deprecated in iOS 11. Applications targeting iOS 11 and later can use the `viewRespectsSystemMinimumLayoutMargins` property of `UIViewController` instead of `LMRootView` to disable system-defined margins.
-
-See [LMRootView.h](https://github.com/gk-brown/Lima/blob/master/Lima-iOS/Lima/LMRootView.h) for more information.
 
 ## LMScrollView
 The `LMScrollView` class extends `UIScrollView` to simplify the declaration of scrollable content. It presents a single content view, optionally allowing the user to scroll in one or both directions.
@@ -450,8 +438,6 @@ LMScrollView(fitToWidth: true,
 ```
 
 Similarly, when `fitToHeight` is `true`, the scroll view will ensure that the height of its content matches its own height, causing the content to wrap and scroll in the horizontal direction. The vertical scroll bar will never be shown, and the horizontal scroll bar will appear when necessary.
-
-See [LMScrollView.h](https://github.com/gk-brown/Lima/blob/master/Lima-iOS/Lima/LMScrollView.h) for more information.
 
 ## LMTableViewCell and LMTableViewHeaderFooterView
 The `LMTableViewCell` class facilitates the declaration of custom table view content. It can be used when the content options provided by the default `UITableViewCell` class are not sufficient. As noted earlier, `LMTableViewCell` automatically applies constraints to its content to enable self-sizing behavior.
@@ -493,8 +479,6 @@ LMTableViewHeaderFooterView(
 
 As with `LMTableViewCell`, `LMTableViewHeaderFooterView` can be used as the base class for custom table view header/footer view classes.
 
-See [LMTableView.h](https://github.com/gk-brown/Lima/blob/master/Lima-iOS/Lima/LMTableView.h) and [LMTableViewCell.h](https://github.com/gk-brown/Lima/blob/master/Lima-iOS/Lima/LMTableViewCell.h) for more information.
-
 ## LMCollectionViewCell
 Similar to `LMTableViewCell`, the `LMCollectionViewCell` class facilitates the declaration of custom collection view content. It extends `UICollectionViewCell` and automatically applies constraints to its content to enable self-sizing behavior. For example:
 
@@ -507,8 +491,6 @@ override init(frame: CGRect) {
     }
 }
 ```
-
-See [LMCollectionViewCell.h](https://github.com/gk-brown/Lima/blob/master/Lima-iOS/Lima/LMCollectionViewCell.h) for more information.
 
 ## UIKit Extensions
 In addition to the `UIView` extensions discussed earlier, Lima provides extenions to the following UIKit types to faciliate view hierarchy declaration:
