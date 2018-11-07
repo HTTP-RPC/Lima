@@ -60,7 +60,7 @@ Lima adds the following properties to `UIView` to customize how subviews are siz
 * `height` - assigns a fixed height to a view
 * `weight` - when used with row and column views, determines how excess space is allocated within the parent
 * `anchor` - when used with anchor views, determines the edges to which the view will be anchored within the parent
-* `displayable` - determines whether the view will participate in auto layout (`true` by default)
+* `isDisplayable` - determines whether the view will participate in auto layout (`true` by default)
 
 Additionally, the `LMSpacer` class can be used to create fixed or flexible space between other views.
 
