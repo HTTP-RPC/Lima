@@ -410,6 +410,22 @@ override func viewWillLayoutSubviews() {
 
 Top and bottom layout guides are deprecated in iOS 11. Applications targeting iOS 11 and later can use the `viewRespectsSystemMinimumLayoutMargins` property of `UIViewController` instead of `LMRootView` to disable system-defined margins.
 
+#### Live Preview
+`LMRootView` can also be used to facilitate live preview in XCode. For example:
+
+```swift
+@IBDesignable
+class PeriodicTableViewControllerPreview: LMRootView {
+    override func prepareForInterfaceBuilder() {
+        let owner = PeriodicTableViewController(nibName: nil, bundle: nil)
+
+        addSubview(owner.view)
+    }
+}
+```
+
+<img src="README/live-preview.png" width="960px"/>
+
 ## LMScrollView
 The `LMScrollView` class extends `UIScrollView` to simplify the declaration of scrollable content. It presents a single content view, optionally allowing the user to scroll in one or both directions.
 

@@ -344,3 +344,12 @@ class PeriodicTableViewController: UIViewController {
         )
     }
 }
+
+@IBDesignable
+class PeriodicTableViewControllerPreview: LMRootView {
+    override func prepareForInterfaceBuilder() {
+        let owner = PeriodicTableViewController(nibName: nil, bundle: nil)
+
+        addSubview(owner.view)
+    }
+}

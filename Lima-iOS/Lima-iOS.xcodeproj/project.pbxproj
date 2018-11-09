@@ -64,6 +64,7 @@
 		37E750302186169900B06374 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37E7502E2186169900B06374 /* LaunchScreen.storyboard */; };
 		37E75035218616A100B06374 /* Lima.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 376DD5C52186132B00A981C7 /* Lima.framework */; };
 		37E75036218616A100B06374 /* Lima.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 376DD5C52186132B00A981C7 /* Lima.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		37FAB1F0219634EF00F3E02A /* PeriodicTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37FAB1EF219634EF00F3E02A /* PeriodicTableViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -150,6 +151,7 @@
 		37E7502C2186169900B06374 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		37E7502F2186169900B06374 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		37E750312186169900B06374 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		37FAB1EF219634EF00F3E02A /* PeriodicTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PeriodicTableViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,6 +245,7 @@
 				375724B1218A80C100E4E9AC /* AnchorViewController.swift */,
 				375724B2218A80C100E4E9AC /* GridViewController.swift */,
 				37E0B96D2190FB7300AEF092 /* PeriodicTableViewController.swift */,
+				37FAB1EF219634EF00F3E02A /* PeriodicTableViewController.xib */,
 				378008BD218C5B96009D3C05 /* ScrollViewController.swift */,
 				378008BF218C5BA7009D3C05 /* TableViewCellController.swift */,
 				378008C1218C5BB6009D3C05 /* CollectionViewCellController.swift */,
@@ -375,6 +378,7 @@
 			files = (
 				37E750302186169900B06374 /* LaunchScreen.storyboard in Resources */,
 				37E7502D2186169900B06374 /* Assets.xcassets in Resources */,
+				37FAB1F0219634EF00F3E02A /* PeriodicTableViewController.xib in Resources */,
 				379F3A3C218DC6AD002EA5B0 /* daisies.jpg in Resources */,
 				379F3A38218DBC56002EA5B0 /* sample.txt in Resources */,
 				379F3A3A218DBFA4002EA5B0 /* pharmacies.json in Resources */,
