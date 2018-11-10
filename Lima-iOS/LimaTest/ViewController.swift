@@ -17,9 +17,7 @@ import Lima
 
 class ViewController: UITableViewController {
     enum Example: Int, CaseIterable {
-        #if os(iOS)
-        case controls
-        #endif
+        case greeting
         case horizontalAlignment
         case verticalAlignment
         case anchorView
@@ -31,6 +29,7 @@ class ViewController: UITableViewController {
         case tableViewCell
         #if os(iOS)
         case collectionViewCell
+        case controls
         case webView
         case mapView
         case animation
@@ -65,10 +64,8 @@ class ViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) ?? UITableViewCell(style: .default, reuseIdentifier: cellIdentifier)
 
         switch example {
-        #if os(iOS)
-        case .controls:
-            cell.textLabel?.text = "Controls"
-        #endif
+        case .greeting:
+            cell.textLabel?.text = "Greeting"
 
         case .horizontalAlignment:
             cell.textLabel?.text = "Horizontal Alignment"
@@ -97,6 +94,9 @@ class ViewController: UITableViewController {
         case .collectionViewCell:
             cell.textLabel?.text = "Collection View Cell"
 
+        case .controls:
+            cell.textLabel?.text = "Controls"
+
         case .webView:
             cell.textLabel?.text = "Web View"
 
@@ -120,10 +120,8 @@ class ViewController: UITableViewController {
 
         let viewController: UIViewController
         switch example {
-        #if os(iOS)
-        case .controls:
-            viewController = ControlsViewController(style: .grouped)
-        #endif
+        case .greeting:
+            viewController = GreetingViewController()
             
         case .horizontalAlignment:
             viewController = HorizontalAlignmentViewController()
@@ -156,6 +154,9 @@ class ViewController: UITableViewController {
             collectionViewLayout.sectionInset = UIEdgeInsets(top: 12, left: 12, bottom: 12, right: 12)
 
             viewController = CollectionViewCellController(collectionViewLayout: collectionViewLayout)
+
+        case .controls:
+            viewController = ControlsViewController(style: .grouped)
 
         case .webView:
             viewController = WebViewController()

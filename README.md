@@ -75,8 +75,8 @@ Finally, Lima adds initializers to common UIKit views and controls to simplify t
 
 ```swift
 let columnView = LMColumnView(
-    UIImageView(image: UIImage(named: "world.png")),
-    UILabel(text: "Hello, World!")
+    UIImageView(image: UIImage(named: "world.png"), contentMode: .scaleAspectFit),
+    UILabel(text: "Hello, World!", textAlignment: .center)
 )
 ```
 
@@ -86,15 +86,17 @@ The same result could also be achieved as shown below:
 
 ```swift
 let columnView = LMColumnView()
-    
+
 let imageView = UIImageView()
 imageView.image = UIImage(named: "world.png")
-    
+imageView.contentMode = .scaleAspectFit
+
 columnView.addSubview(imageView)
-    
+
 let label = UILabel()
 label.text = "Hello, World!"
-    
+label.textAlignment = .center
+
 columnView.addSubview(label)
 ```
 

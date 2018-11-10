@@ -32,6 +32,8 @@
 		373EB537218618FA001FE0C9 /* LMSpacer.m in Sources */ = {isa = PBXBuildFile; fileRef = 373EB535218618FA001FE0C9 /* LMSpacer.m */; };
 		373EB53A21861953001FE0C9 /* UIKit+Lima.m in Sources */ = {isa = PBXBuildFile; fileRef = 373EB53821861953001FE0C9 /* UIKit+Lima.m */; };
 		373EB53B21861953001FE0C9 /* UIKit+Lima.h in Headers */ = {isa = PBXBuildFile; fileRef = 373EB53921861953001FE0C9 /* UIKit+Lima.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		374C5836219702A200500E12 /* GreetingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374C5835219702A200500E12 /* GreetingViewController.swift */; };
+		374C5838219705CD00500E12 /* world.png in Resources */ = {isa = PBXBuildFile; fileRef = 374C5837219705CD00500E12 /* world.png */; };
 		374C67C32187B1EA009BF473 /* LMColumnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374C67C22187B1EA009BF473 /* LMColumnView.swift */; };
 		374C67C62187B252009BF473 /* LMRootView.m in Sources */ = {isa = PBXBuildFile; fileRef = 374C67C42187B252009BF473 /* LMRootView.m */; };
 		374C67C72187B252009BF473 /* LMRootView.h in Headers */ = {isa = PBXBuildFile; fileRef = 374C67C52187B252009BF473 /* LMRootView.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -117,6 +119,8 @@
 		373EB535218618FA001FE0C9 /* LMSpacer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMSpacer.m; sourceTree = "<group>"; };
 		373EB53821861953001FE0C9 /* UIKit+Lima.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIKit+Lima.m"; sourceTree = "<group>"; };
 		373EB53921861953001FE0C9 /* UIKit+Lima.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIKit+Lima.h"; sourceTree = "<group>"; };
+		374C5835219702A200500E12 /* GreetingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetingViewController.swift; sourceTree = "<group>"; };
+		374C5837219705CD00500E12 /* world.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = world.png; sourceTree = "<group>"; };
 		374C67C22187B1EA009BF473 /* LMColumnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMColumnView.swift; sourceTree = "<group>"; };
 		374C67C42187B252009BF473 /* LMRootView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMRootView.m; sourceTree = "<group>"; };
 		374C67C52187B252009BF473 /* LMRootView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMRootView.h; sourceTree = "<group>"; };
@@ -239,7 +243,7 @@
 			children = (
 				37E750252186169900B06374 /* AppDelegate.swift */,
 				37E750272186169900B06374 /* ViewController.swift */,
-				378008BB218C55A3009D3C05 /* ControlsViewController.swift */,
+				374C5835219702A200500E12 /* GreetingViewController.swift */,
 				375724B3218A80C100E4E9AC /* HorizontalAlignmentViewController.swift */,
 				375724B4218A80C100E4E9AC /* VerticalAlignmentViewController.swift */,
 				375724B1218A80C100E4E9AC /* AnchorViewController.swift */,
@@ -249,6 +253,7 @@
 				378008BD218C5B96009D3C05 /* ScrollViewController.swift */,
 				378008BF218C5BA7009D3C05 /* TableViewCellController.swift */,
 				378008C1218C5BB6009D3C05 /* CollectionViewCellController.swift */,
+				378008BB218C55A3009D3C05 /* ControlsViewController.swift */,
 				378008C3218C5BD7009D3C05 /* WebViewController.swift */,
 				378008C5218C5BDF009D3C05 /* MapViewController.swift */,
 				378008C7218C5BF1009D3C05 /* AnimationViewController.swift */,
@@ -256,6 +261,7 @@
 				37309682218CFA9600F5F329 /* Icons.xcassets */,
 				37E7502E2186169900B06374 /* LaunchScreen.storyboard */,
 				37E750312186169900B06374 /* Info.plist */,
+				374C5837219705CD00500E12 /* world.png */,
 				379F3A37218DBC56002EA5B0 /* sample.txt */,
 				379F3A39218DBFA4002EA5B0 /* pharmacies.json */,
 				379F3A3B218DC6AD002EA5B0 /* daisies.jpg */,
@@ -377,12 +383,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				37E750302186169900B06374 /* LaunchScreen.storyboard in Resources */,
-				37E7502D2186169900B06374 /* Assets.xcassets in Resources */,
 				37FAB1F0219634EF00F3E02A /* PeriodicTableViewController.xib in Resources */,
-				379F3A3C218DC6AD002EA5B0 /* daisies.jpg in Resources */,
+				37E7502D2186169900B06374 /* Assets.xcassets in Resources */,
+				37309683218CFA9600F5F329 /* Icons.xcassets in Resources */,
+				374C5838219705CD00500E12 /* world.png in Resources */,
 				379F3A38218DBC56002EA5B0 /* sample.txt in Resources */,
 				379F3A3A218DBFA4002EA5B0 /* pharmacies.json in Resources */,
-				37309683218CFA9600F5F329 /* Icons.xcassets in Resources */,
+				379F3A3C218DC6AD002EA5B0 /* daisies.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,7 +431,7 @@
 			files = (
 				37E750262186169900B06374 /* AppDelegate.swift in Sources */,
 				37E750282186169900B06374 /* ViewController.swift in Sources */,
-				378008BC218C55A3009D3C05 /* ControlsViewController.swift in Sources */,
+				374C5836219702A200500E12 /* GreetingViewController.swift in Sources */,
 				375724B7218A80C100E4E9AC /* HorizontalAlignmentViewController.swift in Sources */,
 				375724B8218A80C100E4E9AC /* VerticalAlignmentViewController.swift in Sources */,
 				375724B5218A80C100E4E9AC /* AnchorViewController.swift in Sources */,
@@ -432,6 +439,7 @@
 				378008BE218C5B96009D3C05 /* ScrollViewController.swift in Sources */,
 				378008C0218C5BA7009D3C05 /* TableViewCellController.swift in Sources */,
 				378008C2218C5BB6009D3C05 /* CollectionViewCellController.swift in Sources */,
+				378008BC218C55A3009D3C05 /* ControlsViewController.swift in Sources */,
 				378008C4218C5BD7009D3C05 /* WebViewController.swift in Sources */,
 				378008C6218C5BDF009D3C05 /* MapViewController.swift in Sources */,
 				37E0B96E2190FB7300AEF092 /* PeriodicTableViewController.swift in Sources */,
