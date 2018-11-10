@@ -128,7 +128,7 @@ public convenience init(margin: CGFloat? = nil,
 }
 ```
 
-This allows a layout view's margins to be conveniently established in code. For example:
+This allows a layout view's margins to be conveniently established at creation time. For example:
 
 ```swift
 LMColumnView(margin: 8, leadingMargin: 12, trailingMargin: 12,
@@ -152,7 +152,7 @@ var spacing: CGFloat
 var isAlignToBaseline: Bool
 ```
 
-The first two properties specify the horizontal and vertical alignment, respectively, of the box view's subviews. Horizontal alignment options include `fill`, `leading`, `trailing`, and `center`. Vertical alignment options include `fill`, `top`, `bottom`, and `center`. Both values are set to `fill` by default, which pins subviews along both of the box view's axes and ensures that there is no ambiguity regarding any subview's placement. Other values will cause subviews to be pinned to a single edge or centered along the given axis:
+The first two properties specify the horizontal and vertical alignment, respectively, of the box view's subviews. Horizontal alignment options include `fill`, `leading`, `trailing`, and `center`. Vertical alignment options include `fill`, `top`, `bottom`, and `center`. Both values are set to `fill` by default, which pins subviews along both of the box view's axes. Other values pin subviews to a single edge or center them along a given axis:
 
 <img src="README/horizontal-alignment.png" width="267px"/>
 <img src="README/vertical-alignment.png" width="597px"/>
