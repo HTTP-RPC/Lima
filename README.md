@@ -203,9 +203,9 @@ This code creates a row view containing three labels with different font sizes. 
 
 ```swift
 LMRowView(isAlignToBaseline: true,
-    UILabel(text: "abcd", font: UIFont.systemFont(ofSize: 12)),
-    UILabel(text: "efg", font: UIFont.systemFont(ofSize: 24)),
-    UILabel(text: "hijk", font: UIFont.systemFont(ofSize: 48))
+    UILabel(text: "abcd", font: UIFont.systemFont(ofSize: 16)),
+    UILabel(text: "efg", font: UIFont.systemFont(ofSize: 32)),
+    UILabel(text: "hijk", font: UIFont.systemFont(ofSize: 24))
 )
 ```
 

@@ -20,6 +20,7 @@ class ViewController: UITableViewController {
         case greeting
         case horizontalAlignment
         case verticalAlignment
+        case baseline
         case anchorView
         case gridView
         #if os(iOS)
@@ -72,6 +73,9 @@ class ViewController: UITableViewController {
 
         case .verticalAlignment:
             cell.textLabel?.text = "Vertical Alignment"
+
+        case .baseline:
+            cell.textLabel?.text = "Baseline"
 
         case .anchorView:
             cell.textLabel?.text = "Anchor View"
@@ -128,6 +132,9 @@ class ViewController: UITableViewController {
 
         case .verticalAlignment:
             viewController = VerticalAlignmentViewController()
+
+        case .baseline:
+            viewController = BaselineViewController()
 
         case .anchorView:
             viewController = AnchorViewController()
