@@ -27,6 +27,7 @@ class ViewController: UITableViewController {
         case scrollView
         case periodicTable
         #endif
+        case displayable
         case tableViewCell
         #if os(iOS)
         case collectionViewCell
@@ -91,6 +92,9 @@ class ViewController: UITableViewController {
             cell.textLabel?.text = "Periodic Table"
         #endif
 
+        case .displayable:
+            cell.textLabel?.text = "Displayable"
+
         case .tableViewCell:
             cell.textLabel?.text = "Table View Cell"
 
@@ -149,6 +153,9 @@ class ViewController: UITableViewController {
         case .periodicTable:
             viewController = PeriodicTableViewController()
         #endif
+
+        case .displayable:
+            viewController = DisplayableViewController()
 
         case .tableViewCell:
             viewController = TableViewCellController()

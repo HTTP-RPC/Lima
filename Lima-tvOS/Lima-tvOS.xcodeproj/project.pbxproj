@@ -56,6 +56,7 @@
 		374C583A2197066500500E12 /* GreetingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374C58392197066500500E12 /* GreetingViewController.swift */; };
 		374C583C2197066C00500E12 /* world.png in Resources */ = {isa = PBXBuildFile; fileRef = 374C583B2197066C00500E12 /* world.png */; };
 		374C58402197079A00500E12 /* BaselineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374C583F2197079A00500E12 /* BaselineViewController.swift */; };
+		374C584421970DA300500E12 /* DisplayableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374C584321970DA300500E12 /* DisplayableViewController.swift */; };
 		37E75048218616B200B06374 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37E75047218616B200B06374 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -131,6 +132,7 @@
 		374C58392197066500500E12 /* GreetingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GreetingViewController.swift; path = "../../Lima-iOS/LimaTest/GreetingViewController.swift"; sourceTree = "<group>"; };
 		374C583B2197066C00500E12 /* world.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = world.png; path = "../../Lima-iOS/LimaTest/world.png"; sourceTree = "<group>"; };
 		374C583F2197079A00500E12 /* BaselineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaselineViewController.swift; path = "../../Lima-iOS/LimaTest/BaselineViewController.swift"; sourceTree = "<group>"; };
+		374C584321970DA300500E12 /* DisplayableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DisplayableViewController.swift; path = "../../Lima-iOS/LimaTest/DisplayableViewController.swift"; sourceTree = "<group>"; };
 		37D5266E218613A5005920C3 /* Lima.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Lima.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		37D52672218613A5005920C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		37E7503E218616B100B06374 /* LimaTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LimaTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -229,6 +231,7 @@
 				374C583F2197079A00500E12 /* BaselineViewController.swift */,
 				370898F0218E3E7400D03A00 /* AnchorViewController.swift */,
 				370898FD218E3E7500D03A00 /* GridViewController.swift */,
+				374C584321970DA300500E12 /* DisplayableViewController.swift */,
 				370898F3218E3E7500D03A00 /* TableViewCellController.swift */,
 				37E75047218616B200B06374 /* Assets.xcassets */,
 				370898F6218E3E7500D03A00 /* Icons.xcassets */,
@@ -404,6 +407,7 @@
 				374C58402197079A00500E12 /* BaselineViewController.swift in Sources */,
 				3708990E218E3E7500D03A00 /* GridViewController.swift in Sources */,
 				37089901218E3E7500D03A00 /* AnchorViewController.swift in Sources */,
+				374C584421970DA300500E12 /* DisplayableViewController.swift in Sources */,
 				37089904218E3E7500D03A00 /* TableViewCellController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
