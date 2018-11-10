@@ -15,7 +15,7 @@
 import UIKit
 import Lima
 
-class BaselineViewController: UIViewController {
+class BaselineAlignmentViewController: UIViewController {
     override func loadView() {
         let cellStyle = { (cell: UIView) in
             cell.layer.borderWidth = 0.5

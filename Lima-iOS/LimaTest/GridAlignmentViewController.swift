@@ -15,7 +15,7 @@
 import UIKit
 import Lima
 
-class GridViewController: UIViewController {
+class GridAlignmentViewController: UIViewController {
     override func loadView() {
         let cellStyle = { (cell: UIView) in
             cell.layer.borderWidth = 0.5

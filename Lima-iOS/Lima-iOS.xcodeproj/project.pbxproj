@@ -34,7 +34,7 @@
 		373EB53B21861953001FE0C9 /* UIKit+Lima.h in Headers */ = {isa = PBXBuildFile; fileRef = 373EB53921861953001FE0C9 /* UIKit+Lima.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		374C5836219702A200500E12 /* GreetingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374C5835219702A200500E12 /* GreetingViewController.swift */; };
 		374C5838219705CD00500E12 /* world.png in Resources */ = {isa = PBXBuildFile; fileRef = 374C5837219705CD00500E12 /* world.png */; };
-		374C583E2197078100500E12 /* BaselineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374C583D2197078100500E12 /* BaselineViewController.swift */; };
+		374C583E2197078100500E12 /* BaselineAlignmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374C583D2197078100500E12 /* BaselineAlignmentViewController.swift */; };
 		374C584221970D6E00500E12 /* DisplayableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374C584121970D6E00500E12 /* DisplayableViewController.swift */; };
 		374C67C32187B1EA009BF473 /* LMColumnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374C67C22187B1EA009BF473 /* LMColumnView.swift */; };
 		374C67C62187B252009BF473 /* LMRootView.m in Sources */ = {isa = PBXBuildFile; fileRef = 374C67C42187B252009BF473 /* LMRootView.m */; };
@@ -43,7 +43,7 @@
 		374D720D218B06980037E83C /* LMTableViewHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374D720C218B06980037E83C /* LMTableViewHeaderFooterView.swift */; };
 		375724B0218A7B6E00E4E9AC /* LMScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375724AF218A7B6E00E4E9AC /* LMScrollView.swift */; };
 		375724B5218A80C100E4E9AC /* AnchorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375724B1218A80C100E4E9AC /* AnchorViewController.swift */; };
-		375724B6218A80C100E4E9AC /* GridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375724B2218A80C100E4E9AC /* GridViewController.swift */; };
+		375724B6218A80C100E4E9AC /* GridAlignmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375724B2218A80C100E4E9AC /* GridAlignmentViewController.swift */; };
 		375724B7218A80C100E4E9AC /* HorizontalAlignmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375724B3218A80C100E4E9AC /* HorizontalAlignmentViewController.swift */; };
 		375724B8218A80C100E4E9AC /* VerticalAlignmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375724B4218A80C100E4E9AC /* VerticalAlignmentViewController.swift */; };
 		376DD5CA2186132B00A981C7 /* Lima.h in Headers */ = {isa = PBXBuildFile; fileRef = 376DD5C82186132B00A981C7 /* Lima.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -123,7 +123,7 @@
 		373EB53921861953001FE0C9 /* UIKit+Lima.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIKit+Lima.h"; sourceTree = "<group>"; };
 		374C5835219702A200500E12 /* GreetingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetingViewController.swift; sourceTree = "<group>"; };
 		374C5837219705CD00500E12 /* world.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = world.png; sourceTree = "<group>"; };
-		374C583D2197078100500E12 /* BaselineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaselineViewController.swift; sourceTree = "<group>"; };
+		374C583D2197078100500E12 /* BaselineAlignmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaselineAlignmentViewController.swift; sourceTree = "<group>"; };
 		374C584121970D6E00500E12 /* DisplayableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayableViewController.swift; sourceTree = "<group>"; };
 		374C67C22187B1EA009BF473 /* LMColumnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMColumnView.swift; sourceTree = "<group>"; };
 		374C67C42187B252009BF473 /* LMRootView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMRootView.m; sourceTree = "<group>"; };
@@ -132,7 +132,7 @@
 		374D720C218B06980037E83C /* LMTableViewHeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMTableViewHeaderFooterView.swift; sourceTree = "<group>"; };
 		375724AF218A7B6E00E4E9AC /* LMScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMScrollView.swift; sourceTree = "<group>"; };
 		375724B1218A80C100E4E9AC /* AnchorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnchorViewController.swift; sourceTree = "<group>"; };
-		375724B2218A80C100E4E9AC /* GridViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridViewController.swift; sourceTree = "<group>"; };
+		375724B2218A80C100E4E9AC /* GridAlignmentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridAlignmentViewController.swift; sourceTree = "<group>"; };
 		375724B3218A80C100E4E9AC /* HorizontalAlignmentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorizontalAlignmentViewController.swift; sourceTree = "<group>"; };
 		375724B4218A80C100E4E9AC /* VerticalAlignmentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerticalAlignmentViewController.swift; sourceTree = "<group>"; };
 		376DD5C52186132B00A981C7 /* Lima.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Lima.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -250,12 +250,12 @@
 				374C5835219702A200500E12 /* GreetingViewController.swift */,
 				375724B3218A80C100E4E9AC /* HorizontalAlignmentViewController.swift */,
 				375724B4218A80C100E4E9AC /* VerticalAlignmentViewController.swift */,
-				374C583D2197078100500E12 /* BaselineViewController.swift */,
+				374C583D2197078100500E12 /* BaselineAlignmentViewController.swift */,
+				375724B2218A80C100E4E9AC /* GridAlignmentViewController.swift */,
 				375724B1218A80C100E4E9AC /* AnchorViewController.swift */,
-				375724B2218A80C100E4E9AC /* GridViewController.swift */,
+				374C584121970D6E00500E12 /* DisplayableViewController.swift */,
 				37E0B96D2190FB7300AEF092 /* PeriodicTableViewController.swift */,
 				37FAB1EF219634EF00F3E02A /* PeriodicTableViewController.xib */,
-				374C584121970D6E00500E12 /* DisplayableViewController.swift */,
 				378008BD218C5B96009D3C05 /* ScrollViewController.swift */,
 				378008BF218C5BA7009D3C05 /* TableViewCellController.swift */,
 				378008C1218C5BB6009D3C05 /* CollectionViewCellController.swift */,
@@ -440,11 +440,11 @@
 				374C5836219702A200500E12 /* GreetingViewController.swift in Sources */,
 				375724B7218A80C100E4E9AC /* HorizontalAlignmentViewController.swift in Sources */,
 				375724B8218A80C100E4E9AC /* VerticalAlignmentViewController.swift in Sources */,
-				374C583E2197078100500E12 /* BaselineViewController.swift in Sources */,
+				374C583E2197078100500E12 /* BaselineAlignmentViewController.swift in Sources */,
+				375724B6218A80C100E4E9AC /* GridAlignmentViewController.swift in Sources */,
 				375724B5218A80C100E4E9AC /* AnchorViewController.swift in Sources */,
-				375724B6218A80C100E4E9AC /* GridViewController.swift in Sources */,
-				378008BE218C5B96009D3C05 /* ScrollViewController.swift in Sources */,
 				374C584221970D6E00500E12 /* DisplayableViewController.swift in Sources */,
+				378008BE218C5B96009D3C05 /* ScrollViewController.swift in Sources */,
 				378008C0218C5BA7009D3C05 /* TableViewCellController.swift in Sources */,
 				378008C2218C5BB6009D3C05 /* CollectionViewCellController.swift in Sources */,
 				378008BC218C55A3009D3C05 /* ControlsViewController.swift in Sources */,

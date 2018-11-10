@@ -17,7 +17,6 @@
 		37089909218E3E7500D03A00 /* pharmacies.json in Resources */ = {isa = PBXBuildFile; fileRef = 370898F8218E3E7500D03A00 /* pharmacies.json */; };
 		3708990B218E3E7500D03A00 /* VerticalAlignmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370898FA218E3E7500D03A00 /* VerticalAlignmentViewController.swift */; };
 		3708990C218E3E7500D03A00 /* HorizontalAlignmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370898FB218E3E7500D03A00 /* HorizontalAlignmentViewController.swift */; };
-		3708990E218E3E7500D03A00 /* GridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370898FD218E3E7500D03A00 /* GridViewController.swift */; };
 		37089935218E3E8500D03A00 /* LMRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37089912218E3E8400D03A00 /* LMRootView.swift */; };
 		37089936218E3E8500D03A00 /* LMCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 37089913218E3E8400D03A00 /* LMCollectionViewCell.m */; };
 		37089937218E3E8500D03A00 /* LMSpacer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37089914218E3E8400D03A00 /* LMSpacer.swift */; };
@@ -55,9 +54,10 @@
 		37089957218E3E8500D03A00 /* LMColumnView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37089934218E3E8500D03A00 /* LMColumnView.m */; };
 		374C583A2197066500500E12 /* GreetingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374C58392197066500500E12 /* GreetingViewController.swift */; };
 		374C583C2197066C00500E12 /* world.png in Resources */ = {isa = PBXBuildFile; fileRef = 374C583B2197066C00500E12 /* world.png */; };
-		374C58402197079A00500E12 /* BaselineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374C583F2197079A00500E12 /* BaselineViewController.swift */; };
 		374C584421970DA300500E12 /* DisplayableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374C584321970DA300500E12 /* DisplayableViewController.swift */; };
 		37E75048218616B200B06374 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37E75047218616B200B06374 /* Assets.xcassets */; };
+		37ED46FE219717BA003016A1 /* BaselineAlignmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ED46FC219717BA003016A1 /* BaselineAlignmentViewController.swift */; };
+		37ED46FF219717BA003016A1 /* GridAlignmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ED46FD219717BA003016A1 /* GridAlignmentViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,7 +93,6 @@
 		370898F8218E3E7500D03A00 /* pharmacies.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = pharmacies.json; path = "../../Lima-iOS/LimaTest/pharmacies.json"; sourceTree = "<group>"; };
 		370898FA218E3E7500D03A00 /* VerticalAlignmentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VerticalAlignmentViewController.swift; path = "../../Lima-iOS/LimaTest/VerticalAlignmentViewController.swift"; sourceTree = "<group>"; };
 		370898FB218E3E7500D03A00 /* HorizontalAlignmentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HorizontalAlignmentViewController.swift; path = "../../Lima-iOS/LimaTest/HorizontalAlignmentViewController.swift"; sourceTree = "<group>"; };
-		370898FD218E3E7500D03A00 /* GridViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GridViewController.swift; path = "../../Lima-iOS/LimaTest/GridViewController.swift"; sourceTree = "<group>"; };
 		37089912218E3E8400D03A00 /* LMRootView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LMRootView.swift; path = "../../Lima-iOS/Lima/LMRootView.swift"; sourceTree = "<group>"; };
 		37089913218E3E8400D03A00 /* LMCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LMCollectionViewCell.m; path = "../../Lima-iOS/Lima/LMCollectionViewCell.m"; sourceTree = "<group>"; };
 		37089914218E3E8400D03A00 /* LMSpacer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LMSpacer.swift; path = "../../Lima-iOS/Lima/LMSpacer.swift"; sourceTree = "<group>"; };
@@ -131,13 +130,14 @@
 		37089934218E3E8500D03A00 /* LMColumnView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LMColumnView.m; path = "../../Lima-iOS/Lima/LMColumnView.m"; sourceTree = "<group>"; };
 		374C58392197066500500E12 /* GreetingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GreetingViewController.swift; path = "../../Lima-iOS/LimaTest/GreetingViewController.swift"; sourceTree = "<group>"; };
 		374C583B2197066C00500E12 /* world.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = world.png; path = "../../Lima-iOS/LimaTest/world.png"; sourceTree = "<group>"; };
-		374C583F2197079A00500E12 /* BaselineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaselineViewController.swift; path = "../../Lima-iOS/LimaTest/BaselineViewController.swift"; sourceTree = "<group>"; };
 		374C584321970DA300500E12 /* DisplayableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DisplayableViewController.swift; path = "../../Lima-iOS/LimaTest/DisplayableViewController.swift"; sourceTree = "<group>"; };
 		37D5266E218613A5005920C3 /* Lima.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Lima.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		37D52672218613A5005920C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		37E7503E218616B100B06374 /* LimaTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LimaTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37E75047218616B200B06374 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		37E75049218616B200B06374 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		37ED46FC219717BA003016A1 /* BaselineAlignmentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaselineAlignmentViewController.swift; path = "../../Lima-iOS/LimaTest/BaselineAlignmentViewController.swift"; sourceTree = "<group>"; };
+		37ED46FD219717BA003016A1 /* GridAlignmentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GridAlignmentViewController.swift; path = "../../Lima-iOS/LimaTest/GridAlignmentViewController.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,9 +228,9 @@
 				374C58392197066500500E12 /* GreetingViewController.swift */,
 				370898FB218E3E7500D03A00 /* HorizontalAlignmentViewController.swift */,
 				370898FA218E3E7500D03A00 /* VerticalAlignmentViewController.swift */,
-				374C583F2197079A00500E12 /* BaselineViewController.swift */,
+				37ED46FC219717BA003016A1 /* BaselineAlignmentViewController.swift */,
+				37ED46FD219717BA003016A1 /* GridAlignmentViewController.swift */,
 				370898F0218E3E7400D03A00 /* AnchorViewController.swift */,
-				370898FD218E3E7500D03A00 /* GridViewController.swift */,
 				374C584321970DA300500E12 /* DisplayableViewController.swift */,
 				370898F3218E3E7500D03A00 /* TableViewCellController.swift */,
 				37E75047218616B200B06374 /* Assets.xcassets */,
@@ -404,8 +404,8 @@
 				374C583A2197066500500E12 /* GreetingViewController.swift in Sources */,
 				3708990C218E3E7500D03A00 /* HorizontalAlignmentViewController.swift in Sources */,
 				3708990B218E3E7500D03A00 /* VerticalAlignmentViewController.swift in Sources */,
-				374C58402197079A00500E12 /* BaselineViewController.swift in Sources */,
-				3708990E218E3E7500D03A00 /* GridViewController.swift in Sources */,
+				37ED46FE219717BA003016A1 /* BaselineAlignmentViewController.swift in Sources */,
+				37ED46FF219717BA003016A1 /* GridAlignmentViewController.swift in Sources */,
 				37089901218E3E7500D03A00 /* AnchorViewController.swift in Sources */,
 				374C584421970DA300500E12 /* DisplayableViewController.swift in Sources */,
 				37089904218E3E7500D03A00 /* TableViewCellController.swift in Sources */,

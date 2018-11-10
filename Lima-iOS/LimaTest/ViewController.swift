@@ -20,14 +20,14 @@ class ViewController: UITableViewController {
         case greeting
         case horizontalAlignment
         case verticalAlignment
-        case baseline
+        case baselineAlignment
+        case gridAlignment
         case anchorView
-        case gridView
+        case displayable
         #if os(iOS)
         case scrollView
         case periodicTable
         #endif
-        case displayable
         case tableViewCell
         #if os(iOS)
         case collectionViewCell
@@ -75,14 +75,17 @@ class ViewController: UITableViewController {
         case .verticalAlignment:
             cell.textLabel?.text = "Vertical Alignment"
 
-        case .baseline:
-            cell.textLabel?.text = "Baseline"
+        case .baselineAlignment:
+            cell.textLabel?.text = "Baseline Alignment"
+
+        case .gridAlignment:
+            cell.textLabel?.text = "Grid Alignment"
 
         case .anchorView:
             cell.textLabel?.text = "Anchor View"
 
-        case .gridView:
-            cell.textLabel?.text = "Grid View"
+        case .displayable:
+            cell.textLabel?.text = "Displayable"
 
         #if os(iOS)
         case .scrollView:
@@ -91,9 +94,6 @@ class ViewController: UITableViewController {
         case .periodicTable:
             cell.textLabel?.text = "Periodic Table"
         #endif
-
-        case .displayable:
-            cell.textLabel?.text = "Displayable"
 
         case .tableViewCell:
             cell.textLabel?.text = "Table View Cell"
@@ -137,14 +137,17 @@ class ViewController: UITableViewController {
         case .verticalAlignment:
             viewController = VerticalAlignmentViewController()
 
-        case .baseline:
-            viewController = BaselineViewController()
+        case .baselineAlignment:
+            viewController = BaselineAlignmentViewController()
+
+        case .gridAlignment:
+            viewController = GridAlignmentViewController()
 
         case .anchorView:
             viewController = AnchorViewController()
 
-        case .gridView:
-            viewController = GridViewController()
+        case .displayable:
+            viewController = DisplayableViewController()
 
         #if os(iOS)
         case .scrollView:
@@ -153,9 +156,6 @@ class ViewController: UITableViewController {
         case .periodicTable:
             viewController = PeriodicTableViewController()
         #endif
-
-        case .displayable:
-            viewController = DisplayableViewController()
 
         case .tableViewCell:
             viewController = TableViewCellController()
