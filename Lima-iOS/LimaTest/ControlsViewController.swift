@@ -16,10 +16,10 @@ import UIKit
 import Lima
 
 class ControlsViewController: UITableViewController {
-    @IBOutlet var stepper: UIStepper!
-    @IBOutlet var slider: UISlider!
-    @IBOutlet var pageControl: UIPageControl!
-    @IBOutlet var progressView: UIProgressView!
+    var stepper: UIStepper!
+    var slider: UISlider!
+    var pageControl: UIPageControl!
+    var progressView: UIProgressView!
 
     struct Section {
         let heading: String

@@ -16,34 +16,32 @@ import UIKit
 import Lima
 
 class TableViewCellController: UITableViewController {
-    var pharmacies: [Pharmacy]!
+    var pharmacies: [Pharmacy]?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableView.estimatedRowHeight = 2
-
         tableView.register(PharmacyCell.self, forCellReuseIdentifier: PharmacyCell.description())
 
         let jsonDecoder = JSONDecoder()
 
         guard let url = Bundle.main.url(forResource: "pharmacies", withExtension: "json"),
-            let data = try? Data(contentsOf: url),
-            let pharmacies = try? jsonDecoder.decode([Pharmacy].self, from: data) else {
+            let data = try? Data(contentsOf: url) else {
             fatalError()
         }
 
-        self.pharmacies = pharmacies
+        pharmacies = try? jsonDecoder.decode([Pharmacy].self, from: data)
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return pharmacies.count
+        return pharmacies?.count ?? 0
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let pharmacyCell = tableView.dequeueReusableCell(withIdentifier: PharmacyCell.description(), for: indexPath) as! PharmacyCell
 
-        pharmacyCell.pharmacy = pharmacies[indexPath.row]
+        pharmacyCell.pharmacy = pharmacies?[indexPath.row]
 
         return pharmacyCell
     }
