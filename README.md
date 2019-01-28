@@ -13,6 +13,7 @@ Feedback is welcome and encouraged. Please feel free to [contact me](mailto:gk_b
 # Contents
 * [Getting Lima](#getting-lima)
 * [Lima Classes](#lima-classes)
+    * [LMLayoutView](#lmlayoutview)
     * [LMRowView and LMColumnView](#lmrowview-and-lmcolumnview)
     * [LMSpacer](#lmspacer)
     * [LMAnchorView](#lmanchorview)
@@ -117,20 +118,7 @@ public convenience init(margin: CGFloat?,
 
 The first argument specifies a value to apply to all margins. The remaining arguments specify the value for a particular edge. If no value is specified, the default is 0.
 
-Subclasses of `LMLayoutView`, such as `LMColumnView`, provide a default of `nil` for all margin values:
-
-```swift
-public convenience init(margin: CGFloat? = nil,
-    topMargin: CGFloat? = nil,
-    leadingMargin: CGFloat? = nil,
-    bottomMargin: CGFloat? = nil,
-    trailingMargin: CGFloat? = nil,
-    ...) {
-    ...
-}
-```
-
-This allows a layout view's margins to be conveniently established at creation time. For example:
+Subclasses of `LMLayoutView` provide a default of `nil` for all margin values. This allows a layout view's margins to be conveniently established at creation time. For example:
 
 ```swift
 LMColumnView(margin: 8, leadingMargin: 12, trailingMargin: 12,
