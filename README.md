@@ -551,7 +551,7 @@ Initialization callbacks are also commonly used to associate view instances with
 Extensions to Lima classes such as `LMRowView` and `LMColumnView` are also provided. For example:
 
 ```swift
-public extension LMColumnView {
+public extension LMRowView {
     public convenience init(margin: CGFloat? = nil,
         topMargin: CGFloat? = nil,
         leadingMargin: CGFloat? = nil,
@@ -561,12 +561,12 @@ public extension LMColumnView {
         verticalAlignment: LMVerticalAlignment = .fill,
         spacing: CGFloat = .nan,
         isAlignToBaseline: Bool = false,
-        isAlignToGrid: Bool = false,
+        baseline: LMBaseline = .first,
         backgroundColor: UIColor? = nil,
         weight: CGFloat = .nan,
         anchor: LMAnchor = [],
         _ subviews: UIView...,
-        with: ((LMColumnView) -> Void)? = nil) {
+        with: ((LMRowView) -> Void)? = nil) {
         ...
     }
 }
@@ -582,7 +582,18 @@ LMColumnView(
 )
 ```
 
-For more information, see the extension [source code](https://github.com/gk-brown/Lima/tree/master/Lima-iOS/Lima).
+For more information, see the extension source code:
+
+* [UIKit Extensions](Lima-iOS/Lima/UIKit+Lima.swift)
+* [LMRowView](Lima-iOS/Lima/LMRowView.swift)
+* [LMColumnView](Lima-iOS/Lima/LMColumnView.swift)
+* [LMSpacer](Lima-iOS/Lima/LMSpacer.swift)
+* [LMAnchorView](Lima-iOS/Lima/LMAnchorView.swift)
+* [LMRootView](Lima-iOS/Lima/LMRootView.swift)
+* [LMScrollView](Lima-iOS/Lima/LMScrollView.swift)
+* [LMTableViewCell](Lima-iOS/Lima/LMTableViewCell.swift)
+* [LMTableViewHeaderFooterView](Lima-iOS/Lima/LMTableViewHeaderFooterView.swift)
+* [LMCollectionViewCell](Lima-iOS/Lima/LMCollectionViewCell.swift)
 
 # Deployment
 The Lima framework is a universal binary that must be "trimmed" prior to submission to the App Store:
