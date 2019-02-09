@@ -65,7 +65,7 @@ Lima adds the following properties to `UIView` to customize how subviews are siz
 
 Additionally, the `LMSpacer` class can be used to create fixed or flexible space between other views.
 
-Lima also provides the following view classes to simplify the use of some common UIKit types:
+Lima also provides the following view classes to simplify the use of several UIKit types:
  
 * `LMScrollView` - extends `UIScrollView` to automatically adapt to content size
 * `LMTableViewCell` - extends `UITableViewCell` to automatically pin content to edges
