@@ -16,17 +16,17 @@ import UIKit
 import Lima
 
 class ControlsViewController: UITableViewController {
-    var stepper: UIStepper!
-    var slider: UISlider!
-    var pageControl: UIPageControl!
-    var progressView: UIProgressView!
-
     struct Section {
         let heading: String
         let cells: [UITableViewCell]
     }
 
     var sections: [Section]!
+
+    var stepper: UIStepper!
+    var slider: UISlider!
+    var pageControl: UIPageControl!
+    var progressView: UIProgressView!
 
     override func loadView() {
         super.loadView()

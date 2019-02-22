@@ -106,6 +106,8 @@ public extension UITextField {
 
         self.placeholder = placeholder
         self.textAlignment = textAlignment
+        self.textColor = textColor
+        self.font = font
         self.borderStyle = borderStyle
         self.keyboardType = keyboardType
         self.autocorrectionType = autocorrectionType
