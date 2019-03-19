@@ -1,4 +1,5 @@
 [![Releases](https://img.shields.io/github/release/gk-brown/Lima.svg)](https://github.com/gk-brown/Lima/releases)
+[![CocoaPods](https://img.shields.io/cocoapods/v/Lima.svg)](https://cocoapods.org/pods/Lima)
 
 # Introduction
 Lima is an open-source framework for simplifying development of responsive iOS and tvOS applications. The project's name comes from the nautical _L_ or _Lima_ flag, representing the first letter of the word "layout":
@@ -26,7 +27,7 @@ Feedback is welcome and encouraged. Please feel free to [contact me](mailto:gk_b
 * [Additional Information](#additional-information)
 
 # Getting Lima
-Lima is distributed as a universal binary that will run in the iOS simulator as well as on an actual device. Either iOS 10 or tvOS 10 or later is required. 
+Lima is distributed as a universal binary that will run in the iOS simulator as well as on an actual device. It is also available via [CocoaPods](https://cocoapods.org/pods/Lima). Either iOS 10 or tvOS 10 or later is required. 
 
 To install:
 
