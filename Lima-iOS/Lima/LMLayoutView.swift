@@ -15,7 +15,7 @@
 import UIKit
 
 public extension LMLayoutView {
-    public convenience init(margin: CGFloat?,
+    convenience init(margin: CGFloat?,
         topMargin: CGFloat?,
         leadingMargin: CGFloat?,
         bottomMargin: CGFloat?,

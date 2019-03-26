@@ -15,7 +15,7 @@
 import UIKit
 
 public extension LMTableViewHeaderFooterView {
-    public convenience init(_ content: UIView? = nil,
+    convenience init(_ content: UIView? = nil,
         with: ((LMTableViewHeaderFooterView) -> Void)? = nil) {
         self.init()
 

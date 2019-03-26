@@ -15,7 +15,7 @@
 import UIKit
 
 public extension LMTableViewCell {
-    public convenience init(accessoryType: UITableViewCell.AccessoryType = .none,
+    convenience init(accessoryType: UITableViewCell.AccessoryType = .none,
         selectionStyle: UITableViewCell.SelectionStyle = .blue,
         _ content: UIView? = nil,
         with: ((LMTableViewCell) -> Void)? = nil) {

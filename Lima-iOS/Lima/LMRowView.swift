@@ -15,7 +15,7 @@
 import UIKit
 
 public extension LMRowView {
-    public convenience init(margin: CGFloat? = nil,
+    convenience init(margin: CGFloat? = nil,
         topMargin: CGFloat? = nil,
         leadingMargin: CGFloat? = nil,
         bottomMargin: CGFloat? = nil,

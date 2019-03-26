@@ -15,7 +15,7 @@
 import UIKit
 
 public extension LMScrollView {
-    public convenience init(isFitToWidth: Bool = false, isFitToHeight: Bool = false,
+    convenience init(isFitToWidth: Bool = false, isFitToHeight: Bool = false,
         backgroundColor: UIColor? = nil,
         weight: CGFloat = .nan,
         anchor: LMAnchor = [],

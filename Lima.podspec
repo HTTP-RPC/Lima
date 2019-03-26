@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name            = 'Lima'
-  s.version         = '1.0.3'
+  s.version         = '1.1'
   s.license         = 'Apache License, Version 2.0'
   s.homepage        = 'https://github.com/gk-brown/Lima'
   s.author          = 'Greg Brown'
@@ -8,8 +8,8 @@ Pod::Spec.new do |s|
   s.source          = { :git => "https://github.com/gk-brown/Lima.git", :tag => s.version.to_s }
   s.swift_version   = '4.2'
 
-  s.ios.deployment_target   = '10.0'
+  s.ios.deployment_target   = '10.3'
   s.ios.source_files        = 'Lima-iOS/Lima/*.{h,m,swift}'
-  s.tvos.deployment_target  = '10.0'
+  s.tvos.deployment_target  = '10.2'
   s.tvos.source_files       = 'Lima-iOS/Lima/*.{h,m,swift}'
 end

@@ -15,7 +15,7 @@
 import UIKit
 
 public extension UIColor {
-    public convenience init(_ rgb: Int, alpha: CGFloat = 1.0) {
+    convenience init(_ rgb: Int, alpha: CGFloat = 1.0) {
         self.init(red: CGFloat((rgb >> 16) & 0xff) / 255.0,
             green: CGFloat((rgb >> 8) & 0xff) / 255.0,
             blue: CGFloat(rgb & 0xff) / 255.0,
@@ -24,7 +24,7 @@ public extension UIColor {
 }
 
 public extension UILabel {
-    public convenience init(text: String? = nil,
+    convenience init(text: String? = nil,
         textAlignment: NSTextAlignment = .natural, textColor: UIColor? = nil, font: UIFont? = nil,
         numberOfLines: Int = 1,
         lineBreakMode: NSLineBreakMode = .byTruncatingTail,
@@ -47,7 +47,7 @@ public extension UILabel {
 }
 
 public extension UIImageView {
-    public convenience init(image: UIImage? = nil,
+    convenience init(image: UIImage? = nil,
         contentMode: UIControl.ContentMode = .scaleToFill,
         tintColor: UIColor? = nil,
         width: CGFloat = .nan, height: CGFloat = .nan,
@@ -70,7 +70,7 @@ public extension UIImageView {
 }
 
 public extension UIButton {
-    public convenience init(type: UIButton.ButtonType,
+    convenience init(type: UIButton.ButtonType,
         title: String? = nil, image: UIImage? = nil,
         tintColor: UIColor? = nil,
         weight: CGFloat = .nan,
@@ -91,7 +91,7 @@ public extension UIButton {
 }
 
 public extension UITextField {
-    public convenience init(placeholder: String? = nil,
+    convenience init(placeholder: String? = nil,
         textAlignment: NSTextAlignment = .natural, textColor: UIColor? = nil, font: UIFont? = nil,
         borderStyle: UITextField.BorderStyle = .none,
         keyboardType: UIKeyboardType = .default,
@@ -124,7 +124,7 @@ public extension UITextField {
 
 #if os(iOS)
 public extension UIDatePicker {
-    public convenience init(datePickerMode: UIDatePicker.Mode = .dateAndTime,
+    convenience init(datePickerMode: UIDatePicker.Mode = .dateAndTime,
         height: CGFloat = .nan,
         weight: CGFloat = .nan,
         anchor: LMAnchor = [],
@@ -142,7 +142,7 @@ public extension UIDatePicker {
 }
 
 public extension UISwitch {
-    public convenience init(tintColor: UIColor? = nil,
+    convenience init(tintColor: UIColor? = nil,
         onTintColor: UIColor? = nil,
         with: ((UISwitch) -> Void)? = nil) {
         self.init()
@@ -156,7 +156,7 @@ public extension UISwitch {
 #endif
 
 public extension UISegmentedControl {
-    public convenience init(tintColor: UIColor? = nil,
+    convenience init(tintColor: UIColor? = nil,
         weight: CGFloat = .nan,
         anchor: LMAnchor = [],
         with: ((UISegmentedControl) -> Void)? = nil) {
@@ -173,7 +173,7 @@ public extension UISegmentedControl {
 
 #if os(iOS)
 public extension UISlider {
-    public convenience init(minimumValue: Float = 0.0, maximumValue: Float = 1.0,
+    convenience init(minimumValue: Float = 0.0, maximumValue: Float = 1.0,
         weight: CGFloat = .nan,
         anchor: LMAnchor = [],
         with: ((UISlider) -> Void)? = nil) {
@@ -190,7 +190,7 @@ public extension UISlider {
 }
 
 public extension UIStepper {
-    public convenience init(minimumValue: Double = 0.0, maximumValue: Double = 100.0,
+    convenience init(minimumValue: Double = 0.0, maximumValue: Double = 100.0,
         stepValue: Double = 1.0,
         weight: CGFloat = .nan,
         anchor: LMAnchor = [],
@@ -210,7 +210,7 @@ public extension UIStepper {
 #endif
 
 public extension UIPageControl {
-    public convenience init(pageIndicatorTintColor: UIColor? = nil,
+    convenience init(pageIndicatorTintColor: UIColor? = nil,
         currentPageIndicatorTintColor: UIColor? = nil,
         weight: CGFloat = .nan,
         anchor: LMAnchor = [],
@@ -228,7 +228,7 @@ public extension UIPageControl {
 }
 
 public extension UIActivityIndicatorView {
-    public convenience init(style: UIActivityIndicatorView.Style,
+    convenience init(style: UIActivityIndicatorView.Style,
         color: UIColor? = nil,
         weight: CGFloat = .nan,
         anchor: LMAnchor = [],
@@ -245,7 +245,7 @@ public extension UIActivityIndicatorView {
 }
 
 public extension UIProgressView {
-    public convenience init(progressTintColor: UIColor? = nil,
+    convenience init(progressTintColor: UIColor? = nil,
         trackTintColor: UIColor? = nil,
         weight: CGFloat = .nan,
         anchor: LMAnchor = [],
@@ -263,7 +263,7 @@ public extension UIProgressView {
 }
 
 public extension UITextView {
-    public convenience init(textContainer: NSTextContainer? = nil,
+    convenience init(textContainer: NSTextContainer? = nil,
         isEditable: Bool = true, isSelectable: Bool = true,
         textAlignment: NSTextAlignment = .natural, textColor: UIColor? = nil, font: UIFont? = nil,
         width: CGFloat = .nan, height: CGFloat = .nan,
@@ -291,7 +291,7 @@ public extension UITextView {
 }
 
 public extension UITableViewCell {
-    public convenience init(style: UITableViewCell.CellStyle,
+    convenience init(style: UITableViewCell.CellStyle,
         text: String? = nil, detailText: String? = nil,
         accessoryType: UITableViewCell.AccessoryType = .none,
         selectionStyle: UITableViewCell.SelectionStyle = .blue,
@@ -309,7 +309,7 @@ public extension UITableViewCell {
 }
 
 public extension UITableViewHeaderFooterView {
-    public convenience init(text: String? = nil, detailText: String? = nil,
+    convenience init(text: String? = nil, detailText: String? = nil,
         with: ((UITableViewHeaderFooterView) -> Void)? = nil) {
         self.init()
 
