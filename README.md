@@ -606,4 +606,4 @@ The Lima framework is a universal binary that must be "trimmed" prior to submiss
 * Invoke the script (e.g. `"${SRCROOT}/trim.sh" Lima`)
 
 # Additional Information
-This guide introduced the Lima framework and provided an overview of its key features. For additional information, see the the [examples](https://github.com/gk-brown/Lima/tree/master/).
+This guide introduced the Lima framework and provided an overview of its key features. For additional information, see the [examples](https://github.com/gk-brown/Lima/tree/master/).
