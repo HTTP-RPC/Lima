@@ -314,8 +314,37 @@ public extension UITableViewHeaderFooterView {
         self.init()
 
         textLabel?.text = text
-        detailTextLabel?.text = text
+        detailTextLabel?.text = detailText
 
         with?(self)
+    }
+}
+
+public extension UICollectionView {
+    convenience init(collectionViewLayout layout: UICollectionViewLayout,
+        width: CGFloat = .nan, height: CGFloat = .nan,
+        with: ((UICollectionView) -> Void)? = nil) {
+        self.init(frame: CGRect(), collectionViewLayout: layout)
+
+        self.width = width
+        self.height = height
+
+        backgroundColor = .white
+
+        with?(self)
+    }
+}
+
+public extension UICollectionViewFlowLayout {
+    convenience init(scrollDirection: UICollectionView.ScrollDirection = .vertical,
+        itemSize: CGSize = CGSize(),
+        minimumInteritemSpacing: CGFloat = 0,
+        minimumLineSpacing: CGFloat = 0) {
+        self.init()
+
+        self.scrollDirection = scrollDirection
+        self.itemSize = itemSize
+        self.minimumInteritemSpacing = minimumInteritemSpacing
+        self.minimumLineSpacing = minimumLineSpacing
     }
 }

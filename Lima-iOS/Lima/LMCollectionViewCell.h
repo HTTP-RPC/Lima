@@ -22,9 +22,17 @@ NS_ASSUME_NONNULL_BEGIN
 @interface LMCollectionViewCell : UICollectionViewCell
 
 /**
- * The cell's content.
+ * Returns the cell's content.
  */
-@property (nonatomic, nullable) UIView *content;
+- (UIView *)content;
+
+/**
+ * Sets the cell's content.
+ *
+ * @param content The cell's content.
+ * @param ignoreMargins Indicates that the cell's layout margins should be ignored.
+ */
+- (void)setContent:(nullable UIView *)content ignoreMargins:(BOOL)ignoreMargins;
 
 @end
 

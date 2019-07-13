@@ -517,6 +517,8 @@ In addition to the `UIView` extensions discussed earlier, Lima provides extenion
 * `UITextView`
 * `UITableViewCell`
 * `UITableViewHeaderFooterView`
+* `UICollectionView`
+* `UICollectionViewFlowLayout`
 
 Each extension follows a similar pattern, adding an initializer that provides default values for common properties along with an optional callback that can be used to customize initialization. For example, the initializer for `UIButton` is defined as follows:
 

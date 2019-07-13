@@ -93,7 +93,7 @@ class ColorCell: LMCollectionViewCell {
         selectedBackgroundView?.backgroundColor = UIColor(0xeeeeee, alpha: 0.9)
         selectedBackgroundView?.layer.cornerRadius = 8
 
-        content = LMColumnView(
+        setContent(LMColumnView(
             UILabel(textAlignment: .center, font: UIFont.preferredFont(forTextStyle: .caption1)) { self.nameLabel = $0 }
         ) { columnView in
             let colorSwatch = UIView()
@@ -103,7 +103,7 @@ class ColorCell: LMCollectionViewCell {
             columnView.addSubview(colorSwatch)
 
             self.colorSwatch = colorSwatch
-        }
+        }, ignoreMargins: false)
     }
 
     required init?(coder decoder: NSCoder) {

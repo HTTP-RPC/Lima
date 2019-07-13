@@ -15,7 +15,7 @@
 import UIKit
 import Lima
 
-class ControlsViewController: UITableViewController {
+class ControlsViewController: UITableViewController, UICollectionViewDataSource {
     struct Section {
         let heading: String
         let cells: [UITableViewCell]
@@ -23,10 +23,21 @@ class ControlsViewController: UITableViewController {
 
     var sections: [Section]!
 
+    var collectionView: UICollectionView!
     var stepper: UIStepper!
     var slider: UISlider!
     var pageControl: UIPageControl!
     var progressView: UIProgressView!
+
+    let icons = [
+        "AccessTimeIcon",
+        "BluetoothIcon",
+        "CheckCircleIcon",
+        "DoneIcon",
+        "EventIcon",
+        "FingerprintIcon",
+        "GradeIcon"
+    ]
 
     override func loadView() {
         super.loadView()
@@ -87,6 +98,17 @@ class ControlsViewController: UITableViewController {
                 )
             ]),
 
+            // Collection view
+            Section(heading: "Collection View", cells: [
+                LMTableViewCell(selectionStyle: .none,
+                    UICollectionView(collectionViewLayout: UICollectionViewFlowLayout(scrollDirection: .horizontal,
+                        itemSize: CGSize(width: 64, height: 64),
+                        minimumLineSpacing: 4), height: 64) {
+                        self.collectionView = $0
+                    }
+                )
+            ]),
+
             // Stepper
             Section(heading: "Stepper", cells: [
                 LMTableViewCell(selectionStyle: .none,
@@ -142,6 +164,10 @@ class ControlsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        collectionView.dataSource = self
+
+        collectionView.register(IconCell.self, forCellWithReuseIdentifier: IconCell.description())
+
         slider.minimumValue = Float(stepper.minimumValue)
         slider.maximumValue = Float(stepper.maximumValue)
 
@@ -162,6 +188,18 @@ class ControlsViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return sections[indexPath.section].cells[indexPath.row]
+    }
+
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return icons.count
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: IconCell.description(), for: indexPath) as! IconCell
+
+        cell.imageView.image = UIImage(named: icons[indexPath.item])
+
+        return cell
     }
 
     @objc func showGreeting() {
@@ -189,5 +227,21 @@ class ControlsViewController: UITableViewController {
 
         pageControl.currentPage = Int(round(value * 10))
         progressView.progress = value
+    }
+}
+
+class IconCell: LMCollectionViewCell {
+    var imageView: UIImageView!
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+
+        imageView = UIImageView(contentMode: .scaleAspectFit, tintColor: .black)
+
+        setContent(imageView, ignoreMargins: false)
+    }
+
+    required init?(coder decoder: NSCoder) {
+        return nil
     }
 }
