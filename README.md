@@ -515,6 +515,7 @@ In addition to the `UIView` extensions discussed earlier, Lima provides extenion
 * `UIActivityIndicatorView`
 * `UIProgressView`
 * `UITextView`
+* `UITableView`
 * `UITableViewCell`
 * `UITableViewHeaderFooterView`
 * `UICollectionView`
