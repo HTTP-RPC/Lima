@@ -293,16 +293,12 @@ public extension UITextView {
 public extension UITableView {
     convenience init(style: UITableView.Style = .plain,
         allowsSelection: Bool,
-        separatorStyle: UITableViewCell.SeparatorStyle = .singleLine,
-        separatorColor: UIColor? = nil,
         weight: CGFloat = .nan,
         anchor: LMAnchor = [],
         with: ((UITableView) -> Void)? = nil) {
         self.init(frame: CGRect(), style: style)
 
         self.allowsSelection = allowsSelection
-        self.separatorStyle = separatorStyle
-        self.separatorColor = separatorColor
 
         self.weight = weight
         self.anchor = anchor
