@@ -39,11 +39,11 @@ class TableViewCellController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let pharmacyCell = tableView.dequeueReusableCell(withIdentifier: PharmacyCell.description(), for: indexPath) as! PharmacyCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: PharmacyCell.description(), for: indexPath) as! PharmacyCell
 
-        pharmacyCell.pharmacy = pharmacies?[indexPath.row]
+        cell.pharmacy = pharmacies?[indexPath.row]
 
-        return pharmacyCell
+        return cell
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
