@@ -174,6 +174,7 @@ public extension UISegmentedControl {
 #if os(iOS)
 public extension UISlider {
     convenience init(minimumValue: Float = 0.0, maximumValue: Float = 1.0,
+        width: CGFloat = .nan,  
         weight: CGFloat = .nan,
         anchor: LMAnchor = [],
         with: ((UISlider) -> Void)? = nil) {
