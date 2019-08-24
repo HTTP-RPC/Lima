@@ -183,6 +183,7 @@ public extension UISlider {
         self.minimumValue = minimumValue
         self.maximumValue = maximumValue
 
+        self.width = width
         self.weight = weight
         self.anchor = anchor
 
