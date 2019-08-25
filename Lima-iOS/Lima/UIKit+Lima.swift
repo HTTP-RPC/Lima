@@ -28,6 +28,7 @@ public extension UILabel {
         textAlignment: NSTextAlignment = .natural, textColor: UIColor? = nil, font: UIFont? = nil,
         numberOfLines: Int = 1,
         lineBreakMode: NSLineBreakMode = .byTruncatingTail,
+        width: CGFloat = .nan,
         weight: CGFloat = .nan,
         anchor: LMAnchor = [],
         with: ((UILabel) -> Void)? = nil) {
@@ -39,6 +40,7 @@ public extension UILabel {
         self.font = font
         self.numberOfLines = numberOfLines
 
+        self.width = width
         self.weight = weight
         self.anchor = anchor
 
