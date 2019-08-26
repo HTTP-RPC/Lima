@@ -175,7 +175,7 @@ public extension UISegmentedControl {
 
 #if os(iOS)
 public extension UISlider {
-    convenience init(minimumValue: Float = 0.0, maximumValue: Float = 1.0,
+    convenience init(minimumValue: Float = 0.0, maximumValue: Float = 1.0, isContinuous: Bool = true,
         width: CGFloat = .nan,  
         weight: CGFloat = .nan,
         anchor: LMAnchor = [],
@@ -184,6 +184,8 @@ public extension UISlider {
 
         self.minimumValue = minimumValue
         self.maximumValue = maximumValue
+
+        self.isContinuous = isContinuous
 
         self.width = width
         self.weight = weight
