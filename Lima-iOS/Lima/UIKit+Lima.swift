@@ -298,7 +298,7 @@ public extension UITextView {
 
 public extension UITableView {
     convenience init(style: UITableView.Style = .plain,
-        allowsSelection: Bool,
+        allowsSelection: Bool = true,
         weight: CGFloat = .nan,
         anchor: LMAnchor = [],
         with: ((UITableView) -> Void)? = nil) {
