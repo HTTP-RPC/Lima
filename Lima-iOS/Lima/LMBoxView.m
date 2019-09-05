@@ -20,11 +20,7 @@
     self = [super initWithFrame:frame];
 
     if (self) {
-        if (@available(iOS 11, tvOS 11, *)) {
-            _spacing = NAN;
-        } else {
-            _spacing = 8;
-        }
+        _spacing = NAN;
     }
 
     return self;
