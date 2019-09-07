@@ -99,6 +99,7 @@ public extension UITextField {
         keyboardType: UIKeyboardType = .default,
         autocorrectionType: UITextAutocorrectionType = .default,
         autocapitalizationType: UITextAutocapitalizationType = .sentences,
+        textContentType: UITextContentType? = nil,
         isSecureTextEntry: Bool = false,
         width: CGFloat = .nan,
         weight: CGFloat = .nan,
@@ -114,6 +115,7 @@ public extension UITextField {
         self.keyboardType = keyboardType
         self.autocorrectionType = autocorrectionType
         self.autocapitalizationType = autocapitalizationType
+        self.textContentType = textContentType
         self.isSecureTextEntry = isSecureTextEntry
 
         self.width = width
