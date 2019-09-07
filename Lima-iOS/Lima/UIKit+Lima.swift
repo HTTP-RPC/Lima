@@ -159,6 +159,7 @@ public extension UISwitch {
 
 public extension UISegmentedControl {
     convenience init(tintColor: UIColor? = nil,
+        width: CGFloat = .nan,
         weight: CGFloat = .nan,
         anchor: LMAnchor = [],
         with: ((UISegmentedControl) -> Void)? = nil) {
@@ -166,6 +167,7 @@ public extension UISegmentedControl {
 
         self.tintColor = tintColor
 
+        self.width = width
         self.weight = weight
         self.anchor = anchor
 
