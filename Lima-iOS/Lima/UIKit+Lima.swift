@@ -97,6 +97,7 @@ public extension UITextField {
         textAlignment: NSTextAlignment = .natural, textColor: UIColor? = nil, font: UIFont? = nil,
         borderStyle: UITextField.BorderStyle = .none,
         keyboardType: UIKeyboardType = .default,
+        returnKeyType: UIReturnKeyType = .default,
         autocorrectionType: UITextAutocorrectionType = .default,
         autocapitalizationType: UITextAutocapitalizationType = .sentences,
         textContentType: UITextContentType? = nil,
@@ -113,6 +114,7 @@ public extension UITextField {
         self.font = font
         self.borderStyle = borderStyle
         self.keyboardType = keyboardType
+        self.returnKeyType = returnKeyType
         self.autocorrectionType = autocorrectionType
         self.autocapitalizationType = autocapitalizationType
         self.textContentType = textContentType
