@@ -42,6 +42,8 @@ class WebViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        viewRespectsSystemMinimumLayoutMargins = false
+
         urlTextField.text = "http://"
 
         urlTextField.delegate = self
@@ -77,11 +79,11 @@ class WebViewController: UIViewController, UITextFieldDelegate {
     @objc func keyboardWillShow(_ notification: Notification) {
         let frame = notification.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! CGRect
 
-        // TODO view.bottomMargin = frame.height
+        view.bottomMargin = frame.height
     }
 
     @objc func keyboardWillHide(_ notification: Notification) {
-        // TODO view.bottomPadding = 0
+        view.bottomMargin = 0
     }
 
     @objc func loadURL() {

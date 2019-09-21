@@ -55,6 +55,8 @@ class MapViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        viewRespectsSystemMinimumLayoutMargins = false
+
         latitudeTextField.delegate = self
         longitudeTextField.delegate = self
     }
@@ -89,11 +91,11 @@ class MapViewController: UIViewController, UITextFieldDelegate {
     @objc func keyboardWillShow(_ notification: Notification) {
         let frame = notification.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! CGRect
 
-        // TODO view.bottomMargin = frame.height
+        view.bottomMargin = frame.height
     }
 
     @objc func keyboardWillHide(_ notification: Notification) {
-        // TODO view.bottomMargin = 0
+        view.bottomMargin = 0
     }
 
     @objc func showLocation() {

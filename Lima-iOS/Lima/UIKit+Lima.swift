@@ -23,6 +23,64 @@ public extension UIColor {
     }
 }
 
+public extension UIView {
+    var topMargin: CGFloat {
+        get {
+            return directionalLayoutMargins.top
+        }
+
+        set {
+            var margins = directionalLayoutMargins
+
+            margins.top = newValue
+
+            directionalLayoutMargins = margins
+        }
+    }
+
+    var leadingMargin: CGFloat {
+        get {
+            return directionalLayoutMargins.leading
+        }
+
+        set {
+            var margins = directionalLayoutMargins
+
+            margins.leading = newValue
+
+            directionalLayoutMargins = margins
+        }
+    }
+
+    var bottomMargin: CGFloat {
+        get {
+            return directionalLayoutMargins.bottom
+        }
+
+        set {
+            var margins = directionalLayoutMargins
+
+            margins.bottom = newValue
+
+            directionalLayoutMargins = margins
+        }
+    }
+
+    var trailingMargin: CGFloat {
+        get {
+            return directionalLayoutMargins.trailing
+        }
+
+        set {
+            var margins = directionalLayoutMargins
+
+            margins.trailing = newValue
+
+            directionalLayoutMargins = margins
+        }
+    }
+}
+
 public extension UILabel {
     convenience init(text: String? = nil,
         textAlignment: NSTextAlignment = .natural, textColor: UIColor? = nil, font: UIFont? = nil,
