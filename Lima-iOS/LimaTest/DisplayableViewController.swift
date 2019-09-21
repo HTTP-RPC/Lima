@@ -29,27 +29,25 @@ class DisplayableViewController: UIViewController {
             label.weight = 1
         }
 
-        view = LMRootView(backgroundColor: UIColor.white,
-            LMColumnView(margin: 16, spacing: 16,
-                LMRowView(weight: 1,
-                    UILabel(text: "One", with: labelStyle),
-                    UILabel(text: "Two") { labelStyle($0); self.secondLabel = $0 },
-                    UILabel(text: "Three", with: labelStyle)
-                ),
+        view = LMColumnView(margin: 16, spacing: 16, backgroundColor: UIColor.white,
+            LMRowView(weight: 1,
+                UILabel(text: "One", with: labelStyle),
+                UILabel(text: "Two") { labelStyle($0); self.secondLabel = $0 },
+                UILabel(text: "Three", with: labelStyle)
+            ),
 
-                UISegmentedControl() { segmentedControl in
-                    segmentedControl.insertSegment(withTitle: "Displayable", at: 0, animated: false)
-                    segmentedControl.insertSegment(withTitle: "Not Displayable", at: 1, animated: false)
+            UISegmentedControl() { segmentedControl in
+                segmentedControl.insertSegment(withTitle: "Displayable", at: 0, animated: false)
+                segmentedControl.insertSegment(withTitle: "Not Displayable", at: 1, animated: false)
 
-                    segmentedControl.selectedSegmentIndex = 0
+                segmentedControl.selectedSegmentIndex = 0
 
-                    self.update(segmentedControl)
+                self.update(segmentedControl)
 
-                    segmentedControl.addTarget(self, action: #selector(self.update(_:)), for: .valueChanged)
-                },
+                segmentedControl.addTarget(self, action: #selector(self.update(_:)), for: .valueChanged)
+            },
 
-                LMSpacer(weight: 4)
-            )
+            LMSpacer(weight: 4)
         )
     }
 

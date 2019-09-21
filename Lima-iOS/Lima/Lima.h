@@ -26,7 +26,6 @@ FOUNDATION_EXPORT const unsigned char LimaVersionString[];
 #import "LMColumnView.h"
 #import "LMRowView.h"
 #import "LMAnchorView.h"
-#import "LMRootView.h"
 #import "LMSpacer.h"
 #import "LMScrollView.h"
 #import "LMTableViewCell.h"

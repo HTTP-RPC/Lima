@@ -30,27 +30,25 @@ class MapViewController: UIViewController, UITextFieldDelegate {
         mapView.layer.borderWidth = 0.5
         mapView.layer.borderColor = UIColor.lightGray.cgColor
 
-        view = LMRootView(backgroundColor: UIColor.white,
-            LMColumnView(margin: 16,
-                mapView,
-                LMRowView(
-                    UITextField(placeholder: "Latitude",
-                        borderStyle: .roundedRect,
-                        keyboardType: .numbersAndPunctuation,
-                        autocorrectionType: .no,
-                        autocapitalizationType: .none,
-                        weight: 1) { self.latitudeTextField = $0 },
-                    UITextField(placeholder: "Longitude",
-                        borderStyle: .roundedRect,
-                        keyboardType: .numbersAndPunctuation,
-                        autocorrectionType: .no,
-                        autocapitalizationType: .none,
-                        weight: 1) { self.longitudeTextField = $0 }
-                ),
-                UIButton(type: .system, title: "Go") { button in
-                    button.addTarget(self, action: #selector(self.showLocation), for: .primaryActionTriggered)
-                }
-            )
+        view = LMColumnView(margin: 16, backgroundColor: UIColor.white,
+            mapView,
+            LMRowView(
+                UITextField(placeholder: "Latitude",
+                    borderStyle: .roundedRect,
+                    keyboardType: .numbersAndPunctuation,
+                    autocorrectionType: .no,
+                    autocapitalizationType: .none,
+                    weight: 1) { self.latitudeTextField = $0 },
+                UITextField(placeholder: "Longitude",
+                    borderStyle: .roundedRect,
+                    keyboardType: .numbersAndPunctuation,
+                    autocorrectionType: .no,
+                    autocapitalizationType: .none,
+                    weight: 1) { self.longitudeTextField = $0 }
+            ),
+            UIButton(type: .system, title: "Go") { button in
+                button.addTarget(self, action: #selector(self.showLocation), for: .primaryActionTriggered)
+            }
         )
     }
 
@@ -89,16 +87,13 @@ class MapViewController: UIViewController, UITextFieldDelegate {
     }
 
     @objc func keyboardWillShow(_ notification: Notification) {
-        let rootView = view as! LMRootView
         let frame = notification.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! CGRect
 
-        rootView.bottomPadding = frame.height
+        // TODO view.bottomMargin = frame.height
     }
 
     @objc func keyboardWillHide(_ notification: Notification) {
-        let rootView = view as! LMRootView
-
-        rootView.bottomPadding = 0
+        // TODO view.bottomMargin = 0
     }
 
     @objc func showLocation() {

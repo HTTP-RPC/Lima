@@ -18,7 +18,6 @@ Feedback is welcome and encouraged. Please feel free to [contact me](mailto:gk_b
     * [LMRowView and LMColumnView](#lmrowview-and-lmcolumnview)
     * [LMSpacer](#lmspacer)
     * [LMAnchorView](#lmanchorview)
-    * [LMRootView](#lmrootview)
     * [LMScrollView](#lmscrollview)
     * [LMTableViewCell and LMTableViewHeaderFooterView](#lmtableviewcell-and-lmtableviewheaderfooterview)
     * [LMCollectionViewCell](#lmcollectionviewcell)
@@ -27,7 +26,7 @@ Feedback is welcome and encouraged. Please feel free to [contact me](mailto:gk_b
 * [Additional Information](#additional-information)
 
 # Getting Lima
-Lima is distributed as a universal binary that will run in the simulator as well as on an actual device. It is also available via [CocoaPods](https://cocoapods.org/pods/Lima). Either iOS 10 or tvOS 10 or later is required. 
+Lima is distributed as a universal binary that will run in the simulator as well as on an actual device. It is also available via [CocoaPods](https://cocoapods.org/pods/Lima). Either iOS 11 or tvOS 11 or later is required. 
 
 To install:
 
@@ -48,7 +47,6 @@ Auto layout in iOS is implemented primarily via layout constraints, which, while
 * `LMRowView` - arranges subviews in a horizontal line
 * `LMColumnView` - arranges subviews in a vertical line
 * `LMAnchorView` - anchors subviews to one or more edges
-* `LMRootView` - provides a margin-independent root for a view hierarchy
 
 These classes use layout constraints internally, allowing developers to easily take advantage of auto layout while eliminating the need to manage constraints directly. They can be nested to create complex layouts that automatically adjust to orientation or screen size changes. 
 
@@ -127,8 +125,6 @@ LMColumnView(margin: 8, leadingMargin: 12, trailingMargin: 12,
 )
 ```
 
-In iOS 11, the `leadingMargin` and `trailingMargin` properties map directly to the view's directional edge insets. In iOS 10, they are applied dynamically based on the system text direction.
-
 By default, layout views do not consume touch events. Touches that occur within the layout view but do not intersect with a subview are ignored, allowing the event to pass through the view. Assigning a non-`nil` background color to a layout view will cause the view to begin consuming events.
 
 ## LMRowView and LMColumnView
@@ -169,8 +165,6 @@ LMRowView(spacing: 16,
     UILabel(text: "Three")
 )
 ```
-
-In iOS 10, the default spacing value is 8. In iOS 11 and later, the system default is used.
 
 The `isAlignToBaseline` property can be used to manage how subviews are vertically aligned with respect to one another. This is discussed in more detail below. Baseline alignmnent is disabled by default.
 
@@ -380,43 +374,6 @@ LMAnchorView(margin: 16,
 
 If no anchor is specified for a given dimension, the subview will be centered within the anchor view for that dimension.
 
-## LMRootView
-In iOS 10, `UIKit` may in some cases assign system-defined, non-overridable values for a view's margins. In such cases, the `LMRootView` class can be used. This class always pins subviews to its edges instead of its margins, and provides the following properties that can be used to reserve additional space at the top and bottom of the view, respectively:
-
-```swift
-var topPadding: CGFloat
-var bottomPadding: CGFloat
-```
-
-For example, a view controller might override `viewWillLayoutSubviews` to set the root view's top and bottom spacing to the length of its top and bottom layout guides, respectively, ensuring that any subviews are positioned between the guides:
-
-```swift
-override func viewWillLayoutSubviews() {
-    super.viewWillLayoutSubviews()
-
-    rootView.topPadding = topLayoutGuide.length
-    rootView.bottomPadding = bottomLayoutGuide.length
-}
-```
-
-Top and bottom layout guides are deprecated in iOS 11. Applications targeting iOS 11 and later can use the `viewRespectsSystemMinimumLayoutMargins` property of `UIViewController` instead of `LMRootView` to disable system-defined margins.
-
-#### Live Preview
-`LMRootView` can also be used to facilitate live preview in XCode. For example:
-
-```swift
-@IBDesignable
-class PeriodicTableViewControllerPreview: LMRootView {
-    override func prepareForInterfaceBuilder() {
-        let owner = PeriodicTableViewController(nibName: nil, bundle: nil)
-
-        addSubview(owner.view)
-    }
-}
-```
-
-<img src="README/live-preview.png" width="960px"/>
-
 ## LMScrollView
 The `LMScrollView` class extends `UIScrollView` to simplify the declaration of scrollable content. It presents a single content view, optionally allowing the user to scroll in one or both directions.
 
@@ -593,7 +550,6 @@ For more information, see the extension source code:
 * [LMColumnView](Lima-iOS/Lima/LMColumnView.swift)
 * [LMSpacer](Lima-iOS/Lima/LMSpacer.swift)
 * [LMAnchorView](Lima-iOS/Lima/LMAnchorView.swift)
-* [LMRootView](Lima-iOS/Lima/LMRootView.swift)
 * [LMScrollView](Lima-iOS/Lima/LMScrollView.swift)
 * [LMTableViewCell](Lima-iOS/Lima/LMTableViewCell.swift)
 * [LMTableViewHeaderFooterView](Lima-iOS/Lima/LMTableViewHeaderFooterView.swift)

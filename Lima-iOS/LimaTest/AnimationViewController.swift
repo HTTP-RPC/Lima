@@ -24,32 +24,30 @@ class AnimationViewController: UIViewController {
 
         let text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 
-        view = LMRootView(
-            LMAnchorView(
-                UIImageView(image: UIImage(named: "daisies.jpg"), contentMode: .scaleAspectFill, anchor: [.all]),
+        view = LMAnchorView(margin: 0,
+            UIImageView(image: UIImage(named: "daisies.jpg"), contentMode: .scaleAspectFill, anchor: [.all]),
 
-                LMColumnView(spacing: 0, backgroundColor: backgroundColor, anchor: [.bottom, .left, .right],
-                    LMColumnView(margin: 8, verticalAlignment: .top, spacing: 0,
-                        UILabel(text: text,
-                            textColor: textColor,
-                            font: UIFont.systemFont(ofSize: 14),
-                            numberOfLines: 0)
-                    ) { detailView in
-                        detailView.clipsToBounds = true
+            LMColumnView(spacing: 0, backgroundColor: backgroundColor, anchor: [.bottom, .left, .right],
+                LMColumnView(margin: 8, verticalAlignment: .top, spacing: 0,
+                    UILabel(text: text,
+                        textColor: textColor,
+                        font: UIFont.systemFont(ofSize: 14),
+                        numberOfLines: 0)
+                ) { detailView in
+                    detailView.clipsToBounds = true
 
-                        self.detailView = detailView
-                    },
+                    self.detailView = detailView
+                },
 
-                    LMSpacer(height: 0.5, backgroundColor: UIColor.gray),
+                LMSpacer(height: 0.5, backgroundColor: UIColor.gray),
 
-                    LMRowView(margin: 8,
-                        UILabel(text: "Show Detail",
-                            textColor: textColor,
-                            weight: 1),
-                        UISwitch(onTintColor: UIColor.lightGray) { detailSwitch in
-                            detailSwitch.addTarget(self, action: #selector(self.toggleDetail(_:)), for: .valueChanged)
-                        }
-                    )
+                LMRowView(margin: 8,
+                    UILabel(text: "Show Detail",
+                        textColor: textColor,
+                        weight: 1),
+                    UISwitch(onTintColor: UIColor.lightGray) { detailSwitch in
+                        detailSwitch.addTarget(self, action: #selector(self.toggleDetail(_:)), for: .valueChanged)
+                    }
                 )
             )
         )
@@ -57,6 +55,8 @@ class AnimationViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+
+        viewRespectsSystemMinimumLayoutMargins = false
 
         detailView.height = 0
     }

@@ -27,17 +27,15 @@ class WebViewController: UIViewController, UITextFieldDelegate {
         webView.layer.borderWidth = 0.5
         webView.layer.borderColor = UIColor.lightGray.cgColor
 
-        view = LMRootView(backgroundColor: UIColor.white,
-            LMColumnView(margin: 16,
-                webView,
-                UITextField(borderStyle: .roundedRect,
-                    keyboardType: .URL,
-                    autocorrectionType: .no,
-                    autocapitalizationType: .none) { self.urlTextField = $0 },
-                UIButton(type: .system, title: "Go") { button in
-                    button.addTarget(self, action: #selector(self.loadURL), for: .primaryActionTriggered)
-                }
-            )
+        view = LMColumnView(margin: 16, backgroundColor: UIColor.white,
+            webView,
+            UITextField(borderStyle: .roundedRect,
+                keyboardType: .URL,
+                autocorrectionType: .no,
+                autocapitalizationType: .none) { self.urlTextField = $0 },
+            UIButton(type: .system, title: "Go") { button in
+                button.addTarget(self, action: #selector(self.loadURL), for: .primaryActionTriggered)
+            }
         )
     }
 
@@ -77,16 +75,13 @@ class WebViewController: UIViewController, UITextFieldDelegate {
     }
 
     @objc func keyboardWillShow(_ notification: Notification) {
-        let rootView = view as! LMRootView
         let frame = notification.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! CGRect
 
-        rootView.bottomPadding = frame.height
+        // TODO view.bottomMargin = frame.height
     }
 
     @objc func keyboardWillHide(_ notification: Notification) {
-        let rootView = view as! LMRootView
-
-        rootView.bottomPadding = 0
+        // TODO view.bottomPadding = 0
     }
 
     @objc func loadURL() {

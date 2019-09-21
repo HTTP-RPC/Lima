@@ -22,39 +22,39 @@ class ScrollViewController: UIViewController {
     let dispatchQueue = DispatchQueue(label: "Dispatch Queue")
 
     override func loadView() {
-        view = LMRootView(backgroundColor: UIColor.white,
-            LMAnchorView(
-                LMScrollView(isFitToWidth: true, anchor: [.all],
-                    LMColumnView(margin: 10, spacing: 10,
-                        UILabel(numberOfLines: 0, lineBreakMode: .byWordWrapping) { self.label1 = $0 },
-                        UILabel(numberOfLines: 0, lineBreakMode: .byWordWrapping) { self.label2 = $0 }
-                    )
-                ) { scrollView in
-                    let refreshControl = UIRefreshControl()
-
-                    refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
-
-                    scrollView.refreshControl = refreshControl
-                },
-
-                LMColumnView(margin: 20, anchor: [.bottom, .left, .right],
-                    UIButton(type: .system, title: "Press Me!") { button in
-                        button.backgroundColor = UIColor(0xffffff, alpha: 0.9)
-                        button.contentEdgeInsets = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
-
-                        button.layer.borderWidth = 0.5
-                        button.layer.borderColor = UIColor.gray.cgColor
-                        button.layer.cornerRadius = 6
-
-                        button.addTarget(self, action: #selector(self.showGreeting), for: .primaryActionTriggered)
-                    }
+        view = LMAnchorView(margin: 0, backgroundColor: UIColor.white,
+            LMScrollView(isFitToWidth: true, anchor: [.all],
+                LMColumnView(margin: 10, spacing: 10,
+                    UILabel(numberOfLines: 0, lineBreakMode: .byWordWrapping) { self.label1 = $0 },
+                    UILabel(numberOfLines: 0, lineBreakMode: .byWordWrapping) { self.label2 = $0 }
                 )
+            ) { scrollView in
+                let refreshControl = UIRefreshControl()
+
+                refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
+
+                scrollView.refreshControl = refreshControl
+            },
+
+            LMColumnView(margin: 20, anchor: [.bottom, .left, .right],
+                UIButton(type: .system, title: "Press Me!") { button in
+                    button.backgroundColor = UIColor(0xffffff, alpha: 0.9)
+                    button.contentEdgeInsets = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
+
+                    button.layer.borderWidth = 0.5
+                    button.layer.borderColor = UIColor.gray.cgColor
+                    button.layer.cornerRadius = 6
+
+                    button.addTarget(self, action: #selector(self.showGreeting), for: .primaryActionTriggered)
+                }
             )
         )
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        viewRespectsSystemMinimumLayoutMargins = false
 
         guard let textPath = Bundle.main.path(forResource: "sample", ofType: "txt"),
             let text = try? String(contentsOfFile: textPath, encoding: String.Encoding.ascii) else {

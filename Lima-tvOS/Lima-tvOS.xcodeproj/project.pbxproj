@@ -17,7 +17,6 @@
 		37089909218E3E7500D03A00 /* pharmacies.json in Resources */ = {isa = PBXBuildFile; fileRef = 370898F8218E3E7500D03A00 /* pharmacies.json */; };
 		3708990B218E3E7500D03A00 /* VerticalAlignmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370898FA218E3E7500D03A00 /* VerticalAlignmentViewController.swift */; };
 		3708990C218E3E7500D03A00 /* HorizontalAlignmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370898FB218E3E7500D03A00 /* HorizontalAlignmentViewController.swift */; };
-		37089935218E3E8500D03A00 /* LMRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37089912218E3E8400D03A00 /* LMRootView.swift */; };
 		37089936218E3E8500D03A00 /* LMCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 37089913218E3E8400D03A00 /* LMCollectionViewCell.m */; };
 		37089937218E3E8500D03A00 /* LMSpacer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37089914218E3E8400D03A00 /* LMSpacer.swift */; };
 		37089938218E3E8500D03A00 /* LMLayoutView.h in Headers */ = {isa = PBXBuildFile; fileRef = 37089915218E3E8400D03A00 /* LMLayoutView.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -30,7 +29,6 @@
 		3708993F218E3E8500D03A00 /* Lima.h in Headers */ = {isa = PBXBuildFile; fileRef = 3708991C218E3E8400D03A00 /* Lima.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		37089940218E3E8500D03A00 /* LMTableViewHeaderFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3708991D218E3E8400D03A00 /* LMTableViewHeaderFooterView.m */; };
 		37089941218E3E8500D03A00 /* LMTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 3708991E218E3E8400D03A00 /* LMTableViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		37089942218E3E8500D03A00 /* LMRootView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3708991F218E3E8400D03A00 /* LMRootView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		37089943218E3E8500D03A00 /* LMCollectionViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 37089920218E3E8400D03A00 /* LMCollectionViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		37089944218E3E8500D03A00 /* UIKit+Lima.m in Sources */ = {isa = PBXBuildFile; fileRef = 37089921218E3E8400D03A00 /* UIKit+Lima.m */; };
 		37089945218E3E8500D03A00 /* LMBoxView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37089922218E3E8400D03A00 /* LMBoxView.m */; };
@@ -49,7 +47,6 @@
 		37089952218E3E8500D03A00 /* LMRowView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3708992F218E3E8500D03A00 /* LMRowView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		37089953218E3E8500D03A00 /* LMSpacer.m in Sources */ = {isa = PBXBuildFile; fileRef = 37089930218E3E8500D03A00 /* LMSpacer.m */; };
 		37089954218E3E8500D03A00 /* LMRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37089931218E3E8500D03A00 /* LMRowView.swift */; };
-		37089955218E3E8500D03A00 /* LMRootView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37089932218E3E8500D03A00 /* LMRootView.m */; };
 		37089956218E3E8500D03A00 /* LMSpacer.h in Headers */ = {isa = PBXBuildFile; fileRef = 37089933218E3E8500D03A00 /* LMSpacer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		37089957218E3E8500D03A00 /* LMColumnView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37089934218E3E8500D03A00 /* LMColumnView.m */; };
 		374C583A2197066500500E12 /* GreetingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374C58392197066500500E12 /* GreetingViewController.swift */; };
@@ -106,7 +103,6 @@
 		3708991C218E3E8400D03A00 /* Lima.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Lima.h; path = "../../Lima-iOS/Lima/Lima.h"; sourceTree = "<group>"; };
 		3708991D218E3E8400D03A00 /* LMTableViewHeaderFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LMTableViewHeaderFooterView.m; path = "../../Lima-iOS/Lima/LMTableViewHeaderFooterView.m"; sourceTree = "<group>"; };
 		3708991E218E3E8400D03A00 /* LMTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LMTableViewCell.h; path = "../../Lima-iOS/Lima/LMTableViewCell.h"; sourceTree = "<group>"; };
-		3708991F218E3E8400D03A00 /* LMRootView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LMRootView.h; path = "../../Lima-iOS/Lima/LMRootView.h"; sourceTree = "<group>"; };
 		37089920218E3E8400D03A00 /* LMCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LMCollectionViewCell.h; path = "../../Lima-iOS/Lima/LMCollectionViewCell.h"; sourceTree = "<group>"; };
 		37089921218E3E8400D03A00 /* UIKit+Lima.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIKit+Lima.m"; path = "../../Lima-iOS/Lima/UIKit+Lima.m"; sourceTree = "<group>"; };
 		37089922218E3E8400D03A00 /* LMBoxView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LMBoxView.m; path = "../../Lima-iOS/Lima/LMBoxView.m"; sourceTree = "<group>"; };
@@ -125,7 +121,6 @@
 		3708992F218E3E8500D03A00 /* LMRowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LMRowView.h; path = "../../Lima-iOS/Lima/LMRowView.h"; sourceTree = "<group>"; };
 		37089930218E3E8500D03A00 /* LMSpacer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LMSpacer.m; path = "../../Lima-iOS/Lima/LMSpacer.m"; sourceTree = "<group>"; };
 		37089931218E3E8500D03A00 /* LMRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LMRowView.swift; path = "../../Lima-iOS/Lima/LMRowView.swift"; sourceTree = "<group>"; };
-		37089932218E3E8500D03A00 /* LMRootView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LMRootView.m; path = "../../Lima-iOS/Lima/LMRootView.m"; sourceTree = "<group>"; };
 		37089933218E3E8500D03A00 /* LMSpacer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LMSpacer.h; path = "../../Lima-iOS/Lima/LMSpacer.h"; sourceTree = "<group>"; };
 		37089934218E3E8500D03A00 /* LMColumnView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LMColumnView.m; path = "../../Lima-iOS/Lima/LMColumnView.m"; sourceTree = "<group>"; };
 		374C58392197066500500E12 /* GreetingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GreetingViewController.swift; path = "../../Lima-iOS/LimaTest/GreetingViewController.swift"; sourceTree = "<group>"; };
@@ -195,8 +190,6 @@
 				37089928218E3E8500D03A00 /* LMAnchorView.h */,
 				37089924218E3E8500D03A00 /* LMAnchorView.m */,
 				3708991B218E3E8400D03A00 /* LMAnchorView.swift */,
-				3708991F218E3E8400D03A00 /* LMRootView.h */,
-				37089932218E3E8500D03A00 /* LMRootView.m */,
 				37089912218E3E8400D03A00 /* LMRootView.swift */,
 				37089933218E3E8500D03A00 /* LMSpacer.h */,
 				37089930218E3E8500D03A00 /* LMSpacer.m */,
@@ -255,7 +248,6 @@
 				37089950218E3E8500D03A00 /* LMColumnView.h in Headers */,
 				37089952218E3E8500D03A00 /* LMRowView.h in Headers */,
 				3708994B218E3E8500D03A00 /* LMAnchorView.h in Headers */,
-				37089942218E3E8500D03A00 /* LMRootView.h in Headers */,
 				37089956218E3E8500D03A00 /* LMSpacer.h in Headers */,
 				3708994D218E3E8500D03A00 /* LMScrollView.h in Headers */,
 				37089941218E3E8500D03A00 /* LMTableViewCell.h in Headers */,
@@ -379,8 +371,6 @@
 				37089954218E3E8500D03A00 /* LMRowView.swift in Sources */,
 				37089947218E3E8500D03A00 /* LMAnchorView.m in Sources */,
 				3708993E218E3E8500D03A00 /* LMAnchorView.swift in Sources */,
-				37089955218E3E8500D03A00 /* LMRootView.m in Sources */,
-				37089935218E3E8500D03A00 /* LMRootView.swift in Sources */,
 				37089953218E3E8500D03A00 /* LMSpacer.m in Sources */,
 				37089937218E3E8500D03A00 /* LMSpacer.swift in Sources */,
 				37089951218E3E8500D03A00 /* LMScrollView.m in Sources */,
