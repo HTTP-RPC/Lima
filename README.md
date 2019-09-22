@@ -8,9 +8,6 @@ Lima is an open-source framework for simplifying development of responsive iOS a
 
 This guide introduces the Lima framework and provides an overview of its key features.
 
-# Feedback
-Feedback is welcome and encouraged. Please feel free to [contact me](mailto:gk_brown@icloud.com?subject=Lima) with any questions, comments, or suggestions. Also, if you like using Lima, please consider [starring](https://github.com/gk-brown/Lima/stargazers) it!
-
 # Contents
 * [Getting Lima](#getting-lima)
 * [Lima Classes](#lima-classes)
