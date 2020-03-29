@@ -24,18 +24,14 @@ class ViewController: UITableViewController {
         case gridAlignment
         case anchorView
         case displayable
-        #if os(iOS)
         case scrollView
         case periodicTable
-        #endif
         case tableViewCell
-        #if os(iOS)
         case collectionViewCell
         case controls
         case webView
         case mapView
         case animation
-        #endif
     }
 
     override func viewDidLoad() {
@@ -43,9 +39,7 @@ class ViewController: UITableViewController {
         
         title = "Lima Test"
 
-        #if os(iOS)
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-        #endif
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -87,18 +81,15 @@ class ViewController: UITableViewController {
         case .displayable:
             cell.textLabel?.text = "Displayable"
 
-        #if os(iOS)
         case .scrollView:
             cell.textLabel?.text = "Scroll View"
 
         case .periodicTable:
             cell.textLabel?.text = "Periodic Table"
-        #endif
 
         case .tableViewCell:
             cell.textLabel?.text = "Table View Cell"
 
-        #if os(iOS)
         case .collectionViewCell:
             cell.textLabel?.text = "Collection View Cell"
 
@@ -113,7 +104,6 @@ class ViewController: UITableViewController {
 
         case .animation:
             cell.textLabel?.text = "Animation"
-        #endif
         }
 
         cell.accessoryType = .disclosureIndicator
@@ -149,18 +139,15 @@ class ViewController: UITableViewController {
         case .displayable:
             viewController = DisplayableViewController()
 
-        #if os(iOS)
         case .scrollView:
             viewController = ScrollViewController()
 
         case .periodicTable:
             viewController = PeriodicTableViewController()
-        #endif
 
         case .tableViewCell:
             viewController = TableViewCellController()
 
-        #if os(iOS)
         case .collectionViewCell:
             let collectionViewLayout = UICollectionViewFlowLayout()
 
@@ -180,7 +167,6 @@ class ViewController: UITableViewController {
 
         case .animation:
             viewController = AnimationViewController()
-        #endif
         }
 
         viewController.title = tableView.cellForRow(at: indexPath)?.textLabel?.text

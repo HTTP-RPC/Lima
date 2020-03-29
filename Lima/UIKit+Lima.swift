@@ -186,7 +186,6 @@ public extension UITextField {
     }
 }
 
-#if os(iOS)
 public extension UIDatePicker {
     convenience init(datePickerMode: UIDatePicker.Mode = .dateAndTime,
         height: CGFloat = .nan,
@@ -217,7 +216,6 @@ public extension UISwitch {
         with?(self)
     }
 }
-#endif
 
 public extension UISegmentedControl {
     convenience init(tintColor: UIColor? = nil,
@@ -237,7 +235,6 @@ public extension UISegmentedControl {
     }
 }
 
-#if os(iOS)
 public extension UISlider {
     convenience init(minimumValue: Float = 0.0, maximumValue: Float = 1.0, isContinuous: Bool = true,
         width: CGFloat = .nan,
@@ -277,7 +274,6 @@ public extension UIStepper {
         with?(self)
     }
 }
-#endif
 
 public extension UIPageControl {
     convenience init(pageIndicatorTintColor: UIColor? = nil,
@@ -342,10 +338,7 @@ public extension UITextView {
         with: ((UITextView) -> Void)? = nil) {
         self.init(frame: CGRect(), textContainer: textContainer)
 
-        #if os(iOS)
-        self.isEditable = isEditable
-        #endif
-        
+        self.isEditable = isEditable        
         self.isSelectable = isSelectable
         self.textAlignment = textAlignment
         self.textColor = textColor

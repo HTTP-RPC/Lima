@@ -1,8 +1,7 @@
 [![Releases](https://img.shields.io/github/release/gk-brown/Lima.svg)](https://github.com/gk-brown/Lima/releases)
-[![CocoaPods](https://img.shields.io/cocoapods/v/Lima.svg)](https://cocoapods.org/pods/Lima)
 
 # Introduction
-Lima is an open-source framework for simplifying development of responsive iOS and tvOS applications. The project's name comes from the nautical _L_ or _Lima_ flag, representing the first letter of the word "layout":
+Lima is an open-source framework for simplifying development of responsive iOS applications. The project's name comes from the nautical _L_ or _Lima_ flag, representing the first letter of the word "layout":
 
 ![](README/lima.png)
 
@@ -19,11 +18,10 @@ This guide introduces the Lima framework and provides an overview of its key fea
     * [LMTableViewCell and LMTableViewHeaderFooterView](#lmtableviewcell-and-lmtableviewheaderfooterview)
     * [LMCollectionViewCell](#lmcollectionviewcell)
     * [UIKit Extensions](#uikit-extensions)
-* [Deployment](#deployment)
 * [Additional Information](#additional-information)
 
 # Getting Lima
-Lima is distributed as a universal binary that will run in the simulator as well as on an actual device. It is also available via [CocoaPods](https://cocoapods.org/pods/Lima). Either iOS 11 or tvOS 11 or later is required. 
+Lima is distributed as a universal binary that will run in the simulator as well as on an actual device. iOS 12 or later is required. 
 
 To install:
 
@@ -33,8 +31,6 @@ To install:
 * Select the "General" tab
 * Drag _Lima.framework_ to the "Embedded Binaries" section
 * In the dialog that appears, ensure that "Copy items if needed" is checked and click "Finish"
-
-Note that the framework binary must be "trimmed" prior to App Store submission. See the [Deployment](#deployment) section for more information.
 
 # Lima Classes
 Auto layout is an iOS feature that allows developers to create applications that automatically adapt to device size, orientation, or content changes. An application built using auto layout generally has little or no hard-coded view positioning logic, but instead dynamically arranges user interface elements based on their preferred or "intrinsic" content sizes.
@@ -551,15 +547,6 @@ For more information, see the extension source code:
 * [LMTableViewCell](Lima-iOS/Lima/LMTableViewCell.swift)
 * [LMTableViewHeaderFooterView](Lima-iOS/Lima/LMTableViewHeaderFooterView.swift)
 * [LMCollectionViewCell](Lima-iOS/Lima/LMCollectionViewCell.swift)
-
-# Deployment
-The Lima framework is a universal binary that must be "trimmed" prior to submission to the App Store:
-
-* Place the _[trim.sh](Xcode/trim.sh)_ script in your project root directory
-* Ensure that the script has execute permission (e.g. 744)
-* Create a new "Run Script" build phase after the "Embed Frameworks" phase
-* Rename the new build phase to "Trim Framework Executables" or similar (optional)
-* Invoke the script (e.g. `"${SRCROOT}/trim.sh" Lima`)
 
 # Additional Information
 This guide introduced the Lima framework and provided an overview of its key features. For additional information, see the [examples](https://github.com/gk-brown/Lima/tree/master/).
