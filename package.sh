@@ -23,3 +23,4 @@ xcodebuild -create-xcframework\
     -framework "archive/Lima-macOS.xcarchive/Products/Library/Frameworks/Lima.framework"\
     -output "Lima.xcframework"
 
+tar -czv -f Lima.xcframework.tar.gz Lima.xcframework
