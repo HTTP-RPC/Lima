@@ -236,7 +236,6 @@
 		3794D6372430D5F700C74F19 /* LimaTest */ = {
 			isa = PBXGroup;
 			children = (
-				372D85022430E0350073ED7C /* LimaTest.entitlements */,
 				3794D6382430D5F700C74F19 /* AppDelegate.swift */,
 				3794D63C2430D5F700C74F19 /* ViewController.swift */,
 				3794D6902430D9DA00C74F19 /* GreetingViewController.swift */,
@@ -256,6 +255,7 @@
 				3794D6AC2430DA7B00C74F19 /* AnimationViewController.swift */,
 				3794D6412430D5F800C74F19 /* Assets.xcassets */,
 				3794D68E2430D98000C74F19 /* Icons.xcassets */,
+				372D85022430E0350073ED7C /* LimaTest.entitlements */,
 				3794D6432430D5F800C74F19 /* LaunchScreen.storyboard */,
 				3794D6462430D5F800C74F19 /* Info.plist */,
 				3794D6AE2430DA8B00C74F19 /* world.png */,
