@@ -1,7 +1,7 @@
 [![Releases](https://img.shields.io/github/release/gk-brown/Lima.svg)](https://github.com/gk-brown/Lima/releases)
 
 # Introduction
-Lima is an open-source framework for simplifying development of responsive iOS applications. The project's name comes from the nautical _L_ or _Lima_ flag, representing the first letter of the word "layout":
+Lima is an open-source framework for simplifying development of responsive iOS and macOS applications. The project's name comes from the nautical _L_ or _Lima_ flag, representing the first letter of the word "layout":
 
 ![](README/lima.png)
 
@@ -21,7 +21,7 @@ This guide introduces the Lima framework and provides an overview of its key fea
 * [Additional Information](#additional-information)
 
 # Getting Lima
-Lima is distributed as a universal binary that will run in the simulator as well as on an actual device. iOS 12 or later is required. 
+Lima is distributed as a universal binary that will run in the simulator as well as on an actual device. iOS 12 or macOS 10.15 or later is required. 
 
 To install:
 
