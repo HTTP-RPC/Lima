@@ -21,7 +21,7 @@ This guide introduces the Lima framework and provides an overview of its key fea
 * [Additional Information](#additional-information)
 
 # Getting Lima
-Lima is distributed as a universal binary that will run in the simulator as well as on an actual device. iOS 12 or macOS 10.15 or later is required. 
+Lima is distributed as a universal binary that will run in the iOS simulator as well as on an actual device. iOS 11 or macOS 10.15 or later is required. 
 
 To install:
 
