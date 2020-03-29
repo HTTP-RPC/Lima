@@ -21,15 +21,13 @@ This guide introduces the Lima framework and provides an overview of its key fea
 * [Additional Information](#additional-information)
 
 # Getting Lima
-Lima is distributed as a universal binary that will run in the iOS simulator as well as on an actual device. iOS 11 or macOS 10.15 or later is required. 
-
-To install:
+Lima is distributed as an XCFramework. iOS 11 or macOS 10.15 or later is required. To install:
 
 * Download the [latest release](https://github.com/gk-brown/Lima/releases) archive and expand
 * In Xcode, select the project root node in the Project Navigator view
 * Select the application target
 * Select the "General" tab
-* Drag _Lima.framework_ to the "Embedded Binaries" section
+* Drag _Lima.xcframework_ to the "Embedded Binaries" section
 * In the dialog that appears, ensure that "Copy items if needed" is checked and click "Finish"
 
 # Lima Classes
