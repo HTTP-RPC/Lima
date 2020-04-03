@@ -294,12 +294,16 @@ public extension UIPageControl {
 }
 
 public extension UIActivityIndicatorView {
-    convenience init(style: UIActivityIndicatorView.Style,
+    convenience init(style: UIActivityIndicatorView.Style? = nil,
         color: UIColor? = nil,
         weight: CGFloat = .nan,
         anchor: LMAnchor = [],
         with: ((UIActivityIndicatorView) -> Void)? = nil) {
-        self.init(style: style)
+        if #available(iOS 13, *) {
+            self.init(style: style ?? .medium)
+        } else {
+            self.init(style: style ?? .gray)
+        }
 
         self.color = color
 
