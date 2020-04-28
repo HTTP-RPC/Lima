@@ -47,7 +47,9 @@ class ControlsViewController: UITableViewController, UICollectionViewDataSource 
             Section(heading: "Button", cells: [
                 LMTableViewCell(selectionStyle: .none,
                     UIButton(type: .system, title: "Button") { button in
-                        button.addTarget(self, action: #selector(self.showGreeting), for: .primaryActionTriggered)
+                        button.on(.primaryActionTriggered) { [weak self] sender in
+                            self?.buttonPressed(sender)
+                        }
                     }
                 )
             ]),
@@ -116,7 +118,9 @@ class ControlsViewController: UITableViewController, UICollectionViewDataSource 
                         LMSpacer(),
                         UIStepper(minimumValue: 0.0, maximumValue: 1.0, stepValue: 0.1) { stepper in
                             stepper.value = 0.5
-                            stepper.addTarget(self, action: #selector(self.stepperValueChanged(_:)), for: .valueChanged)
+                            stepper.on(.valueChanged) { [weak self] sender in
+                                self?.stepperValueChanged(sender)
+                            }
 
                             self.stepper = stepper
                         },
@@ -129,7 +133,9 @@ class ControlsViewController: UITableViewController, UICollectionViewDataSource 
             Section(heading: "Slider", cells: [
                 LMTableViewCell(selectionStyle: .none,
                     UISlider() { slider in
-                        slider.addTarget(self, action: #selector(self.sliderValueChanged(_:)), for: .valueChanged)
+                        slider.on(.valueChanged) { [weak self] sender in
+                            self?.sliderValueChanged(sender)
+                        }
 
                         self.slider = slider
                     }
@@ -164,6 +170,10 @@ class ControlsViewController: UITableViewController, UICollectionViewDataSource 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Item") { [weak self] sender in
+            self?.barButtonItemPressed(sender)
+        }
+               
         collectionView.dataSource = self
 
         collectionView.register(IconCell.self, forCellWithReuseIdentifier: IconCell.description())
@@ -201,22 +211,30 @@ class ControlsViewController: UITableViewController, UICollectionViewDataSource 
 
         return cell
     }
-
-    @objc func showGreeting() {
-        let alertController = UIAlertController(title: "Greeting", message: "Hello!", preferredStyle: .alert)
+    
+    func barButtonItemPressed(_ sender: UIBarButtonItem) {
+        let alertController = UIAlertController(title: sender.title, message: "Hello!", preferredStyle: .alert)
 
         alertController.addAction(UIAlertAction(title: "OK", style: .default))
 
         present(alertController, animated: true)
     }
 
-    @objc func stepperValueChanged(_ sender: UIStepper) {
+    func buttonPressed(_ sender: UIButton) {
+        let alertController = UIAlertController(title: sender.title(for: .normal), message: "Hello!", preferredStyle: .alert)
+
+        alertController.addAction(UIAlertAction(title: "OK", style: .default))
+
+        present(alertController, animated: true)
+    }
+
+    func stepperValueChanged(_ sender: UIStepper) {
         slider.value = Float(sender.value)
 
         updateState()
     }
 
-    @objc func sliderValueChanged(_ sender: UISlider) {
+    func sliderValueChanged(_ sender: UISlider) {
         stepper.value = Double(sender.value)
 
         updateState()

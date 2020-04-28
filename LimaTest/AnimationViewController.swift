@@ -46,7 +46,9 @@ class AnimationViewController: UIViewController {
                         textColor: textColor,
                         weight: 1),
                     UISwitch(onTintColor: UIColor.lightGray) { detailSwitch in
-                        detailSwitch.addTarget(self, action: #selector(self.toggleDetail(_:)), for: .valueChanged)
+                        detailSwitch.on(.valueChanged) { [weak self] sender in
+                            self?.toggleDetail(sender)
+                        }
                     }
                 )
             )
@@ -61,7 +63,7 @@ class AnimationViewController: UIViewController {
         detailView.height = 0
     }
 
-    @objc func toggleDetail(_ sender: UISwitch) {
+    func toggleDetail(_ sender: UISwitch) {
         view.layoutIfNeeded()
 
         detailView.height = sender.isOn ? 175 : 0

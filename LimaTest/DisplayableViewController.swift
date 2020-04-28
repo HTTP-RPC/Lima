@@ -40,18 +40,20 @@ class DisplayableViewController: UIViewController {
                 segmentedControl.insertSegment(withTitle: "Displayable", at: 0, animated: false)
                 segmentedControl.insertSegment(withTitle: "Not Displayable", at: 1, animated: false)
 
+                segmentedControl.on(.valueChanged) { [weak self] sender in
+                    self?.update(sender)
+                }
+                
                 segmentedControl.selectedSegmentIndex = 0
 
                 self.update(segmentedControl)
-
-                segmentedControl.addTarget(self, action: #selector(self.update(_:)), for: .valueChanged)
             },
 
             LMSpacer(weight: 4)
         )
     }
 
-    @objc func update(_ sender: UISegmentedControl) {
+    func update(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:
             secondLabel.isDisplayable = true

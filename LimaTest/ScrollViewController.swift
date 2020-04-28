@@ -31,7 +31,9 @@ class ScrollViewController: UIViewController {
             ) { scrollView in
                 let refreshControl = UIRefreshControl()
 
-                refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
+                refreshControl.on(.valueChanged) { [weak self] sender in
+                    self?.refresh(sender)
+                }
 
                 scrollView.refreshControl = refreshControl
             },
@@ -45,7 +47,9 @@ class ScrollViewController: UIViewController {
                     button.layer.borderColor = UIColor.gray.cgColor
                     button.layer.cornerRadius = 6
 
-                    button.addTarget(self, action: #selector(self.showGreeting), for: .primaryActionTriggered)
+                    button.on(.primaryActionTriggered) { [weak self] in
+                        self?.showGreeting()
+                    }
                 }
             )
         )
@@ -65,7 +69,7 @@ class ScrollViewController: UIViewController {
         label2.text = text
     }
 
-    @objc func showGreeting() {
+    func showGreeting() {
         let alertController = UIAlertController(title: "Greeting", message: "Hello!", preferredStyle: .alert)
 
         alertController.addAction(UIAlertAction(title: "OK", style: .default))
@@ -73,7 +77,7 @@ class ScrollViewController: UIViewController {
         present(alertController, animated: true)
     }
 
-    @objc func refresh(_ sender: UIRefreshControl) {
+    func refresh(_ sender: UIRefreshControl) {
         dispatchQueue.async {
             Thread.sleep(forTimeInterval: 2)
 

@@ -47,7 +47,9 @@ class MapViewController: UIViewController, UITextFieldDelegate {
                     weight: 1) { self.longitudeTextField = $0 }
             ),
             UIButton(type: .system, title: "Go") { button in
-                button.addTarget(self, action: #selector(self.showLocation), for: .primaryActionTriggered)
+                button.on(.primaryActionTriggered) { [weak self] in
+                    self?.showLocation()
+                }
             }
         )
     }
@@ -98,7 +100,7 @@ class MapViewController: UIViewController, UITextFieldDelegate {
         view.bottomMargin = 0
     }
 
-    @objc func showLocation() {
+    func showLocation() {
         let latitude = Double(latitudeTextField.text ?? "") ?? 0
         let longitude = Double(longitudeTextField.text ?? "") ?? 0
 

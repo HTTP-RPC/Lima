@@ -494,7 +494,9 @@ UIButton(type: .system, title: "Press Me!") { button in
     button.layer.borderColor = UIColor.gray.cgColor
     button.layer.cornerRadius = 6
 
-    button.addTarget(self, action: #selector(self.showGreeting), for: .primaryActionTriggered)
+    button.on(.primaryActionTriggered) { [weak self] in
+        self?.showGreeting()
+    }
 }
 ```
 

@@ -34,7 +34,9 @@ class WebViewController: UIViewController, UITextFieldDelegate {
                 autocorrectionType: .no,
                 autocapitalizationType: .none) { self.urlTextField = $0 },
             UIButton(type: .system, title: "Go") { button in
-                button.addTarget(self, action: #selector(self.loadURL), for: .primaryActionTriggered)
+                button.on(.primaryActionTriggered) { [weak self] in
+                    self?.loadURL()
+                }
             }
         )
     }
@@ -86,7 +88,7 @@ class WebViewController: UIViewController, UITextFieldDelegate {
         view.bottomMargin = 0
     }
 
-    @objc func loadURL() {
+    func loadURL() {
         webView.load(URLRequest(url: URL(string: urlTextField.text!)!))
     }
 }
