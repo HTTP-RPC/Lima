@@ -1,4 +1,4 @@
-[![Releases](https://img.shields.io/github/release/gk-brown/Lima.svg)](https://github.com/gk-brown/Lima/releases)
+[![Releases](https://img.shields.io/github/release/HTTP-RPC/Lima.svg)](https://github.com/HTTP-RPC/Lima/releases)
 
 # Introduction
 Lima is an open-source framework for simplifying development of responsive iOS and macOS applications. The project's name comes from the nautical _L_ or _Lima_ flag, representing the first letter of the word "layout":
@@ -23,7 +23,7 @@ This guide introduces the Lima framework and provides an overview of its key fea
 # Getting Lima
 Lima is distributed as an XCFramework. iOS 11 or macOS 10.15 or later is required. To install:
 
-* Download the [latest release](https://github.com/gk-brown/Lima/releases) archive and expand
+* Download the [latest release](https://github.com/HTTP-RPC/Lima/releases) archive and expand
 * In Xcode, select the project root node in the Project Navigator view
 * Select the application target
 * Select the "General" tab
@@ -549,4 +549,4 @@ For more information, see the extension source code:
 * [LMCollectionViewCell](Lima-iOS/Lima/LMCollectionViewCell.swift)
 
 # Additional Information
-This guide introduced the Lima framework and provided an overview of its key features. For additional information, see the [examples](https://github.com/gk-brown/Lima/tree/master/).
+This guide introduced the Lima framework and provided an overview of its key features. For additional information, see the [examples](https://github.com/HTTP-RPC/Lima/tree/master/).
