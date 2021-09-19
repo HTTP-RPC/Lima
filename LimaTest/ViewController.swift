@@ -170,7 +170,6 @@ class ViewController: UITableViewController {
         }
 
         viewController.title = tableView.cellForRow(at: indexPath)?.textLabel?.text
-        viewController.edgesForExtendedLayout = UIRectEdge()
         
         self.navigationController?.pushViewController(viewController, animated: true)
     }
