@@ -57,8 +57,6 @@ class MapViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        viewRespectsSystemMinimumLayoutMargins = false
-
         latitudeTextField.delegate = self
         longitudeTextField.delegate = self
     }

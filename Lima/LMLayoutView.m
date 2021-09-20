@@ -27,7 +27,7 @@
     self = [super initWithFrame:frame];
 
     if (self) {
-        [self setLayoutMargins:UIEdgeInsetsZero];
+        [self setDirectionalLayoutMargins:NSDirectionalEdgeInsetsZero];
     }
 
     return self;

@@ -79,7 +79,7 @@ class PeriodicTableViewController: UIViewController {
         convenience init(_ number: Int, _ symbol: String, _ group: Group) {
             self.init()
 
-            layoutMargins = UIEdgeInsets(top: 4, left: 4, bottom: 4, right: 4)
+            directionalLayoutMargins = NSDirectionalEdgeInsets(top: 4, leading: 4, bottom: 4, trailing: 4)
 
             spacing = 0
 
@@ -110,7 +110,7 @@ class PeriodicTableViewController: UIViewController {
         init(_ text: String, _ group: Group) {
             super.init(frame: CGRect())
 
-            layoutMargins = UIEdgeInsets(top: 2, left: 2, bottom: 2, right: 2)
+            directionalLayoutMargins = NSDirectionalEdgeInsets(top: 2, leading: 2, bottom: 2, trailing: 2)
 
             addSubview(UILabel(text: text,
                 textAlignment: .center,
