@@ -21,7 +21,7 @@ This guide introduces the Lima framework and provides an overview of its key fea
 * [Additional Information](#additional-information)
 
 # Getting Lima
-Lima is distributed as an XCFramework. iOS 11 or macOS 10.15 or later is required. To install:
+Lima is distributed as an XCFramework. iOS 14 or macOS 11 or later is required. To install:
 
 * Download the [latest release](https://github.com/HTTP-RPC/Lima/releases) archive and expand
 * In Xcode, select the project root node in the Project Navigator view

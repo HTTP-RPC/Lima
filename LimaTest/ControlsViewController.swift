@@ -97,11 +97,7 @@ class ControlsViewController: UITableViewController, UICollectionViewDataSource 
             Section(heading: "Date Picker", cells: [
                 LMTableViewCell(selectionStyle: .none,
                     UIDatePicker(datePickerMode: .dateAndTime) { datePicker in
-                        if #available(iOS 14, *) {
-                            datePicker.preferredDatePickerStyle = .inline
-                        } else {
-                            datePicker.preferredDatePickerStyle = .wheels
-                        }
+                        datePicker.preferredDatePickerStyle = .inline
                     }
                 )
             ]),

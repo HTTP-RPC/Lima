@@ -62,6 +62,12 @@
     [super willRemoveSubview:subview];
 }
 
+- (void)safeAreaInsetsDidChange {
+    [super safeAreaInsetsDidChange];
+    
+    [self setNeedsUpdateConstraints];
+}
+
 - (void)layoutSubviews {
     // Ensure that content resizes
     if (_content != nil) {
@@ -121,9 +127,13 @@
             }
 
             if (_fitToHeight) {
+                UIEdgeInsets safeAreaInsets = [self safeAreaInsets];
+                
+                NSLog(@"%@", NSStringFromUIEdgeInsets(safeAreaInsets));
+                
                 [constraints addObject:[NSLayoutConstraint constraintWithItem:_content attribute:NSLayoutAttributeHeight
                     relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeHeight
-                    multiplier:1 constant:0]];
+                    multiplier:1 constant:-(safeAreaInsets.top + safeAreaInsets.bottom)]];
             }
 
             _constraints = constraints;

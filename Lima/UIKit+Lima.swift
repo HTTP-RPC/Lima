@@ -309,11 +309,7 @@ public extension UIActivityIndicatorView {
         weight: CGFloat = .nan,
         anchor: LMAnchor = [],
         with: ((UIActivityIndicatorView) -> Void)? = nil) {
-        if #available(iOS 13, *) {
-            self.init(style: style ?? .medium)
-        } else {
-            self.init(style: style ?? .gray)
-        }
+        self.init(style: style ?? .medium)
 
         self.color = color
 

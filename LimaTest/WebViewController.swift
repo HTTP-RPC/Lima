@@ -45,7 +45,7 @@ class WebViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
 
         viewRespectsSystemMinimumLayoutMargins = false
-
+        
         urlTextField.text = "http://"
 
         urlTextField.delegate = self
