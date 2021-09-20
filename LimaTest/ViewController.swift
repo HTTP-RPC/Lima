@@ -25,10 +25,10 @@ class ViewController: UITableViewController {
         case anchorView
         case displayable
         case scrollView
-        case periodicTable
         case tableViewCell
         case collectionViewCell
         case controls
+        case periodicTable
         case animation
     }
 
@@ -82,9 +82,6 @@ class ViewController: UITableViewController {
         case .scrollView:
             cell.textLabel?.text = "Scroll View"
 
-        case .periodicTable:
-            cell.textLabel?.text = "Periodic Table"
-
         case .tableViewCell:
             cell.textLabel?.text = "Table View Cell"
 
@@ -93,6 +90,9 @@ class ViewController: UITableViewController {
 
         case .controls:
             cell.textLabel?.text = "Controls"
+
+        case .periodicTable:
+            cell.textLabel?.text = "Periodic Table"
 
         case .animation:
             cell.textLabel?.text = "Animation"
@@ -134,9 +134,6 @@ class ViewController: UITableViewController {
         case .scrollView:
             viewController = ScrollViewController()
 
-        case .periodicTable:
-            viewController = PeriodicTableViewController()
-
         case .tableViewCell:
             viewController = TableViewCellController()
 
@@ -150,6 +147,9 @@ class ViewController: UITableViewController {
 
         case .controls:
             viewController = ControlsViewController(style: .grouped)
+
+        case .periodicTable:
+            viewController = PeriodicTableViewController()
 
         case .animation:
             viewController = AnimationViewController()
