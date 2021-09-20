@@ -22,28 +22,26 @@ class AnimationViewController: UIViewController {
         let text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 
         view = LMAnchorView(margin: 0, backgroundColor: .white,
-            LMColumnView(spacing: 0, backgroundColor: .lightGray, anchor: [.bottom, .left, .right],
+            LMColumnView(spacing: 0, anchor: [.bottom, .left, .right],
                 LMColumnView(margin: 8, verticalAlignment: .top, spacing: 0,
-                    UILabel(text: text, textColor: .white, font: UIFont.systemFont(ofSize: 14), numberOfLines: 0)
+                    UILabel(text: text, font: UIFont.systemFont(ofSize: 14), numberOfLines: 0)
                 ) { detailView in
                     detailView.clipsToBounds = true
 
                     self.detailView = detailView
                 },
 
-                LMSpacer(height: 0.5, backgroundColor: UIColor.gray),
+                LMSpacer(height: 0.5, backgroundColor: UIColor.lightGray),
 
                 LMRowView(margin: 8,
-                    UILabel(text: "Show Detail", textColor: .white, weight: 1),
+                    UILabel(text: "Show Text", weight: 1),
                     
                     UISwitch(onTintColor: UIColor.systemBlue) { detailSwitch in
                         detailSwitch.on(.valueChanged) { [weak self] sender in
                             self?.toggleDetail(sender)
                         }
                     }
-                ),
-                
-                LMSpacer(height: 0.5, backgroundColor: UIColor.gray)
+                )
             )
         )
     }

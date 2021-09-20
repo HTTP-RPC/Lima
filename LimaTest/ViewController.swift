@@ -29,8 +29,6 @@ class ViewController: UITableViewController {
         case tableViewCell
         case collectionViewCell
         case controls
-        case webView
-        case mapView
         case animation
     }
 
@@ -96,12 +94,6 @@ class ViewController: UITableViewController {
         case .controls:
             cell.textLabel?.text = "Controls"
 
-        case .webView:
-            cell.textLabel?.text = "Web View"
-
-        case .mapView:
-            cell.textLabel?.text = "Map View"
-
         case .animation:
             cell.textLabel?.text = "Animation"
         }
@@ -158,12 +150,6 @@ class ViewController: UITableViewController {
 
         case .controls:
             viewController = ControlsViewController(style: .grouped)
-
-        case .webView:
-            viewController = WebViewController()
-
-        case .mapView:
-            viewController = MapViewController()
 
         case .animation:
             viewController = AnimationViewController()
