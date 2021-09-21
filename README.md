@@ -457,4 +457,4 @@ override init(frame: CGRect) {
 ```
 
 # Additional Information
-This guide introduced the Lima framework and provided an overview of its key features. For more information, see the [example application](LimaTest/).
+This guide introduced the Lima framework and provided an overview of its key features. For more information, see the [examples](LimaTest/).
