@@ -135,9 +135,11 @@ var isAlignToBaseline: Bool
 
 The first two properties specify the horizontal and vertical alignment, respectively, of the box view's subviews. Horizontal alignment options include `fill`, `leading`, `trailing`, and `center`. Vertical alignment options include `fill`, `top`, `bottom`, and `center`. Both values are set to `fill` by default, which pins subviews along both of the box view's axes. Other values pin subviews to a single edge or center them along a given axis:
 
-<img src="README/horizontal-alignment.png" width="267px"/>
+<img src="README/horizontal-alignment.png" width="683px"/>
 
-<img src="README/vertical-alignment.png" width="597px"/>
+<br/>
+
+<img src="README/vertical-alignment.png" width="683px"/>
 
 For example, this code creates a row view containing three labels that are aligned horizontally to the row's leading edge and vertically to the top of the row:
 
