@@ -37,7 +37,7 @@ class CollectionViewCellController: UICollectionViewController {
         Element(name: "Purple", color: .purple),
         Element(name: "Brown", color: .brown),
         Element(name: "Clear", color: .clear),
-        Element(name: "None", color: nil)
+        Element(name: "none", color: nil)
     ]
 
     override func viewDidLoad() {
@@ -68,6 +68,12 @@ class CollectionViewCellController: UICollectionViewController {
         
         return cell
     }
+
+    override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.willTransition(to: newCollection, with: coordinator)
+
+        collectionView.collectionViewLayout.invalidateLayout()
+    }
 }
 
 class ColorCell: LMCollectionViewCell {
@@ -90,15 +96,18 @@ class ColorCell: LMCollectionViewCell {
         super.init(frame: frame)
 
         selectedBackgroundView = UIView()
+        
         selectedBackgroundView?.backgroundColor = UIColor(0xeeeeee, alpha: 0.9)
-        selectedBackgroundView?.layer.cornerRadius = 8
 
         setContent(LMColumnView(
-            UILabel(textAlignment: .center, font: UIFont.preferredFont(forTextStyle: .caption1)) { self.nameLabel = $0 }
+            UILabel(textAlignment: .center, font: .preferredFont(forTextStyle: .caption1)) { self.nameLabel = $0 }
         ) { columnView in
             let colorSwatch = UIView()
 
             colorSwatch.weight = 1
+
+            colorSwatch.layer.borderWidth = 0.5
+            colorSwatch.layer.borderColor = UIColor.gray.cgColor
 
             columnView.addSubview(colorSwatch)
 

@@ -17,9 +17,9 @@ import Lima
 
 class HorizontalAlignmentViewController: UIViewController {
     override func loadView() {
-        let phoneIcon = UIImage(named: "PhoneIcon")
-        let faxIcon = UIImage(named: "FaxIcon")
-        let emailIcon = UIImage(named: "EmailIcon")
+        let phoneIcon = UIImage(systemName: "phone.fill")
+        let faxIcon = UIImage(systemName: "printer.fill")
+        let emailIcon = UIImage(systemName: "envelope.fill")
 
         let cellStyle = { (cell: UIView) in
             cell.layer.borderWidth = 0.5
@@ -29,7 +29,7 @@ class HorizontalAlignmentViewController: UIViewController {
         view = LMScrollView(isFitToWidth: true, backgroundColor: .white,
             LMColumnView(margin: 8,
                 // Leading alignment
-                UILabel(text: "Leading", font: UIFont.systemFont(ofSize: 14)),
+                UILabel(text: "Leading", font: .systemFont(ofSize: 14)),
 
                 LMRowView(margin: 8, horizontalAlignment: .leading,
                     UIImageView(image: phoneIcon, tintColor: .black),
@@ -48,7 +48,7 @@ class HorizontalAlignmentViewController: UIViewController {
                 LMSpacer(height: 0.5, backgroundColor: .gray),
 
                 // Trailing alignment
-                UILabel(text: "Trailing", font: UIFont.systemFont(ofSize: 14)),
+                UILabel(text: "Trailing", font: .systemFont(ofSize: 14)),
 
                 LMRowView(margin: 8, horizontalAlignment: .trailing,
                     UIImageView(image: phoneIcon, tintColor: .black),
@@ -67,7 +67,7 @@ class HorizontalAlignmentViewController: UIViewController {
                 LMSpacer(height: 0.5, backgroundColor: .gray),
 
                 // Center alignment
-                UILabel(text: "Center", font: UIFont.systemFont(ofSize: 14)),
+                UILabel(text: "Center", font: .systemFont(ofSize: 14)),
 
                 LMColumnView(margin: 8, horizontalAlignment: .center,
                     UIImageView(image: phoneIcon, tintColor: .black),
@@ -79,7 +79,7 @@ class HorizontalAlignmentViewController: UIViewController {
                 LMSpacer(height: 0.5, backgroundColor: .gray),
 
                 // Fill alignment
-                UILabel(text: "Fill", font: UIFont.systemFont(ofSize: 14)),
+                UILabel(text: "Fill", font: .systemFont(ofSize: 14)),
 
                 LMRowView(margin: 8, horizontalAlignment: .fill,
                     UIImageView(image: phoneIcon, contentMode: .center, tintColor: .black, weight: 1),

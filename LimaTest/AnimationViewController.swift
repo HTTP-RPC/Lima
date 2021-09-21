@@ -24,7 +24,7 @@ class AnimationViewController: UIViewController {
         view = LMAnchorView(margin: 0, backgroundColor: .white,
             LMColumnView(spacing: 0, anchor: [.bottom, .left, .right],
                 LMColumnView(margin: 8, verticalAlignment: .top, spacing: 0,
-                    UILabel(text: text, font: UIFont.systemFont(ofSize: 14), numberOfLines: 0)
+                    UILabel(text: text, font: .systemFont(ofSize: 14), numberOfLines: 0)
                 ) { detailView in
                     detailView.clipsToBounds = true
 
@@ -37,8 +37,8 @@ class AnimationViewController: UIViewController {
                     UILabel(text: "Show Text", weight: 1),
                     
                     UISwitch(onTintColor: .systemBlue) { detailSwitch in
-                        detailSwitch.on(.valueChanged) { [weak self] sender in
-                            self?.toggleDetail(sender)
+                        detailSwitch.on(.valueChanged) { [unowned self] sender in
+                            toggleDetail(sender)
                         }
                     }
                 )

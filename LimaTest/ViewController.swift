@@ -24,11 +24,10 @@ class ViewController: UITableViewController {
         case gridAlignment
         case anchorView
         case displayable
-        case scrollView
+        case periodicTable
         case tableViewCell
         case collectionViewCell
         case controls
-        case periodicTable
         case animation
     }
 
@@ -79,8 +78,8 @@ class ViewController: UITableViewController {
         case .displayable:
             cell.textLabel?.text = "Displayable"
 
-        case .scrollView:
-            cell.textLabel?.text = "Scroll View"
+        case .periodicTable:
+            cell.textLabel?.text = "Periodic Table"
 
         case .tableViewCell:
             cell.textLabel?.text = "Table View Cell"
@@ -90,9 +89,6 @@ class ViewController: UITableViewController {
 
         case .controls:
             cell.textLabel?.text = "Controls"
-
-        case .periodicTable:
-            cell.textLabel?.text = "Periodic Table"
 
         case .animation:
             cell.textLabel?.text = "Animation"
@@ -131,25 +127,21 @@ class ViewController: UITableViewController {
         case .displayable:
             viewController = DisplayableViewController()
 
-        case .scrollView:
-            viewController = ScrollViewController()
+        case .periodicTable:
+            viewController = PeriodicTableViewController()
 
         case .tableViewCell:
             viewController = TableViewCellController()
 
         case .collectionViewCell:
-            let collectionViewLayout = UICollectionViewFlowLayout()
-
-            collectionViewLayout.itemSize = CGSize(width: 80, height: 120)
-            collectionViewLayout.sectionInset = UIEdgeInsets(top: 12, left: 12, bottom: 12, right: 12)
+            let collectionViewLayout = UICollectionViewFlowLayout(itemSize: CGSize(width: 80, height: 120),
+                sectionInset: UIEdgeInsets(top: 12, left: 12, bottom: 12, right: 12),
+                sectionInsetReference: .fromSafeArea)
 
             viewController = CollectionViewCellController(collectionViewLayout: collectionViewLayout)
 
         case .controls:
-            viewController = ControlsViewController(style: .grouped)
-
-        case .periodicTable:
-            viewController = PeriodicTableViewController()
+            viewController = ControlsViewController(style: .insetGrouped)
 
         case .animation:
             viewController = AnimationViewController()
@@ -157,7 +149,7 @@ class ViewController: UITableViewController {
 
         viewController.title = tableView.cellForRow(at: indexPath)?.textLabel?.text
         
-        self.navigationController?.pushViewController(viewController, animated: true)
+        navigationController?.pushViewController(viewController, animated: true)
     }
 
     override func tableView(_ tableView: UITableView, canFocusRowAt indexPath: IndexPath) -> Bool {

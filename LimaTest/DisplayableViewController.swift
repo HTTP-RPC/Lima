@@ -21,7 +21,7 @@ class DisplayableViewController: UIViewController {
     override func loadView() {
         let labelStyle = { (label: UILabel) in
             label.textAlignment = .center
-            label.font = UIFont.systemFont(ofSize: 24)
+            label.font = .systemFont(ofSize: 24)
 
             label.layer.borderWidth = 0.5
             label.layer.borderColor = UIColor.lightGray.cgColor
@@ -40,8 +40,8 @@ class DisplayableViewController: UIViewController {
                 segmentedControl.insertSegment(withTitle: "Displayable", at: 0, animated: false)
                 segmentedControl.insertSegment(withTitle: "Not Displayable", at: 1, animated: false)
 
-                segmentedControl.on(.valueChanged) { [weak self] sender in
-                    self?.update(sender)
+                segmentedControl.on(.valueChanged) { [unowned self] sender in
+                    update(sender)
                 }
                 
                 segmentedControl.selectedSegmentIndex = 0

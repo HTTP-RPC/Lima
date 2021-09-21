@@ -17,7 +17,6 @@ This guide introduces the Lima framework and provides an overview of its key fea
     * [LMScrollView](#lmscrollview)
     * [LMTableViewCell and LMTableViewHeaderFooterView](#lmtableviewcell-and-lmtableviewheaderfooterview)
     * [LMCollectionViewCell](#lmcollectionviewcell)
-    * [UIKit Extensions](#uikit-extensions)
 * [Additional Information](#additional-information)
 
 # Getting Lima
@@ -31,9 +30,9 @@ Lima is distributed as an XCFramework. iOS 14 or macOS 11 or later is required. 
 * In the dialog that appears, ensure that "Copy items if needed" is checked and click "Finish"
 
 # Lima Classes
-Auto layout is an iOS feature that allows developers to create applications that automatically adapt to device size, orientation, or content changes. An application built using auto layout generally has little or no hard-coded view positioning logic, but instead dynamically arranges user interface elements based on their preferred or "intrinsic" content sizes.
+Auto layout is a feature of [UIKit](https://developer.apple.com/documentation/uikit/), a framework for building iOS and macOS applications, that allows developers to create applications that automatically adapt to device size, orientation, or content changes. An application built using auto layout generally has little or no hard-coded view positioning logic, but instead dynamically arranges user interface elements based on their preferred or "intrinsic" content sizes.
 
-Auto layout in iOS is implemented primarily via layout constraints, which, while powerful, are not particularly convenient to work with. To simplify the process, Lima provides a set of view classes whose sole responsibility is managing the size and position of their respective subviews:
+Auto layout in UIKit is implemented via layout constraints, which, while powerful, are not particularly convenient to work with. To simplify the process, Lima provides a set of view classes whose sole responsibility is managing the size and position of their respective subviews:
 
 * `LMRowView` - arranges subviews in a horizontal line
 * `LMColumnView` - arranges subviews in a vertical line
@@ -55,7 +54,7 @@ Lima adds the following properties to `UIView` to customize how subviews are siz
 
 Additionally, the `LMSpacer` class can be used to create fixed or flexible space between other views.
 
-Lima also provides the following view classes to simplify the use of several UIKit types:
+Lima also provides the following view classes to simplify the use of several common UIKit types:
  
 * `LMScrollView` - extends `UIScrollView` to automatically adapt to content size
 * `LMTableViewCell` - extends `UITableViewCell` to automatically pin content to edges
@@ -94,7 +93,7 @@ columnView.addSubview(label)
 Although the two examples produce identical results, the first version is much more concise and easier to read.
 
 ## LMLayoutView
-`LMLayoutView` is the base class for all layout views in Lima. Among other things, it provides the following initializer, which is used to define the view's layout margins:
+`LMLayoutView` is the base class for all layout views in Lima. Among other things, it provides the following initializer, which is used to establish the view's layout margins:
 
 ```swift
 public convenience init(margin: CGFloat?,
@@ -133,6 +132,7 @@ var isAlignToBaseline: Bool
 The first two properties specify the horizontal and vertical alignment, respectively, of the box view's subviews. Horizontal alignment options include `fill`, `leading`, `trailing`, and `center`. Vertical alignment options include `fill`, `top`, `bottom`, and `center`. Both values are set to `fill` by default, which pins subviews along both of the box view's axes. Other values pin subviews to a single edge or center them along a given axis:
 
 <img src="README/horizontal-alignment.png" width="267px"/>
+
 <img src="README/vertical-alignment.png" width="597px"/>
 
 For example, this code creates a row view containing three labels that are aligned horizontally to the row's leading edge and vertically to the top of the row:
@@ -305,23 +305,26 @@ Weights in `LMRowView` are handled similarly, but in the horizontal direction.
 Note that explicitly defined width and height values take priority over weights. If a view has both a weight and a fixed dimension value, the weight value will be ignored.
 
 ## LMSpacer
-A common use for weights is to add flexible space around a view. For example, the following code could be used to center a label horizontally within a row view (the closures used to initialize the view instances are discussed in more detail later):
+The `LMSpacer` class can be used to create flexible space between other views. `LMSpacer` has a default weight of 1, so the following code would create a label with an equal amount of space on either side:
 
-```swift
-LMRowView(
-    UIView() { $0.weight = 1 },
-    UILabel(text: "Hello, World!"),
-    UIView() { $0.weight = 1 }
-)
-```
-
-Because spacer views are so common, Lima provides a dedicated `UIView` subclass called `LMSpacer` for conveniently creating flexible space between other views. `LMSpacer` has a default weight of 1, so the previous example could be rewritten as follows, eliminating the closures and improving readability:
 
 ```swift
 LMRowView(
     LMSpacer(),
     UILabel(text: "Hello, World!"),
     LMSpacer()
+)
+```
+
+Spacers can also be used to create fixed space between views:
+
+```swift
+LMRowView(
+    UILabel(text: "One", textAlignment: .center, weight: 1),
+    LMSpacer(width: 1, backgroundColor: .lightGray),
+    UILabel(text: "Two", textAlignment: .center, weight: 1),
+    LMSpacer(width: 1, backgroundColor: .lightGray),
+    UILabel(text: "Three", textAlignment: .center, weight: 1)
 )
 ```
 
@@ -332,7 +335,7 @@ The `LMAnchorView` class optionally anchors subviews to one or more of its own e
 
 <img src="README/anchor-view.png" width="597px"/>
 
-Although it is possible to achieve similar layouts using a combination of row, column, and spacer views, anchor views offer a simpler alternative in some cases. Anchor views are also the only layout container that supports Z-ordering.
+Although it is possible to achieve similar layouts using a combination of row, column, and spacer views, anchor views offer a simpler alternative in some cases. `LMAnchorView` is also the only layout container that supports Z-ordering.
 
 Anchors are specified as an option set that defines the edges to which the view will be anchored within its parent. For example, the following code creates an anchor view containing four labels anchored to its top, left, right, and bottom edges. The labels will all be inset by 16 pixels:
 
@@ -392,7 +395,7 @@ LMScrollView(fitToWidth: true,
 )
 ```
 
-Similarly, when `fitToHeight` is `true`, the scroll view will ensure that the height of its content matches its own height, causing the content to wrap and scroll in the horizontal direction. The vertical scroll bar will never be shown, and the horizontal scroll bar will appear when necessary.
+When `fitToHeight` is `true`, the scroll view will ensure that the height of its content matches the height of its safe area, causing the content to wrap and scroll in the horizontal direction. The vertical scroll bar will never be shown, and the horizontal scroll bar will appear when necessary.
 
 ## LMTableViewCell and LMTableViewHeaderFooterView
 The `LMTableViewCell` class facilitates the declaration of custom table view content. It can be used when the content options provided by the default `UITableViewCell` class are not sufficient. As noted earlier, `LMTableViewCell` automatically applies constraints to its content to enable self-sizing behavior.
@@ -447,106 +450,5 @@ override init(frame: CGRect) {
 }
 ```
 
-## UIKit Extensions
-In addition to the `UIView` extensions discussed earlier, Lima provides extenions to the following UIKit types to faciliate view hierarchy declaration:
-
-* `UILabel`
-* `UIImageView`
-* `UIButton`
-* `UITextField`
-* `UIDatePicker`
-* `UISwitch`
-* `UISegmentedControl`
-* `UISlider`
-* `UIStepper`
-* `UIPageControl`
-* `UIActivityIndicatorView`
-* `UIProgressView`
-* `UITextView`
-* `UITableView`
-* `UITableViewCell`
-* `UITableViewHeaderFooterView`
-* `UICollectionView`
-* `UICollectionViewFlowLayout`
-
-Each extension follows a similar pattern, adding an initializer that provides default values for common properties along with an optional callback that can be used to customize initialization. For example, the initializer for `UIButton` is defined as follows:
-
-```swift
-public extension UIButton {
-    public convenience init(type: UIButton.ButtonType,
-        title: String? = nil, image: UIImage? = nil,
-        tintColor: UIColor? = nil,
-        weight: CGFloat = .nan,
-        anchor: LMAnchor = [],
-        with: ((UIButton) -> Void)? = nil) {
-        ...
-    }
-}
-```
-
-This code creates a button with a title of "Press Me!", using a trailing closure to apply styling and register an event listener:
-
-```swift
-UIButton(type: .system, title: "Press Me!") { button in
-    button.contentEdgeInsets = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
-
-    button.layer.borderWidth = 0.5
-    button.layer.borderColor = UIColor.gray.cgColor
-    button.layer.cornerRadius = 6
-
-    button.on(.primaryActionTriggered) { [weak self] in
-        self?.showGreeting()
-    }
-}
-```
-
-Initialization callbacks are also commonly used to associate view instances with outlet variables.
-
-Extensions to Lima classes such as `LMRowView` and `LMColumnView` are also provided. For example:
-
-```swift
-public extension LMRowView {
-    public convenience init(margin: CGFloat? = nil,
-        topMargin: CGFloat? = nil,
-        leadingMargin: CGFloat? = nil,
-        bottomMargin: CGFloat? = nil,
-        trailingMargin: CGFloat? = nil,
-        horizontalAlignment: LMHorizontalAlignment = .fill,
-        verticalAlignment: LMVerticalAlignment = .fill,
-        spacing: CGFloat = .nan,
-        isAlignToBaseline: Bool = false,
-        baseline: LMBaseline = .first,
-        backgroundColor: UIColor? = nil,
-        weight: CGFloat = .nan,
-        anchor: LMAnchor = [],
-        _ subviews: UIView...,
-        with: ((LMRowView) -> Void)? = nil) {
-        ...
-    }
-}
-```
-
-Note that the variadic `subviews` argument is what enables view hierarchies to be constructed declaratively:
-
-```swift
-LMColumnView(
-    UILabel(text: "One"),
-    UILabel(text: "Two"),
-    UILabel(text: "Three")
-)
-```
-
-For more information, see the extension source code:
-
-* [UIKit Extensions](Lima-iOS/Lima/UIKit+Lima.swift)
-* [LMRowView](Lima-iOS/Lima/LMRowView.swift)
-* [LMColumnView](Lima-iOS/Lima/LMColumnView.swift)
-* [LMSpacer](Lima-iOS/Lima/LMSpacer.swift)
-* [LMAnchorView](Lima-iOS/Lima/LMAnchorView.swift)
-* [LMScrollView](Lima-iOS/Lima/LMScrollView.swift)
-* [LMTableViewCell](Lima-iOS/Lima/LMTableViewCell.swift)
-* [LMTableViewHeaderFooterView](Lima-iOS/Lima/LMTableViewHeaderFooterView.swift)
-* [LMCollectionViewCell](Lima-iOS/Lima/LMCollectionViewCell.swift)
-
 # Additional Information
-This guide introduced the Lima framework and provided an overview of its key features. For additional information, see the [examples](https://github.com/HTTP-RPC/Lima/tree/master/).
+This guide introduced the Lima framework and provided an overview of its key features. For more information, see the [example application](LimaTest/).

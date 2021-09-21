@@ -34,6 +34,7 @@ class GridAlignmentViewController: UIViewController {
                     LMRowView(isAlignToBaseline: true,
                         UILabel(text: "First Baseline", textAlignment: .right,
                             with: cellStyle),
+                            
                         LMColumnView(weight: 1,
                             UILabel(text: text, numberOfLines: 0),
                             UILabel(text: text, numberOfLines: 0),

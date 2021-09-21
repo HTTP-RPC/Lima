@@ -94,32 +94,28 @@ class PharmacyCell: LMTableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
-        let phoneIcon = UIImage(named: "PhoneIcon")
-        let faxIcon = UIImage(named: "FaxIcon")
-        let emailIcon = UIImage(named: "EmailIcon")
-
         setContent(LMColumnView(spacing: 4,
             LMRowView(spacing: 4, isAlignToBaseline: true,
-                UILabel(font: UIFont.preferredFont(forTextStyle: .headline), weight: 1) { self.nameLabel = $0 },
-                UILabel(textColor: .gray, font: UIFont.preferredFont(forTextStyle: .body)) { self.distanceLabel = $0 }
+                UILabel(font: .preferredFont(forTextStyle: .headline), weight: 1) { self.nameLabel = $0 },
+                UILabel(textColor: .gray, font: .preferredFont(forTextStyle: .body)) { self.distanceLabel = $0 }
             ),
 
-            UILabel(font: UIFont.preferredFont(forTextStyle: .body), numberOfLines: 0) { self.addressLabel = $0 },
+            UILabel(font: .preferredFont(forTextStyle: .body), numberOfLines: 0) { self.addressLabel = $0 },
 
             LMColumnView(spacing: 4,
                 LMRowView(
-                    UIImageView(image: phoneIcon, contentMode: .scaleAspectFit, tintColor: .darkGray),
-                    UILabel(font: UIFont.preferredFont(forTextStyle: .caption1), weight: 1) { self.phoneLabel = $0 }
+                    UIImageView(image: UIImage(systemName: "phone.fill"), tintColor: .darkGray),
+                    UILabel(font: .preferredFont(forTextStyle: .caption1), weight: 1) { self.phoneLabel = $0 }
                 ),
 
                 LMRowView(
-                    UIImageView(image: faxIcon, contentMode: .scaleAspectFit, tintColor: .darkGray),
-                    UILabel(font: UIFont.preferredFont(forTextStyle: .caption1), weight: 1) { self.faxLabel = $0 }
+                    UIImageView(image: UIImage(systemName: "printer.fill"), tintColor: .darkGray),
+                    UILabel(font: .preferredFont(forTextStyle: .caption1), weight: 1) { self.faxLabel = $0 }
                 ),
 
                 LMRowView(
-                    UIImageView(image: emailIcon, contentMode: .scaleAspectFit, tintColor: .darkGray),
-                    UILabel(font: UIFont.preferredFont(forTextStyle: .caption1), weight: 1) { self.emailLabel = $0 }
+                    UIImageView(image: UIImage(systemName: "envelope.fill"), tintColor: .darkGray),
+                    UILabel(font: .preferredFont(forTextStyle: .caption1), weight: 1) { self.emailLabel = $0 }
                 )
             )
         ), ignoreMargins: false)

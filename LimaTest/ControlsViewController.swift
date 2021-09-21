@@ -15,7 +15,7 @@
 import UIKit
 import Lima
 
-class ControlsViewController: UITableViewController, UICollectionViewDataSource {
+class ControlsViewController: UITableViewController {
     struct Section {
         let heading: String
         let cells: [UITableViewCell]
@@ -23,21 +23,10 @@ class ControlsViewController: UITableViewController, UICollectionViewDataSource 
 
     var sections: [Section]!
 
-    var collectionView: UICollectionView!
     var stepper: UIStepper!
     var slider: UISlider!
     var pageControl: UIPageControl!
     var progressView: UIProgressView!
-
-    let icons = [
-        "AccessTimeIcon",
-        "BluetoothIcon",
-        "CheckCircleIcon",
-        "DoneIcon",
-        "EventIcon",
-        "FingerprintIcon",
-        "GradeIcon"
-    ]
 
     override func loadView() {
         super.loadView()
@@ -46,19 +35,10 @@ class ControlsViewController: UITableViewController, UICollectionViewDataSource 
             // Button
             Section(heading: "Button", cells: [
                 LMTableViewCell(selectionStyle: .none,
-                    UIButton(type: .system, title: "Button") { button in
-                        button.on(.primaryActionTriggered) { [weak self] sender in
-                            self?.buttonPressed(sender)
-                        }
-                    }
+                    UIButton(type: .system, primaryAction: UIAction(title: "Button") { [unowned self] action in
+                        buttonPressed()
+                    })
                 )
-            ]),
-
-            // Switch
-            Section(heading: "Switch", cells: [
-                UITableViewCell(style: .default, text: "On/Off", selectionStyle: .none) { tableViewCell in
-                    tableViewCell.accessoryView = UISwitch()
-                }
             ]),
 
             // Text fields
@@ -77,16 +57,24 @@ class ControlsViewController: UITableViewController, UICollectionViewDataSource 
                 )
             ]),
 
+            // Switch
+            Section(heading: "Switch", cells: [
+                UITableViewCell(style: .default, text: "On/Off", selectionStyle: .none) { tableViewCell in
+                    tableViewCell.accessoryView = UISwitch()
+                }
+            ]),
+
             // Segmented control
             Section(heading: "Segmented Control", cells: [
+                // TODO Use actions
                 LMTableViewCell(selectionStyle: .none,
                     LMRowView(
                         LMSpacer(),
                         UISegmentedControl() { segmentedControl in
-                            segmentedControl.insertSegment(withTitle: "Small", at: 0, animated: false)
-                            segmentedControl.insertSegment(withTitle: "Medium", at: 1, animated: false)
-                            segmentedControl.insertSegment(withTitle: "Large", at: 2, animated: false)
-                            segmentedControl.insertSegment(withTitle: "Extra-Large", at: 3, animated: false)
+                            segmentedControl.insertSegment(withTitle: "One", at: 0, animated: false)
+                            segmentedControl.insertSegment(withTitle: "Two", at: 1, animated: false)
+                            segmentedControl.insertSegment(withTitle: "Three", at: 2, animated: false)
+                            segmentedControl.insertSegment(withTitle: "Four", at: 3, animated: false)
                         },
                         LMSpacer()
                     )
@@ -102,17 +90,6 @@ class ControlsViewController: UITableViewController, UICollectionViewDataSource 
                 )
             ]),
 
-            // Collection view
-            Section(heading: "Collection View", cells: [
-                LMTableViewCell(selectionStyle: .none,
-                    UICollectionView(collectionViewLayout: UICollectionViewFlowLayout(scrollDirection: .horizontal,
-                        itemSize: CGSize(width: 64, height: 64),
-                        minimumLineSpacing: 4), height: 64) {
-                        self.collectionView = $0
-                    }
-                )
-            ]),
-
             // Stepper
             Section(heading: "Stepper", cells: [
                 LMTableViewCell(selectionStyle: .none,
@@ -120,8 +97,8 @@ class ControlsViewController: UITableViewController, UICollectionViewDataSource 
                         LMSpacer(),
                         UIStepper(minimumValue: 0.0, maximumValue: 1.0, stepValue: 0.1) { stepper in
                             stepper.value = 0.5
-                            stepper.on(.valueChanged) { [weak self] sender in
-                                self?.stepperValueChanged(sender)
+                            stepper.on(.valueChanged) { [unowned self] sender in
+                                stepperValueChanged(sender)
                             }
 
                             self.stepper = stepper
@@ -135,8 +112,8 @@ class ControlsViewController: UITableViewController, UICollectionViewDataSource 
             Section(heading: "Slider", cells: [
                 LMTableViewCell(selectionStyle: .none,
                     UISlider() { slider in
-                        slider.on(.valueChanged) { [weak self] sender in
-                            self?.sliderValueChanged(sender)
+                        slider.on(.valueChanged) { [unowned self] sender in
+                            sliderValueChanged(sender)
                         }
 
                         self.slider = slider
@@ -172,14 +149,10 @@ class ControlsViewController: UITableViewController, UICollectionViewDataSource 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Item") { [weak self] sender in
-            self?.barButtonItemPressed(sender)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Item") { [unowned self] sender in
+            barButtonItemPressed(sender)
         }
                
-        collectionView.dataSource = self
-
-        collectionView.register(IconCell.self, forCellWithReuseIdentifier: IconCell.description())
-
         slider.minimumValue = Float(stepper.minimumValue)
         slider.maximumValue = Float(stepper.maximumValue)
 
@@ -201,18 +174,6 @@ class ControlsViewController: UITableViewController, UICollectionViewDataSource 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return sections[indexPath.section].cells[indexPath.row]
     }
-
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return icons.count
-    }
-
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: IconCell.description(), for: indexPath) as! IconCell
-
-        cell.imageView.image = UIImage(named: icons[indexPath.item])
-
-        return cell
-    }
     
     func barButtonItemPressed(_ sender: UIBarButtonItem) {
         let alertController = UIAlertController(title: sender.title, message: "Hello!", preferredStyle: .alert)
@@ -222,8 +183,8 @@ class ControlsViewController: UITableViewController, UICollectionViewDataSource 
         present(alertController, animated: true)
     }
 
-    func buttonPressed(_ sender: UIButton) {
-        let alertController = UIAlertController(title: sender.title(for: .normal), message: "Hello!", preferredStyle: .alert)
+    func buttonPressed() {
+        let alertController = UIAlertController(title: nil, message: "Hello!", preferredStyle: .alert)
 
         alertController.addAction(UIAlertAction(title: "OK", style: .default))
 
@@ -247,21 +208,5 @@ class ControlsViewController: UITableViewController, UICollectionViewDataSource 
 
         pageControl.currentPage = Int(round(value * 10))
         progressView.progress = value
-    }
-}
-
-class IconCell: LMCollectionViewCell {
-    var imageView: UIImageView!
-
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-
-        imageView = UIImageView(contentMode: .scaleAspectFit, tintColor: .black)
-
-        setContent(imageView, ignoreMargins: false)
-    }
-
-    required init?(coder decoder: NSCoder) {
-        return nil
     }
 }

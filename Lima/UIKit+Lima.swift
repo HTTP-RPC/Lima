@@ -82,10 +82,12 @@ public extension UIView {
 }
 
 public extension UIControl {
+    @available(*, deprecated)
     func on(_ event: UIControl.Event, invoke actionHandler: @escaping () -> Void) {
         __onControlEvents(event) { sender in actionHandler() }
     }
 
+    @available(*, deprecated)
     func on<T>(_ event: UIControl.Event, invoke actionHandler: @escaping (T) -> Void) {
         __onControlEvents(event) { sender in actionHandler(sender as! T) }
     }
@@ -107,6 +109,7 @@ public extension UILabel {
         self.textColor = textColor
         self.font = font
         self.numberOfLines = numberOfLines
+        self.lineBreakMode = lineBreakMode
 
         self.width = width
         self.weight = weight
@@ -158,8 +161,19 @@ public extension UIButton {
 
         with?(self)
     }
+    
+    convenience init(type: UIButton.ButtonType = .system,
+        primaryAction: UIAction,
+        weight: CGFloat = .nan,
+        anchor: LMAnchor = [],
+        with: ((UIButton) -> Void)) {
+        self.init(type: type, primaryAction: primaryAction)
+        
+        with(self)
+    }
 }
 
+// TODO UIAction
 public extension UITextField {
     convenience init(placeholder: String? = nil,
         textAlignment: NSTextAlignment = .natural, textColor: UIColor? = nil, font: UIFont? = nil,
@@ -196,6 +210,7 @@ public extension UITextField {
     }
 }
 
+// TODO UIAction
 public extension UIDatePicker {
     convenience init(datePickerMode: UIDatePicker.Mode = .dateAndTime,
         height: CGFloat = .nan,
@@ -214,6 +229,7 @@ public extension UIDatePicker {
     }
 }
 
+// TODO UIAction
 public extension UISwitch {
     convenience init(tintColor: UIColor? = nil,
         onTintColor: UIColor? = nil,
@@ -227,6 +243,7 @@ public extension UISwitch {
     }
 }
 
+// TODO UIAction
 public extension UISegmentedControl {
     convenience init(tintColor: UIColor? = nil,
         width: CGFloat = .nan,
@@ -245,6 +262,7 @@ public extension UISegmentedControl {
     }
 }
 
+// TODO UIAction
 public extension UISlider {
     convenience init(minimumValue: Float = 0.0, maximumValue: Float = 1.0, isContinuous: Bool = true,
         width: CGFloat = .nan,
@@ -266,6 +284,7 @@ public extension UISlider {
     }
 }
 
+// TODO UIAction
 public extension UIStepper {
     convenience init(minimumValue: Double = 0.0, maximumValue: Double = 100.0,
         stepValue: Double = 1.0,
@@ -285,6 +304,7 @@ public extension UIStepper {
     }
 }
 
+// TODO UIAction
 public extension UIPageControl {
     convenience init(pageIndicatorTintColor: UIColor? = nil,
         currentPageIndicatorTintColor: UIColor? = nil,
@@ -412,14 +432,15 @@ public extension UITableViewHeaderFooterView {
 
 public extension UICollectionView {
     convenience init(collectionViewLayout layout: UICollectionViewLayout,
+        backgroundColor: UIColor? = .white,
         width: CGFloat = .nan, height: CGFloat = .nan,
         with: ((UICollectionView) -> Void)? = nil) {
         self.init(frame: CGRect(), collectionViewLayout: layout)
 
+        self.backgroundColor = backgroundColor
+
         self.width = width
         self.height = height
-
-        backgroundColor = .white
 
         with?(self)
     }
@@ -428,17 +449,22 @@ public extension UICollectionView {
 public extension UICollectionViewFlowLayout {
     convenience init(scrollDirection: UICollectionView.ScrollDirection = .vertical,
         itemSize: CGSize = CGSize(),
+        sectionInset: UIEdgeInsets = UIEdgeInsets.zero,
+        sectionInsetReference: UICollectionViewFlowLayout.SectionInsetReference = .fromContentInset,
         minimumInteritemSpacing: CGFloat = 0,
         minimumLineSpacing: CGFloat = 0) {
         self.init()
 
         self.scrollDirection = scrollDirection
         self.itemSize = itemSize
+        self.sectionInset = sectionInset
+        self.sectionInsetReference = sectionInsetReference
         self.minimumInteritemSpacing = minimumInteritemSpacing
         self.minimumLineSpacing = minimumLineSpacing
     }
 }
 
+// TODO UIAction
 public extension UIBarButtonItem {
     convenience init(image: UIImage?, actionHandler: @escaping () -> Void) {
         self.init(image: image) { sender in actionHandler() }

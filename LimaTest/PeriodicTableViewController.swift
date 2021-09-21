@@ -86,12 +86,12 @@ class PeriodicTableViewController: UIViewController {
             addSubview(UILabel(text: String(number),
                 textAlignment: .center,
                 textColor: UIColor(0x0c47a7),
-                font: UIFont.preferredFont(forTextStyle: .caption1)))
+                font: .preferredFont(forTextStyle: .caption1)))
 
             addSubview(UILabel(text: symbol,
                 textAlignment: .center,
                 textColor: UIColor(0x0c47a7),
-                font: UIFont.preferredFont(forTextStyle: .body),
+                font: .preferredFont(forTextStyle: .body),
                 weight: 1))
 
             backgroundColor = group.color
@@ -114,7 +114,7 @@ class PeriodicTableViewController: UIViewController {
 
             addSubview(UILabel(text: text,
                 textAlignment: .center,
-                font: UIFont.preferredFont(forTextStyle: .caption1),
+                font: .preferredFont(forTextStyle: .caption1),
                 numberOfLines: 0))
 
             backgroundColor = group.color

@@ -17,9 +17,9 @@ import Lima
 
 class VerticalAlignmentViewController: UIViewController {
     override func loadView() {
-        let phoneIcon = UIImage(named: "PhoneIcon")
-        let faxIcon = UIImage(named: "FaxIcon")
-        let emailIcon = UIImage(named: "EmailIcon")
+        let phoneIcon = UIImage(systemName: "phone.fill")
+        let faxIcon = UIImage(systemName: "printer.fill")
+        let emailIcon = UIImage(systemName: "envelope.fill")
 
         let cellStyle = { (cell: UIView) in
             cell.layer.borderWidth = 0.5
@@ -30,7 +30,7 @@ class VerticalAlignmentViewController: UIViewController {
             LMRowView(margin:8,
                 // Top alignment
                 LMColumnView(
-                    UILabel(text: "Top", font: UIFont.systemFont(ofSize: 14)),
+                    UILabel(text: "Top", font: .systemFont(ofSize: 14)),
 
                     LMRowView(weight: 1,
                         LMColumnView(margin: 8, verticalAlignment: .top,
@@ -53,7 +53,7 @@ class VerticalAlignmentViewController: UIViewController {
 
                 // Bottom alignment
                 LMColumnView(
-                    UILabel(text: "Bottom", font: UIFont.systemFont(ofSize: 14)),
+                    UILabel(text: "Bottom", font: .systemFont(ofSize: 14)),
 
                     LMRowView(weight: 1,
                         LMColumnView(margin: 8, verticalAlignment: .bottom,
@@ -76,7 +76,7 @@ class VerticalAlignmentViewController: UIViewController {
 
                 // Center alignment
                 LMColumnView(
-                    UILabel(text: "Center", font: UIFont.systemFont(ofSize: 14)),
+                    UILabel(text: "Center", font: .systemFont(ofSize: 14)),
 
                     LMRowView(margin: 8, verticalAlignment: .center, weight: 1,
                         UIImageView(image: phoneIcon, tintColor: .black),
@@ -90,7 +90,7 @@ class VerticalAlignmentViewController: UIViewController {
 
                 // Fill alignment
                 LMColumnView(
-                    UILabel(text: "Fill", font: UIFont.systemFont(ofSize: 14)),
+                    UILabel(text: "Fill", font: .systemFont(ofSize: 14)),
 
                     LMColumnView(margin: 8,
                         UIImageView(image: phoneIcon, contentMode: .center, tintColor: .black, weight: 1),

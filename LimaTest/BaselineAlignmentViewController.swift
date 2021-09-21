@@ -26,16 +26,17 @@ class BaselineAlignmentViewController: UIViewController {
             LMColumnView(margin: 8,
                 LMRowView(margin: 4, isAlignToBaseline: true,
                     LMSpacer(),
-                    UILabel(text: "abcd", font: UIFont.systemFont(ofSize: 16)),
-                    UILabel(text: "efg", font: UIFont.systemFont(ofSize: 32)),
-                    UILabel(text: "hijk", font: UIFont.systemFont(ofSize: 24)),
+                    UILabel(text: "abcd", font: .systemFont(ofSize: 16)),
+                    UILabel(text: "efg", font: .systemFont(ofSize: 32)),
+                    UILabel(text: "hijk", font: .systemFont(ofSize: 24)),
                     LMSpacer(),
                     with: cellStyle
                 ),
+                
                 LMColumnView(margin: 4, horizontalAlignment: .center, isAlignToBaseline: true,
-                    UILabel(text: "abcd", font: UIFont.systemFont(ofSize: 16)),
-                    UILabel(text: "efg", font: UIFont.systemFont(ofSize: 32)),
-                    UILabel(text: "hijk", font: UIFont.systemFont(ofSize: 24)),
+                    UILabel(text: "abcd", font: .systemFont(ofSize: 16)),
+                    UILabel(text: "efg", font: .systemFont(ofSize: 32)),
+                    UILabel(text: "hijk", font: .systemFont(ofSize: 24)),
                     with: cellStyle
                 )
             )
