@@ -26,7 +26,7 @@ class VerticalAlignmentViewController: UIViewController {
             cell.layer.borderColor = UIColor.lightGray.cgColor
         }
 
-        view = LMScrollView(isFitToHeight: true, backgroundColor: UIColor.white,
+        view = LMScrollView(isFitToHeight: true, backgroundColor: .white,
             LMRowView(margin:8,
                 // Top alignment
                 LMColumnView(
@@ -34,22 +34,22 @@ class VerticalAlignmentViewController: UIViewController {
 
                     LMRowView(weight: 1,
                         LMColumnView(margin: 8, verticalAlignment: .top,
-                            UIImageView(image: phoneIcon, tintColor: UIColor.black),
-                            UIImageView(image: faxIcon, tintColor: UIColor.black),
-                            UIImageView(image: emailIcon, tintColor: UIColor.black),
+                            UIImageView(image: phoneIcon, tintColor: .black),
+                            UIImageView(image: faxIcon, tintColor: .black),
+                            UIImageView(image: emailIcon, tintColor: .black),
                             with: cellStyle
                         ),
 
                         LMRowView(margin: 8, verticalAlignment: .top,
-                            UIImageView(image: phoneIcon, tintColor: UIColor.black),
-                            UIImageView(image: faxIcon, tintColor: UIColor.black),
-                            UIImageView(image: emailIcon, tintColor: UIColor.black),
+                            UIImageView(image: phoneIcon, tintColor: .black),
+                            UIImageView(image: faxIcon, tintColor: .black),
+                            UIImageView(image: emailIcon, tintColor: .black),
                             with: cellStyle
                         )
                     )
                 ),
 
-                LMSpacer(width: 0.5, backgroundColor: UIColor.gray),
+                LMSpacer(width: 0.5, backgroundColor: .gray),
 
                 // Bottom alignment
                 LMColumnView(
@@ -57,45 +57,45 @@ class VerticalAlignmentViewController: UIViewController {
 
                     LMRowView(weight: 1,
                         LMColumnView(margin: 8, verticalAlignment: .bottom,
-                            UIImageView(image: phoneIcon, tintColor: UIColor.black),
-                            UIImageView(image: faxIcon, tintColor: UIColor.black),
-                            UIImageView(image: emailIcon, tintColor: UIColor.black),
+                            UIImageView(image: phoneIcon, tintColor: .black),
+                            UIImageView(image: faxIcon, tintColor: .black),
+                            UIImageView(image: emailIcon, tintColor: .black),
                             with: cellStyle
                         ),
 
                         LMRowView(margin: 8, verticalAlignment: .bottom,
-                            UIImageView(image: phoneIcon, tintColor: UIColor.black),
-                            UIImageView(image: faxIcon, tintColor: UIColor.black),
-                            UIImageView(image: emailIcon, tintColor: UIColor.black),
+                            UIImageView(image: phoneIcon, tintColor: .black),
+                            UIImageView(image: faxIcon, tintColor: .black),
+                            UIImageView(image: emailIcon, tintColor: .black),
                             with: cellStyle
                         )
                     )
                 ),
 
-                LMSpacer(width: 0.5, backgroundColor: UIColor.gray),
+                LMSpacer(width: 0.5, backgroundColor: .gray),
 
                 // Center alignment
                 LMColumnView(
                     UILabel(text: "Center", font: UIFont.systemFont(ofSize: 14)),
 
                     LMRowView(margin: 8, verticalAlignment: .center, weight: 1,
-                        UIImageView(image: phoneIcon, tintColor: UIColor.black),
-                        UIImageView(image: faxIcon, tintColor: UIColor.black),
-                        UIImageView(image: emailIcon, tintColor: UIColor.black),
+                        UIImageView(image: phoneIcon, tintColor: .black),
+                        UIImageView(image: faxIcon, tintColor: .black),
+                        UIImageView(image: emailIcon, tintColor: .black),
                         with: cellStyle
                     )
                 ),
 
-                LMSpacer(width: 0.5, backgroundColor: UIColor.gray),
+                LMSpacer(width: 0.5, backgroundColor: .gray),
 
                 // Fill alignment
                 LMColumnView(
                     UILabel(text: "Fill", font: UIFont.systemFont(ofSize: 14)),
 
                     LMColumnView(margin: 8,
-                        UIImageView(image: phoneIcon, contentMode: .center, tintColor: UIColor.black, weight: 1),
-                        UIImageView(image: faxIcon, contentMode: .center, tintColor: UIColor.black, weight: 1),
-                        UIImageView(image: emailIcon, contentMode: .center, tintColor: UIColor.black, weight: 1),
+                        UIImageView(image: phoneIcon, contentMode: .center, tintColor: .black, weight: 1),
+                        UIImageView(image: faxIcon, contentMode: .center, tintColor: .black, weight: 1),
+                        UIImageView(image: emailIcon, contentMode: .center, tintColor: .black, weight: 1),
                         with: cellStyle
                     )
                 )

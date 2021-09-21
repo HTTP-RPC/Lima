@@ -31,12 +31,12 @@ class AnimationViewController: UIViewController {
                     self.detailView = detailView
                 },
 
-                LMSpacer(height: 0.5, backgroundColor: UIColor.lightGray),
+                LMSpacer(height: 0.5, backgroundColor: .lightGray),
 
                 LMRowView(margin: 8,
                     UILabel(text: "Show Text", weight: 1),
                     
-                    UISwitch(onTintColor: UIColor.systemBlue) { detailSwitch in
+                    UISwitch(onTintColor: .systemBlue) { detailSwitch in
                         detailSwitch.on(.valueChanged) { [weak self] sender in
                             self?.toggleDetail(sender)
                         }

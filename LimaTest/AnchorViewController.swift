@@ -22,7 +22,7 @@ class AnchorViewController: UIViewController {
             cell.layer.borderColor = UIColor.lightGray.cgColor
         }
 
-        view = LMAnchorView(margin: 16, backgroundColor: UIColor.white,
+        view = LMAnchorView(margin: 16, backgroundColor: .white,
             // All
             UILabel(anchor: [.all], with: cellStyle),
 

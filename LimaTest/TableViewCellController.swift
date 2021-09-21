@@ -101,24 +101,24 @@ class PharmacyCell: LMTableViewCell {
         setContent(LMColumnView(spacing: 4,
             LMRowView(spacing: 4, isAlignToBaseline: true,
                 UILabel(font: UIFont.preferredFont(forTextStyle: .headline), weight: 1) { self.nameLabel = $0 },
-                UILabel(textColor: UIColor.gray, font: UIFont.preferredFont(forTextStyle: .body)) { self.distanceLabel = $0 }
+                UILabel(textColor: .gray, font: UIFont.preferredFont(forTextStyle: .body)) { self.distanceLabel = $0 }
             ),
 
             UILabel(font: UIFont.preferredFont(forTextStyle: .body), numberOfLines: 0) { self.addressLabel = $0 },
 
             LMColumnView(spacing: 4,
                 LMRowView(
-                    UIImageView(image: phoneIcon, contentMode: .scaleAspectFit, tintColor: UIColor.darkGray),
+                    UIImageView(image: phoneIcon, contentMode: .scaleAspectFit, tintColor: .darkGray),
                     UILabel(font: UIFont.preferredFont(forTextStyle: .caption1), weight: 1) { self.phoneLabel = $0 }
                 ),
 
                 LMRowView(
-                    UIImageView(image: faxIcon, contentMode: .scaleAspectFit, tintColor: UIColor.darkGray),
+                    UIImageView(image: faxIcon, contentMode: .scaleAspectFit, tintColor: .darkGray),
                     UILabel(font: UIFont.preferredFont(forTextStyle: .caption1), weight: 1) { self.faxLabel = $0 }
                 ),
 
                 LMRowView(
-                    UIImageView(image: emailIcon, contentMode: .scaleAspectFit, tintColor: UIColor.darkGray),
+                    UIImageView(image: emailIcon, contentMode: .scaleAspectFit, tintColor: .darkGray),
                     UILabel(font: UIFont.preferredFont(forTextStyle: .caption1), weight: 1) { self.emailLabel = $0 }
                 )
             )

@@ -22,28 +22,28 @@ class CollectionViewCellController: UICollectionViewController {
     }
 
     let elements: [Element] = [
-        Element(name: "Black", color: UIColor.black),
-        Element(name: "Dark Gray", color: UIColor.darkGray),
-        Element(name: "Light Gray", color: UIColor.lightGray),
-        Element(name: "White", color: UIColor.white),
-        Element(name: "Gray", color: UIColor.gray),
-        Element(name: "Red", color: UIColor.red),
-        Element(name: "Green", color: UIColor.green),
-        Element(name: "Blue", color: UIColor.blue),
-        Element(name: "Cyan", color: UIColor.cyan),
-        Element(name: "Yellow", color: UIColor.yellow),
-        Element(name: "Magenta", color: UIColor.magenta),
-        Element(name: "Orange", color: UIColor.orange),
-        Element(name: "Purple", color: UIColor.purple),
-        Element(name: "Brown", color: UIColor.brown),
-        Element(name: "Clear", color: UIColor.clear),
+        Element(name: "Black", color: .black),
+        Element(name: "Dark Gray", color: .darkGray),
+        Element(name: "Light Gray", color: .lightGray),
+        Element(name: "White", color: .white),
+        Element(name: "Gray", color: .gray),
+        Element(name: "Red", color: .red),
+        Element(name: "Green", color: .green),
+        Element(name: "Blue", color: .blue),
+        Element(name: "Cyan", color: .cyan),
+        Element(name: "Yellow", color: .yellow),
+        Element(name: "Magenta", color: .magenta),
+        Element(name: "Orange", color: .orange),
+        Element(name: "Purple", color: .purple),
+        Element(name: "Brown", color: .brown),
+        Element(name: "Clear", color: .clear),
         Element(name: "None", color: nil)
     ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        collectionView?.backgroundColor = UIColor.white
+        collectionView?.backgroundColor = .white
 
         collectionView?.register(ColorCell.self, forCellWithReuseIdentifier: ColorCell.description())
     }

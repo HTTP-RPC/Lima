@@ -326,7 +326,7 @@ class PeriodicTableViewController: UIViewController {
                     )
                 ),
 
-                LMSpacer(height: 0.5, backgroundColor: UIColor.lightGray),
+                LMSpacer(height: 0.5, backgroundColor: .lightGray),
 
                 LMRowView(
                     KeyView("Alkali metal", .alkaliMetal),

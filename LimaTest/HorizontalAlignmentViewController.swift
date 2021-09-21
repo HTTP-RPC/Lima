@@ -26,65 +26,65 @@ class HorizontalAlignmentViewController: UIViewController {
             cell.layer.borderColor = UIColor.lightGray.cgColor
         }
 
-        view = LMScrollView(isFitToWidth: true, backgroundColor: UIColor.white,
+        view = LMScrollView(isFitToWidth: true, backgroundColor: .white,
             LMColumnView(margin: 8,
                 // Leading alignment
                 UILabel(text: "Leading", font: UIFont.systemFont(ofSize: 14)),
 
                 LMRowView(margin: 8, horizontalAlignment: .leading,
-                    UIImageView(image: phoneIcon, tintColor: UIColor.black),
-                    UIImageView(image: faxIcon, tintColor: UIColor.black),
-                    UIImageView(image: emailIcon, tintColor: UIColor.black),
+                    UIImageView(image: phoneIcon, tintColor: .black),
+                    UIImageView(image: faxIcon, tintColor: .black),
+                    UIImageView(image: emailIcon, tintColor: .black),
                     with: cellStyle
                 ),
 
                 LMColumnView(margin: 8, horizontalAlignment: .leading,
-                    UIImageView(image: phoneIcon, tintColor: UIColor.black),
-                    UIImageView(image: faxIcon, tintColor: UIColor.black),
-                    UIImageView(image: emailIcon, tintColor: UIColor.black),
+                    UIImageView(image: phoneIcon, tintColor: .black),
+                    UIImageView(image: faxIcon, tintColor: .black),
+                    UIImageView(image: emailIcon, tintColor: .black),
                     with: cellStyle
                 ),
 
-                LMSpacer(height: 0.5, backgroundColor: UIColor.gray),
+                LMSpacer(height: 0.5, backgroundColor: .gray),
 
                 // Trailing alignment
                 UILabel(text: "Trailing", font: UIFont.systemFont(ofSize: 14)),
 
                 LMRowView(margin: 8, horizontalAlignment: .trailing,
-                    UIImageView(image: phoneIcon, tintColor: UIColor.black),
-                    UIImageView(image: faxIcon, tintColor: UIColor.black),
-                    UIImageView(image: emailIcon, tintColor: UIColor.black),
+                    UIImageView(image: phoneIcon, tintColor: .black),
+                    UIImageView(image: faxIcon, tintColor: .black),
+                    UIImageView(image: emailIcon, tintColor: .black),
                     with: cellStyle
                 ),
 
                 LMColumnView(margin: 8, horizontalAlignment: .trailing,
-                    UIImageView(image: phoneIcon, tintColor: UIColor.black),
-                    UIImageView(image: faxIcon, tintColor: UIColor.black),
-                    UIImageView(image: emailIcon, tintColor: UIColor.black),
+                    UIImageView(image: phoneIcon, tintColor: .black),
+                    UIImageView(image: faxIcon, tintColor: .black),
+                    UIImageView(image: emailIcon, tintColor: .black),
                     with: cellStyle
                 ),
 
-                LMSpacer(height: 0.5, backgroundColor: UIColor.gray),
+                LMSpacer(height: 0.5, backgroundColor: .gray),
 
                 // Center alignment
                 UILabel(text: "Center", font: UIFont.systemFont(ofSize: 14)),
 
                 LMColumnView(margin: 8, horizontalAlignment: .center,
-                    UIImageView(image: phoneIcon, tintColor: UIColor.black),
-                    UIImageView(image: faxIcon, tintColor: UIColor.black),
-                    UIImageView(image: emailIcon, tintColor: UIColor.black),
+                    UIImageView(image: phoneIcon, tintColor: .black),
+                    UIImageView(image: faxIcon, tintColor: .black),
+                    UIImageView(image: emailIcon, tintColor: .black),
                     with: cellStyle
                 ),
 
-                LMSpacer(height: 0.5, backgroundColor: UIColor.gray),
+                LMSpacer(height: 0.5, backgroundColor: .gray),
 
                 // Fill alignment
                 UILabel(text: "Fill", font: UIFont.systemFont(ofSize: 14)),
 
                 LMRowView(margin: 8, horizontalAlignment: .fill,
-                    UIImageView(image: phoneIcon, contentMode: .center, tintColor: UIColor.black, weight: 1),
-                    UIImageView(image: faxIcon, contentMode: .center, tintColor: UIColor.black, weight: 1),
-                    UIImageView(image: emailIcon, contentMode: .center, tintColor: UIColor.black, weight: 1),
+                    UIImageView(image: phoneIcon, contentMode: .center, tintColor: .black, weight: 1),
+                    UIImageView(image: faxIcon, contentMode: .center, tintColor: .black, weight: 1),
+                    UIImageView(image: emailIcon, contentMode: .center, tintColor: .black, weight: 1),
                     with: cellStyle
                 )
             )

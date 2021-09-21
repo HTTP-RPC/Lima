@@ -24,7 +24,7 @@ class GridAlignmentViewController: UIViewController {
 
         let text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
 
-        view = LMScrollView(isFitToWidth: true, backgroundColor: UIColor.white,
+        view = LMScrollView(isFitToWidth: true, backgroundColor: .white,
             LMColumnView(margin: 16,
                 // Fill
                 UILabel(text: text, numberOfLines: 0, with: cellStyle),

@@ -22,7 +22,7 @@ class ScrollViewController: UIViewController {
     let dispatchQueue = DispatchQueue(label: "Dispatch Queue")
 
     override func loadView() {
-        view = LMAnchorView(margin: 0, backgroundColor: UIColor.white,
+        view = LMAnchorView(margin: 0, backgroundColor: .white,
             LMScrollView(isFitToWidth: true, anchor: [.all],
                 LMColumnView(margin: 10, spacing: 10,
                     UILabel(numberOfLines: 0, lineBreakMode: .byWordWrapping) { self.label1 = $0 },

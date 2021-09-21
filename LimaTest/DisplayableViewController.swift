@@ -29,7 +29,7 @@ class DisplayableViewController: UIViewController {
             label.weight = 1
         }
 
-        view = LMColumnView(margin: 16, spacing: 16, backgroundColor: UIColor.white,
+        view = LMColumnView(margin: 16, spacing: 16, backgroundColor: .white,
             LMRowView(weight: 1,
                 UILabel(text: "One", with: labelStyle),
                 UILabel(text: "Two") { labelStyle($0); self.secondLabel = $0 },

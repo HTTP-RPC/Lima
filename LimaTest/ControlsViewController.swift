@@ -147,8 +147,8 @@ class ControlsViewController: UITableViewController, UICollectionViewDataSource 
             // Page control
             Section(heading: "Page Control", cells: [
                 LMTableViewCell(selectionStyle: .none,
-                    UIPageControl(pageIndicatorTintColor: UIColor.lightGray,
-                        currentPageIndicatorTintColor: UIColor.black) { pageControl in
+                    UIPageControl(pageIndicatorTintColor: .lightGray,
+                        currentPageIndicatorTintColor: .black) { pageControl in
                         pageControl.numberOfPages = 11
 
                         self.pageControl = pageControl

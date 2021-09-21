@@ -23,7 +23,7 @@ class GreetingViewController: UIViewController {
         )
 
         view = LMScrollView(isFitToWidth: true,
-            backgroundColor: UIColor.white,
+            backgroundColor: .white,
             columnView)
     }
 }

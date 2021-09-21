@@ -22,7 +22,7 @@ class BaselineAlignmentViewController: UIViewController {
             cell.layer.borderColor = UIColor.lightGray.cgColor
         }
 
-        view = LMScrollView(isFitToWidth: true, backgroundColor: UIColor.white,
+        view = LMScrollView(isFitToWidth: true, backgroundColor: .white,
             LMColumnView(margin: 8,
                 LMRowView(margin: 4, isAlignToBaseline: true,
                     LMSpacer(),
