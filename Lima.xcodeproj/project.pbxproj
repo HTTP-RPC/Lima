@@ -56,9 +56,7 @@
 		3794D6A32430DA4D00C74F19 /* TableViewCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3794D6A12430DA4D00C74F19 /* TableViewCellController.swift */; };
 		3794D6A62430DA5D00C74F19 /* CollectionViewCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3794D6A42430DA5D00C74F19 /* CollectionViewCellController.swift */; };
 		3794D6A72430DA5D00C74F19 /* ControlsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3794D6A52430DA5D00C74F19 /* ControlsViewController.swift */; };
-		3794D6AD2430DA7B00C74F19 /* AnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3794D6AC2430DA7B00C74F19 /* AnimationViewController.swift */; };
 		3794D6AF2430DA8B00C74F19 /* world.png in Resources */ = {isa = PBXBuildFile; fileRef = 3794D6AE2430DA8B00C74F19 /* world.png */; };
-		3794D6B12430DA9100C74F19 /* sample.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3794D6B02430DA9100C74F19 /* sample.txt */; };
 		3794D6B32430DA9700C74F19 /* pharmacies.json in Resources */ = {isa = PBXBuildFile; fileRef = 3794D6B22430DA9700C74F19 /* pharmacies.json */; };
 /* End PBXBuildFile section */
 
@@ -139,9 +137,7 @@
 		3794D6A12430DA4D00C74F19 /* TableViewCellController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCellController.swift; sourceTree = "<group>"; };
 		3794D6A42430DA5D00C74F19 /* CollectionViewCellController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCellController.swift; sourceTree = "<group>"; };
 		3794D6A52430DA5D00C74F19 /* ControlsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlsViewController.swift; sourceTree = "<group>"; };
-		3794D6AC2430DA7B00C74F19 /* AnimationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationViewController.swift; sourceTree = "<group>"; };
 		3794D6AE2430DA8B00C74F19 /* world.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = world.png; sourceTree = "<group>"; };
-		3794D6B02430DA9100C74F19 /* sample.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sample.txt; sourceTree = "<group>"; };
 		3794D6B22430DA9700C74F19 /* pharmacies.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pharmacies.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -239,13 +235,11 @@
 				3794D6A12430DA4D00C74F19 /* TableViewCellController.swift */,
 				3794D6A42430DA5D00C74F19 /* CollectionViewCellController.swift */,
 				3794D6A52430DA5D00C74F19 /* ControlsViewController.swift */,
-				3794D6AC2430DA7B00C74F19 /* AnimationViewController.swift */,
 				3794D6412430D5F800C74F19 /* Assets.xcassets */,
 				372D85022430E0350073ED7C /* LimaTest.entitlements */,
 				3794D6432430D5F800C74F19 /* LaunchScreen.storyboard */,
 				3794D6462430D5F800C74F19 /* Info.plist */,
 				3794D6AE2430DA8B00C74F19 /* world.png */,
-				3794D6B02430DA9100C74F19 /* sample.txt */,
 				3794D6B22430DA9700C74F19 /* pharmacies.json */,
 			);
 			path = LimaTest;
@@ -374,7 +368,6 @@
 				3794D6452430D5F800C74F19 /* LaunchScreen.storyboard in Resources */,
 				3794D6422430D5F800C74F19 /* Assets.xcassets in Resources */,
 				3794D6B32430DA9700C74F19 /* pharmacies.json in Resources */,
-				3794D6B12430DA9100C74F19 /* sample.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,7 +413,6 @@
 				3794D69D2430DA3C00C74F19 /* DisplayableViewController.swift in Sources */,
 				3794D6992430DA1600C74F19 /* GridAlignmentViewController.swift in Sources */,
 				3794D6A32430DA4D00C74F19 /* TableViewCellController.swift in Sources */,
-				3794D6AD2430DA7B00C74F19 /* AnimationViewController.swift in Sources */,
 				3794D6A62430DA5D00C74F19 /* CollectionViewCellController.swift in Sources */,
 				3794D6A72430DA5D00C74F19 /* ControlsViewController.swift in Sources */,
 				3794D6952430D9ED00C74F19 /* HorizontalAlignmentViewController.swift in Sources */,

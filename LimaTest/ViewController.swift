@@ -28,7 +28,6 @@ class ViewController: UITableViewController {
         case tableViewCell
         case collectionViewCell
         case controls
-        case animation
     }
 
     override func viewDidLoad() {
@@ -89,9 +88,6 @@ class ViewController: UITableViewController {
 
         case .controls:
             cell.textLabel?.text = "Controls"
-
-        case .animation:
-            cell.textLabel?.text = "Animation"
         }
 
         cell.accessoryType = .disclosureIndicator
@@ -142,9 +138,6 @@ class ViewController: UITableViewController {
 
         case .controls:
             viewController = ControlsViewController(style: .insetGrouped)
-
-        case .animation:
-            viewController = AnimationViewController()
         }
 
         viewController.title = tableView.cellForRow(at: indexPath)?.textLabel?.text

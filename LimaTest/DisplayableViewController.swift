@@ -17,6 +17,7 @@ import Lima
 
 class DisplayableViewController: UIViewController {
     var secondLabel: UILabel!
+    var displayableSwitch: UISwitch!
 
     override func loadView() {
         let labelStyle = { (label: UILabel) in
@@ -35,34 +36,32 @@ class DisplayableViewController: UIViewController {
                 UILabel(text: "Two") { labelStyle($0); self.secondLabel = $0 },
                 UILabel(text: "Three", with: labelStyle)
             ),
+            
+            LMSpacer(height: 0.5, backgroundColor: .lightGray),
 
-            UISegmentedControl() { segmentedControl in
-                segmentedControl.insertSegment(withTitle: "Displayable", at: 0, animated: false)
-                segmentedControl.insertSegment(withTitle: "Not Displayable", at: 1, animated: false)
-
-                segmentedControl.on(.valueChanged) { [unowned self] sender in
-                    update(sender)
+            LMRowView(
+                UILabel(text: "Displayable"),
+                LMSpacer(),
+                UISwitch(primaryAction: UIAction() { [unowned self] action in
+                    toggleDisplayable()
+                }) {
+                    self.displayableSwitch = $0
                 }
-                
-                segmentedControl.selectedSegmentIndex = 0
-
-                self.update(segmentedControl)
-            },
+            ),
 
             LMSpacer(weight: 4)
         )
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        displayableSwitch.isOn = true
+        
+        toggleDisplayable()
+    }
 
-    func update(_ sender: UISegmentedControl) {
-        switch sender.selectedSegmentIndex {
-        case 0:
-            secondLabel.isDisplayable = true
-
-        case 1:
-            secondLabel.isDisplayable = false
-
-        default:
-            fatalError()
-        }
+    func toggleDisplayable() {
+        secondLabel.isDisplayable = displayableSwitch.isOn
     }
 }

@@ -143,13 +143,17 @@ public extension UIImageView {
 }
 
 public extension UIButton {
-    convenience init(type: UIButton.ButtonType,
+    convenience init(type: UIButton.ButtonType, primaryAction: UIAction?,
         title: String? = nil, image: UIImage? = nil,
         tintColor: UIColor? = nil,
         weight: CGFloat = .nan,
         anchor: LMAnchor = [],
         with: ((UIButton) -> Void)? = nil) {
-        self.init(type: type)
+        if (primaryAction == nil) {
+            self.init(type: type)
+        } else {
+            self.init(type: type, primaryAction: primaryAction)
+        }
 
         setTitle(title, for: .normal)
         setImage(image, for: .normal)
@@ -160,16 +164,6 @@ public extension UIButton {
         self.anchor = anchor
 
         with?(self)
-    }
-    
-    convenience init(type: UIButton.ButtonType = .system,
-        primaryAction: UIAction,
-        weight: CGFloat = .nan,
-        anchor: LMAnchor = [],
-        with: ((UIButton) -> Void)) {
-        self.init(type: type, primaryAction: primaryAction)
-        
-        with(self)
     }
 }
 
@@ -229,13 +223,17 @@ public extension UIDatePicker {
     }
 }
 
-// TODO UIAction
 public extension UISwitch {
-    convenience init(tintColor: UIColor? = nil,
+    convenience init(primaryAction: UIAction? = nil,
+        tintColor: UIColor? = nil,
         onTintColor: UIColor? = nil,
         with: ((UISwitch) -> Void)? = nil) {
-        self.init()
-
+        if (primaryAction == nil) {
+            self.init()
+        } else {
+            self.init(frame: CGRect(), primaryAction: primaryAction)
+        }
+        
         self.tintColor = tintColor
         self.onTintColor = onTintColor
 
