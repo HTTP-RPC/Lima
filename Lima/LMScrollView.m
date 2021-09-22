@@ -62,8 +62,8 @@
     [super willRemoveSubview:subview];
 }
 
-- (void)safeAreaInsetsDidChange {
-    [super safeAreaInsetsDidChange];
+- (void)adjustedContentInsetDidChange {
+    [super adjustedContentInsetDidChange];
     
     [self setNeedsUpdateConstraints];
 }
@@ -127,11 +127,11 @@
             }
 
             if (_fitToHeight) {
-                UIEdgeInsets safeAreaInsets = [self safeAreaInsets];
+                UIEdgeInsets adjustedContentInset = [self adjustedContentInset];
                 
                 [constraints addObject:[NSLayoutConstraint constraintWithItem:_content attribute:NSLayoutAttributeHeight
                     relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeHeight
-                    multiplier:1 constant:-(safeAreaInsets.top + safeAreaInsets.bottom)]];
+                    multiplier:1 constant:-(adjustedContentInset.top + adjustedContentInset.bottom)]];
             }
 
             _constraints = constraints;
