@@ -16,7 +16,7 @@ import UIKit
 import Lima
 
 class DisplayableViewController: UIViewController {
-    var secondLabel: UILabel!
+    var labelRowView: LMRowView!
     var displayableSwitch: UISwitch!
 
     override func loadView() {
@@ -33,9 +33,11 @@ class DisplayableViewController: UIViewController {
         view = LMColumnView(margin: 16, spacing: 16, backgroundColor: .white,
             LMRowView(weight: 1,
                 UILabel(text: "One", with: labelStyle),
-                UILabel(text: "Two") { labelStyle($0); secondLabel = $0 },
+                UILabel(text: "Two", with: labelStyle),
                 UILabel(text: "Three", with: labelStyle)
-            ),
+            ) {
+                labelRowView = $0
+            },
             
             LMSpacer(height: 0.5, backgroundColor: .lightGray),
 
@@ -62,6 +64,6 @@ class DisplayableViewController: UIViewController {
     }
 
     func toggleDisplayable() {
-        secondLabel.isDisplayable = displayableSwitch.isOn
+        labelRowView.subviews[1].isDisplayable = displayableSwitch.isOn
     }
 }
