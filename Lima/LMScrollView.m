@@ -121,9 +121,11 @@
 
             // Match content width/height to scroll view width/height
             if (_fitToWidth) {
+                UIEdgeInsets adjustedContentInset = [self adjustedContentInset];
+            
                 [constraints addObject:[NSLayoutConstraint constraintWithItem:_content attribute:NSLayoutAttributeWidth
                     relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeWidth
-                    multiplier:1 constant:0]];
+                    multiplier:1 constant:-(adjustedContentInset.left + adjustedContentInset.right)]];
             }
 
             if (_fitToHeight) {
