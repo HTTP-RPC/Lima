@@ -143,7 +143,7 @@ public extension UIImageView {
 }
 
 public extension UIButton {
-    convenience init(type: UIButton.ButtonType, primaryAction: UIAction?,
+    convenience init(type: UIButton.ButtonType, primaryAction: UIAction? = nil,
         title: String? = nil, image: UIImage? = nil,
         tintColor: UIColor? = nil,
         weight: CGFloat = .nan,
@@ -167,9 +167,9 @@ public extension UIButton {
     }
 }
 
-// TODO UIAction
 public extension UITextField {
-    convenience init(placeholder: String? = nil,
+    convenience init(primaryAction: UIAction? = nil,
+        placeholder: String? = nil,
         textAlignment: NSTextAlignment = .natural, textColor: UIColor? = nil, font: UIFont? = nil,
         borderStyle: UITextField.BorderStyle = .none,
         keyboardType: UIKeyboardType = .default,
@@ -182,7 +182,11 @@ public extension UITextField {
         weight: CGFloat = .nan,
         anchor: LMAnchor = [],
         with: ((UITextField) -> Void)? = nil) {
-        self.init()
+        if (primaryAction == nil) {
+            self.init()
+        } else {
+            self.init(frame: CGRect(), primaryAction: primaryAction)
+        }
 
         self.placeholder = placeholder
         self.textAlignment = textAlignment
@@ -204,14 +208,18 @@ public extension UITextField {
     }
 }
 
-// TODO UIAction
 public extension UIDatePicker {
-    convenience init(datePickerMode: UIDatePicker.Mode = .dateAndTime,
+    convenience init(primaryAction: UIAction? = nil,
+        datePickerMode: UIDatePicker.Mode = .dateAndTime,
         height: CGFloat = .nan,
         weight: CGFloat = .nan,
         anchor: LMAnchor = [],
         with: ((UIDatePicker) -> Void)? = nil) {
-        self.init()
+        if (primaryAction == nil) {
+            self.init()
+        } else {
+            self.init(frame: CGRect(), primaryAction: primaryAction)
+        }
 
         self.datePickerMode = datePickerMode
 
@@ -241,14 +249,18 @@ public extension UISwitch {
     }
 }
 
-// TODO UIAction
 public extension UISegmentedControl {
-    convenience init(tintColor: UIColor? = nil,
+    convenience init(primaryAction: UIAction? = nil,
+        tintColor: UIColor? = nil,
         width: CGFloat = .nan,
         weight: CGFloat = .nan,
         anchor: LMAnchor = [],
         with: ((UISegmentedControl) -> Void)? = nil) {
-        self.init()
+        if (primaryAction == nil) {
+            self.init()
+        } else {
+            self.init(frame: CGRect(), primaryAction: primaryAction)
+        }
 
         self.tintColor = tintColor
 
@@ -260,14 +272,18 @@ public extension UISegmentedControl {
     }
 }
 
-// TODO UIAction
 public extension UISlider {
-    convenience init(minimumValue: Float = 0.0, maximumValue: Float = 1.0, isContinuous: Bool = true,
+    convenience init(primaryAction: UIAction? = nil,
+        minimumValue: Float = 0.0, maximumValue: Float = 1.0, isContinuous: Bool = true,
         width: CGFloat = .nan,
         weight: CGFloat = .nan,
         anchor: LMAnchor = [],
         with: ((UISlider) -> Void)? = nil) {
-        self.init()
+        if (primaryAction == nil) {
+            self.init()
+        } else {
+            self.init(frame: CGRect(), primaryAction: primaryAction)
+        }
 
         self.minimumValue = minimumValue
         self.maximumValue = maximumValue
@@ -282,14 +298,18 @@ public extension UISlider {
     }
 }
 
-// TODO UIAction
 public extension UIStepper {
-    convenience init(minimumValue: Double = 0.0, maximumValue: Double = 100.0,
+    convenience init(primaryAction: UIAction? = nil,
+        minimumValue: Double = 0.0, maximumValue: Double = 100.0,
         stepValue: Double = 1.0,
         weight: CGFloat = .nan,
         anchor: LMAnchor = [],
         with: ((UIStepper) -> Void)? = nil) {
-        self.init()
+        if (primaryAction == nil) {
+            self.init()
+        } else {
+            self.init(frame: CGRect(), primaryAction: primaryAction)
+        }
 
         self.minimumValue = minimumValue
         self.maximumValue = maximumValue
@@ -302,14 +322,18 @@ public extension UIStepper {
     }
 }
 
-// TODO UIAction
 public extension UIPageControl {
-    convenience init(pageIndicatorTintColor: UIColor? = nil,
+    convenience init(primaryAction: UIAction? = nil,
+        pageIndicatorTintColor: UIColor? = nil,
         currentPageIndicatorTintColor: UIColor? = nil,
         weight: CGFloat = .nan,
         anchor: LMAnchor = [],
         with: ((UIPageControl) -> Void)? = nil) {
-        self.init()
+        if (primaryAction == nil) {
+            self.init()
+        } else {
+            self.init(frame: CGRect(), primaryAction: primaryAction)
+        }
 
         self.pageIndicatorTintColor = pageIndicatorTintColor
         self.currentPageIndicatorTintColor = currentPageIndicatorTintColor
@@ -462,16 +486,18 @@ public extension UICollectionViewFlowLayout {
     }
 }
 
-// TODO UIAction
 public extension UIBarButtonItem {
+    @available(*, deprecated)
     convenience init(image: UIImage?, actionHandler: @escaping () -> Void) {
         self.init(image: image) { sender in actionHandler() }
     }
 
+    @available(*, deprecated)
     convenience init(title: String?, actionHandler: @escaping () -> Void) {
         self.init(title: title) { sender in actionHandler() }
     }
     
+    @available(*, deprecated)
     convenience init(barButtonSystemItem systemItem: UIBarButtonItem.SystemItem, actionHandler: @escaping () -> Void) {
         self.init(barButtonSystemItem: systemItem) { sender in actionHandler() }
     }

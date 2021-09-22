@@ -76,7 +76,7 @@ typedef NS_OPTIONS(NSUInteger, LMAnchor) {
 
 @interface UIControl (Lima)
 
-- (void)onControlEvents:(UIControlEvents)controlEvents invoke:(void (^)(id))actionHandler NS_REFINED_FOR_SWIFT;
+- (void)onControlEvents:(UIControlEvents)controlEvents invoke:(void (^)(id))actionHandler NS_REFINED_FOR_SWIFT __deprecated;
 
 @end
 
@@ -88,7 +88,7 @@ typedef NS_OPTIONS(NSUInteger, LMAnchor) {
  * @param image The bar button image.
  * @param actionHandler The action handler.
  */
-- (instancetype)initWithImage:(nullable UIImage *)image actionHandler:(void (^)(UIBarButtonItem *))actionHandler;
+- (instancetype)initWithImage:(nullable UIImage *)image actionHandler:(void (^)(UIBarButtonItem *))actionHandler __deprecated;
 
 /**
  * Creates a new bar button item with an associated action handler.
@@ -96,7 +96,7 @@ typedef NS_OPTIONS(NSUInteger, LMAnchor) {
  * @param title The bar button title.
  * @param actionHandler The action handler.
  */
-- (instancetype)initWithTitle:(nullable NSString *)title actionHandler:(void (^)(UIBarButtonItem *))actionHandler;
+- (instancetype)initWithTitle:(nullable NSString *)title actionHandler:(void (^)(UIBarButtonItem *))actionHandler __deprecated;
 
 /**
  * Creates a new bar button item with an associated action handler.
@@ -104,7 +104,7 @@ typedef NS_OPTIONS(NSUInteger, LMAnchor) {
  * @param systemItem The bar button system item.
  * @param actionHandler The action handler.
  */
-- (instancetype)initWithBarButtonSystemItem:(UIBarButtonSystemItem)systemItem actionHandler:(void (^)(UIBarButtonItem *))actionHandler;
+- (instancetype)initWithBarButtonSystemItem:(UIBarButtonSystemItem)systemItem actionHandler:(void (^)(UIBarButtonItem *))actionHandler __deprecated;
 
 @end
 

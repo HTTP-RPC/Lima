@@ -36,7 +36,7 @@ class ControlsViewController: UITableViewController {
             Section(heading: "Button", cells: [
                 LMTableViewCell(selectionStyle: .none,
                     UIButton(type: .system, primaryAction: UIAction(title: "Button") { [unowned self] action in
-                        buttonPressed()
+                        showGreeting()
                     })
                 )
             ]),
@@ -149,9 +149,9 @@ class ControlsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Item") { [unowned self] sender in
-            barButtonItemPressed(sender)
-        }
+        navigationItem.rightBarButtonItem = UIBarButtonItem(primaryAction: UIAction(title: "Item") { [unowned self] action in
+            showGreeting()
+        })
                
         slider.minimumValue = Float(stepper.minimumValue)
         slider.maximumValue = Float(stepper.maximumValue)
@@ -174,16 +174,8 @@ class ControlsViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return sections[indexPath.section].cells[indexPath.row]
     }
-    
-    func barButtonItemPressed(_ sender: UIBarButtonItem) {
-        let alertController = UIAlertController(title: sender.title, message: "Hello!", preferredStyle: .alert)
 
-        alertController.addAction(UIAlertAction(title: "OK", style: .default))
-
-        present(alertController, animated: true)
-    }
-
-    func buttonPressed() {
+    func showGreeting() {
         let alertController = UIAlertController(title: nil, message: "Hello!", preferredStyle: .alert)
 
         alertController.addAction(UIAlertAction(title: "OK", style: .default))
