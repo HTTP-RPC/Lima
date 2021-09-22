@@ -95,13 +95,10 @@ class ControlsViewController: UITableViewController {
                 LMTableViewCell(selectionStyle: .none,
                     LMRowView(
                         LMSpacer(),
-                        UIStepper(minimumValue: 0.0, maximumValue: 1.0, stepValue: 0.1) { stepper in
-                            stepper.value = 0.5
-                            stepper.on(.valueChanged) { [unowned self] sender in
-                                stepperValueChanged(sender)
-                            }
-
-                            self.stepper = stepper
+                        UIStepper(primaryAction: UIAction() { [unowned self] action in
+                            stepperValueChanged()
+                        }, minimumValue: 0.0, maximumValue: 1.0, stepValue: 0.1) {
+                            stepper = $0
                         },
                         LMSpacer()
                     )
@@ -111,12 +108,10 @@ class ControlsViewController: UITableViewController {
             // Slider
             Section(heading: "Slider", cells: [
                 LMTableViewCell(selectionStyle: .none,
-                    UISlider() { slider in
-                        slider.on(.valueChanged) { [unowned self] sender in
-                            sliderValueChanged(sender)
-                        }
-
-                        self.slider = slider
+                    UISlider(primaryAction: UIAction() { [unowned self] action in
+                        sliderValueChanged()
+                    }) {
+                        slider = $0
                     }
                 )
             ]),
@@ -137,8 +132,8 @@ class ControlsViewController: UITableViewController {
             Section(heading: "Progress View", cells: [
                 LMTableViewCell(selectionStyle: .none,
                     LMColumnView(topMargin: 8, bottomMargin: 8,
-                        UIProgressView() { progressView in
-                            self.progressView = progressView
+                        UIProgressView() {
+                            progressView = $0
                         }
                     )
                 )
@@ -156,7 +151,9 @@ class ControlsViewController: UITableViewController {
         slider.minimumValue = Float(stepper.minimumValue)
         slider.maximumValue = Float(stepper.maximumValue)
 
-        stepperValueChanged(stepper)
+        stepper.value = 0.5
+
+        stepperValueChanged()
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -183,14 +180,14 @@ class ControlsViewController: UITableViewController {
         present(alertController, animated: true)
     }
 
-    func stepperValueChanged(_ sender: UIStepper) {
-        slider.value = Float(sender.value)
+    func stepperValueChanged() {
+        slider.value = Float(stepper.value)
 
         updateState()
     }
 
-    func sliderValueChanged(_ sender: UISlider) {
-        stepper.value = Double(sender.value)
+    func sliderValueChanged() {
+        stepper.value = Double(slider.value)
 
         updateState()
     }
