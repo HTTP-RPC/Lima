@@ -17,6 +17,7 @@ This guide introduces the Lima framework and provides an overview of its key fea
     * [LMScrollView](#lmscrollview)
     * [LMTableViewCell and LMTableViewHeaderFooterView](#lmtableviewcell-and-lmtableviewheaderfooterview)
     * [LMCollectionViewCell](#lmcollectionviewcell)
+* [Initializer Callbacks](#initializer-callbacks)
 * [Additional Information](#additional-information)
 
 # Getting Lima
@@ -455,6 +456,9 @@ override init(frame: CGRect) {
     }
 }
 ```
+
+# Initializer Callbacks
+TODO
 
 # Additional Information
 This guide introduced the Lima framework and provided an overview of its key features. For more information, see the [examples](LimaTest/).

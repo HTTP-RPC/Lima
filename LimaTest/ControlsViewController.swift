@@ -16,12 +16,7 @@ import UIKit
 import Lima
 
 class ControlsViewController: UITableViewController {
-    struct Section {
-        let heading: String
-        let cells: [UITableViewCell]
-    }
-
-    var sections: [Section]!
+    var sections: [[UITableViewCell]]!
 
     var stepper: UIStepper!
     var slider: UISlider!
@@ -32,17 +27,14 @@ class ControlsViewController: UITableViewController {
         super.loadView()
 
         sections = [
-            // Button
-            Section(heading: "Button", cells: [
+            [
                 LMTableViewCell(selectionStyle: .none,
                     UIButton(type: .system, primaryAction: UIAction(title: "Button") { [unowned self] action in
                         showGreeting()
                     })
                 )
-            ]),
-
-            // Text fields
-            Section(heading: "Text Fields", cells: [
+            ],
+            [
                 LMTableViewCell(selectionStyle: .none,
                     UITextField(placeholder: "Text")
                 ),
@@ -54,44 +46,27 @@ class ControlsViewController: UITableViewController {
                 ),
                 LMTableViewCell(selectionStyle: .none,
                     UITextField(placeholder: "Password", isSecureTextEntry: true)
-                )
-            ]),
-
-            // Switch
-            Section(heading: "Switch", cells: [
-                UITableViewCell(style: .default, text: "On/Off", selectionStyle: .none) { tableViewCell in
-                    tableViewCell.accessoryView = UISwitch()
-                }
-            ]),
-
-            // Segmented control
-            Section(heading: "Segmented Control", cells: [
-                // TODO Use actions
+                ),
                 LMTableViewCell(selectionStyle: .none,
-                    LMRowView(
-                        LMSpacer(),
-                        UISegmentedControl() { segmentedControl in
-                            segmentedControl.insertSegment(withTitle: "One", at: 0, animated: false)
-                            segmentedControl.insertSegment(withTitle: "Two", at: 1, animated: false)
-                            segmentedControl.insertSegment(withTitle: "Three", at: 2, animated: false)
-                            segmentedControl.insertSegment(withTitle: "Four", at: 3, animated: false)
-                        },
-                        LMSpacer()
-                    )
-                )
-            ]),
+                    UITextView(height: 90) { textView in
+                        textView.textContainer.lineFragmentPadding = 0
 
-            // Date picker
-            Section(heading: "Date Picker", cells: [
-                LMTableViewCell(selectionStyle: .none,
-                    UIDatePicker(datePickerMode: .dateAndTime) { datePicker in
-                        datePicker.preferredDatePickerStyle = .inline
+                        textView.text = "This is a multi-line text view."
                     }
                 )
-            ]),
-
-            // Stepper
-            Section(heading: "Stepper", cells: [
+            ],
+            [
+                UITableViewCell(style: .default, text: "On/Off", selectionStyle: .none) { tableViewCell in
+                    tableViewCell.accessoryView = UISwitch()
+                },
+                LMTableViewCell(selectionStyle: .none,
+                    UISegmentedControl(items: ["One", "Two", "Three", "Four"])
+                ),
+                LMTableViewCell(selectionStyle: .none,
+                    UIDatePicker(datePickerMode: .dateAndTime)
+                )
+            ],
+            [
                 LMTableViewCell(selectionStyle: .none,
                     LMRowView(
                         LMSpacer(),
@@ -102,22 +77,14 @@ class ControlsViewController: UITableViewController {
                         },
                         LMSpacer()
                     )
-                )
-            ]),
-
-            // Slider
-            Section(heading: "Slider", cells: [
+                ),
                 LMTableViewCell(selectionStyle: .none,
                     UISlider(primaryAction: UIAction() { [unowned self] action in
                         sliderValueChanged()
                     }) {
                         slider = $0
                     }
-                )
-            ]),
-
-            // Page control
-            Section(heading: "Page Control", cells: [
+                ),
                 LMTableViewCell(selectionStyle: .none,
                     UIPageControl(pageIndicatorTintColor: .lightGray,
                         currentPageIndicatorTintColor: .black) { pageControl in
@@ -125,11 +92,7 @@ class ControlsViewController: UITableViewController {
 
                         self.pageControl = pageControl
                     }
-                )
-            ]),
-
-            // Progress view
-            Section(heading: "Progress View", cells: [
+                ),
                 LMTableViewCell(selectionStyle: .none,
                     LMColumnView(topMargin: 8, bottomMargin: 8,
                         UIProgressView() {
@@ -137,7 +100,7 @@ class ControlsViewController: UITableViewController {
                         }
                     )
                 )
-            ])
+            ]
         ]
     }
 
@@ -161,15 +124,11 @@ class ControlsViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return sections[section].cells.count
-    }
-
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return sections[section].heading
+        return sections[section].count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return sections[indexPath.section].cells[indexPath.row]
+        return sections[indexPath.section][indexPath.row]
     }
 
     func showGreeting() {

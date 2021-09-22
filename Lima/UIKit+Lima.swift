@@ -149,11 +149,7 @@ public extension UIButton {
         weight: CGFloat = .nan,
         anchor: LMAnchor = [],
         with: ((UIButton) -> Void) = { _ in }) {
-        if (primaryAction == nil) {
-            self.init(type: type)
-        } else {
-            self.init(type: type, primaryAction: primaryAction)
-        }
+        self.init(type: type, primaryAction: primaryAction)
 
         setTitle(title, for: .normal)
         setImage(image, for: .normal)
@@ -211,6 +207,7 @@ public extension UITextField {
 public extension UIDatePicker {
     convenience init(primaryAction: UIAction? = nil,
         datePickerMode: UIDatePicker.Mode = .dateAndTime,
+        preferredDatePickerStyle: UIDatePickerStyle = .automatic,
         height: CGFloat = .nan,
         weight: CGFloat = .nan,
         anchor: LMAnchor = [],
@@ -405,23 +402,6 @@ public extension UITextView {
     }
 }
 
-public extension UITableView {
-    convenience init(style: UITableView.Style = .plain,
-        allowsSelection: Bool = true,
-        weight: CGFloat = .nan,
-        anchor: LMAnchor = [],
-        with: ((UITableView) -> Void) = { _ in }) {
-        self.init(frame: CGRect(), style: style)
-
-        self.allowsSelection = allowsSelection
-
-        self.weight = weight
-        self.anchor = anchor
-
-        with(self)
-    }
-}
-
 public extension UITableViewCell {
     convenience init(style: UITableViewCell.CellStyle,
         text: String? = nil, detailText: String? = nil,
@@ -447,22 +427,6 @@ public extension UITableViewHeaderFooterView {
 
         textLabel?.text = text
         detailTextLabel?.text = detailText
-
-        with(self)
-    }
-}
-
-public extension UICollectionView {
-    convenience init(collectionViewLayout layout: UICollectionViewLayout,
-        backgroundColor: UIColor? = .white,
-        width: CGFloat = .nan, height: CGFloat = .nan,
-        with: ((UICollectionView) -> Void) = { _ in }) {
-        self.init(frame: CGRect(), collectionViewLayout: layout)
-
-        self.backgroundColor = backgroundColor
-
-        self.width = width
-        self.height = height
 
         with(self)
     }
