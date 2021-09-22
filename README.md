@@ -97,6 +97,8 @@ columnView.addSubview(label)
 
 Although the two examples produce identical results, the first version is much more concise and easier to read.
 
+Lima's initializers also support callbacks that can be used to further customize the instantiated views. Initializer callbacks are discussed in more detail [later](#initializer-callbacks).
+
 ## LMLayoutView
 `LMLayoutView` is the base class for all layout views in Lima. Among other things, it provides the following initializer, which is used to establish the view's layout margins:
 
