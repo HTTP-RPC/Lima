@@ -99,20 +99,17 @@ class ColorCell: LMCollectionViewCell {
         
         selectedBackgroundView?.backgroundColor = UIColor(0xeeeeee, alpha: 0.9)
 
+        colorSwatch = UIView()
+
+        colorSwatch.weight = 1
+
+        colorSwatch.layer.borderWidth = 0.5
+        colorSwatch.layer.borderColor = UIColor.gray.cgColor
+
         setContent(LMColumnView(
-            UILabel(textAlignment: .center, font: .preferredFont(forTextStyle: .caption1)) { nameLabel = $0 }
-        ) { columnView in
-            let colorSwatch = UIView()
-
-            colorSwatch.weight = 1
-
-            colorSwatch.layer.borderWidth = 0.5
-            colorSwatch.layer.borderColor = UIColor.gray.cgColor
-
-            columnView.addSubview(colorSwatch)
-
-            self.colorSwatch = colorSwatch
-        }, ignoreMargins: false)
+            UILabel(textAlignment: .center, font: .preferredFont(forTextStyle: .caption1)) { nameLabel = $0 },
+            colorSwatch
+        ), ignoreMargins: false)
     }
 
     required init?(coder decoder: NSCoder) {
