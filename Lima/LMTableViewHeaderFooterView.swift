@@ -16,11 +16,11 @@ import UIKit
 
 public extension LMTableViewHeaderFooterView {
     convenience init(_ content: UIView? = nil,
-        with: ((LMTableViewHeaderFooterView) -> Void)? = nil) {
+        with: ((LMTableViewHeaderFooterView) -> Void) = { _ in }) {
         self.init()
 
         setContent(content, ignoreMargins: false)
 
-        with?(self)
+        with(self)
     }
 }

@@ -29,7 +29,7 @@ public extension LMColumnView {
         weight: CGFloat = .nan,
         anchor: LMAnchor = [],
         _ subviews: UIView...,
-        with: ((LMColumnView) -> Void)? = nil) {
+        with: ((LMColumnView) -> Void) = { _ in }) {
         self.init(margin: margin,
             topMargin: topMargin,
             leadingMargin: leadingMargin,
@@ -51,6 +51,6 @@ public extension LMColumnView {
             addSubview(view)
         }
 
-        with?(self)
+        with(self)
     }
 }

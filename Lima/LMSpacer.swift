@@ -18,7 +18,7 @@ public extension LMSpacer {
     convenience init(width: CGFloat = .nan, height: CGFloat = .nan,
         weight: CGFloat = .nan,
         backgroundColor: UIColor? = nil,
-        with: ((LMSpacer) -> Void)? = nil) {
+        with: ((LMSpacer) -> Void) = { _ in }) {
         self.init()
 
         self.width = width
@@ -27,6 +27,6 @@ public extension LMSpacer {
 
         self.backgroundColor = backgroundColor
 
-        with?(self)
+        with(self)
     }
 }

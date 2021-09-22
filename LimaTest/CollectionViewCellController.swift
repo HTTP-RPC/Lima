@@ -100,7 +100,7 @@ class ColorCell: LMCollectionViewCell {
         selectedBackgroundView?.backgroundColor = UIColor(0xeeeeee, alpha: 0.9)
 
         setContent(LMColumnView(
-            UILabel(textAlignment: .center, font: .preferredFont(forTextStyle: .caption1)) { self.nameLabel = $0 }
+            UILabel(textAlignment: .center, font: .preferredFont(forTextStyle: .caption1)) { nameLabel = $0 }
         ) { columnView in
             let colorSwatch = UIView()
 

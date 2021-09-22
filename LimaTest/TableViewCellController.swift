@@ -96,26 +96,26 @@ class PharmacyCell: LMTableViewCell {
 
         setContent(LMColumnView(spacing: 4,
             LMRowView(spacing: 4, isAlignToBaseline: true,
-                UILabel(font: .preferredFont(forTextStyle: .headline), weight: 1) { self.nameLabel = $0 },
-                UILabel(textColor: .gray, font: .preferredFont(forTextStyle: .body)) { self.distanceLabel = $0 }
+                UILabel(font: .preferredFont(forTextStyle: .headline), weight: 1) { nameLabel = $0 },
+                UILabel(textColor: .gray, font: .preferredFont(forTextStyle: .body)) { distanceLabel = $0 }
             ),
 
-            UILabel(font: .preferredFont(forTextStyle: .body), numberOfLines: 0) { self.addressLabel = $0 },
+            UILabel(font: .preferredFont(forTextStyle: .body), numberOfLines: 0) { addressLabel = $0 },
 
             LMColumnView(spacing: 4,
                 LMRowView(
                     UIImageView(image: UIImage(systemName: "phone.fill"), tintColor: .darkGray),
-                    UILabel(font: .preferredFont(forTextStyle: .caption1), weight: 1) { self.phoneLabel = $0 }
+                    UILabel(font: .preferredFont(forTextStyle: .caption1), weight: 1) { phoneLabel = $0 }
                 ),
 
                 LMRowView(
                     UIImageView(image: UIImage(systemName: "printer.fill"), tintColor: .darkGray),
-                    UILabel(font: .preferredFont(forTextStyle: .caption1), weight: 1) { self.faxLabel = $0 }
+                    UILabel(font: .preferredFont(forTextStyle: .caption1), weight: 1) { faxLabel = $0 }
                 ),
 
                 LMRowView(
                     UIImageView(image: UIImage(systemName: "envelope.fill"), tintColor: .darkGray),
-                    UILabel(font: .preferredFont(forTextStyle: .caption1), weight: 1) { self.emailLabel = $0 }
+                    UILabel(font: .preferredFont(forTextStyle: .caption1), weight: 1) { emailLabel = $0 }
                 )
             )
         ), ignoreMargins: false)

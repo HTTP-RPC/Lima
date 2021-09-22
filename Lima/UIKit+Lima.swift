@@ -101,7 +101,7 @@ public extension UILabel {
         width: CGFloat = .nan,
         weight: CGFloat = .nan,
         anchor: LMAnchor = [],
-        with: ((UILabel) -> Void)? = nil) {
+        with: ((UILabel) -> Void) = { _ in }) {
         self.init()
 
         self.text = text
@@ -115,7 +115,7 @@ public extension UILabel {
         self.weight = weight
         self.anchor = anchor
 
-        with?(self)
+        with(self)
     }
 }
 
@@ -126,7 +126,7 @@ public extension UIImageView {
         width: CGFloat = .nan, height: CGFloat = .nan,
         weight: CGFloat = .nan,
         anchor: LMAnchor = [],
-        with: ((UIImageView) -> Void)? = nil) {
+        with: ((UIImageView) -> Void) = { _ in }) {
         self.init()
 
         self.image = image
@@ -138,7 +138,7 @@ public extension UIImageView {
         self.weight = weight
         self.anchor = anchor
 
-        with?(self)
+        with(self)
     }
 }
 
@@ -148,7 +148,7 @@ public extension UIButton {
         tintColor: UIColor? = nil,
         weight: CGFloat = .nan,
         anchor: LMAnchor = [],
-        with: ((UIButton) -> Void)? = nil) {
+        with: ((UIButton) -> Void) = { _ in }) {
         if (primaryAction == nil) {
             self.init(type: type)
         } else {
@@ -163,7 +163,7 @@ public extension UIButton {
         self.weight = weight
         self.anchor = anchor
 
-        with?(self)
+        with(self)
     }
 }
 
@@ -181,7 +181,7 @@ public extension UITextField {
         width: CGFloat = .nan,
         weight: CGFloat = .nan,
         anchor: LMAnchor = [],
-        with: ((UITextField) -> Void)? = nil) {
+        with: ((UITextField) -> Void) = { _ in }) {
         if (primaryAction == nil) {
             self.init()
         } else {
@@ -204,7 +204,7 @@ public extension UITextField {
         self.weight = weight
         self.anchor = anchor
 
-        with?(self)
+        with(self)
     }
 }
 
@@ -214,7 +214,7 @@ public extension UIDatePicker {
         height: CGFloat = .nan,
         weight: CGFloat = .nan,
         anchor: LMAnchor = [],
-        with: ((UIDatePicker) -> Void)? = nil) {
+        with: ((UIDatePicker) -> Void) = { _ in }) {
         if (primaryAction == nil) {
             self.init()
         } else {
@@ -227,7 +227,7 @@ public extension UIDatePicker {
         self.weight = weight
         self.anchor = anchor
 
-        with?(self)
+        with(self)
     }
 }
 
@@ -235,7 +235,7 @@ public extension UISwitch {
     convenience init(primaryAction: UIAction? = nil,
         tintColor: UIColor? = nil,
         onTintColor: UIColor? = nil,
-        with: ((UISwitch) -> Void)? = nil) {
+        with: ((UISwitch) -> Void) = { _ in }) {
         if (primaryAction == nil) {
             self.init()
         } else {
@@ -245,7 +245,7 @@ public extension UISwitch {
         self.tintColor = tintColor
         self.onTintColor = onTintColor
 
-        with?(self)
+        with(self)
     }
 }
 
@@ -255,7 +255,7 @@ public extension UISegmentedControl {
         width: CGFloat = .nan,
         weight: CGFloat = .nan,
         anchor: LMAnchor = [],
-        with: ((UISegmentedControl) -> Void)? = nil) {
+        with: ((UISegmentedControl) -> Void) = { _ in }) {
         if (primaryAction == nil) {
             self.init()
         } else {
@@ -268,7 +268,7 @@ public extension UISegmentedControl {
         self.weight = weight
         self.anchor = anchor
 
-        with?(self)
+        with(self)
     }
 }
 
@@ -278,7 +278,7 @@ public extension UISlider {
         width: CGFloat = .nan,
         weight: CGFloat = .nan,
         anchor: LMAnchor = [],
-        with: ((UISlider) -> Void)? = nil) {
+        with: ((UISlider) -> Void) = { _ in }) {
         if (primaryAction == nil) {
             self.init()
         } else {
@@ -294,7 +294,7 @@ public extension UISlider {
         self.weight = weight
         self.anchor = anchor
 
-        with?(self)
+        with(self)
     }
 }
 
@@ -304,7 +304,7 @@ public extension UIStepper {
         stepValue: Double = 1.0,
         weight: CGFloat = .nan,
         anchor: LMAnchor = [],
-        with: ((UIStepper) -> Void)? = nil) {
+        with: ((UIStepper) -> Void) = { _ in }) {
         if (primaryAction == nil) {
             self.init()
         } else {
@@ -318,7 +318,7 @@ public extension UIStepper {
         self.weight = weight
         self.anchor = anchor
 
-        with?(self)
+        with(self)
     }
 }
 
@@ -328,7 +328,7 @@ public extension UIPageControl {
         currentPageIndicatorTintColor: UIColor? = nil,
         weight: CGFloat = .nan,
         anchor: LMAnchor = [],
-        with: ((UIPageControl) -> Void)? = nil) {
+        with: ((UIPageControl) -> Void) = { _ in }) {
         if (primaryAction == nil) {
             self.init()
         } else {
@@ -341,7 +341,7 @@ public extension UIPageControl {
         self.weight = weight
         self.anchor = anchor
 
-        with?(self)
+        with(self)
     }
 }
 
@@ -350,7 +350,7 @@ public extension UIActivityIndicatorView {
         color: UIColor? = nil,
         weight: CGFloat = .nan,
         anchor: LMAnchor = [],
-        with: ((UIActivityIndicatorView) -> Void)? = nil) {
+        with: ((UIActivityIndicatorView) -> Void) = { _ in }) {
         self.init(style: style ?? .medium)
 
         self.color = color
@@ -358,7 +358,7 @@ public extension UIActivityIndicatorView {
         self.weight = weight
         self.anchor = anchor
 
-        with?(self)
+        with(self)
     }
 }
 
@@ -367,7 +367,7 @@ public extension UIProgressView {
         trackTintColor: UIColor? = nil,
         weight: CGFloat = .nan,
         anchor: LMAnchor = [],
-        with: ((UIProgressView) -> Void)? = nil) {
+        with: ((UIProgressView) -> Void) = { _ in }) {
         self.init()
 
         self.progressTintColor = progressTintColor
@@ -376,7 +376,7 @@ public extension UIProgressView {
         self.weight = weight
         self.anchor = anchor
 
-        with?(self)
+        with(self)
     }
 }
 
@@ -387,7 +387,7 @@ public extension UITextView {
         width: CGFloat = .nan, height: CGFloat = .nan,
         weight: CGFloat = .nan,
         anchor: LMAnchor = [],
-        with: ((UITextView) -> Void)? = nil) {
+        with: ((UITextView) -> Void) = { _ in }) {
         self.init(frame: CGRect(), textContainer: textContainer)
 
         self.isEditable = isEditable        
@@ -401,7 +401,7 @@ public extension UITextView {
         self.weight = weight
         self.anchor = anchor
 
-        with?(self)
+        with(self)
     }
 }
 
@@ -410,7 +410,7 @@ public extension UITableView {
         allowsSelection: Bool = true,
         weight: CGFloat = .nan,
         anchor: LMAnchor = [],
-        with: ((UITableView) -> Void)? = nil) {
+        with: ((UITableView) -> Void) = { _ in }) {
         self.init(frame: CGRect(), style: style)
 
         self.allowsSelection = allowsSelection
@@ -418,7 +418,7 @@ public extension UITableView {
         self.weight = weight
         self.anchor = anchor
 
-        with?(self)
+        with(self)
     }
 }
 
@@ -427,7 +427,7 @@ public extension UITableViewCell {
         text: String? = nil, detailText: String? = nil,
         accessoryType: UITableViewCell.AccessoryType = .none,
         selectionStyle: UITableViewCell.SelectionStyle = .blue,
-        with: ((UITableViewCell) -> Void)? = nil) {
+        with: ((UITableViewCell) -> Void) = { _ in }) {
         self.init(style: style, reuseIdentifier: nil)
 
         textLabel?.text = text
@@ -436,19 +436,19 @@ public extension UITableViewCell {
         self.accessoryType = accessoryType
         self.selectionStyle = selectionStyle
 
-        with?(self)
+        with(self)
     }
 }
 
 public extension UITableViewHeaderFooterView {
     convenience init(text: String? = nil, detailText: String? = nil,
-        with: ((UITableViewHeaderFooterView) -> Void)? = nil) {
+        with: ((UITableViewHeaderFooterView) -> Void) = { _ in }) {
         self.init()
 
         textLabel?.text = text
         detailTextLabel?.text = detailText
 
-        with?(self)
+        with(self)
     }
 }
 
@@ -456,7 +456,7 @@ public extension UICollectionView {
     convenience init(collectionViewLayout layout: UICollectionViewLayout,
         backgroundColor: UIColor? = .white,
         width: CGFloat = .nan, height: CGFloat = .nan,
-        with: ((UICollectionView) -> Void)? = nil) {
+        with: ((UICollectionView) -> Void) = { _ in }) {
         self.init(frame: CGRect(), collectionViewLayout: layout)
 
         self.backgroundColor = backgroundColor
@@ -464,7 +464,7 @@ public extension UICollectionView {
         self.width = width
         self.height = height
 
-        with?(self)
+        with(self)
     }
 }
 

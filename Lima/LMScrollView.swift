@@ -20,7 +20,7 @@ public extension LMScrollView {
         weight: CGFloat = .nan,
         anchor: LMAnchor = [],
         _ content: UIView? = nil,
-        with: ((LMScrollView) -> Void)? = nil) {
+        with: ((LMScrollView) -> Void) = { _ in }) {
         self.init()
 
         self.isFitToWidth = isFitToWidth
@@ -33,6 +33,6 @@ public extension LMScrollView {
 
         self.content = content
 
-        with?(self)
+        with(self)
     }
 }

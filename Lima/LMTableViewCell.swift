@@ -18,7 +18,7 @@ public extension LMTableViewCell {
     convenience init(accessoryType: UITableViewCell.AccessoryType = .none,
         selectionStyle: UITableViewCell.SelectionStyle = .blue,
         _ content: UIView? = nil,
-        with: ((LMTableViewCell) -> Void)? = nil) {
+        with: ((LMTableViewCell) -> Void) = { _ in }) {
         self.init()
 
         setContent(content, ignoreMargins: false)
@@ -26,6 +26,6 @@ public extension LMTableViewCell {
         self.accessoryType = accessoryType
         self.selectionStyle = selectionStyle
 
-        with?(self)
+        with(self)
     }
 }

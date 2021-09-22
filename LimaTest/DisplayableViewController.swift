@@ -33,7 +33,7 @@ class DisplayableViewController: UIViewController {
         view = LMColumnView(margin: 16, spacing: 16, backgroundColor: .white,
             LMRowView(weight: 1,
                 UILabel(text: "One", with: labelStyle),
-                UILabel(text: "Two") { labelStyle($0); self.secondLabel = $0 },
+                UILabel(text: "Two") { labelStyle($0); secondLabel = $0 },
                 UILabel(text: "Three", with: labelStyle)
             ),
             
@@ -45,7 +45,7 @@ class DisplayableViewController: UIViewController {
                 UISwitch(primaryAction: UIAction() { [unowned self] action in
                     toggleDisplayable()
                 }) {
-                    self.displayableSwitch = $0
+                    displayableSwitch = $0
                 }
             ),
 
