@@ -464,7 +464,7 @@ Previous sections included examples of how Lima's initializers can be used to de
 
 For example, Lima's `UILabel` initializer is defined as follows: 
 
-```
+```swift
 convenience init(text: String? = nil,
     textAlignment: NSTextAlignment = .natural, textColor: UIColor? = nil, font: UIFont? = nil,
     numberOfLines: Int = 1,
@@ -479,7 +479,7 @@ convenience init(text: String? = nil,
 
 The trailing closure could be used as shown below to create a label with a custom border:
 
-```
+```swift
 UILabel(text: "Hello, World!", textAlignment: .center, weight: 1) { label in
     label.layer.borderWidth = 0.5
     label.layer.borderColor = UIColor.lightGray.cgColor
@@ -488,7 +488,7 @@ UILabel(text: "Hello, World!", textAlignment: .center, weight: 1) { label in
 
 However, a more common use of initializer callbacks is to associate view instances with controller member variables, or "outlets". For example:
 
-```
+```swift
 class ControlsViewController: UITableViewController {
     var sections: [[UITableViewCell]]!
 
@@ -528,7 +528,7 @@ class ControlsViewController: UITableViewController {
     }
 ```
 
-The complete controls view is shown below:
+The complete view is shown below:
 
 <img src="README/controls.png" width="250px"/>
 
