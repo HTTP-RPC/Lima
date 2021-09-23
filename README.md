@@ -460,7 +460,75 @@ override init(frame: CGRect) {
 ```
 
 # Initializer Callbacks
-TODO
+Previous sections included examples of how Lima's initializers can be used to declaratively construct and configure various UIView subclasses. All Lima initializers also provide a trailing closure that can be used to further customize the instantiated view. This callback is automatically invoked by the initializer before it returns. 
+
+For example, Lima's `UILabel` initializer is defined as follows: 
+
+```
+convenience init(text: String? = nil,
+    textAlignment: NSTextAlignment = .natural, textColor: UIColor? = nil, font: UIFont? = nil,
+    numberOfLines: Int = 1,
+    lineBreakMode: NSLineBreakMode = .byTruncatingTail,
+    width: CGFloat = .nan,
+    weight: CGFloat = .nan,
+    anchor: LMAnchor = [],
+    with: ((UILabel) -> Void) = { _ in }) {
+```
+
+The trailing closure could be used as shown below to create a label with a custom border:
+
+```
+UILabel(text: "Hello, World!", textAlignment: .center, weight: 1) { label in
+    label.layer.borderWidth = 0.5
+    label.layer.borderColor = UIColor.lightGray.cgColor
+}
+```
+
+However, a more common use of initializer callbacks is to associate view instances with controller member variables, or "outlets". For example:
+
+```
+class ControlsViewController: UITableViewController {
+    var sections: [[UITableViewCell]]!
+
+    var stepper: UIStepper!
+    var slider: UISlider!
+    ...
+
+    override func loadView() {
+        super.loadView()
+
+        sections = [
+            ...,
+            
+            [
+                LMTableViewCell(
+                    LMRowView(
+                        LMSpacer(),
+                        UIStepper(primaryAction: UIAction() { [unowned self] action in
+                            stepperValueChanged()
+                        }, minimumValue: 0.0, maximumValue: 1.0, stepValue: 0.1) {
+                            stepper = $0
+                        },
+                        LMSpacer()
+                    )
+                ),
+                LMTableViewCell(
+                    UISlider(primaryAction: UIAction() { [unowned self] action in
+                        sliderValueChanged()
+                    }) {
+                        slider = $0
+                    }
+                ),
+                
+                ...
+            ]
+        ]
+    }
+```
+
+The complete controls view is shown below:
+
+<img src="README/controls.png" width="250px"/>
 
 # Additional Information
 This guide introduced the Lima framework and provided an overview of its key features. For more information, see the [examples](LimaTest/).

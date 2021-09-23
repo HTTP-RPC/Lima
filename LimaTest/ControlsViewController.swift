@@ -28,26 +28,26 @@ class ControlsViewController: UITableViewController {
 
         sections = [
             [
-                LMTableViewCell(selectionStyle: .none,
+                LMTableViewCell(
                     UIButton(type: .system, primaryAction: UIAction(title: "Button") { [unowned self] action in
                         showGreeting()
                     })
                 )
             ],
             [
-                LMTableViewCell(selectionStyle: .none,
+                LMTableViewCell(
                     UITextField(placeholder: "Text")
                 ),
-                LMTableViewCell(selectionStyle: .none,
+                LMTableViewCell(
                     UITextField(placeholder: "Number", keyboardType: .numberPad)
                 ),
-                LMTableViewCell(selectionStyle: .none,
+                LMTableViewCell(
                     UITextField(placeholder: "Email Address", keyboardType: .emailAddress)
                 ),
-                LMTableViewCell(selectionStyle: .none,
+                LMTableViewCell(
                     UITextField(placeholder: "Password", isSecureTextEntry: true)
                 ),
-                LMTableViewCell(selectionStyle: .none,
+                LMTableViewCell(
                     UITextView(height: 90) { textView in
                         textView.textContainer.lineFragmentPadding = 0
 
@@ -59,15 +59,15 @@ class ControlsViewController: UITableViewController {
                 UITableViewCell(style: .default, text: "On/Off", selectionStyle: .none) { tableViewCell in
                     tableViewCell.accessoryView = UISwitch()
                 },
-                LMTableViewCell(selectionStyle: .none,
+                LMTableViewCell(
                     UISegmentedControl(items: ["One", "Two", "Three", "Four"])
                 ),
-                LMTableViewCell(selectionStyle: .none,
+                LMTableViewCell(
                     UIDatePicker(datePickerMode: .dateAndTime)
                 )
             ],
             [
-                LMTableViewCell(selectionStyle: .none,
+                LMTableViewCell(
                     LMRowView(
                         LMSpacer(),
                         UIStepper(primaryAction: UIAction() { [unowned self] action in
@@ -78,14 +78,14 @@ class ControlsViewController: UITableViewController {
                         LMSpacer()
                     )
                 ),
-                LMTableViewCell(selectionStyle: .none,
+                LMTableViewCell(
                     UISlider(primaryAction: UIAction() { [unowned self] action in
                         sliderValueChanged()
                     }) {
                         slider = $0
                     }
                 ),
-                LMTableViewCell(selectionStyle: .none,
+                LMTableViewCell(
                     UIPageControl(pageIndicatorTintColor: .lightGray,
                         currentPageIndicatorTintColor: .black) { pageControl in
                         pageControl.numberOfPages = 11
@@ -93,7 +93,7 @@ class ControlsViewController: UITableViewController {
                         self.pageControl = pageControl
                     }
                 ),
-                LMTableViewCell(selectionStyle: .none,
+                LMTableViewCell(
                     LMColumnView(topMargin: 8, bottomMargin: 8,
                         UIProgressView() {
                             progressView = $0
@@ -110,6 +110,8 @@ class ControlsViewController: UITableViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(primaryAction: UIAction(title: "Item") { [unowned self] action in
             showGreeting()
         })
+        
+        tableView.allowsSelection = false
                
         slider.minimumValue = Float(stepper.minimumValue)
         slider.maximumValue = Float(stepper.maximumValue)
