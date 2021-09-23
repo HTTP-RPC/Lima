@@ -472,7 +472,9 @@ convenience init(text: String? = nil,
     width: CGFloat = .nan,
     weight: CGFloat = .nan,
     anchor: LMAnchor = [],
-    with: ((UILabel) -> Void) = { _ in }) {
+    with: ((UILabel) -> Void) = { _ in }) { 
+    ... 
+}
 ```
 
 The trailing closure could be used as shown below to create a label with a custom border:
