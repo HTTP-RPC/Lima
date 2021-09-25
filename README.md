@@ -62,7 +62,9 @@ Lima also provides the following view classes to simplify the use of several com
 * `LMTableViewHeaderFooterView` - extends `UITableViewHeaderFooterView` to automatically pin content to edges
 * `LMCollectionViewCell` - extends `UICollectionViewCell` to automatically pin content to edges
 
-Finally, Lima adds initializers to common UIKit views and controls to simplify their declaration in a view hieararchy. For example, the following Swift code creates an instance of `LMColumnView` containing a `UIImageView` and a `UILabel`:
+Finally, Lima adds initializers to common UIKit views and controls to simplify their declaration in a view hieararchy. 
+
+For example, the following Swift code creates an instance of `LMColumnView` containing a `UIImageView` and a `UILabel`:
 
 ```swift
 let columnView = LMColumnView(
@@ -164,7 +166,7 @@ LMRowView(spacing: 16,
 )
 ```
 
-The default spacing value is system-dependent.
+If unspecified, the default (system-dependent) spacing value will be used.
 
 Spacer views can also be used to align subviews or create fixed space within a row or column. This is discussed in more detail [later](#lmspacer).
 
@@ -201,7 +203,7 @@ The `isAlignToBaseline` property is used to toggle baseline alignment in row and
 
 <img src="README/baseline-alignment.png" width="250px"/>
 
-This code creates a row view containing three labels with different font sizes. Because `isAlignToBaseline` is set to `true`, the baselines of all three labels will line up:
+This code creates a row view containing three labels with different font sizes. Because `isAlignToBaseline` is set to `true`, the baselines of all three labels will line up, as shown above:
 
 ```swift
 LMRowView(isAlignToBaseline: true,
@@ -468,7 +470,7 @@ override init(frame: CGRect) {
 ```
 
 # Initializer Callbacks
-Previous sections included examples of how Lima's initializers can be used to declaratively construct and configure various UIView subclasses. All Lima initializers also provide a trailing closure that can be used to further customize the instantiated view. This callback is automatically invoked by the initializer before it returns. 
+Previous sections included examples of how Lima's initializers can be used to declaratively construct and configure various `UIView` subclasses. All Lima initializers also provide a trailing closure that can be used to further customize the instantiated view. This callback is automatically invoked by the initializer before it returns. 
 
 For example, Lima's `UILabel` initializer is defined as follows: 
 
