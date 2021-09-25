@@ -62,9 +62,7 @@ Lima also provides the following view classes to simplify the use of several com
 * `LMTableViewHeaderFooterView` - extends `UITableViewHeaderFooterView` to automatically pin content to edges
 * `LMCollectionViewCell` - extends `UICollectionViewCell` to automatically pin content to edges
 
-Finally, Lima adds initializers to common UIKit views and controls to simplify their declaration in a view hieararchy. 
-
-For example, the following Swift code creates an instance of `LMColumnView` containing a `UIImageView` and a `UILabel`:
+Finally, Lima adds initializers to common UIKit views and controls to simplify their declaration in a view hieararchy. For example, the following Swift code creates an instance of `LMColumnView` containing a `UIImageView` and a `UILabel`:
 
 ```swift
 let columnView = LMColumnView(
@@ -144,9 +142,31 @@ The first two properties specify the horizontal and vertical alignment, respecti
 
 <img src="README/vertical-alignment.png" width="683px"/>
 
-The `spacing` property represents the amount of space reserved between successive subviews. For row views, this refers to the horizontal space between the subviews; for column views, it refers to the vertical space between the views. The default value is system-dependent.
+For example, the following code creates a row view containing three labels that are aligned horizontally to the row's leading edge and vertically to the top of the row:
 
-Spacer views can also be used to align subviews or create fixed space within a row or column. This is discussed in more detail later.
+```swift
+LMRowView(horizontalAlignment: .leading, verticalAlignment: .top,
+    UILabel(text: "One"),
+    UILabel(text: "Two"),
+    UILabel(text: "Three")
+)
+```
+
+The `spacing` property represents the amount of space reserved between successive subviews. For row views, this refers to the horizontal space between the subviews; for column views, it refers to the vertical space between the views. 
+
+This code creates a row view whose labels will each be separated by a gap of 16 pixels:
+
+```swift
+LMRowView(spacing: 16,
+    UILabel(text: "One"),
+    UILabel(text: "Two"),
+    UILabel(text: "Three")
+)
+```
+
+The default spacing value is system-dependent.
+
+Spacer views can also be used to align subviews or create fixed space within a row or column. This is discussed in more detail [later](#lmspacer).
 
 The `isAlignToBaseline` property enables baseline alignment in a row or column view. It is set to `false` by default. Baseline alignment is discussed in more detail below. 
 
