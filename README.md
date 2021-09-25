@@ -1,7 +1,7 @@
 [![Releases](https://img.shields.io/github/release/HTTP-RPC/Lima.svg)](https://github.com/HTTP-RPC/Lima/releases)
 
 # Introduction
-Lima is an open-source framework for simplifying development of responsive iOS and macOS applications. It combines the power of SwiftUI-like declarative layout with the flexibility and stability of the [UIKit](https://developer.apple.com/documentation/uikit/) framework. The project's name comes from the nautical _L_ or _Lima_ flag, representing the first letter of the word "layout":
+Lima is an open-source framework for simplifying development of responsive iOS and macOS applications. It combines the productivity of SwiftUI-like declarative layout with the flexibility and stability of the [UIKit](https://developer.apple.com/documentation/uikit/) framework. The project's name comes from the nautical _L_ or _Lima_ flag, representing the first letter of the word "layout":
 
 ![](README/lima.png)
 
