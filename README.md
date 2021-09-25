@@ -1,7 +1,7 @@
 [![Releases](https://img.shields.io/github/release/HTTP-RPC/Lima.svg)](https://github.com/HTTP-RPC/Lima/releases)
 
 # Introduction
-Lima is an open-source framework for simplifying development of responsive iOS and macOS applications. The project's name comes from the nautical _L_ or _Lima_ flag, representing the first letter of the word "layout":
+Lima is an open-source framework for simplifying development of responsive iOS and macOS applications. It combines the power of SwiftUI-like declarative layout with the flexibility and stability of the [UIKit](https://developer.apple.com/documentation/uikit/) framework. The project's name comes from the nautical _L_ or _Lima_ flag, representing the first letter of the word "layout":
 
 ![](README/lima.png)
 
@@ -31,7 +31,7 @@ Lima is distributed as an XCFramework. iOS 14 or macOS 11 or later is required. 
 * In the dialog that appears, ensure that "Copy items if needed" is checked and click "Finish"
 
 # Lima Classes
-Auto layout is a feature of [UIKit](https://developer.apple.com/documentation/uikit/), a framework for building iOS and macOS applications, that allows developers to create applications that automatically adapt to device size, orientation, or content changes. An application built using auto layout generally has little or no hard-coded view positioning logic, but instead dynamically arranges user interface elements based on their preferred or "intrinsic" content sizes.
+Auto layout is a UIKit feature that allows developers to create applications that automatically adapt to device size, orientation, or content changes. An application built using auto layout generally has little or no hard-coded view positioning logic, but instead dynamically arranges user interface elements based on their preferred or "intrinsic" content sizes.
 
 Auto layout in UIKit is implemented via layout constraints, which, while powerful, are not particularly convenient to work with. To simplify the process, Lima provides a set of view classes whose sole responsibility is managing the size and position of their respective subviews:
 
