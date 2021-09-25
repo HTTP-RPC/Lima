@@ -144,29 +144,11 @@ The first two properties specify the horizontal and vertical alignment, respecti
 
 <img src="README/vertical-alignment.png" width="683px"/>
 
-For example, this code creates a row view containing three labels that are aligned horizontally to the row's leading edge and vertically to the top of the row:
+The `spacing` property represents the amount of space reserved between successive subviews. For row views, this refers to the horizontal space between the subviews; for column views, it refers to the vertical space between the views. The default value is system-dependent.
 
-```swift
-LMRowView(horizontalAlignment: .leading, verticalAlignment: .top,
-    UILabel(text: "One"),
-    UILabel(text: "Two"),
-    UILabel(text: "Three")
-)
-```
+Spacer views can also be used to align subviews or create fixed space within a row or column. This is discussed in more detail later.
 
-Spacer views can also be used to align subviews within a row or column. This is discussed in more detail later.
-
-The `spacing` property represents the amount of space reserved between successive subviews. For row views, this refers to the horizontal space between the subviews; for column views, it refers to the vertical space between the views. For example, the following code creates a row view whose labels will each be separated by a gap of 16 pixels:
-
-```swift
-LMRowView(spacing: 16,
-    UILabel(text: "One"),
-    UILabel(text: "Two"),
-    UILabel(text: "Three")
-)
-```
-
-The `isAlignToBaseline` property can be used to manage how subviews are vertically aligned with respect to one another. This is discussed in more detail below. Baseline alignmnent is disabled by default.
+The `isAlignToBaseline` property enables baseline alignment in a row or column view. It is set to `false` by default. Baseline alignment is discussed in more detail below. 
 
 ### LMRowView
 The `LMRowView` class arranges its subviews in a horizontal line. Subviews are laid out from leading to trailing edge in the order in which they are declared. For example, the following code creates a row view containing three labels:
@@ -181,25 +163,6 @@ LMRowView(
 
 If the row view's vertical alignment is set to `fill` (the default), the top and bottom edges of each subview will be pinned to the top and bottom edges of the row (excluding layout margins), ensuring that all of the labels are the same height. Otherwise, the subviews will be vertically aligned according to the specified value.
 
-#### Baseline Alignment
-This code creates a row view containing three labels with different font sizes. Because `isAlignToBaseline` is set to `true`, the baselines of all three labels will line up:
-
-```swift
-LMRowView(isAlignToBaseline: true,
-    UILabel(text: "abcd", font: UIFont.systemFont(ofSize: 16)),
-    UILabel(text: "efg", font: UIFont.systemFont(ofSize: 32)),
-    UILabel(text: "hijk", font: UIFont.systemFont(ofSize: 24))
-)
-```
-
-Further, the baseline to which subviews will be aligned can be controlled by the `baseline` property. The default value is `first`, meaning that subviews will be aligned to the first baseline. However, it is also possible to align subviews to the last baseline; for example:
-
-```swift
-LMRowView(isAlignToBaseline: true, baseline: .last,
-    ...
-)
-```
-
 ### LMColumnView
 The `LMColumnView` class arranges its subviews in a vertical line. Subviews are laid out from top to bottom in the order in which they are declared. For example, the following code creates a column view containing three labels:
 
@@ -213,7 +176,29 @@ LMColumnView(
 
 If the column view's horizontal alignment is set to `fill` (the default), the left and right edges of each subview will be pinned to the left and right edges of the column (excluding layout margins), ensuring that all of the labels are the same width. Otherwise, the subviews will be horizontally aligned according to the specified value.
 
-#### Baseline Alignment
+### Baseline Alignment
+The `isAlignToBaseline` property is used to toggle baseline alignment in row and column views:
+
+<img src="README/baseline-alignment.png" width="250px"/>
+
+This code creates a row view containing three labels with different font sizes. Because `isAlignToBaseline` is set to `true`, the baselines of all three labels will line up:
+
+```swift
+LMRowView(isAlignToBaseline: true,
+    UILabel(text: "abcd", font: UIFont.systemFont(ofSize: 16)),
+    UILabel(text: "efg", font: UIFont.systemFont(ofSize: 32)),
+    UILabel(text: "hijk", font: UIFont.systemFont(ofSize: 24))
+)
+```
+
+The baseline to which subviews will be aligned can be controlled by the `baseline` property of `LMRowView`. The default value is `first`, meaning that subviews will be aligned to the first baseline. However, it is also possible to align subviews to the last baseline; for example:
+
+```swift
+LMRowView(isAlignToBaseline: true, baseline: .last,
+    ...
+)
+```
+
 This code creates a column view containing three labels with different font sizes. Because `isAlignToBaseline` is set to `true`, the labels will be spaced vertically according to their first and last baselines rather than their bounding rectangles:
 
 ```swift
@@ -224,7 +209,7 @@ LMColumnView(isAlignToBaseline: true,
 )
 ```
 
-#### Grid Alignment
+### Grid Alignment
 `LMColumnView` defines the following additional property, which specifies that nested subviews should be vertically aligned in a grid, like an HTML table: 
 
 ```swift
@@ -253,6 +238,10 @@ LMColumnView(isAlignToGrid: true,
 ```
 
 Column view subviews that are not `LMRowView` instances are excluded from alignment. This allows them to be used as section breaks or headers, for example.
+
+The following is an example of grid aligment that also incorporates baseline alignment:
+
+<img src="README/grid-alignment.png" width="250px"/>
 
 ### Fixed Dimensions
 Although views are typically arranged based on their intrinsic content sizes, it is occasionally necessary to assign a fixed value for a particular view dimension. Lima adds the following properties to `UIView` to support explicit size definition:
@@ -290,7 +279,7 @@ LMColumnView(
 )
 ```
  
-Since weights are relative to each other, this code will produce the same results:
+Since weight values are relative, this code will produce the same results:
 
 ```swift
 LMColumnView(
@@ -314,8 +303,7 @@ Weights in `LMRowView` are handled similarly, but in the horizontal direction.
 Note that explicitly defined width and height values take priority over weights. If a view has both a weight and a fixed dimension value, the weight value will be ignored.
 
 ## LMSpacer
-The `LMSpacer` class can be used to create flexible space between other views. `LMSpacer` has a default weight of 1, so the following code would create a label with an equal amount of space on either side:
-
+The `LMSpacer` class is used to create space between other views. `LMSpacer` has a default weight of 1, so the following code would create a label with an equal amount of flexible space on either side:
 
 ```swift
 LMRowView(

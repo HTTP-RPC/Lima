@@ -259,18 +259,18 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3794D6762430D77500C74F19 /* LMRowView.h in Headers */,
-				3794D6752430D77500C74F19 /* LMLayoutView.h in Headers */,
-				3794D6742430D77500C74F19 /* LMColumnView.h in Headers */,
-				3794D6792430D77500C74F19 /* LMTableViewCell.h in Headers */,
-				3794D6732430D77500C74F19 /* LMCollectionViewCell.h in Headers */,
-				3794D6722430D77500C74F19 /* LMBoxView.h in Headers */,
 				3794D62C2430D57900C74F19 /* Lima.h in Headers */,
+				3794D6752430D77500C74F19 /* LMLayoutView.h in Headers */,
+				3794D6722430D77500C74F19 /* LMBoxView.h in Headers */,
+				3794D6742430D77500C74F19 /* LMColumnView.h in Headers */,
+				3794D6762430D77500C74F19 /* LMRowView.h in Headers */,
 				3794D6782430D77500C74F19 /* LMSpacer.h in Headers */,
 				3794D6712430D76500C74F19 /* LMAnchorView.h in Headers */,
 				3794D6772430D77500C74F19 /* LMScrollView.h in Headers */,
-				3794D67B2430D77500C74F19 /* UIKit+Lima.h in Headers */,
+				3794D6792430D77500C74F19 /* LMTableViewCell.h in Headers */,
 				3794D67A2430D77500C74F19 /* LMTableViewHeaderFooterView.h in Headers */,
+				3794D6732430D77500C74F19 /* LMCollectionViewCell.h in Headers */,
+				3794D67B2430D77500C74F19 /* UIKit+Lima.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,26 +378,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3794D6892430D8DA00C74F19 /* LMScrollView.swift in Sources */,
-				3794D6682430D74000C74F19 /* LMBoxView.m in Sources */,
-				3794D6672430D74000C74F19 /* LMScrollView.m in Sources */,
-				3794D66F2430D74000C74F19 /* LMRowView.m in Sources */,
-				3794D67D2430D7DE00C74F19 /* UIKit+Lima.swift in Sources */,
-				3794D6662430D74000C74F19 /* LMAnchorView.m in Sources */,
-				3794D6812430D8AD00C74F19 /* LMColumnView.swift in Sources */,
-				3794D66D2430D74000C74F19 /* UIKit+Lima.m in Sources */,
-				3794D66E2430D74000C74F19 /* LMTableViewCell.m in Sources */,
-				3794D68D2430D8E800C74F19 /* LMTableViewHeaderFooterView.swift in Sources */,
-				3794D6702430D74000C74F19 /* LMColumnView.m in Sources */,
-				3794D67F2430D8A200C74F19 /* LMLayoutView.swift in Sources */,
-				3794D6832430D8BA00C74F19 /* LMRowView.swift in Sources */,
 				3794D6692430D74000C74F19 /* LMLayoutView.m in Sources */,
-				3794D6852430D8CD00C74F19 /* LMAnchorView.swift in Sources */,
+				3794D67F2430D8A200C74F19 /* LMLayoutView.swift in Sources */,
+				3794D6682430D74000C74F19 /* LMBoxView.m in Sources */,
+				3794D6702430D74000C74F19 /* LMColumnView.m in Sources */,
+				3794D6812430D8AD00C74F19 /* LMColumnView.swift in Sources */,
+				3794D66F2430D74000C74F19 /* LMRowView.m in Sources */,
+				3794D6832430D8BA00C74F19 /* LMRowView.swift in Sources */,
+				3794D6662430D74000C74F19 /* LMAnchorView.m in Sources */,
 				3794D66A2430D74000C74F19 /* LMSpacer.m in Sources */,
-				3794D68B2430D8E200C74F19 /* LMTableViewCell.swift in Sources */,
-				3794D66C2430D74000C74F19 /* LMCollectionViewCell.m in Sources */,
-				3794D66B2430D74000C74F19 /* LMTableViewHeaderFooterView.m in Sources */,
 				3794D6872430D8D500C74F19 /* LMSpacer.swift in Sources */,
+				3794D6852430D8CD00C74F19 /* LMAnchorView.swift in Sources */,
+				3794D6672430D74000C74F19 /* LMScrollView.m in Sources */,
+				3794D6892430D8DA00C74F19 /* LMScrollView.swift in Sources */,
+				3794D66E2430D74000C74F19 /* LMTableViewCell.m in Sources */,
+				3794D68B2430D8E200C74F19 /* LMTableViewCell.swift in Sources */,
+				3794D66B2430D74000C74F19 /* LMTableViewHeaderFooterView.m in Sources */,
+				3794D68D2430D8E800C74F19 /* LMTableViewHeaderFooterView.swift in Sources */,
+				3794D66C2430D74000C74F19 /* LMCollectionViewCell.m in Sources */,
+				3794D66D2430D74000C74F19 /* UIKit+Lima.m in Sources */,
+				3794D67D2430D7DE00C74F19 /* UIKit+Lima.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,19 +405,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3794D6942430D9ED00C74F19 /* VerticalAlignmentViewController.swift in Sources */,
+				3794D6392430D5F700C74F19 /* AppDelegate.swift in Sources */,
 				3794D63D2430D5F700C74F19 /* ViewController.swift in Sources */,
 				3794D6912430D9DA00C74F19 /* GreetingViewController.swift in Sources */,
-				3794D69F2430DA3C00C74F19 /* AnchorViewController.swift in Sources */,
-				3794D69E2430DA3C00C74F19 /* PeriodicTableViewController.swift in Sources */,
-				3794D69D2430DA3C00C74F19 /* DisplayableViewController.swift in Sources */,
+				3794D6952430D9ED00C74F19 /* HorizontalAlignmentViewController.swift in Sources */,
+				3794D6942430D9ED00C74F19 /* VerticalAlignmentViewController.swift in Sources */,
+				3794D6982430DA1600C74F19 /* BaselineAlignmentViewController.swift in Sources */,
 				3794D6992430DA1600C74F19 /* GridAlignmentViewController.swift in Sources */,
+				3794D69F2430DA3C00C74F19 /* AnchorViewController.swift in Sources */,
+				3794D69D2430DA3C00C74F19 /* DisplayableViewController.swift in Sources */,
+				3794D69E2430DA3C00C74F19 /* PeriodicTableViewController.swift in Sources */,
 				3794D6A32430DA4D00C74F19 /* TableViewCellController.swift in Sources */,
 				3794D6A62430DA5D00C74F19 /* CollectionViewCellController.swift in Sources */,
 				3794D6A72430DA5D00C74F19 /* ControlsViewController.swift in Sources */,
-				3794D6952430D9ED00C74F19 /* HorizontalAlignmentViewController.swift in Sources */,
-				3794D6392430D5F700C74F19 /* AppDelegate.swift in Sources */,
-				3794D6982430DA1600C74F19 /* BaselineAlignmentViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
