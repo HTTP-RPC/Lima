@@ -284,7 +284,6 @@ public extension UISlider {
 
         self.minimumValue = minimumValue
         self.maximumValue = maximumValue
-
         self.isContinuous = isContinuous
 
         self.width = width
@@ -321,8 +320,12 @@ public extension UIStepper {
 
 public extension UIPageControl {
     convenience init(primaryAction: UIAction? = nil,
+        hidesForSinglePage: Bool = false,
         pageIndicatorTintColor: UIColor? = nil,
         currentPageIndicatorTintColor: UIColor? = nil,
+        backgroundStyle: UIPageControl.BackgroundStyle = .automatic,
+        allowsContinuousInteraction: Bool = true,
+        preferredIndicatorImage: UIImage? = nil,
         weight: CGFloat = .nan,
         anchor: LMAnchor = [],
         with: ((UIPageControl) -> Void) = { _ in }) {
@@ -332,8 +335,12 @@ public extension UIPageControl {
             self.init(frame: CGRect(), primaryAction: primaryAction)
         }
 
+        self.hidesForSinglePage = hidesForSinglePage
         self.pageIndicatorTintColor = pageIndicatorTintColor
         self.currentPageIndicatorTintColor = currentPageIndicatorTintColor
+        self.backgroundStyle = backgroundStyle
+        self.allowsContinuousInteraction = allowsContinuousInteraction
+        self.preferredIndicatorImage = preferredIndicatorImage
 
         self.weight = weight
         self.anchor = anchor
