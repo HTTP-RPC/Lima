@@ -213,7 +213,7 @@ LMRowView(isAlignToBaseline: true,
 )
 ```
 
-The baseline to which subviews will be aligned can be controlled by the `baseline` property of `LMRowView`. The default value is `first`, meaning that subviews will be aligned to the first baseline. However, it is also possible to align subviews to the last baseline; for example:
+The baseline to which subviews will be aligned can be controlled by the `baseline` property. The default value is `first`, meaning that subviews will be aligned to the first baseline. However, it is also possible to align subviews to the last baseline; for example:
 
 ```swift
 LMRowView(isAlignToBaseline: true, baseline: .last,
