@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		372202902700C3F000B2A114 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3722028F2700C3F000B2A114 /* README.md */; };
 		3794D62C2430D57900C74F19 /* Lima.h in Headers */ = {isa = PBXBuildFile; fileRef = 3794D62A2430D57900C74F19 /* Lima.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3794D6392430D5F700C74F19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3794D6382430D5F700C74F19 /* AppDelegate.swift */; };
 		3794D63D2430D5F700C74F19 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3794D63C2430D5F700C74F19 /* ViewController.swift */; };
@@ -360,7 +359,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				372202902700C3F000B2A114 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -586,7 +584,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.2.1;
+				MARKETING_VERSION = 3.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = org.httprpc.Lima;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -616,7 +614,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.2.1;
+				MARKETING_VERSION = 3.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = org.httprpc.Lima;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;

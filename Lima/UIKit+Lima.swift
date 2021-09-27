@@ -81,18 +81,6 @@ public extension UIView {
     }
 }
 
-public extension UIControl {
-    @available(*, deprecated)
-    func on(_ event: UIControl.Event, invoke actionHandler: @escaping () -> Void) {
-        __onControlEvents(event) { sender in actionHandler() }
-    }
-
-    @available(*, deprecated)
-    func on<T>(_ event: UIControl.Event, invoke actionHandler: @escaping (T) -> Void) {
-        __onControlEvents(event) { sender in actionHandler(sender as! T) }
-    }
-}
-
 public extension UILabel {
     convenience init(text: String? = nil,
         textAlignment: NSTextAlignment = .natural, textColor: UIColor? = nil, font: UIFont? = nil,
@@ -454,22 +442,5 @@ public extension UICollectionViewFlowLayout {
         self.sectionInsetReference = sectionInsetReference
         self.minimumInteritemSpacing = minimumInteritemSpacing
         self.minimumLineSpacing = minimumLineSpacing
-    }
-}
-
-public extension UIBarButtonItem {
-    @available(*, deprecated)
-    convenience init(image: UIImage?, actionHandler: @escaping () -> Void) {
-        self.init(image: image) { sender in actionHandler() }
-    }
-
-    @available(*, deprecated)
-    convenience init(title: String?, actionHandler: @escaping () -> Void) {
-        self.init(title: title) { sender in actionHandler() }
-    }
-    
-    @available(*, deprecated)
-    convenience init(barButtonSystemItem systemItem: UIBarButtonItem.SystemItem, actionHandler: @escaping () -> Void) {
-        self.init(barButtonSystemItem: systemItem) { sender in actionHandler() }
     }
 }

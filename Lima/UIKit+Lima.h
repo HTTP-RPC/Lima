@@ -74,38 +74,4 @@ typedef NS_OPTIONS(NSUInteger, LMAnchor) {
 
 @end
 
-@interface UIControl (Lima)
-
-- (void)onControlEvents:(UIControlEvents)controlEvents invoke:(void (^)(id))actionHandler NS_REFINED_FOR_SWIFT __deprecated;
-
-@end
-
-@interface UIBarButtonItem (Lima)
-
-/**
- * Creates a new bar button item with an associated action handler.
- *
- * @param image The bar button image.
- * @param actionHandler The action handler.
- */
-- (instancetype)initWithImage:(nullable UIImage *)image actionHandler:(void (^)(UIBarButtonItem *))actionHandler __deprecated;
-
-/**
- * Creates a new bar button item with an associated action handler.
- *
- * @param title The bar button title.
- * @param actionHandler The action handler.
- */
-- (instancetype)initWithTitle:(nullable NSString *)title actionHandler:(void (^)(UIBarButtonItem *))actionHandler __deprecated;
-
-/**
- * Creates a new bar button item with an associated action handler.
- *
- * @param systemItem The bar button system item.
- * @param actionHandler The action handler.
- */
-- (instancetype)initWithBarButtonSystemItem:(UIBarButtonSystemItem)systemItem actionHandler:(void (^)(UIBarButtonItem *))actionHandler __deprecated;
-
-@end
-
 NS_ASSUME_NONNULL_END

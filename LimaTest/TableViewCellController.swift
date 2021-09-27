@@ -16,13 +16,16 @@ import UIKit
 import Lima
 
 class TableViewCellController: UITableViewController {
-    var pharmacies: [Pharmacy]?
+    var pharmacies: [Pharmacy] = []
+
+    let pharmacyCellIdentifier = "pharmacyCell"
+    
+    let phoneNumberFormatter = PhoneNumberFormatter()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tableView.estimatedRowHeight = 2
-        tableView.register(PharmacyCell.self, forCellReuseIdentifier: PharmacyCell.description())
+        tableView.register(PharmacyCell.self, forCellReuseIdentifier: pharmacyCellIdentifier)
 
         let jsonDecoder = JSONDecoder()
 
@@ -31,17 +34,27 @@ class TableViewCellController: UITableViewController {
             fatalError()
         }
 
-        pharmacies = try? jsonDecoder.decode([Pharmacy].self, from: data)
+        do {
+            pharmacies = try jsonDecoder.decode([Pharmacy].self, from: data)
+        } catch {
+            fatalError()
+        }
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return pharmacies?.count ?? 0
+        return pharmacies.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: PharmacyCell.description(), for: indexPath) as! PharmacyCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: pharmacyCellIdentifier, for: indexPath) as! PharmacyCell
 
-        cell.pharmacy = pharmacies?[indexPath.row]
+        let pharmacy = pharmacies[indexPath.row]
+
+        cell.nameLabel.text = pharmacy.name
+        cell.addressLabel.text = String(format: "%@\n%@ %@ %@", pharmacy.street, pharmacy.city, pharmacy.state, pharmacy.zipCode)
+        cell.phoneLabel.text = phoneNumberFormatter.string(for: pharmacy.phone)
+        cell.faxLabel.text = phoneNumberFormatter.string(for: pharmacy.fax)
+        cell.emailLabel.text = pharmacy.email
 
         return cell
     }
@@ -53,74 +66,46 @@ class TableViewCellController: UITableViewController {
 
 struct Pharmacy: Decodable {
     let name: String
-
     let street: String
     let city: String
     let state: String
     let zipCode: String
-
-    var address: String {
-        return String(format: "%@\n%@ %@ %@", street, city, state, zipCode)
-    }
-
     let phone: String
     let fax: String
     let email: String
-    let distance: Double
 }
 
 class PharmacyCell: LMTableViewCell {
     var nameLabel: UILabel!
-    var distanceLabel: UILabel!
     var addressLabel: UILabel!
     var phoneLabel: UILabel!
     var faxLabel: UILabel!
     var emailLabel: UILabel!
 
-    let distanceFormatter = MeasurementFormatter()
-    let phoneNumberFormatter = PhoneNumberFormatter();
-
-    var pharmacy: Pharmacy! {
-        didSet {
-            nameLabel.text = pharmacy.name
-            distanceLabel.text = distanceFormatter.string(for: Measurement(value: pharmacy.distance, unit: UnitLength.miles))
-            addressLabel.text = pharmacy.address
-            phoneLabel.text = phoneNumberFormatter.string(for: pharmacy.phone)
-            faxLabel.text = phoneNumberFormatter.string(for: pharmacy.fax)
-            emailLabel.text = pharmacy.email
-        }
-    }
-
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
         setContent(LMColumnView(spacing: 4,
-            LMRowView(spacing: 4, isAlignToBaseline: true,
-                UILabel(font: .preferredFont(forTextStyle: .headline), weight: 1) { nameLabel = $0 },
-                UILabel(textColor: .gray, font: .preferredFont(forTextStyle: .body)) { distanceLabel = $0 }
-            ),
-
+            UILabel(font: .preferredFont(forTextStyle: .headline), weight: 1) { nameLabel = $0 },
             UILabel(font: .preferredFont(forTextStyle: .body), numberOfLines: 0) { addressLabel = $0 },
 
-            LMColumnView(spacing: 4,
+            LMColumnView(spacing: 4, isAlignToGrid: true,
                 LMRowView(
-                    UIImageView(image: UIImage(systemName: "phone.fill"), tintColor: .darkGray),
+                    UIImageView(image: UIImage(systemName: "phone.fill"), contentMode: .scaleAspectFit, tintColor: .darkGray),
                     UILabel(font: .preferredFont(forTextStyle: .caption1), weight: 1) { phoneLabel = $0 }
                 ),
 
                 LMRowView(
-                    UIImageView(image: UIImage(systemName: "printer.fill"), tintColor: .darkGray),
+                    UIImageView(image: UIImage(systemName: "printer.fill"), contentMode: .scaleAspectFit, tintColor: .darkGray),
                     UILabel(font: .preferredFont(forTextStyle: .caption1), weight: 1) { faxLabel = $0 }
                 ),
 
                 LMRowView(
-                    UIImageView(image: UIImage(systemName: "envelope.fill"), tintColor: .darkGray),
+                    UIImageView(image: UIImage(systemName: "envelope.fill"), contentMode: .scaleAspectFit, tintColor: .darkGray),
                     UILabel(font: .preferredFont(forTextStyle: .caption1), weight: 1) { emailLabel = $0 }
                 )
             )
         ), ignoreMargins: false)
-
-        distanceFormatter.unitStyle = .long
     }
 
     required init?(coder decoder: NSCoder) {

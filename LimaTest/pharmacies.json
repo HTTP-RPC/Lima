@@ -7,8 +7,7 @@
         "zipCode": "02108",
         "phone": "6177427035",
         "email": "store04@cvs.com",
-        "fax": "6177420001",
-        "distance": 0.42
+        "fax": "6177420001"
     },
     {
         "name": "Walgreens",
@@ -18,8 +17,7 @@
         "zipCode": "02108",
         "phone": "6172657488",
         "email": "store20@walgreens.com",
-        "fax": "6177420001",
-        "distance": 0.64
+        "fax": "6177420001"
     },
     {
         "name": "Rite Aid",
@@ -29,8 +27,7 @@
         "zipCode": "02127",
         "phone": "6172695788",
         "email": "store01@riteaid.com",
-        "fax": "6172695789",
-        "distance": 2.08
+        "fax": "6172695789"
     },
     {
         "name": "Stop & Shop Pharmacy",
@@ -40,8 +37,7 @@
         "zipCode": "02148",
         "phone": "7813211768",
         "email": "pharmacy@stopshop.com",
-        "fax": "7813211700",
-        "distance": 4.31
+        "fax": "7813211700"
     },
     {
         "name": "Elmwood Pharmacy",
@@ -51,7 +47,6 @@
         "zipCode": "02148",
         "phone": "7813210055",
         "email": "pharmacy@elmwoodpharmacy.com",
-        "fax": "7813214567",
-        "distance": 4.46
+        "fax": "7813214567"
     }
 ]
