@@ -16,47 +16,43 @@ import UIKit
 import Lima
 
 class TableViewCellController: UITableViewController {
-    var pharmacies: [Pharmacy] = []
-
     let pharmacyCellIdentifier = "pharmacyCell"
     
     let phoneNumberFormatter = PhoneNumberFormatter()
+    
+    lazy var dataSource = UITableViewDiffableDataSource<Int, Pharmacy>(tableView: tableView) { (tableView, indexPath, pharmacy) -> UITableViewCell? in
+        let cell = tableView.dequeueReusableCell(withIdentifier: self.pharmacyCellIdentifier, for: indexPath) as! PharmacyCell
+
+        cell.nameLabel.text = pharmacy.name
+        cell.addressLabel.text = String(format: "%@\n%@ %@ %@", pharmacy.street, pharmacy.city, pharmacy.state, pharmacy.zipCode)
+        cell.phoneLabel.text = self.phoneNumberFormatter.string(for: pharmacy.phone)
+        cell.faxLabel.text = self.phoneNumberFormatter.string(for: pharmacy.fax)
+        cell.emailLabel.text = pharmacy.email
+        
+        return cell
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableView.register(PharmacyCell.self, forCellReuseIdentifier: pharmacyCellIdentifier)
 
+        tableView.dataSource = dataSource
+
         let jsonDecoder = JSONDecoder()
 
         guard let url = Bundle.main.url(forResource: "pharmacies", withExtension: "json"),
-            let data = try? Data(contentsOf: url) else {
+            let data = try? Data(contentsOf: url),
+            let pharmacies = try? jsonDecoder.decode([Pharmacy].self, from: data) else {
             fatalError()
         }
 
-        do {
-            pharmacies = try jsonDecoder.decode([Pharmacy].self, from: data)
-        } catch {
-            fatalError()
-        }
-    }
+        var snapshot = NSDiffableDataSourceSnapshot<Int, Pharmacy>()
+        
+        snapshot.appendSections([0])
+        snapshot.appendItems(pharmacies)
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return pharmacies.count
-    }
-
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: pharmacyCellIdentifier, for: indexPath) as! PharmacyCell
-
-        let pharmacy = pharmacies[indexPath.row]
-
-        cell.nameLabel.text = pharmacy.name
-        cell.addressLabel.text = String(format: "%@\n%@ %@ %@", pharmacy.street, pharmacy.city, pharmacy.state, pharmacy.zipCode)
-        cell.phoneLabel.text = phoneNumberFormatter.string(for: pharmacy.phone)
-        cell.faxLabel.text = phoneNumberFormatter.string(for: pharmacy.fax)
-        cell.emailLabel.text = pharmacy.email
-
-        return cell
+        dataSource.apply(snapshot, animatingDifferences: false)
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -64,7 +60,7 @@ class TableViewCellController: UITableViewController {
     }
 }
 
-struct Pharmacy: Decodable {
+struct Pharmacy: Hashable, Decodable {
     let name: String
     let street: String
     let city: String
