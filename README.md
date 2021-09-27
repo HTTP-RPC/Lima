@@ -16,7 +16,6 @@ This guide introduces the Lima framework and provides an overview of its key fea
     * [LMAnchorView](#lmanchorview)
     * [LMScrollView](#lmscrollview)
     * [LMTableViewCell and LMTableViewHeaderFooterView](#lmtableviewcell-and-lmtableviewheaderfooterview)
-    * [LMCollectionViewCell](#lmcollectionviewcell)
 * [Initializer Callbacks](#initializer-callbacks)
 * [Additional Information](#additional-information)
 
@@ -60,7 +59,6 @@ Lima also provides the following view classes to simplify the use of several com
 * `LMScrollView` - extends `UIScrollView` to automatically adapt to content size
 * `LMTableViewCell` - extends `UITableViewCell` to automatically pin content to edges
 * `LMTableViewHeaderFooterView` - extends `UITableViewHeaderFooterView` to automatically pin content to edges
-* `LMCollectionViewCell` - extends `UICollectionViewCell` to automatically pin content to edges
 
 Finally, Lima adds initializers to common UIKit views and controls to simplify their declaration in a view hieararchy. 
 
@@ -455,19 +453,6 @@ LMTableViewHeaderFooterView(
 ```
 
 As with `LMTableViewCell`, `LMTableViewHeaderFooterView` can also be used as the base class for custom table view header/footer view classes.
-
-## LMCollectionViewCell
-Similar to `LMTableViewCell`, the `LMCollectionViewCell` class facilitates the declaration of custom collection view content. It extends `UICollectionViewCell` and automatically applies constraints to its content to enable self-sizing behavior. For example:
-
-```swift
-override init(frame: CGRect) {
-    super.init(frame: frame)
-
-    content = LMColumnView(
-        ...
-    }
-}
-```
 
 # Initializer Callbacks
 Previous sections included examples of how Lima's initializers can be used to declaratively construct and configure various `UIView` subclasses. All Lima initializers also provide a trailing closure that can be used to further customize the instantiated view. This callback is automatically invoked by the initializer before it returns. 

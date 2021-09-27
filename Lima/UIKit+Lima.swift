@@ -426,21 +426,3 @@ public extension UITableViewHeaderFooterView {
         with(self)
     }
 }
-
-public extension UICollectionViewFlowLayout {
-    convenience init(scrollDirection: UICollectionView.ScrollDirection = .vertical,
-        itemSize: CGSize = CGSize(),
-        sectionInset: UIEdgeInsets = UIEdgeInsets.zero,
-        sectionInsetReference: UICollectionViewFlowLayout.SectionInsetReference = .fromContentInset,
-        minimumInteritemSpacing: CGFloat = 0,
-        minimumLineSpacing: CGFloat = 0) {
-        self.init()
-
-        self.scrollDirection = scrollDirection
-        self.itemSize = itemSize
-        self.sectionInset = sectionInset
-        self.sectionInsetReference = sectionInsetReference
-        self.minimumInteritemSpacing = minimumInteritemSpacing
-        self.minimumLineSpacing = minimumLineSpacing
-    }
-}

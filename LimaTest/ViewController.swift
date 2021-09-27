@@ -26,7 +26,6 @@ class ViewController: UITableViewController {
         case displayable
         case periodicTable
         case tableViewCell
-        case collectionViewCell
         case controls
     }
 
@@ -83,9 +82,6 @@ class ViewController: UITableViewController {
         case .tableViewCell:
             cell.textLabel?.text = "Table View Cell"
 
-        case .collectionViewCell:
-            cell.textLabel?.text = "Collection View Cell"
-
         case .controls:
             cell.textLabel?.text = "Controls"
         }
@@ -128,13 +124,6 @@ class ViewController: UITableViewController {
 
         case .tableViewCell:
             viewController = TableViewCellController()
-
-        case .collectionViewCell:
-            let collectionViewLayout = UICollectionViewFlowLayout(itemSize: CGSize(width: 80, height: 120),
-                sectionInset: UIEdgeInsets(top: 12, left: 12, bottom: 12, right: 12),
-                sectionInsetReference: .fromSafeArea)
-
-            viewController = CollectionViewCellController(collectionViewLayout: collectionViewLayout)
 
         case .controls:
             viewController = ControlsViewController(style: .insetGrouped)

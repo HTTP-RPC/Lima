@@ -30,5 +30,4 @@ FOUNDATION_EXPORT const unsigned char LimaVersionString[];
 #import "LMScrollView.h"
 #import "LMTableViewCell.h"
 #import "LMTableViewHeaderFooterView.h"
-#import "LMCollectionViewCell.h"
 #import "UIKit+Lima.h"
