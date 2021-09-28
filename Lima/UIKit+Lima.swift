@@ -414,15 +414,20 @@ public extension UITextView {
 
 public extension UITableViewCell {
     convenience init(style: UITableViewCell.CellStyle,
-        text: String? = nil, detailText: String? = nil,
+        text: String? = nil, secondaryText: String? = nil, image: UIImage? = nil,
         accessoryType: UITableViewCell.AccessoryType = .none,
         selectionStyle: UITableViewCell.SelectionStyle = .blue,
         with: ((UITableViewCell) -> Void) = { _ in }) {
         self.init(style: style, reuseIdentifier: nil)
 
-        textLabel?.text = text
-        detailTextLabel?.text = detailText
+        var contentConfiguration = defaultContentConfiguration()
+        
+        contentConfiguration.text = text
+        contentConfiguration.secondaryText = secondaryText
+        contentConfiguration.image = image
 
+        self.contentConfiguration = contentConfiguration
+        
         self.accessoryType = accessoryType
         self.selectionStyle = selectionStyle
 
@@ -431,12 +436,16 @@ public extension UITableViewCell {
 }
 
 public extension UITableViewHeaderFooterView {
-    convenience init(text: String? = nil, detailText: String? = nil,
+    convenience init(text: String? = nil, secondaryText: String? = nil,
         with: ((UITableViewHeaderFooterView) -> Void) = { _ in }) {
         self.init()
 
-        textLabel?.text = text
-        detailTextLabel?.text = detailText
+        var contentConfiguration = defaultContentConfiguration()
+        
+        contentConfiguration.text = text
+        contentConfiguration.secondaryText = secondaryText
+
+        self.contentConfiguration = contentConfiguration
 
         with(self)
     }
