@@ -132,18 +132,33 @@ public extension UIImageView {
 
 public extension UIButton {
     convenience init(type: UIButton.ButtonType, primaryAction: UIAction? = nil,
-        title: String? = nil, image: UIImage? = nil,
         tintColor: UIColor? = nil,
-        weight: CGFloat = .nan,
         anchor: LMAnchor = [],
         with: ((UIButton) -> Void) = { _ in }) {
         self.init(type: type, primaryAction: primaryAction)
 
-        setTitle(title, for: .normal)
-        setImage(image, for: .normal)
-
         self.tintColor = tintColor
 
+        self.anchor = anchor
+
+        with(self)
+    }
+
+    convenience init(configuration: UIButton.Configuration, primaryAction: UIAction? = nil,
+        menu: UIMenu? = nil,
+        changesSelectionAsPrimaryAction: Bool = false,
+        preferredBehavioralStyle: UIBehavioralStyle = .automatic,
+        width: CGFloat = .nan,
+        weight: CGFloat = .nan,
+        anchor: LMAnchor = [],
+        with: ((UIButton) -> Void) = { _ in }) {
+        self.init(configuration: configuration, primaryAction: primaryAction)
+        
+        self.menu = menu
+        self.changesSelectionAsPrimaryAction = changesSelectionAsPrimaryAction
+        self.preferredBehavioralStyle = preferredBehavioralStyle
+
+        self.width = width
         self.weight = weight
         self.anchor = anchor
 
@@ -196,7 +211,7 @@ public extension UIDatePicker {
     convenience init(primaryAction: UIAction? = nil,
         datePickerMode: UIDatePicker.Mode = .dateAndTime,
         preferredDatePickerStyle: UIDatePickerStyle = .automatic,
-        height: CGFloat = .nan,
+        width: CGFloat = .nan,
         weight: CGFloat = .nan,
         anchor: LMAnchor = [],
         with: ((UIDatePicker) -> Void) = { _ in }) {
@@ -208,7 +223,7 @@ public extension UIDatePicker {
 
         self.datePickerMode = datePickerMode
 
-        self.height = height
+        self.width = width
         self.weight = weight
         self.anchor = anchor
 
@@ -220,6 +235,7 @@ public extension UISwitch {
     convenience init(primaryAction: UIAction? = nil,
         tintColor: UIColor? = nil,
         onTintColor: UIColor? = nil,
+        anchor: LMAnchor = [],
         with: ((UISwitch) -> Void) = { _ in }) {
         if (primaryAction == nil) {
             self.init()
@@ -229,6 +245,8 @@ public extension UISwitch {
         
         self.tintColor = tintColor
         self.onTintColor = onTintColor
+        
+        self.anchor = anchor
 
         with(self)
     }
@@ -260,6 +278,7 @@ public extension UISegmentedControl {
 public extension UISlider {
     convenience init(primaryAction: UIAction? = nil,
         minimumValue: Float = 0.0, maximumValue: Float = 1.0, isContinuous: Bool = true,
+        preferredBehavioralStyle: UIBehavioralStyle = .automatic,
         width: CGFloat = .nan,
         weight: CGFloat = .nan,
         anchor: LMAnchor = [],
@@ -273,6 +292,7 @@ public extension UISlider {
         self.minimumValue = minimumValue
         self.maximumValue = maximumValue
         self.isContinuous = isContinuous
+        self.preferredBehavioralStyle = preferredBehavioralStyle
 
         self.width = width
         self.weight = weight
@@ -284,9 +304,7 @@ public extension UISlider {
 
 public extension UIStepper {
     convenience init(primaryAction: UIAction? = nil,
-        minimumValue: Double = 0.0, maximumValue: Double = 100.0,
-        stepValue: Double = 1.0,
-        weight: CGFloat = .nan,
+        minimumValue: Double = 0.0, maximumValue: Double = 100.0, stepValue: Double = 1.0,
         anchor: LMAnchor = [],
         with: ((UIStepper) -> Void) = { _ in }) {
         if (primaryAction == nil) {
@@ -299,7 +317,6 @@ public extension UIStepper {
         self.maximumValue = maximumValue
         self.stepValue = stepValue
 
-        self.weight = weight
         self.anchor = anchor
 
         with(self)
@@ -314,7 +331,6 @@ public extension UIPageControl {
         backgroundStyle: UIPageControl.BackgroundStyle = .automatic,
         allowsContinuousInteraction: Bool = true,
         preferredIndicatorImage: UIImage? = nil,
-        weight: CGFloat = .nan,
         anchor: LMAnchor = [],
         with: ((UIPageControl) -> Void) = { _ in }) {
         if (primaryAction == nil) {
@@ -330,7 +346,6 @@ public extension UIPageControl {
         self.allowsContinuousInteraction = allowsContinuousInteraction
         self.preferredIndicatorImage = preferredIndicatorImage
 
-        self.weight = weight
         self.anchor = anchor
 
         with(self)
@@ -338,16 +353,14 @@ public extension UIPageControl {
 }
 
 public extension UIActivityIndicatorView {
-    convenience init(style: UIActivityIndicatorView.Style? = nil,
+    convenience init(style: UIActivityIndicatorView.Style = .medium,
         color: UIColor? = nil,
-        weight: CGFloat = .nan,
         anchor: LMAnchor = [],
         with: ((UIActivityIndicatorView) -> Void) = { _ in }) {
-        self.init(style: style ?? .medium)
+        self.init(style: style)
 
         self.color = color
 
-        self.weight = weight
         self.anchor = anchor
 
         with(self)
@@ -357,6 +370,7 @@ public extension UIActivityIndicatorView {
 public extension UIProgressView {
     convenience init(progressTintColor: UIColor? = nil,
         trackTintColor: UIColor? = nil,
+        width: CGFloat = .nan,
         weight: CGFloat = .nan,
         anchor: LMAnchor = [],
         with: ((UIProgressView) -> Void) = { _ in }) {
@@ -365,6 +379,7 @@ public extension UIProgressView {
         self.progressTintColor = progressTintColor
         self.trackTintColor = trackTintColor
 
+        self.width = width
         self.weight = weight
         self.anchor = anchor
 
