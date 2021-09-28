@@ -146,6 +146,7 @@ public extension UIButton {
 
     convenience init(configuration: UIButton.Configuration, primaryAction: UIAction? = nil,
         menu: UIMenu? = nil,
+        showsMenuAsPrimaryAction: Bool = false,
         changesSelectionAsPrimaryAction: Bool = false,
         preferredBehavioralStyle: UIBehavioralStyle = .automatic,
         width: CGFloat = .nan,
@@ -155,6 +156,7 @@ public extension UIButton {
         self.init(configuration: configuration, primaryAction: primaryAction)
         
         self.menu = menu
+        self.showsMenuAsPrimaryAction = showsMenuAsPrimaryAction
         self.changesSelectionAsPrimaryAction = changesSelectionAsPrimaryAction
         self.preferredBehavioralStyle = preferredBehavioralStyle
 

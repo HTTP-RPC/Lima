@@ -24,6 +24,7 @@ class ViewController: UITableViewController {
         case gridAlignment
         case anchorView
         case displayable
+        case hitTest
         case periodicTable
         case tableViewCell
         case controls
@@ -34,7 +35,7 @@ class ViewController: UITableViewController {
         
         title = "Lima Test"
 
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationItem.backButtonDisplayMode = .minimal
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -75,6 +76,9 @@ class ViewController: UITableViewController {
 
         case .displayable:
             cell.textLabel?.text = "Displayable"
+
+        case .hitTest:
+            cell.textLabel?.text = "Hit Test"
 
         case .periodicTable:
             cell.textLabel?.text = "Periodic Table"
@@ -118,6 +122,9 @@ class ViewController: UITableViewController {
 
         case .displayable:
             viewController = DisplayableViewController()
+
+        case .hitTest:
+            viewController = HitTestViewController()
 
         case .periodicTable:
             viewController = PeriodicTableViewController()

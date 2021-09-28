@@ -55,6 +55,7 @@
 		3794D6A72430DA5D00C74F19 /* ControlsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3794D6A52430DA5D00C74F19 /* ControlsViewController.swift */; };
 		3794D6AF2430DA8B00C74F19 /* world.png in Resources */ = {isa = PBXBuildFile; fileRef = 3794D6AE2430DA8B00C74F19 /* world.png */; };
 		3794D6B32430DA9700C74F19 /* pharmacies.json in Resources */ = {isa = PBXBuildFile; fileRef = 3794D6B22430DA9700C74F19 /* pharmacies.json */; };
+		37ECB02D27036442003662D0 /* HitTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ECB02C27036442003662D0 /* HitTestViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -134,6 +135,7 @@
 		3794D6A52430DA5D00C74F19 /* ControlsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlsViewController.swift; sourceTree = "<group>"; };
 		3794D6AE2430DA8B00C74F19 /* world.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = world.png; sourceTree = "<group>"; };
 		3794D6B22430DA9700C74F19 /* pharmacies.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pharmacies.json; sourceTree = "<group>"; };
+		37ECB02C27036442003662D0 /* HitTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitTestViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,6 +227,7 @@
 				3794D6972430DA1600C74F19 /* GridAlignmentViewController.swift */,
 				3794D69C2430DA3C00C74F19 /* AnchorViewController.swift */,
 				3794D69A2430DA3C00C74F19 /* DisplayableViewController.swift */,
+				37ECB02C27036442003662D0 /* HitTestViewController.swift */,
 				3794D69B2430DA3C00C74F19 /* PeriodicTableViewController.swift */,
 				3794D6A12430DA4D00C74F19 /* TableViewCellController.swift */,
 				3794D6A52430DA5D00C74F19 /* ControlsViewController.swift */,
@@ -405,6 +408,7 @@
 				3794D6992430DA1600C74F19 /* GridAlignmentViewController.swift in Sources */,
 				3794D69F2430DA3C00C74F19 /* AnchorViewController.swift in Sources */,
 				3794D69D2430DA3C00C74F19 /* DisplayableViewController.swift in Sources */,
+				37ECB02D27036442003662D0 /* HitTestViewController.swift in Sources */,
 				3794D69E2430DA3C00C74F19 /* PeriodicTableViewController.swift in Sources */,
 				3794D6A32430DA4D00C74F19 /* TableViewCellController.swift in Sources */,
 				3794D6A72430DA5D00C74F19 /* ControlsViewController.swift in Sources */,

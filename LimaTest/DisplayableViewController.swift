@@ -16,30 +16,71 @@ import UIKit
 import Lima
 
 class DisplayableViewController: UIViewController {
-    var labelRowView: LMRowView!
+    var columnView: LMColumnView!
+    var rowView: LMRowView!
+    var anchorView: LMAnchorView!
+    
     var displayableSwitch: UISwitch!
+    var animatedSwitch: UISwitch!
 
     override func loadView() {
-        let labelStyle = { (label: UILabel) in
-            label.textAlignment = .center
-            label.font = .systemFont(ofSize: 24)
-
-            label.layer.borderWidth = 0.5
-            label.layer.borderColor = UIColor.lightGray.cgColor
-
-            label.weight = 1
-        }
-
-        view = LMColumnView(margin: 16, spacing: 16, backgroundColor: .white,
-            LMRowView(weight: 1,
-                UILabel(text: "One", with: labelStyle),
-                UILabel(text: "Two", with: labelStyle),
-                UILabel(text: "Three", with: labelStyle)
+        view = LMColumnView(margin: 16, backgroundColor: .white,
+            LMColumnView(weight: 1.5,
+                UILabel(text: "One", textAlignment: .center, weight: 1) { label in
+                    label.layer.borderWidth = 0.5
+                    label.layer.borderColor = UIColor.lightGray.cgColor
+                },
+                UILabel(text: "Two", textAlignment: .center, weight: 1) { label in
+                    label.layer.borderWidth = 0.5
+                    label.layer.borderColor = UIColor.lightGray.cgColor
+                },
+                UILabel(text: "Three",  textAlignment: .center, weight: 1) { label in
+                    label.layer.borderWidth = 0.5
+                    label.layer.borderColor = UIColor.lightGray.cgColor
+                }
             ) {
-                labelRowView = $0
+                columnView = $0
             },
             
-            LMSpacer(height: 0.5, backgroundColor: .lightGray),
+            LMSpacer(height: 0.5, backgroundColor: .gray),
+
+            LMRowView(weight: 1,
+                UILabel(text: "One", textAlignment: .center, weight: 1) { label in
+                    label.layer.borderWidth = 0.5
+                    label.layer.borderColor = UIColor.lightGray.cgColor
+                },
+                UILabel(text: "Two", textAlignment: .center, weight: 1) { label in
+                    label.layer.borderWidth = 0.5
+                    label.layer.borderColor = UIColor.lightGray.cgColor
+                },
+                UILabel(text: "Three",  textAlignment: .center, weight: 1) { label in
+                    label.layer.borderWidth = 0.5
+                    label.layer.borderColor = UIColor.lightGray.cgColor
+                }
+            ) {
+                rowView = $0
+            },
+            
+            LMSpacer(height: 0.5, backgroundColor: .gray),
+
+            LMAnchorView(weight: 1,
+                UILabel(text: "One", textAlignment: .center, anchor: [.top, .bottom, .leading]) { label in
+                    label.layer.borderWidth = 0.5
+                    label.layer.borderColor = UIColor.lightGray.cgColor
+                },
+                UILabel(text: "Two", textAlignment: .center, anchor: [.all]) { label in
+                    label.layer.borderWidth = 0.5
+                    label.layer.borderColor = UIColor.lightGray.cgColor
+                },
+                UILabel(text: "Three",  textAlignment: .center, anchor: [.top, .bottom, .trailing]) { label in
+                    label.layer.borderWidth = 0.5
+                    label.layer.borderColor = UIColor.lightGray.cgColor
+                }
+            ) {
+                anchorView = $0
+            },
+            
+            LMSpacer(height: 0.5, backgroundColor: .gray),
 
             LMRowView(
                 UILabel(text: "Displayable"),
@@ -51,7 +92,13 @@ class DisplayableViewController: UIViewController {
                 }
             ),
 
-            LMSpacer(weight: 4)
+            LMRowView(
+                UILabel(text: "Animated"),
+                LMSpacer(),
+                UISwitch(primaryAction: UIAction() { _ in }) {
+                    animatedSwitch = $0
+                }
+            )
         )
     }
     
@@ -64,6 +111,16 @@ class DisplayableViewController: UIViewController {
     }
 
     func toggleDisplayable() {
-        labelRowView.subviews[1].isDisplayable = displayableSwitch.isOn
+        let displayable = displayableSwitch.isOn
+        
+        columnView.subviews[1].isDisplayable = displayable
+        rowView.subviews[1].isDisplayable = displayable
+        anchorView.subviews[1].isDisplayable = displayable
+
+        if (animatedSwitch.isOn) {
+            UIView.animate(withDuration: 0.33, animations: {
+                self.view.layoutIfNeeded()
+            })
+        }
     }
 }

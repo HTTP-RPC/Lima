@@ -16,7 +16,12 @@ import UIKit
 import Lima
 
 class ControlsViewController: UITableViewController {
-    var sections: [[UITableViewCell]]!
+    struct Section {
+        let headerView: UITableViewHeaderFooterView
+        let cells: [UITableViewCell]
+    }
+    
+    var sections: [Section]!
 
     var stepper: UIStepper!
     var slider: UISlider!
@@ -27,16 +32,42 @@ class ControlsViewController: UITableViewController {
         super.loadView()
 
         sections = [
-            [
+            Section(headerView: UITableViewHeaderFooterView(text: "Buttons"), cells: [
                 LMTableViewCell(
-                    UIButton(type: .system, primaryAction: UIAction(title: "Button") { [unowned self] action in
+                    UIButton(configuration: .plain(), primaryAction: UIAction(title: "Plain") { [unowned self] _ in
                         showGreeting()
                     })
-                )
-            ],
-            [
+                ),
                 LMTableViewCell(
-                    UITextField(placeholder: "Text")
+                    UIButton(configuration: .tinted(), primaryAction: UIAction(title: "Toggle") { _ in },
+                        changesSelectionAsPrimaryAction: true)
+                ),
+                LMTableViewCell(
+                    UIButton(configuration: .borderedTinted(), primaryAction: UIAction(title: "Pop-Up") { _ in },
+                        menu: UIMenu(children: [
+                            UIAction(title: "One") { _ in },
+                            UIAction(title: "Two") { _ in },
+                            UIAction(title: "Three") { _ in },
+                            UIAction(title: "Four") { _ in }
+                        ]),
+                        showsMenuAsPrimaryAction: true)
+                ),
+                LMTableViewCell(
+                    UIButton(configuration: .borderedTinted(),
+                        menu: UIMenu(children: [
+                            UIAction(title: "One") { _ in },
+                            UIAction(title: "Two") { _ in },
+                            UIAction(title: "Three") { _ in },
+                            UIAction(title: "Four") { _ in }
+                        ]),
+                        showsMenuAsPrimaryAction: true,
+                        changesSelectionAsPrimaryAction: true)
+                )
+            ]),
+            
+            Section(headerView: UITableViewHeaderFooterView(text: "Text"), cells: [
+                LMTableViewCell(
+                    UITextField(placeholder: "Default")
                 ),
                 LMTableViewCell(
                     UITextField(placeholder: "Number", keyboardType: .numberPad)
@@ -54,8 +85,9 @@ class ControlsViewController: UITableViewController {
                         textView.text = "This is a multi-line text view."
                     }
                 )
-            ],
-            [
+            ]),
+            
+            Section(headerView: UITableViewHeaderFooterView(text: "Selection"), cells: [
                 UITableViewCell(style: .default, text: "On/Off", selectionStyle: .none) { tableViewCell in
                     tableViewCell.accessoryView = UISwitch()
                 },
@@ -65,8 +97,9 @@ class ControlsViewController: UITableViewController {
                 LMTableViewCell(
                     UIDatePicker(datePickerMode: .dateAndTime)
                 )
-            ],
-            [
+            ]),
+            
+            Section(headerView: UITableViewHeaderFooterView(text: "Range/Progress"), cells: [
                 LMTableViewCell(
                     LMRowView(
                         LMSpacer(),
@@ -100,17 +133,13 @@ class ControlsViewController: UITableViewController {
                         }
                     )
                 )
-            ]
+            ])
         ]
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationItem.rightBarButtonItem = UIBarButtonItem(primaryAction: UIAction(title: "Item") { [unowned self] action in
-            showGreeting()
-        })
-        
         tableView.allowsSelection = false
                
         slider.minimumValue = Float(stepper.minimumValue)
@@ -124,13 +153,17 @@ class ControlsViewController: UITableViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
         return sections.count
     }
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return sections[section].headerView
+    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return sections[section].count
+        return sections[section].cells.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return sections[indexPath.section][indexPath.row]
+        return sections[indexPath.section].cells[indexPath.row]
     }
 
     func showGreeting() {
