@@ -485,7 +485,12 @@ However, a more common use of initializer callbacks is to associate view instanc
 
 ```swift
 class ControlsViewController: UITableViewController {
-    var sections: [[UITableViewCell]]!
+    struct Section {
+        let headerView: UITableViewHeaderFooterView
+        let cells: [UITableViewCell]
+    }
+    
+    var sections: [Section]!
 
     var stepper: UIStepper!
     var slider: UISlider!
@@ -495,9 +500,9 @@ class ControlsViewController: UITableViewController {
         super.loadView()
 
         sections = [
-            ...,
+            ...
             
-            [
+            Section(headerView: UITableViewHeaderFooterView(text: "Range/Progress"), cells: [
                 LMTableViewCell(
                     LMRowView(
                         LMSpacer(),
@@ -518,9 +523,12 @@ class ControlsViewController: UITableViewController {
                 ),
                 
                 ...
-            ]
+            ])
         ]
     }
+    
+    ...
+}
 ```
 
 The complete view is shown below:
