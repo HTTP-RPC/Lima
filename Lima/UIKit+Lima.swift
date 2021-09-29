@@ -213,6 +213,7 @@ public extension UIDatePicker {
     convenience init(primaryAction: UIAction? = nil,
         datePickerMode: UIDatePicker.Mode = .dateAndTime,
         preferredDatePickerStyle: UIDatePickerStyle = .automatic,
+        tintColor: UIColor? = nil,
         width: CGFloat = .nan,
         weight: CGFloat = .nan,
         anchor: LMAnchor = [],
@@ -224,6 +225,8 @@ public extension UIDatePicker {
         }
 
         self.datePickerMode = datePickerMode
+        self.preferredDatePickerStyle = preferredDatePickerStyle
+        self.tintColor = tintColor
 
         self.width = width
         self.weight = weight
@@ -255,16 +258,17 @@ public extension UISwitch {
 }
 
 public extension UISegmentedControl {
-    convenience init(primaryAction: UIAction? = nil,
+    convenience init(items: [Any]? = nil,
+        primaryAction: UIAction? = nil,
         tintColor: UIColor? = nil,
         width: CGFloat = .nan,
         weight: CGFloat = .nan,
         anchor: LMAnchor = [],
         with: ((UISegmentedControl) -> Void) = { _ in }) {
-        if (primaryAction == nil) {
-            self.init()
-        } else {
-            self.init(frame: CGRect(), primaryAction: primaryAction)
+        self.init(items: items)
+        
+        if (primaryAction != nil) {
+            addAction(primaryAction!, for: .primaryActionTriggered)
         }
 
         self.tintColor = tintColor
