@@ -18,6 +18,7 @@ import Lima
 class ControlsViewController: UITableViewController {
     var sections: [[UITableViewCell]]!
 
+    var segmentedControl: UISegmentedControl!
     var stepper: UIStepper!
     var slider: UISlider!
     var pageControl: UIPageControl!
@@ -60,7 +61,13 @@ class ControlsViewController: UITableViewController {
                     tableViewCell.accessoryView = UISwitch()
                 },
                 LMTableViewCell(
-                    UISegmentedControl(items: ["One", "Two", "Three", "Four"])
+                    UISegmentedControl(items: [
+                        "One", "Two", "Three", "Four"
+                    ], primaryAction: UIAction() { [unowned self] _ in
+                        segmentedControlValueChanged()
+                    }) {
+                        segmentedControl = $0
+                    }
                 ),
                 LMTableViewCell(
                     UIDatePicker(datePickerMode: .dateAndTime)
@@ -135,6 +142,16 @@ class ControlsViewController: UITableViewController {
 
     func showGreeting() {
         let alertController = UIAlertController(title: nil, message: "Hello!", preferredStyle: .alert)
+
+        alertController.addAction(UIAlertAction(title: "OK", style: .default))
+
+        present(alertController, animated: true)
+    }
+    
+    func segmentedControlValueChanged() {
+        let text = segmentedControl.titleForSegment(at: segmentedControl.selectedSegmentIndex)
+        
+        let alertController = UIAlertController(title: nil, message: text, preferredStyle: .alert)
 
         alertController.addAction(UIAlertAction(title: "OK", style: .default))
 
