@@ -151,8 +151,13 @@ public extension UIButton {
         with: ((UIButton) -> Void) = { _ in }) {
         self.init(type: type, primaryAction: primaryAction)
 
-        setTitle(title, for: .normal)
-        setImage(image, for: .normal)
+        if (title != nil) {
+            setTitle(title, for: .normal)
+        }
+        
+        if (image != nil) {
+            setImage(image, for: .normal)
+        }
 
         self.tintColor = tintColor
 
