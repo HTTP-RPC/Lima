@@ -419,14 +419,27 @@ public extension UITextView {
 }
 
 public extension UITableViewCell {
-    convenience init(style: UITableViewCell.CellStyle,
+    convenience init(style: UITableViewCell.CellStyle = .default,
         text: String? = nil, secondaryText: String? = nil, image: UIImage? = nil,
         accessoryType: UITableViewCell.AccessoryType = .none,
         selectionStyle: UITableViewCell.SelectionStyle = .blue,
         with: ((UITableViewCell) -> Void) = { _ in }) {
         self.init(style: style, reuseIdentifier: nil)
 
-        var contentConfiguration = defaultContentConfiguration()
+        var contentConfiguration: UIListContentConfiguration
+        switch style {
+        case .default:
+            contentConfiguration = defaultContentConfiguration()
+
+        case .subtitle:
+            contentConfiguration = .subtitleCell()
+
+        case .value1, .value2:
+            contentConfiguration = .valueCell()
+
+        default:
+            fatalError()
+        }
         
         contentConfiguration.text = text
         contentConfiguration.secondaryText = secondaryText
