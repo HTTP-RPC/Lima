@@ -149,6 +149,7 @@ public extension UIButton {
         showsMenuAsPrimaryAction: Bool = false,
         changesSelectionAsPrimaryAction: Bool = false,
         preferredBehavioralStyle: UIBehavioralStyle = .automatic,
+        tintColor: UIColor? = nil,
         width: CGFloat = .nan,
         weight: CGFloat = .nan,
         anchor: LMAnchor = [],
@@ -159,6 +160,8 @@ public extension UIButton {
         self.showsMenuAsPrimaryAction = showsMenuAsPrimaryAction
         self.changesSelectionAsPrimaryAction = changesSelectionAsPrimaryAction
         self.preferredBehavioralStyle = preferredBehavioralStyle
+
+        self.tintColor = tintColor
 
         self.width = width
         self.weight = weight

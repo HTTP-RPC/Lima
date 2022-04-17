@@ -51,7 +51,8 @@ class ControlsViewController: UITableViewController {
                             UIAction(title: "Three") { _ in },
                             UIAction(title: "Four") { _ in }
                         ]),
-                        showsMenuAsPrimaryAction: true)
+                        showsMenuAsPrimaryAction: true,
+                        tintColor: .red)
                 ),
                 LMTableViewCell(
                     UIButton(configuration: .borderedTinted(),
@@ -62,7 +63,8 @@ class ControlsViewController: UITableViewController {
                             UIAction(title: "Four") { _ in }
                         ]),
                         showsMenuAsPrimaryAction: true,
-                        changesSelectionAsPrimaryAction: true)
+                        changesSelectionAsPrimaryAction: true,
+                        tintColor: .green)
                 )
             ]),
             
