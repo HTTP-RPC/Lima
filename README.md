@@ -3,7 +3,7 @@
 # Introduction
 Lima is an open-source framework for simplifying development of responsive iOS and macOS applications. It combines the productivity of a SwiftUI-like DSL with the flexibility of the UIKit framework. The project's name comes from the nautical _L_ or _Lima_ flag, representing the first letter of the word "layout":
 
-![](README/lima.png)
+![](lima.png)
 
 This guide introduces the Lima framework and provides an overview of its key features.
 
