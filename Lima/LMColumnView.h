@@ -17,7 +17,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 /**
- * Box view that arranges subviews vertically in a column.
+ * Layout view that arranges subviews vertically in a column.
  */
 @interface LMColumnView : LMBoxView
 

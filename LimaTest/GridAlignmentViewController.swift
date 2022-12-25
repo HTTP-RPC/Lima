@@ -55,7 +55,7 @@ class GridAlignmentViewController: UIViewController {
                 ),
 
                 // Weights
-                LMRowView(weight: 2,
+                LMRowView(
                     LMColumnView(weight: 2,
                         UILabel(text: text, numberOfLines: 0),
                         LMSpacer(),
