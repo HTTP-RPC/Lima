@@ -22,11 +22,11 @@ class PeriodicTableViewController: UIViewController {
         case lanthanide
         case actinide
         case transitionMetal
-        case postTransitionMetal
+        case otherMetal
         case metalloid
-        case reactiveNonmetal
+        case otherNonmetal
+        case halogen
         case nobleGas
-        case unknown
 
         var color: UIColor {
             let color: UIColor
@@ -47,20 +47,20 @@ class PeriodicTableViewController: UIViewController {
             case .transitionMetal:
                 color = UIColor(0xffbfc1)
 
-            case .postTransitionMetal:
+            case .otherMetal:
                 color = UIColor(0xcccccc)
 
             case .metalloid:
                 color = UIColor(0xcbcc9e)
 
-            case .reactiveNonmetal:
-                color = UIColor(0xe5ff9c)
+            case .otherNonmetal:
+                color = UIColor(0xb6fda9)
+
+            case .halogen:
+                color = UIColor(0xffffa6)
 
             case .nobleGas:
                 color = UIColor(0xbeffff)
-
-            case .unknown:
-                color = UIColor(0xe8e8e8)
             }
 
             return color
@@ -136,7 +136,7 @@ class PeriodicTableViewController: UIViewController {
             LMColumnView(margin: 8,
                 LMColumnView(spacing: 4,
                     LMRowView(
-                        ElementView(1, "H", .reactiveNonmetal),
+                        ElementView(1, "H", .otherNonmetal),
                         ElementView(),
                         ElementView(),
                         ElementView(),
@@ -170,10 +170,10 @@ class PeriodicTableViewController: UIViewController {
                         ElementView(),
                         ElementView(),
                         ElementView(5, "B", .metalloid),
-                        ElementView(6, "C", .reactiveNonmetal),
-                        ElementView(7, "N", .reactiveNonmetal),
-                        ElementView(8, "O", .reactiveNonmetal),
-                        ElementView(9, "F", .reactiveNonmetal),
+                        ElementView(6, "C", .otherNonmetal),
+                        ElementView(7, "N", .otherNonmetal),
+                        ElementView(8, "O", .otherNonmetal),
+                        ElementView(9, "F", .halogen),
                         ElementView(10, "Ne", .nobleGas),
                         with: rowStyle
                     ),
@@ -190,11 +190,11 @@ class PeriodicTableViewController: UIViewController {
                         ElementView(),
                         ElementView(),
                         ElementView(),
-                        ElementView(13, "Al", .postTransitionMetal),
+                        ElementView(13, "Al", .otherMetal),
                         ElementView(14, "Si", .metalloid),
-                        ElementView(15, "P", .reactiveNonmetal),
-                        ElementView(16, "S", .reactiveNonmetal),
-                        ElementView(17, "Cl", .reactiveNonmetal),
+                        ElementView(15, "P", .otherNonmetal),
+                        ElementView(16, "S", .otherNonmetal),
+                        ElementView(17, "Cl", .halogen),
                         ElementView(18, "Ar", .nobleGas),
                         with: rowStyle
                     ),
@@ -210,12 +210,12 @@ class PeriodicTableViewController: UIViewController {
                         ElementView(27, "Co", .transitionMetal),
                         ElementView(28, "Ni", .transitionMetal),
                         ElementView(29, "Cu", .transitionMetal),
-                        ElementView(30, "Zn", .postTransitionMetal),
-                        ElementView(31, "Ga", .postTransitionMetal),
+                        ElementView(30, "Zn", .transitionMetal),
+                        ElementView(31, "Ga", .otherMetal),
                         ElementView(32, "Ge", .metalloid),
                         ElementView(33, "As", .metalloid),
-                        ElementView(34, "Se", .reactiveNonmetal),
-                        ElementView(35, "Br", .reactiveNonmetal),
+                        ElementView(34, "Se", .otherNonmetal),
+                        ElementView(35, "Br", .halogen),
                         ElementView(36, "Kr", .nobleGas),
                         with: rowStyle
                     ),
@@ -231,12 +231,12 @@ class PeriodicTableViewController: UIViewController {
                         ElementView(45, "Rh", .transitionMetal),
                         ElementView(46, "Pd", .transitionMetal),
                         ElementView(47, "Ag", .transitionMetal),
-                        ElementView(48, "Cd", .postTransitionMetal),
-                        ElementView(49, "In", .postTransitionMetal),
-                        ElementView(50, "Sn", .postTransitionMetal),
+                        ElementView(48, "Cd", .transitionMetal),
+                        ElementView(49, "In", .otherMetal),
+                        ElementView(50, "Sn", .otherMetal),
                         ElementView(51, "Sb", .metalloid),
                         ElementView(52, "Te", .metalloid),
-                        ElementView(53, "I", .reactiveNonmetal),
+                        ElementView(53, "I", .halogen),
                         ElementView(54, "Xe", .nobleGas),
                         with: rowStyle
                     ),
@@ -252,12 +252,12 @@ class PeriodicTableViewController: UIViewController {
                         ElementView(77, "Ir", .transitionMetal),
                         ElementView(78, "Pt", .transitionMetal),
                         ElementView(79, "Au", .transitionMetal),
-                        ElementView(80, "Hg", .postTransitionMetal),
-                        ElementView(81, "Tl", .postTransitionMetal),
-                        ElementView(82, "Pb", .postTransitionMetal),
-                        ElementView(83, "Bi", .postTransitionMetal),
-                        ElementView(84, "Po", .postTransitionMetal),
-                        ElementView(85, "At", .metalloid),
+                        ElementView(80, "Hg", .transitionMetal),
+                        ElementView(81, "Tl", .otherMetal),
+                        ElementView(82, "Pb", .otherMetal),
+                        ElementView(83, "Bi", .otherMetal),
+                        ElementView(84, "Po", .otherMetal),
+                        ElementView(85, "At", .halogen),
                         ElementView(86, "Rn", .nobleGas),
                         with: rowStyle
                     ),
@@ -270,16 +270,16 @@ class PeriodicTableViewController: UIViewController {
                         ElementView(106, "Sg", .transitionMetal),
                         ElementView(107, "Bh", .transitionMetal),
                         ElementView(108, "Hs", .transitionMetal),
-                        ElementView(109, "Mt", .unknown),
-                        ElementView(110, "Ds", .unknown),
-                        ElementView(111, "Rg", .unknown),
-                        ElementView(112, "Cn", .postTransitionMetal),
-                        ElementView(113, "Nh", .unknown),
-                        ElementView(114, "Fl", .unknown),
-                        ElementView(115, "Mc", .unknown),
-                        ElementView(116, "Lv", .unknown),
-                        ElementView(117, "Ts", .unknown),
-                        ElementView(118, "Og", .unknown),
+                        ElementView(109, "Mt", .transitionMetal),
+                        ElementView(110, "Ds", .transitionMetal),
+                        ElementView(111, "Rg", .transitionMetal),
+                        ElementView(112, "Cn", .transitionMetal),
+                        ElementView(113, "Nh", .otherMetal),
+                        ElementView(114, "Fl", .otherMetal),
+                        ElementView(115, "Mc", .otherMetal),
+                        ElementView(116, "Lv", .otherMetal),
+                        ElementView(117, "Ts", .halogen),
+                        ElementView(118, "Og", .nobleGas),
                         with: rowStyle
                     ),
                     LMRowView(
@@ -334,11 +334,11 @@ class PeriodicTableViewController: UIViewController {
                     KeyView("Lanthanide", .lanthanide),
                     KeyView("Actinide", .actinide),
                     KeyView("Transition metal", .transitionMetal),
-                    KeyView("Post-transition metal", .postTransitionMetal),
+                    KeyView("Other metal", .otherMetal),
                     KeyView("Metalloid", .metalloid),
-                    KeyView("Reactive nonmetal", .reactiveNonmetal),
-                    KeyView("Noble gas", .nobleGas),
-                    KeyView("Unknown", .unknown)
+                    KeyView("Other non-metal", .otherNonmetal),
+                    KeyView("Halogen", .halogen),
+                    KeyView("Noble gas", .nobleGas)
                 )
             )
         )

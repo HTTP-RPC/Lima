@@ -42,7 +42,7 @@ These classes use layout constraints internally, allowing developers to easily t
 
 For example, the periodic table shown below was constructed using a combination of Lima's layout views and `UILabel` instances:
 
-<img src="README/periodic-table.png" width="683px"/>
+<img src="README/periodic-table.png" width="690px"/>
 
 Lima adds the following properties to `UIView` to customize how subviews are sized and positioned within a parent view:
 
