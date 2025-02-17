@@ -75,14 +75,10 @@ By default, layout views do not consume touch events. Touches that occur within 
 ## LMRowView and LMColumnView
 The `LMRowView` and `LMColumnView` classes lay out subviews in a horizontal or vertical line, respectively. Both classes extend the abstract `LMBoxView` class, which itself extends `LMLayoutView` and adds the following properties:
 
-```swift
-var horizontalAlignment: LMHorizontalAlignment
-var verticalAlignment: LMVerticalAlignment
-
-var spacing: CGFloat
-
-var isAlignToBaseline: Bool
-```
+* `horizontalAlignment`
+* `verticalAlignment`
+* `spacing`
+* `isAlignToBaseline`
 
 The first two properties specify the horizontal and vertical alignment, respectively, of the box view's subviews. Horizontal alignment options include `fill`, `leading`, `trailing`, and `center`. Vertical alignment options include `fill`, `top`, `bottom`, and `center`. Both values are set to `fill` by default, which pins subviews along both of the box view's axes. Other values pin subviews to a single edge or center them along a given axis:
 
@@ -180,13 +176,7 @@ LMColumnView(isAlignToBaseline: true,
 ```
 
 ### Grid Alignment
-`LMColumnView` defines the following additional property, which specifies that nested subviews should be vertically aligned in a grid, like an HTML table: 
-
-```swift
-var isAlignToGrid: Bool
-```
-
-When this property is set to `true`, subviews of successive rows will be sized to match the width of the widest subview in the column. For example, the following code would produce a grid containing three rows arranged in two columns:
+`LMColumnView` additionally defines the `isAlignToGrid` property, which specifies that nested subviews should be vertically aligned in a grid (similar to an HTML table). When this property is set to `true`, subviews of successive rows will be sized to match the width of the widest subview in the column. For example, the following code would produce a grid containing three rows arranged in two columns:
 
 ```swift
 LMColumnView(isAlignToGrid: true,
@@ -214,14 +204,7 @@ The following is an example of grid aligment that also incorporates baseline ali
 <img src="README/grid-alignment.png" width="250px"/>
 
 ### Fixed Dimensions
-Although views are typically arranged based on their intrinsic content sizes, it is occasionally necessary to assign a fixed value for a particular view dimension. Lima adds the following properties to `UIView` to support explicit size definition:
-
-```swift
-var width: CGFloat
-var height: CGFloat
-```
-
-For example, the following code declares an image view whose `height` property is set to 240 pixels:
+Although views are typically arranged based on their intrinsic content sizes, it is occasionally necessary to assign a fixed value for a particular view dimension. Lima adds the `width` and `height` properties to `UIView` to support explicit size definition. For example, the following code declares an image view whose `height` property is set to 240 pixels:
 
 ```swift
 UIImageView(image: UIImage(named: "world.png"), 
@@ -232,13 +215,7 @@ UIImageView(image: UIImage(named: "world.png"),
 If the image is smaller or larger than 240 pixels tall, it will be scaled up or down to fit within this height. Since the content mode is set to `scaleAspectFit`, the width will be adjusted accordingly so that the image retains the correct aspect ratio.
 
 ### View Weights
-Often, a row or column view will be given more space than it needs to accommodate the intrinsic sizes of its subviews. Lima adds the following property to `UIView` that is used to determine how the extra space should be allocated:
-
-```swift
-var weight: CGFloat
-```
-
-This value specifies the amount of excess space the view would like to be given within its superview (once the sizes of all unweighted views have been determined) and is relative to all other weights specified within the superview. For row views, weight applies to the excess horizontal space, and for column views to the excess vertical space.
+Often, a row or column view will be given more space than it needs to accommodate the intrinsic sizes of its subviews. Lima adds a `weight` property to `UIView` that is used to determine how the extra space should be allocated. This value specifies the amount of excess space the view would like to be given within its superview (once the sizes of all unweighted views have been determined) and is relative to all other weights specified within the superview. For row views, weight applies to the excess horizontal space, and for column views to the excess vertical space.
 
 For example, both labels below will be sized equally and given 50% of the height of the column view:
 
@@ -338,14 +315,7 @@ If no anchor is specified for a given dimension, the subview will be centered wi
 ## LMScrollView
 The `LMScrollView` class extends `UIScrollView` to simplify the declaration of scrollable content. It presents a single content view, optionally allowing the user to scroll in one or both directions.
 
-The scroll view's content is specified via its `content` property. The following properties determine how the content will be presented:
-
-```swift
-var isFitToWidth: Bool
-var isFitToHeight: Bool
-```
-
-When both values are set to `false` (the default), the scroll view will automatically display scroll bars when needed, allowing the user to pan in both directions to see the content in its entirety. For example:
+The scroll view's content is specified via its `content` property. The `isFitToWidth` and `isFitToHeight` properties determine how the content will be presented. When both values are set to `false` (the default), the scroll view will automatically display scroll bars when needed, allowing the user to pan in both directions to see the content in its entirety. For example:
 
 ```swift
 LMScrollView(
