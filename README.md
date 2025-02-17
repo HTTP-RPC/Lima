@@ -27,6 +27,8 @@ Auto layout in UIKit is implemented via layout constraints, which, while powerfu
 * `LMColumnView` - arranges subviews in a vertical line
 * `LMAnchorView` - anchors subviews to one or more edges
 
+Additionally, the `LMSpacer` class can be used to create fixed or flexible space between other views.
+
 For example, the periodic table shown below was constructed using a combination of Lima's layout views and `UILabel` instances:
 
 <img src="README/periodic-table.png" width="690px"/>
@@ -39,9 +41,7 @@ Lima adds the following properties to `UIView` to customize how subviews are siz
 * `anchor` - when used with anchor views, determines the edges to which the view will be anchored within the parent
 * `isDisplayable` - determines whether the view will participate in auto layout (`true` by default)
 
-Additionally, the `LMSpacer` class can be used to create fixed or flexible space between other views.
-
-Lima also provides the following classes to simplify the use of several common UIKit types:
+Lima also provides the following classes to simplify the use of some common UIKit types:
  
 * `LMScrollView` - extends `UIScrollView` to automatically adapt to content size
 * `LMTableViewCell` - extends `UITableViewCell` to automatically pin content to edges
@@ -100,7 +100,7 @@ LMRowView(horizontalAlignment: .leading, verticalAlignment: .top,
 )
 ```
 
-The `spacing` property represents the amount of space reserved between successive subviews. For row views, this refers to the horizontal space between the subviews; for column views, it refers to the vertical space between the views. 
+The `spacing` property represents the amount of space reserved between successive subviews. For row views, this refers to the horizontal space between the subviews; for column views, it refers to the vertical space. 
 
 This code creates a row view whose labels will each be separated by a gap of 16 pixels:
 
