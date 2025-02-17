@@ -176,10 +176,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3770B04B2D639F7800728CCC /* Assets.xcassets in Resources */,
 				3770B04E2D639F7800728CCC /* LaunchScreen.storyboard in Resources */,
 				3770B05B2D63A1C500728CCC /* world.png in Resources */,
 				3770B05C2D63A1C500728CCC /* pharmacies.json in Resources */,
-				3770B04B2D639F7800728CCC /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,20 +190,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3770B0462D639F7800728CCC /* ViewController.swift in Sources */,
-				3770B0682D63A1DF00728CCC /* GridAlignmentViewController.swift in Sources */,
-				3770B0692D63A1DF00728CCC /* GreetingViewController.swift in Sources */,
-				3770B06A2D63A1DF00728CCC /* AnchorViewController.swift in Sources */,
-				3770B06B2D63A1DF00728CCC /* DisplayableViewController.swift in Sources */,
-				3770B06C2D63A1DF00728CCC /* TableViewCellController.swift in Sources */,
-				3770B06D2D63A1DF00728CCC /* HorizontalAlignmentViewController.swift in Sources */,
-				3770B06E2D63A1DF00728CCC /* ControlsViewController.swift in Sources */,
-				3770B06F2D63A1DF00728CCC /* PeriodicTableViewController.swift in Sources */,
-				3770B0702D63A1DF00728CCC /* BaselineAlignmentViewController.swift in Sources */,
-				3770B0712D63A1DF00728CCC /* VerticalAlignmentViewController.swift in Sources */,
-				3770B0722D63A1DF00728CCC /* HitTestViewController.swift in Sources */,
 				3770B0422D639F7800728CCC /* AppDelegate.swift in Sources */,
 				3770B0442D639F7800728CCC /* SceneDelegate.swift in Sources */,
+				3770B0462D639F7800728CCC /* ViewController.swift in Sources */,
+				3770B0692D63A1DF00728CCC /* GreetingViewController.swift in Sources */,
+				3770B06D2D63A1DF00728CCC /* HorizontalAlignmentViewController.swift in Sources */,
+				3770B0712D63A1DF00728CCC /* VerticalAlignmentViewController.swift in Sources */,
+				3770B0702D63A1DF00728CCC /* BaselineAlignmentViewController.swift in Sources */,
+				3770B0682D63A1DF00728CCC /* GridAlignmentViewController.swift in Sources */,
+				3770B06A2D63A1DF00728CCC /* AnchorViewController.swift in Sources */,
+				3770B06B2D63A1DF00728CCC /* DisplayableViewController.swift in Sources */,
+				3770B0722D63A1DF00728CCC /* HitTestViewController.swift in Sources */,
+				3770B06F2D63A1DF00728CCC /* PeriodicTableViewController.swift in Sources */,
+				3770B06C2D63A1DF00728CCC /* TableViewCellController.swift in Sources */,
+				3770B06E2D63A1DF00728CCC /* ControlsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

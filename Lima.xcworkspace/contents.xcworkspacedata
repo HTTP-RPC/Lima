@@ -7,35 +7,35 @@
    <FileRef
       location = "group:LimaTest.xcodeproj">
    </FileRef>
-   <FileRef
-      location = "group:README.md">
-   </FileRef>
    <Group
       location = "group:README"
       name = "README">
       <FileRef
-         location = "group:vertical-alignment.png">
-      </FileRef>
-      <FileRef
-         location = "group:horizontal-alignment.png">
+         location = "group:hello-world.png">
       </FileRef>
       <FileRef
          location = "group:periodic-table.png">
       </FileRef>
       <FileRef
-         location = "group:hello-world.png">
+         location = "group:horizontal-alignment.png">
+      </FileRef>
+      <FileRef
+         location = "group:vertical-alignment.png">
       </FileRef>
       <FileRef
          location = "group:baseline-alignment.png">
       </FileRef>
       <FileRef
-         location = "group:controls.png">
+         location = "group:grid-alignment.png">
       </FileRef>
       <FileRef
          location = "group:anchor-view.png">
       </FileRef>
       <FileRef
-         location = "group:grid-alignment.png">
+         location = "group:controls.png">
       </FileRef>
    </Group>
+   <FileRef
+      location = "group:README.md">
+   </FileRef>
 </Workspace>
