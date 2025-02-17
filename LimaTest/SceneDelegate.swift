@@ -14,9 +14,15 @@
 
 import UIKit
 
-@main
-class AppDelegate: UIResponder, UIApplicationDelegate {
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        return true
+class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+    var window: UIWindow?
+
+    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+        window = UIWindow(windowScene: scene as! UIWindowScene)
+
+        window?.rootViewController = UINavigationController(rootViewController: ViewController())
+        window?.backgroundColor = .white
+
+        window?.makeKeyAndVisible()
     }
 }

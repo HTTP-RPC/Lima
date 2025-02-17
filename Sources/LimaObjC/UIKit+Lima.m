@@ -12,7 +12,7 @@
 // limitations under the License.
 //
 
-#import "UIKit+Lima.h"
+#import "include/UIKit+Lima.h"
 
 #import <objc/message.h>
 

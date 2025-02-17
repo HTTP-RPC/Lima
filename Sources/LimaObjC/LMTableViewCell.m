@@ -12,7 +12,7 @@
 // limitations under the License.
 //
 
-#import "LMTableViewCell.h"
+#import "include/LMTableViewCell.h"
 
 @implementation LMTableViewCell {
     UIView *_content;

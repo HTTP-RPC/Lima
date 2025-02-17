@@ -12,7 +12,7 @@
 // limitations under the License.
 //
 
-#import "LMTableViewHeaderFooterView.h"
+#import "include/LMTableViewHeaderFooterView.h"
 
 @implementation LMTableViewHeaderFooterView {
     UIView *_content;

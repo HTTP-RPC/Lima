@@ -1,0 +1,436 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3770B0422D639F7800728CCC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3770B0412D639F7800728CCC /* AppDelegate.swift */; };
+		3770B0442D639F7800728CCC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3770B0432D639F7800728CCC /* SceneDelegate.swift */; };
+		3770B0462D639F7800728CCC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3770B0452D639F7800728CCC /* ViewController.swift */; };
+		3770B04B2D639F7800728CCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3770B04A2D639F7800728CCC /* Assets.xcassets */; };
+		3770B04E2D639F7800728CCC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3770B04C2D639F7800728CCC /* LaunchScreen.storyboard */; };
+		3770B0582D63A1B000728CCC /* Lima in Frameworks */ = {isa = PBXBuildFile; productRef = 3770B0572D63A1B000728CCC /* Lima */; };
+		3770B05B2D63A1C500728CCC /* world.png in Resources */ = {isa = PBXBuildFile; fileRef = 3770B05A2D63A1C500728CCC /* world.png */; };
+		3770B05C2D63A1C500728CCC /* pharmacies.json in Resources */ = {isa = PBXBuildFile; fileRef = 3770B0592D63A1C500728CCC /* pharmacies.json */; };
+		3770B0682D63A1DF00728CCC /* GridAlignmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3770B0622D63A1DF00728CCC /* GridAlignmentViewController.swift */; };
+		3770B0692D63A1DF00728CCC /* GreetingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3770B0612D63A1DF00728CCC /* GreetingViewController.swift */; };
+		3770B06A2D63A1DF00728CCC /* AnchorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3770B05D2D63A1DF00728CCC /* AnchorViewController.swift */; };
+		3770B06B2D63A1DF00728CCC /* DisplayableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3770B0602D63A1DF00728CCC /* DisplayableViewController.swift */; };
+		3770B06C2D63A1DF00728CCC /* TableViewCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3770B0662D63A1DF00728CCC /* TableViewCellController.swift */; };
+		3770B06D2D63A1DF00728CCC /* HorizontalAlignmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3770B0642D63A1DF00728CCC /* HorizontalAlignmentViewController.swift */; };
+		3770B06E2D63A1DF00728CCC /* ControlsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3770B05F2D63A1DF00728CCC /* ControlsViewController.swift */; };
+		3770B06F2D63A1DF00728CCC /* PeriodicTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3770B0652D63A1DF00728CCC /* PeriodicTableViewController.swift */; };
+		3770B0702D63A1DF00728CCC /* BaselineAlignmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3770B05E2D63A1DF00728CCC /* BaselineAlignmentViewController.swift */; };
+		3770B0712D63A1DF00728CCC /* VerticalAlignmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3770B0672D63A1DF00728CCC /* VerticalAlignmentViewController.swift */; };
+		3770B0722D63A1DF00728CCC /* HitTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3770B0632D63A1DF00728CCC /* HitTestViewController.swift */; };
+		377702972D63A36100398657 /* Lima in Frameworks */ = {isa = PBXBuildFile; productRef = 377702962D63A36100398657 /* Lima */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3770B03E2D639F7800728CCC /* LimaTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LimaTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3770B0412D639F7800728CCC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3770B0432D639F7800728CCC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		3770B0452D639F7800728CCC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3770B04A2D639F7800728CCC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3770B04D2D639F7800728CCC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3770B04F2D639F7800728CCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3770B0592D63A1C500728CCC /* pharmacies.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = pharmacies.json; sourceTree = "<group>"; };
+		3770B05A2D63A1C500728CCC /* world.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = world.png; sourceTree = "<group>"; };
+		3770B05D2D63A1DF00728CCC /* AnchorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnchorViewController.swift; sourceTree = "<group>"; };
+		3770B05E2D63A1DF00728CCC /* BaselineAlignmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaselineAlignmentViewController.swift; sourceTree = "<group>"; };
+		3770B05F2D63A1DF00728CCC /* ControlsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlsViewController.swift; sourceTree = "<group>"; };
+		3770B0602D63A1DF00728CCC /* DisplayableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayableViewController.swift; sourceTree = "<group>"; };
+		3770B0612D63A1DF00728CCC /* GreetingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetingViewController.swift; sourceTree = "<group>"; };
+		3770B0622D63A1DF00728CCC /* GridAlignmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridAlignmentViewController.swift; sourceTree = "<group>"; };
+		3770B0632D63A1DF00728CCC /* HitTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitTestViewController.swift; sourceTree = "<group>"; };
+		3770B0642D63A1DF00728CCC /* HorizontalAlignmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalAlignmentViewController.swift; sourceTree = "<group>"; };
+		3770B0652D63A1DF00728CCC /* PeriodicTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodicTableViewController.swift; sourceTree = "<group>"; };
+		3770B0662D63A1DF00728CCC /* TableViewCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellController.swift; sourceTree = "<group>"; };
+		3770B0672D63A1DF00728CCC /* VerticalAlignmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalAlignmentViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3770B03B2D639F7800728CCC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3770B0582D63A1B000728CCC /* Lima in Frameworks */,
+				377702972D63A36100398657 /* Lima in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3770B0352D639F7800728CCC = {
+			isa = PBXGroup;
+			children = (
+				3770B0732D63A22900728CCC /* LimaTest */,
+				3770B03F2D639F7800728CCC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3770B03F2D639F7800728CCC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3770B03E2D639F7800728CCC /* LimaTest.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3770B0732D63A22900728CCC /* LimaTest */ = {
+			isa = PBXGroup;
+			children = (
+				3770B0412D639F7800728CCC /* AppDelegate.swift */,
+				3770B0432D639F7800728CCC /* SceneDelegate.swift */,
+				3770B0452D639F7800728CCC /* ViewController.swift */,
+				3770B0612D63A1DF00728CCC /* GreetingViewController.swift */,
+				3770B0642D63A1DF00728CCC /* HorizontalAlignmentViewController.swift */,
+				3770B0672D63A1DF00728CCC /* VerticalAlignmentViewController.swift */,
+				3770B05E2D63A1DF00728CCC /* BaselineAlignmentViewController.swift */,
+				3770B0622D63A1DF00728CCC /* GridAlignmentViewController.swift */,
+				3770B05D2D63A1DF00728CCC /* AnchorViewController.swift */,
+				3770B0602D63A1DF00728CCC /* DisplayableViewController.swift */,
+				3770B0632D63A1DF00728CCC /* HitTestViewController.swift */,
+				3770B0652D63A1DF00728CCC /* PeriodicTableViewController.swift */,
+				3770B0662D63A1DF00728CCC /* TableViewCellController.swift */,
+				3770B05F2D63A1DF00728CCC /* ControlsViewController.swift */,
+				3770B04A2D639F7800728CCC /* Assets.xcassets */,
+				3770B04C2D639F7800728CCC /* LaunchScreen.storyboard */,
+				3770B04F2D639F7800728CCC /* Info.plist */,
+				3770B05A2D63A1C500728CCC /* world.png */,
+				3770B0592D63A1C500728CCC /* pharmacies.json */,
+			);
+			path = LimaTest;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3770B03D2D639F7800728CCC /* LimaTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3770B0512D639F7800728CCC /* Build configuration list for PBXNativeTarget "LimaTest" */;
+			buildPhases = (
+				3770B03A2D639F7800728CCC /* Sources */,
+				3770B03B2D639F7800728CCC /* Frameworks */,
+				3770B03C2D639F7800728CCC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LimaTest;
+			packageProductDependencies = (
+				3770B0572D63A1B000728CCC /* Lima */,
+				377702962D63A36100398657 /* Lima */,
+			);
+			productName = LimaTest;
+			productReference = 3770B03E2D639F7800728CCC /* LimaTest.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3770B0362D639F7800728CCC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1620;
+				LastUpgradeCheck = 1620;
+				TargetAttributes = {
+					3770B03D2D639F7800728CCC = {
+						CreatedOnToolsVersion = 16.2;
+					};
+				};
+			};
+			buildConfigurationList = 3770B0392D639F7800728CCC /* Build configuration list for PBXProject "LimaTest" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3770B0352D639F7800728CCC;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				377702952D63A36100398657 /* XCLocalSwiftPackageReference "../Lima" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 3770B03F2D639F7800728CCC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3770B03D2D639F7800728CCC /* LimaTest */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3770B03C2D639F7800728CCC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3770B04E2D639F7800728CCC /* LaunchScreen.storyboard in Resources */,
+				3770B05B2D63A1C500728CCC /* world.png in Resources */,
+				3770B05C2D63A1C500728CCC /* pharmacies.json in Resources */,
+				3770B04B2D639F7800728CCC /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3770B03A2D639F7800728CCC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3770B0462D639F7800728CCC /* ViewController.swift in Sources */,
+				3770B0682D63A1DF00728CCC /* GridAlignmentViewController.swift in Sources */,
+				3770B0692D63A1DF00728CCC /* GreetingViewController.swift in Sources */,
+				3770B06A2D63A1DF00728CCC /* AnchorViewController.swift in Sources */,
+				3770B06B2D63A1DF00728CCC /* DisplayableViewController.swift in Sources */,
+				3770B06C2D63A1DF00728CCC /* TableViewCellController.swift in Sources */,
+				3770B06D2D63A1DF00728CCC /* HorizontalAlignmentViewController.swift in Sources */,
+				3770B06E2D63A1DF00728CCC /* ControlsViewController.swift in Sources */,
+				3770B06F2D63A1DF00728CCC /* PeriodicTableViewController.swift in Sources */,
+				3770B0702D63A1DF00728CCC /* BaselineAlignmentViewController.swift in Sources */,
+				3770B0712D63A1DF00728CCC /* VerticalAlignmentViewController.swift in Sources */,
+				3770B0722D63A1DF00728CCC /* HitTestViewController.swift in Sources */,
+				3770B0422D639F7800728CCC /* AppDelegate.swift in Sources */,
+				3770B0442D639F7800728CCC /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		3770B04C2D639F7800728CCC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3770B04D2D639F7800728CCC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3770B0522D639F7800728CCC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = V7HZUN5BKT;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LimaTest/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = org.httprpc.LimaTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3770B0532D639F7800728CCC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = V7HZUN5BKT;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LimaTest/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = org.httprpc.LimaTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		3770B0542D639F7800728CCC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3770B0552D639F7800728CCC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3770B0392D639F7800728CCC /* Build configuration list for PBXProject "LimaTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3770B0542D639F7800728CCC /* Debug */,
+				3770B0552D639F7800728CCC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3770B0512D639F7800728CCC /* Build configuration list for PBXNativeTarget "LimaTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3770B0522D639F7800728CCC /* Debug */,
+				3770B0532D639F7800728CCC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		377702952D63A36100398657 /* XCLocalSwiftPackageReference "../Lima" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../Lima;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3770B0572D63A1B000728CCC /* Lima */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Lima;
+		};
+		377702962D63A36100398657 /* Lima */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Lima;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 3770B0362D639F7800728CCC /* Project object */;
+}

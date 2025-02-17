@@ -12,9 +12,9 @@
 // limitations under the License.
 //
 
-#import "LMColumnView.h"
-#import "LMRowView.h"
-#import "UIKit+Lima.h"
+#import "include/LMColumnView.h"
+#import "include/LMRowView.h"
+#import "include/UIKit+Lima.h"
 
 @implementation LMColumnView
 

@@ -1,5 +1,3 @@
 **/.DS_Store
-archive
-Lima.xcodeproj/xcuserdata/
-Lima.xcodeproj/project.xcworkspace/xcuserdata/
-Lima.xcframework*
+LimaTest.xcodeproj/xcuserdata/
+LimaTest.xcodeproj/project.xcworkspace/xcuserdata/

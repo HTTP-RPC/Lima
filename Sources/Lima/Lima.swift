@@ -12,22 +12,4 @@
 // limitations under the License.
 //
 
-#import <UIKit/UIKit.h>
-
-//! Project version number for Lima.
-FOUNDATION_EXPORT double LimaVersionNumber;
-
-//! Project version string for Lima.
-FOUNDATION_EXPORT const unsigned char LimaVersionString[];
-
-// Public framework headers
-#import "LMLayoutView.h"
-#import "LMBoxView.h"
-#import "LMColumnView.h"
-#import "LMRowView.h"
-#import "LMAnchorView.h"
-#import "LMSpacer.h"
-#import "LMScrollView.h"
-#import "LMTableViewCell.h"
-#import "LMTableViewHeaderFooterView.h"
-#import "UIKit+Lima.h"
+@_exported import LimaObjC

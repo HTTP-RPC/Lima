@@ -12,8 +12,8 @@
 // limitations under the License.
 //
 
-#import "LMLayoutView.h"
-#import "UIKit+Lima.h"
+#import "include/LMLayoutView.h"
+#import "include/UIKit+Lima.h"
 
 @implementation LMLayoutView {
     NSArray *_constraints;

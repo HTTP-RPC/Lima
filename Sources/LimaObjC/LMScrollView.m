@@ -12,7 +12,7 @@
 // limitations under the License.
 //
 
-#import "LMScrollView.h"
+#import "include/LMScrollView.h"
 
 @implementation LMScrollView {
     NSArray *_constraints;

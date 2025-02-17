@@ -12,8 +12,8 @@
 // limitations under the License.
 //
 
-#import "LMSpacer.h"
-#import "UIKit+Lima.h"
+#import "include/LMSpacer.h"
+#import "include/UIKit+Lima.h"
 
 @implementation LMSpacer
 

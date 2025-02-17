@@ -12,8 +12,8 @@
 // limitations under the License.
 //
 
-#import "LMAnchorView.h"
-#import "UIKit+Lima.h"
+#import "include/LMAnchorView.h"
+#import "include/UIKit+Lima.h"
 
 @implementation LMAnchorView
 

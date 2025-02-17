@@ -13,7 +13,6 @@
 //
 
 import UIKit
-import Lima
 
 class ViewController: UITableViewController {
     enum Example: Int, CaseIterable {
