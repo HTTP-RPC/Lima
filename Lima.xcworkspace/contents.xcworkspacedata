@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "container:Lima">
+   </FileRef>
+   <FileRef
       location = "group:LimaTest.xcodeproj">
    </FileRef>
    <FileRef

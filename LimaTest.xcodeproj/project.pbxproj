@@ -27,6 +27,7 @@
 		3770B0712D63A1DF00728CCC /* VerticalAlignmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3770B0672D63A1DF00728CCC /* VerticalAlignmentViewController.swift */; };
 		3770B0722D63A1DF00728CCC /* HitTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3770B0632D63A1DF00728CCC /* HitTestViewController.swift */; };
 		377702972D63A36100398657 /* Lima in Frameworks */ = {isa = PBXBuildFile; productRef = 377702962D63A36100398657 /* Lima */; };
+		37FADF442D63B92100B50118 /* Lima in Frameworks */ = {isa = PBXBuildFile; productRef = 37FADF432D63B92100B50118 /* Lima */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3770B0582D63A1B000728CCC /* Lima in Frameworks */,
+				37FADF442D63B92100B50118 /* Lima in Frameworks */,
 				377702972D63A36100398657 /* Lima in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -126,6 +128,7 @@
 			packageProductDependencies = (
 				3770B0572D63A1B000728CCC /* Lima */,
 				377702962D63A36100398657 /* Lima */,
+				37FADF432D63B92100B50118 /* Lima */,
 			);
 			productName = LimaTest;
 			productReference = 3770B03E2D639F7800728CCC /* LimaTest.app */;
@@ -156,7 +159,7 @@
 			mainGroup = 3770B0352D639F7800728CCC;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				377702952D63A36100398657 /* XCLocalSwiftPackageReference "../Lima" */,
+				37FADF422D63B92100B50118 /* XCLocalSwiftPackageReference "Lima" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 3770B03F2D639F7800728CCC /* Products */;
@@ -415,9 +418,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		377702952D63A36100398657 /* XCLocalSwiftPackageReference "../Lima" */ = {
+		37FADF422D63B92100B50118 /* XCLocalSwiftPackageReference "Lima" */ = {
 			isa = XCLocalSwiftPackageReference;
-			relativePath = ../Lima;
+			relativePath = Lima;
 		};
 /* End XCLocalSwiftPackageReference section */
 
@@ -427,6 +430,10 @@
 			productName = Lima;
 		};
 		377702962D63A36100398657 /* Lima */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Lima;
+		};
+		37FADF432D63B92100B50118 /* Lima */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Lima;
 		};
