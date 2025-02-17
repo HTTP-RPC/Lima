@@ -39,6 +39,8 @@ Lima adds the following properties to `UIView` to customize how subviews are siz
 * `anchor` - when used with anchor views, determines the edges to which the view will be anchored within the parent
 * `isDisplayable` - determines whether the view will participate in auto layout (`true` by default)
 
+Additionally, the `LMSpacer` class can be used to create fixed or flexible space between other views.
+
 Lima also provides the following classes to simplify the use of several common UIKit types:
  
 * `LMScrollView` - extends `UIScrollView` to automatically adapt to content size
