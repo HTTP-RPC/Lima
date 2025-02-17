@@ -1,68 +1,11 @@
 [![Releases](https://img.shields.io/github/release/HTTP-RPC/Lima.svg)](https://github.com/HTTP-RPC/Lima/releases)
 
 # Introduction
-Lima is an open-source framework for simplifying development of responsive iOS and macOS applications. It combines the productivity of a SwiftUI-like DSL with the flexibility of the UIKit framework. The project's name comes from the nautical _L_ or _Lima_ flag, representing the first letter of the word "layout":
+Lima is a Swift package for simplifying development of UIKit-based iOS applications. The project's name comes from the nautical _L_ or _Lima_ flag, representing the first letter of the word "layout":
 
 ![](lima.png)
 
-This guide introduces the Lima framework and provides an overview of its key features.
-
-# Contents
-* [Getting Lima](#getting-lima)
-* [Lima Classes](#lima-classes)
-    * [LMLayoutView](#lmlayoutview)
-    * [LMRowView and LMColumnView](#lmrowview-and-lmcolumnview)
-    * [LMSpacer](#lmspacer)
-    * [LMAnchorView](#lmanchorview)
-    * [LMScrollView](#lmscrollview)
-    * [LMTableViewCell and LMTableViewHeaderFooterView](#lmtableviewcell-and-lmtableviewheaderfooterview)
-* [Initializer Callbacks](#initializer-callbacks)
-* [Additional Information](#additional-information)
-
-# Getting Lima
-Lima is distributed as an XCFramework. iOS 15 or macOS 12 or later is required. To install:
-
-* Download the [latest release](https://github.com/HTTP-RPC/Lima/releases) archive and expand
-* In Xcode, select the project root node in the Project Navigator view
-* Select the application target
-* Select the "General" tab
-* Drag _Lima.xcframework_ to the "Embedded Binaries" section
-* In the dialog that appears, ensure that "Copy items if needed" is checked and click "Finish"
-
-# Lima Classes
-Auto layout is a UIKit feature that allows developers to create applications that automatically adapt to device size, orientation, or content changes. An application built using auto layout generally has little or no hard-coded view positioning logic, but instead dynamically arranges user interface elements based on their preferred or "intrinsic" content sizes.
-
-Auto layout in UIKit is implemented via layout constraints, which, while powerful, are not particularly convenient to work with. To simplify the process, Lima provides a set of view classes whose sole responsibility is managing the size and position of their respective subviews:
-
-* `LMRowView` - arranges subviews in a horizontal line
-* `LMColumnView` - arranges subviews in a vertical line
-* `LMAnchorView` - anchors subviews to one or more edges
-
-These classes use layout constraints internally, allowing developers to easily take advantage of auto layout while eliminating the need to manage constraints directly. They can be nested to create complex layouts that automatically adjust to orientation or screen size changes. 
-
-For example, the periodic table shown below was constructed using a combination of Lima's layout views and `UILabel` instances:
-
-<img src="README/periodic-table.png" width="690px"/>
-
-Lima adds the following properties to `UIView` to customize how subviews are sized and positioned within a parent view:
-
-* `width` - assigns a fixed width to a view
-* `height` - assigns a fixed height to a view
-* `weight` - when used with row and column views, determines how excess space is allocated within the parent
-* `anchor` - when used with anchor views, determines the edges to which the view will be anchored within the parent
-* `isDisplayable` - determines whether the view will participate in auto layout (`true` by default)
-
-Additionally, the `LMSpacer` class can be used to create fixed or flexible space between other views.
-
-Lima also provides the following view classes to simplify the use of several common UIKit types:
- 
-* `LMScrollView` - extends `UIScrollView` to automatically adapt to content size
-* `LMTableViewCell` - extends `UITableViewCell` to automatically pin content to edges
-* `LMTableViewHeaderFooterView` - extends `UITableViewHeaderFooterView` to automatically pin content to edges
-
-Finally, Lima adds initializers to common UIKit views and controls to simplify their declaration in a view hieararchy. 
-
-For example, the following Swift code creates an instance of `LMColumnView` containing a `UIImageView` and a `UILabel`:
+For example, the following code creates an instance of Lima's `LMColumnView` class containing an image view and a label:
 
 ```swift
 let columnView = LMColumnView(
@@ -94,6 +37,39 @@ columnView.addSubview(label)
 ```
 
 Although the two examples produce identical results, the first version is much more concise and easier to read.
+
+Lima requires iOS 15 or later.
+
+# Lima Classes
+Auto layout in UIKit is implemented via layout constraints, which, while powerful, are not particularly convenient to work with. To simplify the process, Lima provides a set of view classes whose sole responsibility is managing the size and position of their respective subviews:
+
+* `LMRowView` - arranges subviews in a horizontal line
+* `LMColumnView` - arranges subviews in a vertical line
+* `LMAnchorView` - anchors subviews to one or more edges
+
+These classes use layout constraints internally, allowing developers to easily take advantage of auto layout while eliminating the need to manage constraints directly. They can be nested to create complex layouts that automatically adjust to orientation or screen size changes. 
+
+For example, the periodic table shown below was constructed using a combination of Lima's layout views and `UILabel` instances:
+
+<img src="README/periodic-table.png" width="690px"/>
+
+Lima adds the following properties to `UIView` to customize how subviews are sized and positioned within a parent view:
+
+* `width` - assigns a fixed width to a view
+* `height` - assigns a fixed height to a view
+* `weight` - when used with row and column views, determines how excess space is allocated within the parent
+* `anchor` - when used with anchor views, determines the edges to which the view will be anchored within the parent
+* `isDisplayable` - determines whether the view will participate in auto layout (`true` by default)
+
+Additionally, the `LMSpacer` class can be used to create fixed or flexible space between other views.
+
+Lima also provides the following view classes to simplify the use of several common UIKit types:
+ 
+* `LMScrollView` - extends `UIScrollView` to automatically adapt to content size
+* `LMTableViewCell` - extends `UITableViewCell` to automatically pin content to edges
+* `LMTableViewHeaderFooterView` - extends `UITableViewHeaderFooterView` to automatically pin content to edges
+
+Finally, Lima adds initializers to common UIKit views and controls to simplify their declaration in a view hieararchy. 
 
 Lima's initializers also support callbacks that can be used to further customize the instantiated views. Initializer callbacks are discussed in more detail [later](#initializer-callbacks).
 
@@ -534,6 +510,3 @@ class ControlsViewController: UITableViewController {
 The complete view is shown below:
 
 <img src="README/controls.png" width="250px"/>
-
-# Additional Information
-This guide introduced the Lima framework and provided an overview of its key features. For more information, see the [examples](LimaTest/).
