@@ -14,29 +14,9 @@ let columnView = LMColumnView(
 )
 ```
 
+The result is shown below:
+
 <img src="README/hello-world.png" width="250px"/>
-
-The same result could also be achieved as shown below:
-
-```swift
-let columnView = LMColumnView()
-
-let imageView = UIImageView()
-
-imageView.image = UIImage(named: "world.png")
-imageView.contentMode = .scaleAspectFit
-
-columnView.addSubview(imageView)
-
-let label = UILabel()
-
-label.text = "Hello, World!"
-label.textAlignment = .center
-
-columnView.addSubview(label)
-```
-
-Although the two examples produce identical results, the first version is more concise and easier to read.
 
 Lima requires iOS 15 or later.
 
@@ -501,6 +481,6 @@ class ControlsViewController: UITableViewController {
 }
 ```
 
-The complete view is shown below:
+The result is shown below:
 
 <img src="README/controls.png" width="250px"/>
