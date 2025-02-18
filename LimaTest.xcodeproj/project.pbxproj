@@ -15,7 +15,6 @@
 		3770B04E2D639F7800728CCC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3770B04C2D639F7800728CCC /* LaunchScreen.storyboard */; };
 		3770B0582D63A1B000728CCC /* Lima in Frameworks */ = {isa = PBXBuildFile; productRef = 3770B0572D63A1B000728CCC /* Lima */; };
 		3770B05B2D63A1C500728CCC /* world.png in Resources */ = {isa = PBXBuildFile; fileRef = 3770B05A2D63A1C500728CCC /* world.png */; };
-		3770B05C2D63A1C500728CCC /* pharmacies.json in Resources */ = {isa = PBXBuildFile; fileRef = 3770B0592D63A1C500728CCC /* pharmacies.json */; };
 		3770B0682D63A1DF00728CCC /* GridAlignmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3770B0622D63A1DF00728CCC /* GridAlignmentViewController.swift */; };
 		3770B0692D63A1DF00728CCC /* GreetingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3770B0612D63A1DF00728CCC /* GreetingViewController.swift */; };
 		3770B06A2D63A1DF00728CCC /* AnchorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3770B05D2D63A1DF00728CCC /* AnchorViewController.swift */; };
@@ -39,7 +38,6 @@
 		3770B04A2D639F7800728CCC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3770B04D2D639F7800728CCC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3770B04F2D639F7800728CCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3770B0592D63A1C500728CCC /* pharmacies.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = pharmacies.json; sourceTree = "<group>"; };
 		3770B05A2D63A1C500728CCC /* world.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = world.png; sourceTree = "<group>"; };
 		3770B05D2D63A1DF00728CCC /* AnchorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnchorViewController.swift; sourceTree = "<group>"; };
 		3770B05E2D63A1DF00728CCC /* BaselineAlignmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaselineAlignmentViewController.swift; sourceTree = "<group>"; };
@@ -103,7 +101,6 @@
 				3770B04C2D639F7800728CCC /* LaunchScreen.storyboard */,
 				3770B04F2D639F7800728CCC /* Info.plist */,
 				3770B05A2D63A1C500728CCC /* world.png */,
-				3770B0592D63A1C500728CCC /* pharmacies.json */,
 			);
 			path = LimaTest;
 			sourceTree = "<group>";
@@ -179,7 +176,6 @@
 				3770B04B2D639F7800728CCC /* Assets.xcassets in Resources */,
 				3770B04E2D639F7800728CCC /* LaunchScreen.storyboard in Resources */,
 				3770B05B2D63A1C500728CCC /* world.png in Resources */,
-				3770B05C2D63A1C500728CCC /* pharmacies.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

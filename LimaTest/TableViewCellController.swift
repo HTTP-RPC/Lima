@@ -16,109 +16,97 @@ import UIKit
 import Lima
 
 class TableViewCellController: UITableViewController {
-    let pharmacyCellIdentifier = "pharmacyCell"
-    
-    let phoneNumberFormatter = PhoneNumberFormatter()
-    
-    lazy var dataSource = UITableViewDiffableDataSource<Int, Pharmacy>(tableView: tableView) { (tableView, indexPath, pharmacy) -> UITableViewCell? in
-        let cell = tableView.dequeueReusableCell(withIdentifier: self.pharmacyCellIdentifier, for: indexPath) as! PharmacyCell
+    let flagCellIdentifier = "flagCell"
 
-        cell.nameLabel.text = pharmacy.name
-        cell.addressLabel.text = String(format: "%@\n%@ %@ %@", pharmacy.street, pharmacy.city, pharmacy.state, pharmacy.zipCode)
-        cell.phoneLabel.text = self.phoneNumberFormatter.string(for: pharmacy.phone)
-        cell.faxLabel.text = self.phoneNumberFormatter.string(for: pharmacy.fax)
-        cell.emailLabel.text = pharmacy.email
-        
-        return cell
-    }
+    let flags = [
+        Flag(flagImageName: "alpha", name: "Alpha", description: "I have a diver down; keep well clear at slow speed."),
+        Flag(flagImageName: "bravo", name: "Bravo", description: "I am taking in or discharging or carrying dangerous goods."),
+        Flag(flagImageName: "charlie", name: "Charlie", description: "Affirmative."),
+        Flag(flagImageName: "delta", name: "Delta", description: "Keep clear of me; I am maneuvering with difficulty."),
+        Flag(flagImageName: "echo", name: "Echo", description: "I am altering my course to starboard."),
+        Flag(flagImageName: "foxtrot", name: "Foxtrot", description: "I am disabled; communicate with me."),
+        Flag(flagImageName: "golf", name: "Golf", description: "I require a pilot."),
+        Flag(flagImageName: "hotel", name: "Hotel", description: "I have a pilot on board."),
+        Flag(flagImageName: "india", name: "India", description: "I am altering my course to port."),
+        Flag(flagImageName: "juliet", name: "Juliet", description: "I am leaking dangerous cargo."),
+        Flag(flagImageName: "kilo", name: "Kilo", description: "I wish to communicate with you."),
+        Flag(flagImageName: "lima", name: "Lima", description: "You should stop your vessel instantly."),
+        Flag(flagImageName: "mike", name: "Mike", description: "My vessel is stopped and making no way through the water."),
+        Flag(flagImageName: "november", name: "November", description: "Negative."),
+        Flag(flagImageName: "oscar", name: "Oscar", description: "Man overboard."),
+        Flag(flagImageName: "papa", name: "Papa", description: "My nets have come fast upon an obstruction."),
+        Flag(flagImageName: "quebec", name: "Quebec", description: "My vessel is \"healthy\" and I request free pratique."),
+        Flag(flagImageName: "romeo", name: "Romeo", description: "No ICS meaning as single flag."),
+        Flag(flagImageName: "sierra", name: "Sierra", description: "I am operating astern propulsion."),
+        Flag(flagImageName: "tango", name: "Tango", description: "Keep clear of me."),
+        Flag(flagImageName: "uniform", name: "Uniform", description: "You are running into danger."),
+        Flag(flagImageName: "victor", name: "Victor", description: "I require assistance."),
+        Flag(flagImageName: "whisky", name: "Whiskey", description: "I require medical assistance."),
+        Flag(flagImageName: "xray", name: "Xray", description: "Stop carrying out your intentions and watch for my signals."),
+        Flag(flagImageName: "yankee", name: "Yankee", description: "I am dragging my anchor."),
+        Flag(flagImageName: "zulu", name: "Zulu", description: "I require a tug.")
+    ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tableView.register(PharmacyCell.self, forCellReuseIdentifier: pharmacyCellIdentifier)
-
-        tableView.dataSource = dataSource
-
-        let jsonDecoder = JSONDecoder()
-
-        guard let url = Bundle.main.url(forResource: "pharmacies", withExtension: "json"),
-            let data = try? Data(contentsOf: url),
-            let pharmacies = try? jsonDecoder.decode([Pharmacy].self, from: data) else {
-            fatalError()
-        }
-
-        var snapshot = NSDiffableDataSourceSnapshot<Int, Pharmacy>()
-        
-        snapshot.appendSections([0])
-        snapshot.appendItems(pharmacies)
-
-        dataSource.apply(snapshot, animatingDifferences: false)
+        tableView.register(FlagCell.self, forCellReuseIdentifier: flagCellIdentifier)
     }
 
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return flags.count
+    }
+
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: flagCellIdentifier, for: indexPath) as! FlagCell
+
+        let flag = flags[indexPath.row]
+
+        cell.flagImageView.image = UIImage(named: "flags/\(flag.flagImageName)")
+
+        cell.nameLabel.text = flag.name
+        cell.descriptionLabel.text = flag.description
+
+        return cell
     }
 }
 
-struct Pharmacy: Hashable, Decodable {
+struct Flag {
+    let flagImageName: String
+
     let name: String
-    let street: String
-    let city: String
-    let state: String
-    let zipCode: String
-    let phone: String
-    let fax: String
-    let email: String
+    let description: String
 }
 
-class PharmacyCell: LMTableViewCell {
+class FlagCell: LMTableViewCell {
+    var flagImageView: UIImageView!
+
     var nameLabel: UILabel!
-    var addressLabel: UILabel!
-    var phoneLabel: UILabel!
-    var faxLabel: UILabel!
-    var emailLabel: UILabel!
+    var descriptionLabel: UILabel!
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
-        setContent(LMColumnView(spacing: 4,
-            UILabel(font: .preferredFont(forTextStyle: .headline), weight: 1) { nameLabel = $0 },
-            UILabel(font: .preferredFont(forTextStyle: .body), numberOfLines: 0) { addressLabel = $0 },
+        setContent(LMRowView(spacing: 8,
+            UIImageView(contentMode: .top, width: 60) {
+                flagImageView = $0
+            },
 
-            LMColumnView(spacing: 4, isAlignToGrid: true,
-                LMRowView(
-                    UIImageView(image: UIImage(systemName: "phone.fill"), contentMode: .scaleAspectFit, tintColor: .darkGray),
-                    UILabel(font: .preferredFont(forTextStyle: .caption1), weight: 1) { phoneLabel = $0 }
-                ),
+            LMColumnView(spacing: 2,
+                UILabel(font: .preferredFont(forTextStyle: .headline)) {
+                    nameLabel = $0
+                },
 
-                LMRowView(
-                    UIImageView(image: UIImage(systemName: "printer.fill"), contentMode: .scaleAspectFit, tintColor: .darkGray),
-                    UILabel(font: .preferredFont(forTextStyle: .caption1), weight: 1) { faxLabel = $0 }
-                ),
+                UILabel(font: .preferredFont(forTextStyle: .body), numberOfLines: 0) {
+                    descriptionLabel = $0
+                },
 
-                LMRowView(
-                    UIImageView(image: UIImage(systemName: "envelope.fill"), contentMode: .scaleAspectFit, tintColor: .darkGray),
-                    UILabel(font: .preferredFont(forTextStyle: .caption1), weight: 1) { emailLabel = $0 }
-                )
+                LMSpacer()
             )
         ), ignoreMargins: false)
     }
 
     required init?(coder decoder: NSCoder) {
         return nil
-    }
-}
-
-class PhoneNumberFormatter: Formatter {
-    override func string(for object: Any?) -> String? {
-        guard let value = object as? NSString else {
-            return nil
-        }
-
-        return String(format: "(%@) %@-%@",
-            value.substring(with: NSMakeRange(0, 3)),
-            value.substring(with: NSMakeRange(3, 3)),
-            value.substring(with: NSMakeRange(6, 4))
-        )
     }
 }
