@@ -18,7 +18,7 @@ The result is shown below:
 
 <img src="README/hello-world.png" width="250px"/>
 
-Lima requires iOS 15 or later.
+Lima requires iOS 16 or later.
 
 # Lima Classes
 Auto layout in UIKit is implemented via layout constraints, which, while powerful, are not particularly convenient to work with. To simplify the process, Lima provides a set of view classes whose sole responsibility is managing the size and position of their respective subviews. These classes use layout constraints internally, allowing developers to easily take advantage of auto layout while eliminating the need to manage constraints directly:

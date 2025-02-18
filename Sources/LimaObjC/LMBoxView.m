@@ -44,10 +44,4 @@
     [self setNeedsUpdateConstraints];
 }
 
-- (void)setAlignToBaseline:(BOOL)alignToBaseline {
-    _alignToBaseline = alignToBaseline;
-
-    [self setNeedsUpdateConstraints];
-}
-
 @end

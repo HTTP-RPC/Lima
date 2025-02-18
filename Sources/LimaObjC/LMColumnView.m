@@ -68,8 +68,6 @@
 
     CGFloat spacing = [self spacing];
 
-    BOOL alignToBaseline = [self alignToBaseline];
-
     UIView *previousSubview = nil;
     UIView *previousWeightedSubview = nil;
 
@@ -87,28 +85,16 @@
                     relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTopMargin
                     multiplier:1 constant:0]];
             }
+        } else if (isnan(spacing)) {
+            NSLayoutConstraint *constraint = [[subview topAnchor] constraintEqualToSystemSpacingBelowAnchor:[previousSubview bottomAnchor] multiplier:1];
+
+            [constraint setConstant:[constraint constant]];
+
+            [constraints addObject:constraint];
         } else {
-            if (alignToBaseline) {
-                if (isnan(spacing)) {
-                    [constraints addObject:[[subview firstBaselineAnchor] constraintEqualToSystemSpacingBelowAnchor:[previousSubview lastBaselineAnchor] multiplier:1]];
-                } else {
-                    [constraints addObject:[NSLayoutConstraint constraintWithItem:subview attribute:NSLayoutAttributeFirstBaseline
-                        relatedBy:NSLayoutRelationEqual toItem:previousSubview attribute:NSLayoutAttributeLastBaseline
-                        multiplier:1 constant:0]];
-                }
-            } else {
-                if (isnan(spacing)) {
-                    NSLayoutConstraint *constraint = [[subview topAnchor] constraintEqualToSystemSpacingBelowAnchor:[previousSubview bottomAnchor] multiplier:1];
-
-                    [constraint setConstant:[constraint constant]];
-
-                    [constraints addObject:constraint];
-                } else {
-                    [constraints addObject:[NSLayoutConstraint constraintWithItem:subview attribute:NSLayoutAttributeTop
-                        relatedBy:NSLayoutRelationEqual toItem:previousSubview attribute:NSLayoutAttributeBottom
-                        multiplier:1 constant:spacing]];
-                }
-            }
+            [constraints addObject:[NSLayoutConstraint constraintWithItem:subview attribute:NSLayoutAttributeTop
+                relatedBy:NSLayoutRelationEqual toItem:previousSubview attribute:NSLayoutAttributeBottom
+                multiplier:1 constant:spacing]];
         }
 
         CGFloat weight = [subview weight];

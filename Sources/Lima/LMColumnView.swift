@@ -23,7 +23,6 @@ public extension LMColumnView {
         horizontalAlignment: LMHorizontalAlignment = .fill,
         verticalAlignment: LMVerticalAlignment = .fill,
         spacing: CGFloat = .nan,
-        isAlignToBaseline: Bool = false,
         isAlignToGrid: Bool = false,
         backgroundColor: UIColor? = nil,
         weight: CGFloat = .nan,
@@ -39,7 +38,6 @@ public extension LMColumnView {
         self.horizontalAlignment = horizontalAlignment
         self.verticalAlignment = verticalAlignment
         self.spacing = spacing
-        self.isAlignToBaseline = isAlignToBaseline
         self.isAlignToGrid = isAlignToGrid
 
         self.backgroundColor = backgroundColor

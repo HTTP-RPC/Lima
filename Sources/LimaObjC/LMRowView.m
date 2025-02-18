@@ -26,6 +26,12 @@
     [super setHorizontalAlignment:horizontalAlignment];
 }
 
+- (void)setAlignToBaseline:(BOOL)alignToBaseline {
+    _alignToBaseline = alignToBaseline;
+
+    [self setNeedsUpdateConstraints];
+}
+
 - (void)setBaseline:(LMBaseline)baseline {
     _baseline = baseline;
 
@@ -68,8 +74,6 @@
 
     CGFloat spacing = [self spacing];
 
-    BOOL alignToBaseline = [self alignToBaseline];
-
     UIView *previousSubview = nil;
     UIView *previousWeightedSubview = nil;
 
@@ -98,7 +102,7 @@
                     multiplier:1 constant:spacing]];
             }
 
-            if (alignToBaseline) {
+            if (_alignToBaseline) {
                 NSLayoutAttribute baselineAttribute;
                 switch (_baseline) {
                     case LMBaselineFirst: {
@@ -133,7 +137,7 @@
         // Align to parent
         switch (verticalAlignment) {
             case LMVerticalAlignmentFill: {
-                if (alignToBaseline) {
+                if (_alignToBaseline) {
                     [constraints addObject:[NSLayoutConstraint constraintWithItem:subview attribute:NSLayoutAttributeTop
                         relatedBy:NSLayoutRelationGreaterThanOrEqual toItem:self attribute:NSLayoutAttributeTopMargin
                         multiplier:1 constant:0]];
@@ -155,7 +159,7 @@
             }
 
             case LMVerticalAlignmentTop: {
-                if (alignToBaseline) {
+                if (_alignToBaseline) {
                     [constraints addObject:[NSLayoutConstraint constraintWithItem:subview attribute:NSLayoutAttributeTop
                         relatedBy:NSLayoutRelationGreaterThanOrEqual toItem:self attribute:NSLayoutAttributeTopMargin
                         multiplier:1 constant:0]];
@@ -169,7 +173,7 @@
             }
 
             case LMVerticalAlignmentBottom: {
-                if (alignToBaseline) {
+                if (_alignToBaseline) {
                     [constraints addObject:[NSLayoutConstraint constraintWithItem:subview attribute:NSLayoutAttributeBottom
                         relatedBy:NSLayoutRelationLessThanOrEqual toItem:self attribute:NSLayoutAttributeBottomMargin
                         multiplier:1 constant:0]];
