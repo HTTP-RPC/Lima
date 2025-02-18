@@ -45,78 +45,44 @@ Lima also provides the following classes to simplify the use of some common UIKi
 * `LMTableViewCell` - extends `UITableViewCell` to automatically pin content to edges
 * `LMTableViewHeaderFooterView` - extends `UITableViewHeaderFooterView` to automatically pin content to edges
 
-Finally, Lima adds initializers to common UIKit views and controls to simplify their declaration in a view hieararchy. These initializers support callbacks that can be used to further customize the instantiated views. Initializer callbacks are discussed in more detail [later](#initializer-callbacks).
+Finally, Lima adds initializers to common UIKit views and controls to simplify their declaration in a view hieararchy. These initializers support callbacks that can be used to further customize the instantiated views and are discussed in more detail [later](#initializer-callbacks).
 
 ## LMRowView and LMColumnView
-The `LMRowView` and `LMColumnView` classes lay out subviews in a horizontal or vertical line, respectively. Both classes extend the abstract `LMBoxView` class, which itself extends `LMLayoutView` and adds the following properties:
+The `LMRowView` and `LMColumnView` classes arrange subviews in a horizontal or vertical line, respectively. Both classes extend the abstract `LMBoxView` class, which defines the following properties:
 
 * `horizontalAlignment`
 * `verticalAlignment`
 * `spacing`
 
-The first two properties specify the horizontal and vertical alignment, respectively, of the box view's subviews. Horizontal alignment options include `fill`, `leading`, `trailing`, and `center`. Vertical alignment options include `fill`, `top`, `bottom`, and `center`. Both values are set to `fill` by default, which pins subviews along both of the box view's axes. Other values pin subviews to a single edge or center them along a given axis:
+Horizontal alignment options include `fill`, `leading`, `trailing`, and `center`. Vertical alignment options include `fill`, `top`, `bottom`, and `center`. Both values are set to `fill` by default, which pins subviews along both of the box view's axes. Other values pin subviews to a single edge or center them along a given axis:
 
 <img src="README/horizontal-alignment.png" width="683px"/>
-
 <br/>
-
 <img src="README/vertical-alignment.png" width="683px"/>
 
-The `spacing` property represents the amount of space reserved between successive subviews. For row views, this refers to the horizontal space between the subviews; for column views, it refers to the vertical space. If unspecified, a default (system-dependent) spacing value will be used.
+The `spacing` property defines the amount of space reserved between subviews. For row views, this refers to the horizontal space between the subviews; for column views, it refers to the vertical space. If unspecified, a default (system-dependent) spacing is used.
 
-### LMRowView
-The `LMRowView` class arranges its subviews in a horizontal line. Subviews are laid out from leading to trailing edge in the order in which they are declared. If the row's vertical alignment is set to `fill` (the default), the top and bottom edges of each subview will be pinned to the top and bottom edges of the row (excluding layout margins), ensuring that all of the labels are the same height. Otherwise, the subviews will be vertically aligned according to the specified value.
-
-The `isAlignToBaseline` property is used to toggle baseline alignment in row views:
+### Baseline Alignment
+The `isAlignToBaseline` property can be used to enable baseline alignment in a row view. When this property is set to `true`, subviews are aligned to their respective baselines rather than the top or bottom egdes of the row. For [example](LimaTest/BaselineAlignment.swift):
 
 <img src="README/baseline-alignment.png" width="250px"/>
 
-This code creates a row view containing three labels with different font sizes. Because `isAlignToBaseline` is set to `true`, the baselines of all three labels will line up, as shown above:
-
-```swift
-LMRowView(spacing: 4, isAlignToBaseline: true,
-    LMSpacer(),
-    UILabel(text: "abcd", font: .systemFont(ofSize: 12)),
-    UILabel(text: "efg", font: .boldSystemFont(ofSize: 48)),
-    UILabel(text: "hijk", font: .systemFont(ofSize: 24)),
-    LMSpacer()
-)
-```
-
-Spacer views are discussed in more detail [later](#lmspacer).
-
-The baseline to which subviews will be aligned can be controlled by the `baseline` property. The default value is `first`, meaning that subviews will be aligned to the first baseline. However, it is also possible to align subviews to the last baseline; for example:
-
-```swift
-LMRowView(isAlignToBaseline: true, baseline: .last,
-    ...
-)
-```
-
-### LMColumnView
-The `LMColumnView` class arranges its subviews in a vertical line. Subviews are laid out from top to bottom in the order in which they are declared. If the column's horizontal alignment is set to `fill` (the default), the left and right edges of each subview will be pinned to the left and right edges of the column (excluding layout margins), ensuring that all of the labels are the same width. Otherwise, the subviews will be horizontally aligned according to the specified value.
-
-The `isAlignToGrid` property is used to toggle grid alignment in column views. When this property is set to `true`, subviews of successive rows will be sized to match the width of the widest subview in the column. For [example](LimaTest/GridAlignmentViewController.swift):
+### Grid Alignment
+The `isAlignToGrid` property can be used to enable grid alignment in a column view. When this property is set to `true`, the subviews of every `LMRowView` in the column are vertically aligned in a grid, as in a spreadsheet or HTML table. For [example](LimaTest/GridAlignmentViewController.swift):
 
 <img src="README/grid-alignment.png" width="250px"/>
 
-Column view subviews that are not `LMRowView` instances are excluded from alignment. This allows them to be used as section breaks or headers, for example.
-
 ### View Weights
-Often, a row or column view will be given more space than it needs to accommodate the intrinsic sizes of its subviews. Lima adds a `weight` property to `UIView` that is used to determine how the extra space should be allocated. This value specifies the amount of excess space the view would like to be given within its superview (once the sizes of all unweighted views have been determined) and is relative to all other weights specified within the superview. For row views, weight applies to the excess horizontal space, and for column views to the excess vertical space.
+Often, a row or column view will be given more space than it needs to accommodate the intrinsic sizes of its subviews. Lima adds a `weight` property to `UIView` that is used to determine how the extra space should be allocated. This value specifies the amount of excess space the view would like to be given within the parent (once the sizes of all unweighted views have been determined) and is relative to all other weights specified within the superview. For row views, weight applies to the excess horizontal space, and for column views to the excess vertical space.
 
-Note that explicitly defined width and height values take priority over weights. If a view has both a weight and a fixed dimension value, the weight value will be ignored.
+Note that explicitly defined width and height values take priority over weights. If a view has both a weight and a fixed dimension, the weight value will be ignored.
  
 ## LMAnchorView
-The `LMAnchorView` class optionally anchors subviews to one or more of its own edges: 
+The `LMAnchorView` class optionally anchors subviews to one or more of its own edges. For [example](LimaTest/AnchorViewController.swift): 
 
 <img src="README/anchor-view.png" width="597px"/>
 
-Although it is possible to achieve similar layouts using a combination of row, column, and spacer views, anchor views offer a simpler alternative in some cases. `LMAnchorView` is also the only layout container that supports Z-ordering.
-
-Anchors are specified as an option set that defines the edges to which the view will be anchored within its parent. If no anchor is specified for a given dimension, the subview will be centered within the anchor view for that dimension.
-
-The complete source code for the above example can be found [here](LimaTest/AnchorViewController.swift).
+Anchors are specified as an option set that defines the edges to which the view will be anchored within the parent. If no anchor is specified for a given dimension, the subview will be centered within the parent for that dimension.
 
 ## LMSpacer
 The `LMSpacer` class has a default weight of 1 and is typically used to create flexible space between other views. However, the `width` and `height` properties can be used to assign a fixed size to a spacer view. For example, this code creates a half-pixel wide spacer with a gray background:
@@ -137,11 +103,9 @@ When `fitToHeight` is `true`, the scroll view will ensure that the height of its
 Setting both properties to `true` produces the same behavior as anchoring a subview to all sides of an `LMAnchorView`.
 
 ## LMTableViewCell and LMTableViewHeaderFooterView
-The `LMTableViewCell` and `LMTableViewHeaderFooterView` classes facilitates the declaration of custom table view content. They can also be used as the base class for custom cell and header/footer view classes. For example:
+The `LMTableViewCell` and `LMTableViewHeaderFooterView` classes facilitates the declaration of custom table view content. They can also be used as the base class for custom cell and header/footer view classes. For [example](LimaTest/TableViewCellController.swift):
 
 <img src="README/table-view-cell.png" width="250px"/>
-
-The complete source code for this example can be found [here](LimaTest/TableViewCellController.swift).
 
 # Initializer Callbacks
 All Lima initializers provide a trailing closure that can be used to further customize the instantiated view. This callback is automatically invoked by the initializer before it returns. 
