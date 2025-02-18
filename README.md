@@ -31,11 +31,7 @@ Auto layout in UIKit is implemented via layout constraints, which, while powerfu
 
 Additionally, the `LMSpacer` class can be used to create fixed or flexible space between other views.
 
-For example, the periodic table shown below was constructed using a combination of Lima's layout views and `UILabel` instances:
-
-<img src="README/periodic-table.png" width="690px"/>
-
-Lima adds the following properties to `UIView` to customize how subviews are sized and positioned within a parent view:
+Lima adds the following properties to `UIView` to control how subviews are sized and positioned by a layout view:
 
 * `width` - assigns a fixed width to a view
 * `height` - assigns a fixed height to a view
@@ -50,31 +46,6 @@ Lima also provides the following classes to simplify the use of some common UIKi
 * `LMTableViewHeaderFooterView` - extends `UITableViewHeaderFooterView` to automatically pin content to edges
 
 Finally, Lima adds initializers to common UIKit views and controls to simplify their declaration in a view hieararchy. These initializers support callbacks that can be used to further customize the instantiated views. Initializer callbacks are discussed in more detail [later](#initializer-callbacks).
-
-## LMLayoutView
-`LMLayoutView` is the base class for all layout views in Lima. Among other things, it provides the following initializer, which is used to establish the view's layout margins:
-
-```swift
-public convenience init(margin: CGFloat?,
-    topMargin: CGFloat?,
-    leadingMargin: CGFloat?,
-    bottomMargin: CGFloat?,
-    trailingMargin: CGFloat?) { 
-    ... 
-}
-```
-
-The first argument specifies a value to apply to all margins. The remaining arguments specify the value for a particular edge. If no value is specified, the default is 0.
-
-Subclasses of `LMLayoutView` provide a default of `nil` for all margin values. This allows a layout view's margins to be conveniently established at creation time. For example:
-
-```swift
-LMColumnView(margin: 8, leadingMargin: 12, trailingMargin: 12,
-    ...
-)
-```
-
-By default, layout views do not consume touch events. Touches that occur within the layout view but do not intersect with a subview are ignored, allowing the event to pass through the view. Assigning a non-`nil` background color to a layout view will cause the view to begin consuming events.
 
 ## LMRowView and LMColumnView
 The `LMRowView` and `LMColumnView` classes lay out subviews in a horizontal or vertical line, respectively. Both classes extend the abstract `LMBoxView` class, which itself extends `LMLayoutView` and adds the following properties:
@@ -134,19 +105,7 @@ Column view subviews that are not `LMRowView` instances are excluded from alignm
 ### View Weights
 Often, a row or column view will be given more space than it needs to accommodate the intrinsic sizes of its subviews. Lima adds a `weight` property to `UIView` that is used to determine how the extra space should be allocated. This value specifies the amount of excess space the view would like to be given within its superview (once the sizes of all unweighted views have been determined) and is relative to all other weights specified within the superview. For row views, weight applies to the excess horizontal space, and for column views to the excess vertical space.
 
-### Fixed Dimensions
-Although views are typically arranged based on their intrinsic content sizes, it is occasionally necessary to assign a fixed value for a particular view dimension. Lima adds the `width` and `height` properties to `UIView` to support explicit size definition.
-
-Explicitly defined width and height values take priority over weights. If a view has both a weight and a fixed dimension value, the weight value will be ignored.
-
-## LMSpacer
-The `LMSpacer` class has a default weight of 1 and is typically used to create flexible space between other views. However, the `width` and `height` properties can be used to assign a fixed size to a spacer view. For example, this code creates a half-pixel wide spacer with a gray background:
-
-```swift
-LMSpacer(width: 0.5, backgroundColor: .gray)
-```
-
-Like layout views, spacer views do not consume touch events by default, so they will not interfere with any user interface elements that appear underneath them. Assigning a non-`nil` background color to a spacer view causes the view to begin consuming events.
+Note that explicitly defined width and height values take priority over weights. If a view has both a weight and a fixed dimension value, the weight value will be ignored.
  
 ## LMAnchorView
 The `LMAnchorView` class optionally anchors subviews to one or more of its own edges: 
@@ -158,6 +117,13 @@ Although it is possible to achieve similar layouts using a combination of row, c
 Anchors are specified as an option set that defines the edges to which the view will be anchored within its parent. If no anchor is specified for a given dimension, the subview will be centered within the anchor view for that dimension.
 
 The complete source code for the above example can be found [here](LimaTest/AnchorViewController.swift).
+
+## LMSpacer
+The `LMSpacer` class has a default weight of 1 and is typically used to create flexible space between other views. However, the `width` and `height` properties can be used to assign a fixed size to a spacer view. For example, this code creates a half-pixel wide spacer with a gray background:
+
+```swift
+LMSpacer(width: 0.5, backgroundColor: .gray)
+```
 
 ## LMScrollView
 The `LMScrollView` class extends `UIScrollView` to simplify the declaration of scrollable content. It presents a single content view, optionally allowing the user to scroll in one or both directions.
@@ -176,8 +142,6 @@ The `LMTableViewCell` and `LMTableViewHeaderFooterView` classes facilitates the 
 <img src="README/table-view-cell.png" width="250px"/>
 
 The complete source code for this example can be found [here](LimaTest/TableViewCellController.swift).
-
-When the `selectionStyle` property of an `LMTableViewCell` instance is set to `none`, the cell will not consume touch events. Touches that occur within the cell but do not intersect with a subview are ignored, preventing selection.
 
 # Initializer Callbacks
 All Lima initializers provide a trailing closure that can be used to further customize the instantiated view. This callback is automatically invoked by the initializer before it returns. 

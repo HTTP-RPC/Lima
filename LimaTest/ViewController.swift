@@ -24,7 +24,6 @@ class ViewController: UITableViewController {
         case anchorView
         case displayable
         case hitTest
-        case periodicTable
         case tableViewCell
         case controls
     }
@@ -79,9 +78,6 @@ class ViewController: UITableViewController {
         case .hitTest:
             cell.textLabel?.text = "Hit Test"
 
-        case .periodicTable:
-            cell.textLabel?.text = "Periodic Table"
-
         case .tableViewCell:
             cell.textLabel?.text = "Table View Cell"
 
@@ -124,9 +120,6 @@ class ViewController: UITableViewController {
 
         case .hitTest:
             viewController = HitTestViewController()
-
-        case .periodicTable:
-            viewController = PeriodicTableViewController()
 
         case .tableViewCell:
             viewController = TableViewCellController()
