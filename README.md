@@ -105,23 +105,17 @@ When `fitToHeight` is `true`, the scroll view will ensure that the height of its
 Setting both properties to `true` produces the same behavior as anchoring a subview to all sides of an `LMAnchorView`.
 
 ## LMTableViewCell and LMTableViewHeaderFooterView
-The `LMTableViewCell` and `LMTableViewHeaderFooterView` classes facilitate the declaration of custom table view content. They can also be used as the base class for custom cell and header/footer view classes. For [example](LimaTest/TableViewCellController.swift):
+The `LMTableViewCell` and `LMTableViewHeaderFooterView` classes facilitate the declaration of custom table view content. For [example](LimaTest/ControlsViewController.swift):
+
+<img src="README/controls.png" width="250px"/>
+
+They can also be used as the base class for custom cell and header/footer view classes. For [example](LimaTest/TableViewCellController.swift):
 
 <img src="README/table-view-cell.png" width="250px"/>
 
 # Initializer Callbacks
 All Lima initializers provide a trailing closure that can be used to further customize the instantiated view. This callback is automatically invoked by the initializer before it returns. 
 
-A common use of initializer callbacks is to associate view instances with controller member variables, or "outlets". For example:
+A common use of initializer callbacks is to associate view instances with controller member variables, or "outlets". For [example](LimaTest/ActionViewController.swift):
 
-```swift
-UISlider(primaryAction: UIAction() { [unowned self] action in
-    sliderValueChanged()
-}) {
-    slider = $0
-}
-```
-
-<img src="README/controls.png" width="250px"/>
-
-See the [controls](LimaTest/ControlsViewController.swift) example for more information.
+<img src="README/action.png" width="250px"/>

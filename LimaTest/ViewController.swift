@@ -22,8 +22,9 @@ class ViewController: UITableViewController {
         case baselineAlignment
         case gridAlignment
         case anchorView
-        case tableViewCell
         case controls
+        case tableViewCell
+        case action
         case hitTest
     }
 
@@ -52,35 +53,21 @@ class ViewController: UITableViewController {
 
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) ?? UITableViewCell(style: .default, reuseIdentifier: cellIdentifier)
 
-        switch example {
-        case .greeting:
-            cell.textLabel?.text = "Greeting"
-
-        case .horizontalAlignment:
-            cell.textLabel?.text = "Horizontal Alignment"
-
-        case .verticalAlignment:
-            cell.textLabel?.text = "Vertical Alignment"
-
-        case .baselineAlignment:
-            cell.textLabel?.text = "Baseline Alignment"
-
-        case .gridAlignment:
-            cell.textLabel?.text = "Grid Alignment"
-
-        case .anchorView:
-            cell.textLabel?.text = "Anchor View"
-
-        case .tableViewCell:
-            cell.textLabel?.text = "Table View Cell"
-
-        case .controls:
-            cell.textLabel?.text = "Controls"
-
-        case .hitTest:
-            cell.textLabel?.text = "Hit Test"
+        let text = switch example {
+            case .greeting: "Greeting"
+            case .horizontalAlignment: "Horizontal Alignment"
+            case .verticalAlignment: "Vertical Alignment"
+            case .baselineAlignment: "Baseline Alignment"
+            case .gridAlignment: "Grid Alignment"
+            case .anchorView: "Anchor View"
+            case .controls: "Controls"
+            case .tableViewCell: "Table View Cell"
+            case .action: "Action"
+            case .hitTest: "Hit Test"
         }
 
+        cell.textLabel?.text = text
+        
         cell.accessoryType = .disclosureIndicator
 
         return cell
@@ -91,34 +78,17 @@ class ViewController: UITableViewController {
             fatalError()
         }
 
-        let viewController: UIViewController
-        switch example {
-        case .greeting:
-            viewController = GreetingViewController()
-            
-        case .horizontalAlignment:
-            viewController = HorizontalAlignmentViewController()
-
-        case .verticalAlignment:
-            viewController = VerticalAlignmentViewController()
-
-        case .baselineAlignment:
-            viewController = BaselineAlignmentViewController()
-
-        case .gridAlignment:
-            viewController = GridAlignmentViewController()
-
-        case .anchorView:
-            viewController = AnchorViewController()
-
-        case .tableViewCell:
-            viewController = TableViewCellController()
-
-        case .controls:
-            viewController = ControlsViewController(style: .insetGrouped)
-
-        case .hitTest:
-            viewController = HitTestViewController()
+        let viewController = switch example {
+            case .greeting: GreetingViewController()
+            case .horizontalAlignment: HorizontalAlignmentViewController()
+            case .verticalAlignment: VerticalAlignmentViewController()
+            case .baselineAlignment: BaselineAlignmentViewController()
+            case .gridAlignment: GridAlignmentViewController()
+            case .anchorView: AnchorViewController()
+            case .controls: ControlsViewController(style: .insetGrouped)
+            case .tableViewCell: TableViewCellController()
+            case .action: ActionViewController()
+            case .hitTest: HitTestViewController()
         }
 
         viewController.title = tableView.cellForRow(at: indexPath)?.textLabel?.text
