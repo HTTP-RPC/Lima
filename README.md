@@ -60,20 +60,20 @@ Horizontal alignment options include `fill`, `leading`, `trailing`, and `center`
 <br/>
 <img src="README/vertical-alignment.png" width="683px"/>
 
-The `spacing` property defines the amount of space reserved between subviews. For row views, this refers to the horizontal space between the subviews; for column views, it refers to the vertical space. If unspecified, a default (system-dependent) spacing is used.
+The `spacing` property defines the amount of space reserved between subviews. For row views, this refers to the horizontal space between the subviews; for column views, it refers to the vertical space. If unspecified, a default (system-dependent) value will be used.
 
 ### Baseline Alignment
-The `isAlignToBaseline` property can be used to enable baseline alignment in a row view. When this property is set to `true`, subviews are aligned to their respective baselines rather than the top or bottom egdes of the row. For [example](LimaTest/BaselineAlignment.swift):
+The `isAlignToBaseline` property enables baseline alignment in a row view. When this property is set to `true`, subviews are aligned to their respective baselines rather than the top or bottom egdes of the row. For [example](LimaTest/BaselineAlignment.swift):
 
 <img src="README/baseline-alignment.png" width="250px"/>
 
 ### Grid Alignment
-The `isAlignToGrid` property can be used to enable grid alignment in a column view. When this property is set to `true`, the subviews of every `LMRowView` in the column are vertically aligned in a grid, as in a spreadsheet or HTML table. For [example](LimaTest/GridAlignmentViewController.swift):
+The `isAlignToGrid` property enables grid alignment in a column view. When this property is set to `true`, the subviews of every `LMRowView` in the column are vertically aligned in a grid, as in a spreadsheet or HTML table. For [example](LimaTest/GridAlignmentViewController.swift):
 
 <img src="README/grid-alignment.png" width="250px"/>
 
 ### View Weights
-Often, a row or column view will be given more space than it needs to accommodate the intrinsic sizes of its subviews. Lima adds a `weight` property to `UIView` that is used to determine how the extra space should be allocated. This value specifies the amount of excess space the view would like to be given within the parent (once the sizes of all unweighted views have been determined) and is relative to all other weights specified within the superview. For row views, weight applies to the excess horizontal space, and for column views to the excess vertical space.
+Often, a row or column view will be given more space than it needs to accommodate the intrinsic sizes of its subviews. The `weight` property can be used to specify the amount of excess space that should be allocated to a subview, relative to other weighted subviews. For row views, weights apply to the excess horizontal space, and for column views to the excess vertical space.
 
 Note that explicitly defined width and height values take priority over weights. If a view has both a weight and a fixed dimension, the weight value will be ignored.
  
@@ -92,18 +92,21 @@ LMSpacer(width: 0.5, backgroundColor: .gray)
 ```
 
 ## LMScrollView
-The `LMScrollView` class extends `UIScrollView` to simplify the declaration of scrollable content. It presents a single content view, optionally allowing the user to scroll in one or both directions.
+The `LMScrollView` class extends `UIScrollView` to simplify the declaration of scrollable content. The following properties determine how the content will be presented:
 
-The `isFitToWidth` and `isFitToHeight` properties determine how the content will be presented. When both values are set to `false` (the default), the scroll view will automatically display scroll bars when needed, allowing the user to pan in both directions to see the content in its entirety. 
+* `isFitToWidth`
+* `isFitToHeight` 
 
-When `fitToWidth` is set to `true`, the scroll view will ensure that the width of its content matches the width of its adjusted content area, causing the content to wrap and scroll in the vertical direction only. The vertical scroll bar will be displayed when necessary, but the horizontal scroll bar will never be shown, since the width of the content will never exceed the width of the scroll view:
+When both values are `false` (the default), the scroll view will automatically display scroll bars when needed, allowing the user to pan in both directions to see the content in its entirety. 
 
-When `fitToHeight` is `true`, the scroll view will ensure that the height of its content matches the height of its adjusted content area, causing the content to wrap and scroll in the horizontal direction only. The vertical scroll bar will never be shown, and the horizontal scroll bar will appear when necessary.
+When `fitToWidth` is set to `true`, the scroll view will ensure that the width of its content matches the width of its adjusted content area, causing the content to wrap and scroll in the vertical direction only. The vertical scroll bar will appear when necessary, and the horizontal scroll bar will never be shown.
+
+When `fitToHeight` is `true`, the scroll view will ensure that the height of its content matches the height of its adjusted content area, causing the content to wrap and scroll in the horizontal direction only. The horizontal scroll bar will appear when necessary, and the vertical scroll bar will never be shown.
 
 Setting both properties to `true` produces the same behavior as anchoring a subview to all sides of an `LMAnchorView`.
 
 ## LMTableViewCell and LMTableViewHeaderFooterView
-The `LMTableViewCell` and `LMTableViewHeaderFooterView` classes facilitates the declaration of custom table view content. They can also be used as the base class for custom cell and header/footer view classes. For [example](LimaTest/TableViewCellController.swift):
+The `LMTableViewCell` and `LMTableViewHeaderFooterView` classes facilitate the declaration of custom table view content. They can also be used as the base class for custom cell and header/footer view classes. For [example](LimaTest/TableViewCellController.swift):
 
 <img src="README/table-view-cell.png" width="250px"/>
 
