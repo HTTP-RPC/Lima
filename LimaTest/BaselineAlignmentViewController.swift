@@ -17,28 +17,13 @@ import Lima
 
 class BaselineAlignmentViewController: UIViewController {
     override func loadView() {
-        let cellStyle = { (cell: UIView) in
-            cell.layer.borderWidth = 0.5
-            cell.layer.borderColor = UIColor.lightGray.cgColor
-        }
-
-        view = LMScrollView(isFitToWidth: true, backgroundColor: .white,
-            LMColumnView(margin: 8,
-                LMRowView(margin: 4, isAlignToBaseline: true,
-                    LMSpacer(),
-                    UILabel(text: "abcd", font: .systemFont(ofSize: 16)),
-                    UILabel(text: "efg", font: .systemFont(ofSize: 32)),
-                    UILabel(text: "hijk", font: .systemFont(ofSize: 24)),
-                    LMSpacer(),
-                    with: cellStyle
-                ),
-                
-                LMColumnView(margin: 4, horizontalAlignment: .center, isAlignToBaseline: true,
-                    UILabel(text: "abcd", font: .systemFont(ofSize: 16)),
-                    UILabel(text: "efg", font: .systemFont(ofSize: 32)),
-                    UILabel(text: "hijk", font: .systemFont(ofSize: 24)),
-                    with: cellStyle
-                )
+        view = LMColumnView(margin: 8, verticalAlignment: .top, backgroundColor: .white,
+            LMRowView(spacing: 4, isAlignToBaseline: true,
+                LMSpacer(),
+                UILabel(text: "abcd", font: .systemFont(ofSize: 12)),
+                UILabel(text: "efg", font: .boldSystemFont(ofSize: 48)),
+                UILabel(text: "hijk", font: .systemFont(ofSize: 24)),
+                LMSpacer()
             )
         )
     }
