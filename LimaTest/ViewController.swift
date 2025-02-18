@@ -22,10 +22,9 @@ class ViewController: UITableViewController {
         case baselineAlignment
         case gridAlignment
         case anchorView
-        case displayable
-        case hitTest
         case tableViewCell
         case controls
+        case hitTest
     }
 
     override func viewDidLoad() {
@@ -72,17 +71,14 @@ class ViewController: UITableViewController {
         case .anchorView:
             cell.textLabel?.text = "Anchor View"
 
-        case .displayable:
-            cell.textLabel?.text = "Displayable"
-
-        case .hitTest:
-            cell.textLabel?.text = "Hit Test"
-
         case .tableViewCell:
             cell.textLabel?.text = "Table View Cell"
 
         case .controls:
             cell.textLabel?.text = "Controls"
+
+        case .hitTest:
+            cell.textLabel?.text = "Hit Test"
         }
 
         cell.accessoryType = .disclosureIndicator
@@ -115,17 +111,14 @@ class ViewController: UITableViewController {
         case .anchorView:
             viewController = AnchorViewController()
 
-        case .displayable:
-            viewController = DisplayableViewController()
-
-        case .hitTest:
-            viewController = HitTestViewController()
-
         case .tableViewCell:
             viewController = TableViewCellController()
 
         case .controls:
             viewController = ControlsViewController(style: .insetGrouped)
+
+        case .hitTest:
+            viewController = HitTestViewController()
         }
 
         viewController.title = tableView.cellForRow(at: indexPath)?.textLabel?.text

@@ -42,10 +42,6 @@
     LMVerticalAlignment verticalAlignment = [self verticalAlignment];
 
     for (UIView * subview in [self subviews]) {
-        if (![subview displayable]) {
-            continue;
-        }
-
         if (verticalAlignment == LMVerticalAlignmentFill) {
             [subview setContentCompressionResistancePriority:UILayoutPriorityDefaultHigh forAxis:UILayoutConstraintAxisVertical];
             [subview setContentHuggingPriority:UILayoutPriorityDefaultLow forAxis:UILayoutConstraintAxisVertical];
@@ -78,10 +74,6 @@
     UIView *previousWeightedSubview = nil;
 
     for (UIView *subview in [self subviews]) {
-        if (![subview displayable]) {
-            continue;
-        }
-
         // Align to siblings
         if (previousSubview == nil) {
             if (horizontalAlignment != LMHorizontalAlignmentTrailing) {
@@ -206,16 +198,6 @@
     }
 
     return constraints;
-}
-
-- (CGSize)intrinsicContentSize {
-    for (UIView *subview in [self subviews]) {
-        if ([subview displayable]) {
-            return [super intrinsicContentSize];
-        }
-    }
-
-    return CGSizeMake(0, UIViewNoIntrinsicMetric);
 }
 
 @end

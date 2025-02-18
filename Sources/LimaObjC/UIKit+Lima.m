@@ -92,19 +92,4 @@
     [[self superview] setNeedsUpdateConstraints];
 }
 
-- (BOOL)displayable {
-    NSNumber *displayable = objc_getAssociatedObject(self, @selector(displayable));
-
-    return (displayable == nil) ? YES : [displayable boolValue];
-}
-
-- (void)setDisplayable:(BOOL)displayable {
-    objc_setAssociatedObject(self, @selector(displayable), [NSNumber numberWithBool:displayable],
-        OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-
-    [self setHidden:!displayable];
-
-    [[self superview] setNeedsUpdateConstraints];
-}
-
 @end

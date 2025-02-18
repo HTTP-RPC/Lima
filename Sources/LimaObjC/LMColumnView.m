@@ -36,10 +36,6 @@
     LMHorizontalAlignment horizontalAlignment = [self horizontalAlignment];
 
     for (UIView * subview in [self subviews]) {
-        if (![subview displayable]) {
-            continue;
-        }
-
         if (horizontalAlignment == LMHorizontalAlignmentFill) {
             [subview setContentCompressionResistancePriority:UILayoutPriorityDefaultHigh forAxis:UILayoutConstraintAxisHorizontal];
             [subview setContentHuggingPriority:UILayoutPriorityDefaultLow forAxis:UILayoutConstraintAxisHorizontal];
@@ -74,10 +70,6 @@
     LMRowView *previousRowView = nil;
 
     for (UIView *subview in [self subviews]) {
-        if (![subview displayable]) {
-            continue;
-        }
-
         // Align to siblings
         if (previousSubview == nil) {
             if (verticalAlignment != LMVerticalAlignmentBottom) {
@@ -177,16 +169,6 @@
     }
 
     return constraints;
-}
-
-- (CGSize)intrinsicContentSize {
-    for (UIView *subview in [self subviews]) {
-        if ([subview displayable]) {
-            return [super intrinsicContentSize];
-        }
-    }
-
-    return CGSizeMake(UIViewNoIntrinsicMetric, 0);
 }
 
 @end

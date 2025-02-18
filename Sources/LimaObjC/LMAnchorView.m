@@ -20,10 +20,6 @@
 - (void)layoutSubviews {
     // Ensure that subviews resize
     for (UIView *subview in [self subviews]) {
-        if (![subview displayable]) {
-            continue;
-        }
-
         LMAnchor anchor = [subview anchor];
 
         if (anchor & LMAnchorTop && anchor & LMAnchorBottom) {
@@ -52,10 +48,6 @@
 
     // Align subview edges to anchor view edges
     for (UIView *subview in [self subviews]) {
-        if (![subview displayable]) {
-            continue;
-        }
-
         LMAnchor anchor = [subview anchor];
 
         if (anchor & LMAnchorTop || anchor & LMAnchorBottom) {

@@ -37,7 +37,6 @@ Lima adds the following properties to `UIView` to control how subviews are sized
 * `height` - assigns a fixed height to a view
 * `weight` - when used with row and column views, determines how excess space is allocated within the parent
 * `anchor` - when used with anchor views, determines the edges to which the view will be anchored within the parent
-* `isDisplayable` - determines whether the view will participate in auto layout (`true` by default)
 
 Lima also provides the following classes to simplify the use of some common UIKit types:
  
