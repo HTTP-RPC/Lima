@@ -53,16 +53,16 @@ The `LMRowView` and `LMColumnView` classes arrange subviews in a horizontal or v
 * `verticalAlignment`
 * `spacing`
 
-Horizontal alignment options include `fill`, `leading`, `trailing`, and `center`. Vertical alignment options include `fill`, `top`, `bottom`, and `center`. Both values are set to `fill` by default, which pins subviews along both of the box view's axes. Other values pin subviews to a single edge or center them along a given axis:
+Horizontal alignment options include `fill`, `leading`, `trailing`, and `center`. Vertical alignment options include `fill`, `top`, `bottom`, and `center`. Both values are set to `fill` by default, which pins subviews along both axes. Other values pin subviews to a single edge or center them along a given axis:
 
 <img src="README/horizontal-alignment.png" width="250px"/>
 <br/>
 <img src="README/vertical-alignment.png" width="542px"/>
 
-The `spacing` property defines the amount of space reserved between subviews. For row views, this refers to the horizontal space between the subviews; for column views, it refers to the vertical space. If unspecified, a default (system-dependent) value will be used.
+The `spacing` property defines the amount of space reserved between subviews. For row views, this refers to the horizontal space between the subviews; for column views, it refers to the vertical space. If unspecified, a default (system-dependent) value is used.
 
 ### Baseline Alignment
-The `isAlignToBaseline` property enables baseline alignment in a row view. When this property is set to `true`, subviews are aligned to their respective baselines rather than the top or bottom egdes of the row. For [example](LimaTest/BaselineAlignment.swift):
+The `isAlignToBaseline` property enables baseline alignment in a row view. When this property is set to `true`, subviews are aligned to their respective baselines. For [example](LimaTest/BaselineAlignmentViewController.swift):
 
 <img src="README/baseline-alignment.png" width="250px"/>
 
@@ -98,7 +98,7 @@ The `LMScrollView` class extends `UIScrollView` to simplify the declaration of s
 
 When both values are `false` (the default), the scroll view will automatically display scroll bars when needed, allowing the user to pan in both directions to see the content in its entirety. 
 
-When `fitToWidth` is set to `true`, the scroll view will ensure that the width of its content matches the width of its adjusted content area, causing the content to wrap and scroll in the vertical direction only. The vertical scroll bar will appear when necessary, and the horizontal scroll bar will never be shown.
+When `fitToWidth` is `true`, the scroll view will ensure that the width of its content matches the width of its adjusted content area, causing the content to wrap and scroll in the vertical direction only. The vertical scroll bar will appear when necessary, and the horizontal scroll bar will never be shown.
 
 When `fitToHeight` is `true`, the scroll view will ensure that the height of its content matches the height of its adjusted content area, causing the content to wrap and scroll in the horizontal direction only. The horizontal scroll bar will appear when necessary, and the vertical scroll bar will never be shown.
 
