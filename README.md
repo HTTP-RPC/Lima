@@ -55,9 +55,9 @@ The `LMRowView` and `LMColumnView` classes arrange subviews in a horizontal or v
 
 Horizontal alignment options include `fill`, `leading`, `trailing`, and `center`. Vertical alignment options include `fill`, `top`, `bottom`, and `center`. Both values are set to `fill` by default, which pins subviews along both of the box view's axes. Other values pin subviews to a single edge or center them along a given axis:
 
-<img src="README/horizontal-alignment.png" width="683px"/>
+<img src="README/horizontal-alignment.png" width="250px"/>
 <br/>
-<img src="README/vertical-alignment.png" width="683px"/>
+<img src="README/vertical-alignment.png" width="542px"/>
 
 The `spacing` property defines the amount of space reserved between subviews. For row views, this refers to the horizontal space between the subviews; for column views, it refers to the vertical space. If unspecified, a default (system-dependent) value will be used.
 
@@ -79,7 +79,7 @@ Note that explicitly defined width and height values take priority over weights.
 ## LMAnchorView
 The `LMAnchorView` class optionally anchors subviews to one or more of its own edges. For [example](LimaTest/AnchorViewController.swift): 
 
-<img src="README/anchor-view.png" width="597px"/>
+<img src="README/anchor-view.png" width="542px"/>
 
 Anchors are specified as an option set that defines the edges to which the view will be anchored within the parent. If no anchor is specified for a given dimension, the subview will be centered within the parent for that dimension.
 
