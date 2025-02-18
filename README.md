@@ -16,7 +16,7 @@ let columnView = LMColumnView(
 
 The result is shown below:
 
-<img src="README/hello-world.png" width="250px"/>
+<img src="README/hello-world.png" width="250px" style="border: 1px solid #c0c0c0"/>
 
 The complete source code for this example can be found [here](LimaTest/GreetingViewController.swift).
 
@@ -55,21 +55,21 @@ The `LMRowView` and `LMColumnView` classes arrange subviews in a horizontal or v
 
 Horizontal alignment options include `fill`, `leading`, `trailing`, and `center`. Vertical alignment options include `fill`, `top`, `bottom`, and `center`. Both values are set to `fill` by default, which pins subviews along both axes. Other values pin subviews to a single edge or center them along a given axis:
 
-<img src="README/horizontal-alignment.png" width="250px"/>
+<img src="README/horizontal-alignment.png" width="250px" style="border: 1px solid #c0c0c0"/>
 <br/>
-<img src="README/vertical-alignment.png" width="542px"/>
+<img src="README/vertical-alignment.png" width="542px" style="border: 1px solid #c0c0c0"/>
 
 The `spacing` property defines the amount of space reserved between subviews. For row views, this refers to the horizontal space between the subviews; for column views, it refers to the vertical space. If unspecified, a default (system-dependent) value is used.
 
 ### Baseline Alignment
 The `isAlignToBaseline` property enables baseline alignment in a row view. When this property is set to `true`, subviews are aligned to their respective baselines. For [example](LimaTest/BaselineAlignmentViewController.swift):
 
-<img src="README/baseline-alignment.png" width="250px"/>
+<img src="README/baseline-alignment.png" width="250px" style="border: 1px solid #c0c0c0"/>
 
 ### Grid Alignment
 The `isAlignToGrid` property enables grid alignment in a column view. When this property is set to `true`, the subviews of every `LMRowView` in the column are vertically aligned in a grid, as in a spreadsheet or HTML table. For [example](LimaTest/GridAlignmentViewController.swift):
 
-<img src="README/grid-alignment.png" width="250px"/>
+<img src="README/grid-alignment.png" width="250px" style="border: 1px solid #c0c0c0"/>
 
 ### View Weights
 Often, a row or column view will be given more space than it needs to accommodate the intrinsic sizes of its subviews. The `weight` property can be used to specify the amount of excess space that should be allocated to a subview, relative to other weighted subviews. For row views, weights apply to the excess horizontal space, and for column views to the excess vertical space.
@@ -79,7 +79,7 @@ Note that explicitly defined width and height values take priority over weights.
 ## LMAnchorView
 The `LMAnchorView` class optionally anchors subviews to one or more of its own edges. For [example](LimaTest/AnchorViewController.swift): 
 
-<img src="README/anchor-view.png" width="542px"/>
+<img src="README/anchor-view.png" width="542px" style="border: 1px solid #c0c0c0"/>
 
 Anchors are specified as an option set that defines the edges to which the view will be anchored within the parent. If no anchor is specified for a given dimension, the subview will be centered within the parent for that dimension.
 
@@ -107,15 +107,15 @@ Setting both properties to `true` produces the same behavior as anchoring a subv
 ## LMTableViewCell and LMTableViewHeaderFooterView
 The `LMTableViewCell` and `LMTableViewHeaderFooterView` classes facilitate the declaration of custom table view content. For [example](LimaTest/ControlsViewController.swift):
 
-<img src="README/controls.png" width="250px"/>
+<img src="README/controls.png" width="250px" style="border: 1px solid #c0c0c0"/>
 
 They can also be used as the base class for custom cell and header/footer view classes. For [example](LimaTest/TableViewCellController.swift):
 
-<img src="README/table-view-cell.png" width="250px"/>
+<img src="README/table-view-cell.png" width="250px" style="border: 1px solid #c0c0c0"/>
 
 # Initializer Callbacks
 All Lima initializers provide a trailing closure that can be used to further customize the instantiated view. This callback is automatically invoked by the initializer before it returns. 
 
 A common use of initializer callbacks is to associate view instances with controller member variables, or "outlets". For [example](LimaTest/ActionViewController.swift):
 
-<img src="README/action.png" width="250px"/>
+<img src="README/action.png" width="250px" style="border: 1px solid #c0c0c0"/>
