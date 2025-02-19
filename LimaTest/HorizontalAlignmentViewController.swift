@@ -31,18 +31,16 @@ class HorizontalAlignmentViewController: UIViewController {
                 // Leading alignment
                 UILabel(text: "Leading", font: .systemFont(ofSize: 14)),
 
-                LMRowView(margin: 8, horizontalAlignment: .leading,
+                LMRowView(margin: 8, horizontalAlignment: .leading, with: cellStyle,
                     UIImageView(image: phoneIcon, tintColor: .black),
                     UIImageView(image: faxIcon, tintColor: .black),
-                    UIImageView(image: emailIcon, tintColor: .black),
-                    with: cellStyle
+                    UIImageView(image: emailIcon, tintColor: .black)
                 ),
 
-                LMColumnView(margin: 8, horizontalAlignment: .leading,
+                LMColumnView(margin: 8, horizontalAlignment: .leading, with: cellStyle,
                     UIImageView(image: phoneIcon, tintColor: .black),
                     UIImageView(image: faxIcon, tintColor: .black),
-                    UIImageView(image: emailIcon, tintColor: .black),
-                    with: cellStyle
+                    UIImageView(image: emailIcon, tintColor: .black)
                 ),
 
                 LMSpacer(height: 0.5, backgroundColor: .gray),
@@ -50,18 +48,16 @@ class HorizontalAlignmentViewController: UIViewController {
                 // Trailing alignment
                 UILabel(text: "Trailing", font: .systemFont(ofSize: 14)),
 
-                LMRowView(margin: 8, horizontalAlignment: .trailing,
+                LMRowView(margin: 8, horizontalAlignment: .trailing, with: cellStyle,
                     UIImageView(image: phoneIcon, tintColor: .black),
                     UIImageView(image: faxIcon, tintColor: .black),
-                    UIImageView(image: emailIcon, tintColor: .black),
-                    with: cellStyle
+                    UIImageView(image: emailIcon, tintColor: .black)
                 ),
 
-                LMColumnView(margin: 8, horizontalAlignment: .trailing,
+                LMColumnView(margin: 8, horizontalAlignment: .trailing, with: cellStyle,
                     UIImageView(image: phoneIcon, tintColor: .black),
                     UIImageView(image: faxIcon, tintColor: .black),
-                    UIImageView(image: emailIcon, tintColor: .black),
-                    with: cellStyle
+                    UIImageView(image: emailIcon, tintColor: .black)
                 ),
 
                 LMSpacer(height: 0.5, backgroundColor: .gray),
@@ -69,11 +65,10 @@ class HorizontalAlignmentViewController: UIViewController {
                 // Center alignment
                 UILabel(text: "Center", font: .systemFont(ofSize: 14)),
 
-                LMColumnView(margin: 8, horizontalAlignment: .center,
+                LMColumnView(margin: 8, horizontalAlignment: .center, with: cellStyle,
                     UIImageView(image: phoneIcon, tintColor: .black),
                     UIImageView(image: faxIcon, tintColor: .black),
-                    UIImageView(image: emailIcon, tintColor: .black),
-                    with: cellStyle
+                    UIImageView(image: emailIcon, tintColor: .black)
                 ),
 
                 LMSpacer(height: 0.5, backgroundColor: .gray),
@@ -81,11 +76,10 @@ class HorizontalAlignmentViewController: UIViewController {
                 // Fill alignment
                 UILabel(text: "Fill", font: .systemFont(ofSize: 14)),
 
-                LMRowView(margin: 8, horizontalAlignment: .fill,
+                LMRowView(margin: 8, horizontalAlignment: .fill, with: cellStyle,
                     UIImageView(image: phoneIcon, contentMode: .center, tintColor: .black, weight: 1),
                     UIImageView(image: faxIcon, contentMode: .center, tintColor: .black, weight: 1),
-                    UIImageView(image: emailIcon, contentMode: .center, tintColor: .black, weight: 1),
-                    with: cellStyle
+                    UIImageView(image: emailIcon, contentMode: .center, tintColor: .black, weight: 1)
                 )
             )
         )

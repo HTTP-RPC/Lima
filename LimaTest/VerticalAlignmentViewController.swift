@@ -33,18 +33,16 @@ class VerticalAlignmentViewController: UIViewController {
                     UILabel(text: "Top", font: .systemFont(ofSize: 14)),
 
                     LMRowView(weight: 1,
-                        LMColumnView(margin: 8, verticalAlignment: .top,
+                        LMColumnView(margin: 8, verticalAlignment: .top, with: cellStyle,
                             UIImageView(image: phoneIcon, tintColor: .black),
                             UIImageView(image: faxIcon, tintColor: .black),
-                            UIImageView(image: emailIcon, tintColor: .black),
-                            with: cellStyle
+                            UIImageView(image: emailIcon, tintColor: .black)
                         ),
 
-                        LMRowView(margin: 8, verticalAlignment: .top,
+                        LMRowView(margin: 8, verticalAlignment: .top, with: cellStyle,
                             UIImageView(image: phoneIcon, tintColor: .black),
                             UIImageView(image: faxIcon, tintColor: .black),
-                            UIImageView(image: emailIcon, tintColor: .black),
-                            with: cellStyle
+                            UIImageView(image: emailIcon, tintColor: .black)
                         )
                     )
                 ),
@@ -56,18 +54,16 @@ class VerticalAlignmentViewController: UIViewController {
                     UILabel(text: "Bottom", font: .systemFont(ofSize: 14)),
 
                     LMRowView(weight: 1,
-                        LMColumnView(margin: 8, verticalAlignment: .bottom,
+                        LMColumnView(margin: 8, verticalAlignment: .bottom, with: cellStyle,
                             UIImageView(image: phoneIcon, tintColor: .black),
                             UIImageView(image: faxIcon, tintColor: .black),
-                            UIImageView(image: emailIcon, tintColor: .black),
-                            with: cellStyle
+                            UIImageView(image: emailIcon, tintColor: .black)
                         ),
 
-                        LMRowView(margin: 8, verticalAlignment: .bottom,
+                        LMRowView(margin: 8, verticalAlignment: .bottom, with: cellStyle,
                             UIImageView(image: phoneIcon, tintColor: .black),
                             UIImageView(image: faxIcon, tintColor: .black),
-                            UIImageView(image: emailIcon, tintColor: .black),
-                            with: cellStyle
+                            UIImageView(image: emailIcon, tintColor: .black)
                         )
                     )
                 ),
@@ -78,11 +74,10 @@ class VerticalAlignmentViewController: UIViewController {
                 LMColumnView(
                     UILabel(text: "Center", font: .systemFont(ofSize: 14)),
 
-                    LMRowView(margin: 8, verticalAlignment: .center, weight: 1,
+                    LMRowView(margin: 8, verticalAlignment: .center, weight: 1, with: cellStyle,
                         UIImageView(image: phoneIcon, tintColor: .black),
                         UIImageView(image: faxIcon, tintColor: .black),
-                        UIImageView(image: emailIcon, tintColor: .black),
-                        with: cellStyle
+                        UIImageView(image: emailIcon, tintColor: .black)
                     )
                 ),
 
@@ -92,11 +87,10 @@ class VerticalAlignmentViewController: UIViewController {
                 LMColumnView(
                     UILabel(text: "Fill", font: .systemFont(ofSize: 14)),
 
-                    LMColumnView(margin: 8,
+                    LMColumnView(margin: 8, with: cellStyle,
                         UIImageView(image: phoneIcon, contentMode: .center, tintColor: .black, weight: 1),
                         UIImageView(image: faxIcon, contentMode: .center, tintColor: .black, weight: 1),
-                        UIImageView(image: emailIcon, contentMode: .center, tintColor: .black, weight: 1),
-                        with: cellStyle
+                        UIImageView(image: emailIcon, contentMode: .center, tintColor: .black, weight: 1)
                     )
                 )
             )

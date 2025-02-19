@@ -27,8 +27,7 @@ public extension LMColumnView {
         backgroundColor: UIColor? = nil,
         weight: CGFloat = .nan,
         anchor: LMAnchor = [],
-        _ subviews: UIView...,
-        with: ((LMColumnView) -> Void) = { _ in }) {
+        with: ((LMColumnView) -> Void) = { _ in }, _ subviews: UIView...) {
         self.init(margin: margin,
             topMargin: topMargin,
             leadingMargin: leadingMargin,

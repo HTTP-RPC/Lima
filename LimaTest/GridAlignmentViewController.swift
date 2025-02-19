@@ -32,38 +32,32 @@ class GridAlignmentViewController: UIViewController {
                 // Baselines
                 LMColumnView(isAlignToGrid: true,
                     LMRowView(isAlignToBaseline: true,
-                        UILabel(text: "First Baseline", textAlignment: .right,
-                            with: cellStyle),
-                            
-                        LMColumnView(weight: 1,
+                        UILabel(text: "First Baseline", textAlignment: .right, with: cellStyle),
+
+                        LMColumnView(weight: 1, with: cellStyle,
                             UILabel(text: text, numberOfLines: 0),
-                            UILabel(text: text, numberOfLines: 0),
-                            with: cellStyle
+                            UILabel(text: text, numberOfLines: 0)
                         )
                     ),
 
                     LMRowView(isAlignToBaseline: true, baseline: .last,
-                        UILabel(text: "Last Baseline", textAlignment: .right,
-                            with: cellStyle),
+                        UILabel(text: "Last Baseline", textAlignment: .right, with: cellStyle),
 
-                        LMColumnView(weight: 1,
+                        LMColumnView(weight: 1, with: cellStyle,
                             UILabel(text: text, numberOfLines: 0),
-                            UILabel(text: text, numberOfLines: 0),
-                            with: cellStyle
+                            UILabel(text: text, numberOfLines: 0)
                         )
                     )
                 ),
 
                 // Weights
                 LMRowView(
-                    LMColumnView(weight: 2,
+                    LMColumnView(weight: 2, with: cellStyle,
                         UILabel(text: text, numberOfLines: 0),
-                        LMSpacer(),
-                        with: cellStyle
+                        LMSpacer()
                     ),
 
-                    UILabel(text: text, numberOfLines: 0, weight: 1,
-                        with: cellStyle)
+                    UILabel(text: text, numberOfLines: 0, weight: 1, with: cellStyle)
                 )
             )
         )

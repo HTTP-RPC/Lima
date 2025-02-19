@@ -28,8 +28,7 @@ public extension LMRowView {
         backgroundColor: UIColor? = nil,
         weight: CGFloat = .nan,
         anchor: LMAnchor = [],
-        _ subviews: UIView...,
-        with: ((LMRowView) -> Void) = { _ in }) {
+        with: ((LMRowView) -> Void) = { _ in }, _ subviews: UIView...) {
         self.init(margin: margin,
             topMargin: topMargin,
             leadingMargin: leadingMargin,

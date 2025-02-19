@@ -17,8 +17,7 @@ import UIKit
 public extension LMTableViewCell {
     convenience init(accessoryType: UITableViewCell.AccessoryType = .none,
         selectionStyle: UITableViewCell.SelectionStyle = .blue,
-        _ content: UIView? = nil,
-        with: ((LMTableViewCell) -> Void) = { _ in }) {
+        with: ((LMTableViewCell) -> Void) = { _ in }, _ content: UIView? = nil) {
         self.init()
 
         setContent(content, ignoreMargins: false)
