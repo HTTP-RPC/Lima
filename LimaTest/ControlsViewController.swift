@@ -108,7 +108,13 @@ class ControlsViewController: UITableViewController {
                 )
             ]),
             
-            Section(headerView: UITableViewHeaderFooterView(text: "Range/Progress"), cells: [
+            Section(headerView: LMTableViewHeaderFooterView(
+                LMRowView(
+                    UILabel(text: "Custom Header", textColor: .gray, font: .preferredFont(forTextStyle: .headline)),
+                    LMSpacer(),
+                    UIImageView(image: UIImage(systemName: "questionmark.circle"), contentMode: .center, tintColor: .gray)
+                )
+            ), cells: [
                 LMTableViewCell(
                     LMRowView(
                         LMSpacer(),
