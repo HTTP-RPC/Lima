@@ -77,11 +77,11 @@ Often, a row or column view will be given more space than it needs to accommodat
 Note that explicitly defined width and height values take priority over weights. If a view has both a weight and a fixed dimension, the weight value will be ignored.
  
 ## LMAnchorView
-The `LMAnchorView` class optionally anchors subviews to one or more of its own edges. For [example](LimaTest/AnchorViewController.swift): 
+The `LMAnchorView` class optionally anchors subviews to one or more of its own edges. Anchors are specified as an option set that defines the edges to which the view will be anchored within the parent. For [example](LimaTest/AnchorViewController.swift): 
 
 <img src="README/anchor-view.png" width="542px"/>
 
-Anchors are specified as an option set that defines the edges to which the view will be anchored within the parent. If no anchor is specified for a given dimension, the subview will be centered within the parent for that dimension.
+If no anchor is specified for a given dimension, the subview will be centered within the parent for that dimension.
 
 ## LMSpacer
 The `LMSpacer` class has a default weight of 1 and is typically used to create flexible space between other views. However, the `width` and `height` properties can be used to assign a fixed size to a spacer view. For example, this code creates a half-pixel wide spacer with a gray background:
