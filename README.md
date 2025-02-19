@@ -114,7 +114,7 @@ They can also be used as the base class for custom cell and header/footer view c
 <img src="README/table-view-cell.png" width="250px"/>
 
 # Initializer Callbacks
-All Lima initializers provide a trailing closure that can be used to further customize the instantiated view. This callback is automatically invoked by the initializer before it returns. 
+All Lima initializers provide a closure that can be used to further customize the instantiated view. This callback is automatically invoked by the initializer before it returns.
 
 A common use of initializer callbacks is to associate view instances with controller member variables, or "outlets". For [example](LimaTest/ActionViewController.swift):
 
