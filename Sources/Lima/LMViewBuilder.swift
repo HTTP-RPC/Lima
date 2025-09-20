@@ -19,4 +19,8 @@ public struct LMViewBuilder {
     public static func buildBlock(_ subviews: UIView...) -> [UIView] {
         return subviews
     }
+
+    public static func buildBlock(_ content: UIView) -> UIView {
+        return content
+    }
 }

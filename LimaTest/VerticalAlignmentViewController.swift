@@ -26,7 +26,7 @@ class VerticalAlignmentViewController: UIViewController {
             cell.layer.borderColor = UIColor.lightGray.cgColor
         }
 
-        view = LMScrollView(isFitToHeight: true, backgroundColor: .white,
+        view = LMScrollView(isFitToHeight: true, backgroundColor: .white) {
             LMRowView(margin:8) {
                 // Top alignment
                 LMColumnView() {
@@ -94,6 +94,6 @@ class VerticalAlignmentViewController: UIViewController {
                     }
                 }
             }
-        )
+        }
     }
 }

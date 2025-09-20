@@ -15,10 +15,10 @@
 import UIKit
 
 public extension LMTableViewCell {
-    // TODO
     convenience init(accessoryType: UITableViewCell.AccessoryType = .none,
         selectionStyle: UITableViewCell.SelectionStyle = .blue,
-        with: ((LMTableViewCell) -> Void) = { _ in }, _ content: UIView? = nil) {
+        with: ((LMTableViewCell) -> Void) = { _ in },
+        @LMViewBuilder content: () -> UIView) {
         self.init()
 
         self.accessoryType = accessoryType
@@ -26,6 +26,6 @@ public extension LMTableViewCell {
 
         with(self)
 
-        setContent(content, ignoreMargins: false)
+        setContent(content(), ignoreMargins: false)
     }
 }

@@ -34,16 +34,16 @@ class ControlsViewController: UITableViewController {
 
         sections = [
             Section(headerView: UITableViewHeaderFooterView(text: "Buttons"), cells: [
-                LMTableViewCell(
+                LMTableViewCell() {
                     UIButton(configuration: .plain(), primaryAction: UIAction(title: "Plain") { [unowned self] _ in
                         showGreeting()
                     })
-                ),
-                LMTableViewCell(
+                },
+                LMTableViewCell() {
                     UIButton(configuration: .tinted(), primaryAction: UIAction(title: "Toggle") { _ in },
                         changesSelectionAsPrimaryAction: true)
-                ),
-                LMTableViewCell(
+                },
+                LMTableViewCell() {
                     UIButton(configuration: .borderedTinted(), primaryAction: UIAction(title: "Pop-Up") { _ in },
                         menu: UIMenu(children: [
                             UIAction(title: "One") { _ in },
@@ -53,8 +53,8 @@ class ControlsViewController: UITableViewController {
                         ]),
                         showsMenuAsPrimaryAction: true,
                         tintColor: .red)
-                ),
-                LMTableViewCell(
+                },
+                LMTableViewCell() {
                     UIButton(configuration: .borderedTinted(),
                         menu: UIMenu(children: [
                             UIAction(title: "One") { _ in },
@@ -65,36 +65,36 @@ class ControlsViewController: UITableViewController {
                         showsMenuAsPrimaryAction: true,
                         changesSelectionAsPrimaryAction: true,
                         tintColor: .green)
-                )
+                }
             ]),
             
             Section(headerView: UITableViewHeaderFooterView(text: "Text"), cells: [
-                LMTableViewCell(
+                LMTableViewCell() {
                     UITextField(placeholder: "Default")
-                ),
-                LMTableViewCell(
+                },
+                LMTableViewCell() {
                     UITextField(placeholder: "Number", keyboardType: .numberPad)
-                ),
-                LMTableViewCell(
+                },
+                LMTableViewCell() {
                     UITextField(placeholder: "Email Address", keyboardType: .emailAddress)
-                ),
-                LMTableViewCell(
+                },
+                LMTableViewCell() {
                     UITextField(placeholder: "Password", isSecureTextEntry: true)
-                ),
-                LMTableViewCell(
+                },
+                LMTableViewCell() {
                     UITextView(height: 90) { textView in
                         textView.textContainer.lineFragmentPadding = 0
 
                         textView.text = "This is a multi-line text view."
                     }
-                )
+                }
             ]),
             
             Section(headerView: UITableViewHeaderFooterView(text: "Selection"), cells: [
                 UITableViewCell(style: .default, text: "On/Off", selectionStyle: .none) { tableViewCell in
                     tableViewCell.accessoryView = UISwitch()
                 },
-                LMTableViewCell(
+                LMTableViewCell() {
                     UISegmentedControl(items: [
                         "One", "Two", "Three", "Four"
                     ], primaryAction: UIAction() { [unowned self] _ in
@@ -102,20 +102,20 @@ class ControlsViewController: UITableViewController {
                     }) {
                         segmentedControl = $0
                     }
-                ),
-                LMTableViewCell(
+                },
+                LMTableViewCell() {
                     UIDatePicker(datePickerMode: .dateAndTime)
-                )
+                }
             ]),
             
-            Section(headerView: LMTableViewHeaderFooterView(
+            Section(headerView: LMTableViewHeaderFooterView() {
                 LMRowView() {
                     UILabel(text: "Custom Header", textColor: .gray, font: .preferredFont(forTextStyle: .headline))
                     LMSpacer()
                     UIImageView(image: UIImage(systemName: "questionmark.circle"), contentMode: .center, tintColor: .gray)
                 }
-            ), cells: [
-                LMTableViewCell(
+            }, cells: [
+                LMTableViewCell() {
                     LMRowView() {
                         LMSpacer()
                         UIStepper(primaryAction: UIAction() { [unowned self] action in
@@ -125,29 +125,29 @@ class ControlsViewController: UITableViewController {
                         }
                         LMSpacer()
                     }
-                ),
-                LMTableViewCell(
+                },
+                LMTableViewCell() {
                     UISlider(primaryAction: UIAction() { [unowned self] action in
                         sliderValueChanged()
                     }) {
                         slider = $0
                     }
-                ),
-                LMTableViewCell(
+                },
+                LMTableViewCell() {
                     UIPageControl(pageIndicatorTintColor: .lightGray,
                         currentPageIndicatorTintColor: .black) { pageControl in
                         pageControl.numberOfPages = 11
 
                         self.pageControl = pageControl
                     }
-                ),
-                LMTableViewCell(
+                },
+                LMTableViewCell() {
                     LMColumnView(topMargin: 8, bottomMargin: 8) {
                         UIProgressView() {
                             progressView = $0
                         }
                     }
-                )
+                }
             ])
         ]
     }

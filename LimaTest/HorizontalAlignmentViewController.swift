@@ -26,7 +26,7 @@ class HorizontalAlignmentViewController: UIViewController {
             cell.layer.borderColor = UIColor.lightGray.cgColor
         }
 
-        view = LMScrollView(isFitToWidth: true, backgroundColor: .white,
+        view = LMScrollView(isFitToWidth: true, backgroundColor: .white) {
             LMColumnView(margin: 8) {
                 // Leading alignment
                 UILabel(text: "Leading", font: .systemFont(ofSize: 14))
@@ -82,6 +82,6 @@ class HorizontalAlignmentViewController: UIViewController {
                     UIImageView(image: emailIcon, contentMode: .center, tintColor: .black, weight: 1)
                 }
             }
-        )
+        }
     }
 }

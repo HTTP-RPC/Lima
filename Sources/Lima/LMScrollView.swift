@@ -15,12 +15,12 @@
 import UIKit
 
 public extension LMScrollView {
-    // TODO
     convenience init(isFitToWidth: Bool = false, isFitToHeight: Bool = false,
         backgroundColor: UIColor? = nil,
         weight: CGFloat = .nan,
         anchor: LMAnchor = [],
-        with: ((LMScrollView) -> Void) = { _ in }, _ content: UIView? = nil) {
+        with: ((LMScrollView) -> Void) = { _ in },
+        @LMViewBuilder content: () -> UIView) {
         self.init()
 
         self.isFitToWidth = isFitToWidth
@@ -33,6 +33,6 @@ public extension LMScrollView {
 
         with(self)
 
-        self.content = content
+        self.content = content()
     }
 }
