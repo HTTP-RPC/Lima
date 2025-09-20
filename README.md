@@ -8,10 +8,10 @@ Lima is a Swift package for simplifying development of UIKit-based iOS applicati
 For example, the following code creates an instance of Lima's `LMColumnView` class containing an image view and a label:
 
 ```swift
-let columnView = LMColumnView(
-    UIImageView(image: UIImage(named: "world.png"), contentMode: .scaleAspectFit),
+LMColumnView() {
+    UIImageView(image: UIImage(named: "world.png"), contentMode: .scaleAspectFit)
     UILabel(text: "Hello, World!", textAlignment: .center)
-)
+}
 ```
 
 The result is shown below:
@@ -20,7 +20,7 @@ The result is shown below:
 
 The complete source code for this example can be found [here](LimaTest/GreetingViewController.swift).
 
-Lima requires iOS 16 or later.
+Lima requires iOS 18 or later.
 
 # Lima Classes
 Auto layout in UIKit is implemented via layout constraints, which, while powerful, are not particularly convenient to work with. To simplify the process, Lima provides a set of view classes whose sole responsibility is managing the size and position of their respective subviews. These classes use layout constraints internally, allowing developers to easily take advantage of auto layout while eliminating the need to manage constraints directly:
