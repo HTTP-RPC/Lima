@@ -109,22 +109,22 @@ class ControlsViewController: UITableViewController {
             ]),
             
             Section(headerView: LMTableViewHeaderFooterView(
-                LMRowView(
-                    UILabel(text: "Custom Header", textColor: .gray, font: .preferredFont(forTextStyle: .headline)),
-                    LMSpacer(),
+                LMRowView() {
+                    UILabel(text: "Custom Header", textColor: .gray, font: .preferredFont(forTextStyle: .headline))
+                    LMSpacer()
                     UIImageView(image: UIImage(systemName: "questionmark.circle"), contentMode: .center, tintColor: .gray)
-                )
+                }
             ), cells: [
                 LMTableViewCell(
-                    LMRowView(
-                        LMSpacer(),
+                    LMRowView() {
+                        LMSpacer()
                         UIStepper(primaryAction: UIAction() { [unowned self] action in
                             stepperValueChanged()
                         }, minimumValue: 0.0, maximumValue: 1.0, stepValue: 0.1) {
                             stepper = $0
-                        },
+                        }
                         LMSpacer()
-                    )
+                    }
                 ),
                 LMTableViewCell(
                     UISlider(primaryAction: UIAction() { [unowned self] action in
@@ -142,11 +142,11 @@ class ControlsViewController: UITableViewController {
                     }
                 ),
                 LMTableViewCell(
-                    LMColumnView(topMargin: 8, bottomMargin: 8,
+                    LMColumnView(topMargin: 8, bottomMargin: 8) {
                         UIProgressView() {
                             progressView = $0
                         }
-                    )
+                    }
                 )
             ])
         ]

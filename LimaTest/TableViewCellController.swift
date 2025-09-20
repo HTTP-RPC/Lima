@@ -87,23 +87,23 @@ class FlagCell: LMTableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
-        setContent(LMRowView(spacing: 8,
+        setContent(LMRowView(spacing: 8) {
             UIImageView(contentMode: .top, width: 60) {
                 flagImageView = $0
-            },
+            }
 
-            LMColumnView(spacing: 2,
+            LMColumnView(spacing: 2) {
                 UILabel(font: .preferredFont(forTextStyle: .headline)) {
                     nameLabel = $0
-                },
+                }
 
                 UILabel(font: .preferredFont(forTextStyle: .body), numberOfLines: 0) {
                     descriptionLabel = $0
-                },
+                }
 
                 LMSpacer()
-            )
-        ), ignoreMargins: false)
+            }
+        }, ignoreMargins: false)
     }
 
     required init?(coder decoder: NSCoder) {

@@ -14,13 +14,9 @@
 
 import UIKit
 
-public extension LMTableViewHeaderFooterView {
-    // TODO
-    convenience init(with: ((LMTableViewHeaderFooterView) -> Void) = { _ in }, _ content: UIView? = nil) {
-        self.init()
-
-        with(self)
-
-        setContent(content, ignoreMargins: false)
+@resultBuilder
+public struct LMViewBuilder {
+    public static func buildBlock(_ subviews: UIView...) -> [UIView] {
+        return subviews
     }
 }

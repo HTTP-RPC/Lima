@@ -22,24 +22,24 @@ class AnchorViewController: UIViewController {
             cell.layer.borderColor = UIColor.lightGray.cgColor
         }
 
-        view = LMAnchorView(margin: 16, backgroundColor: .white,
+        view = LMAnchorView(margin: 16, backgroundColor: .white) {
             // All
-            UILabel(anchor: [.all], with: cellStyle),
+            UILabel(anchor: [.all], with: cellStyle)
 
             // Top
-            UILabel(text: "Top Leading", anchor: [.top, .leading], with: cellStyle),
-            UILabel(text: "Top", anchor: [.top], with: cellStyle),
-            UILabel(text: "Top Trailing", anchor: [.top, .trailing], with: cellStyle),
+            UILabel(text: "Top Leading", anchor: [.top, .leading], with: cellStyle)
+            UILabel(text: "Top", anchor: [.top], with: cellStyle)
+            UILabel(text: "Top Trailing", anchor: [.top, .trailing], with: cellStyle)
 
             // Middle
-            UILabel(text: "Leading", anchor: [.leading], with: cellStyle),
-            UILabel(text: "None", anchor: [], with: cellStyle),
-            UILabel(text: "Trailing", anchor: [.trailing], with: cellStyle),
+            UILabel(text: "Leading", anchor: [.leading], with: cellStyle)
+            UILabel(text: "None", anchor: [], with: cellStyle)
+            UILabel(text: "Trailing", anchor: [.trailing], with: cellStyle)
 
             // Bottom
-            UILabel(text: "Bottom Leading", anchor: [.bottom, .leading], with: cellStyle),
-            UILabel(text: "Bottom", anchor: [.bottom], with: cellStyle),
+            UILabel(text: "Bottom Leading", anchor: [.bottom, .leading], with: cellStyle)
+            UILabel(text: "Bottom", anchor: [.bottom], with: cellStyle)
             UILabel(text: "Bottom Trailing", anchor: [.bottom, .trailing], with: cellStyle)
-        )
+        }
     }
 }

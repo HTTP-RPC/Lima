@@ -17,32 +17,32 @@ import Lima
 
 class HitTestViewController: UIViewController {
     override func loadView() {
-        view = LMAnchorView(backgroundColor: .white,
-            UIButton(configuration: .tinted(), primaryAction: UIAction() { _ in }, anchor: [.all]),
+        view = LMAnchorView(backgroundColor: .white) {
+            UIButton(configuration: .tinted(), primaryAction: UIAction() { _ in }, anchor: [.all])
             
-            LMColumnView(anchor: [.all],
-                LMRowView(weight: 1,
+            LMColumnView(anchor: [.all]) {
+                LMRowView(weight: 1) {
                     UILabel(text: "Transparent Row View", textAlignment: .center)
-                ),
-                LMRowView(backgroundColor: UIColor(0xffffff, alpha: 0.5), weight: 1,
+                }
+                LMRowView(backgroundColor: UIColor(0xffffff, alpha: 0.5), weight: 1) {
                     UILabel(text: "Opaque Row View", textAlignment: .center)
-                ),
-                LMAnchorView(weight: 1,
+                }
+                LMAnchorView(weight: 1) {
                     LMSpacer() { spacer in
                         spacer.anchor = [.all]
-                    },
+                    }
                     
                     UILabel(text: "Transparent Spacer")
-                ),
-                LMAnchorView(weight: 1,
+                }
+                LMAnchorView(weight: 1) {
                     LMSpacer(backgroundColor: UIColor(0xffffff, alpha: 0.5)) { spacer in
                         spacer.anchor = [.all]
-                    },
+                    }
                     
                     UILabel(text: "Opaque Spacer")
-                )
-            )
-        )
+                }
+            }
+        }
     }
 }
 

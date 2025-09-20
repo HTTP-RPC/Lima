@@ -17,14 +17,14 @@ import Lima
 
 class BaselineAlignmentViewController: UIViewController {
     override func loadView() {
-        view = LMColumnView(margin: 8, verticalAlignment: .top, backgroundColor: .white,
-            LMRowView(spacing: 4, isAlignToBaseline: true,
-                LMSpacer(),
-                UILabel(text: "abcd", font: .systemFont(ofSize: 12)),
-                UILabel(text: "efg", font: .boldSystemFont(ofSize: 48)),
-                UILabel(text: "hijk", font: .systemFont(ofSize: 24)),
+        view = LMColumnView(margin: 8, verticalAlignment: .top, backgroundColor: .white) {
+            LMRowView(spacing: 4, isAlignToBaseline: true) {
                 LMSpacer()
-            )
-        )
+                UILabel(text: "abcd", font: .systemFont(ofSize: 12))
+                UILabel(text: "efg", font: .boldSystemFont(ofSize: 48))
+                UILabel(text: "hijk", font: .systemFont(ofSize: 24))
+                LMSpacer()
+            }
+        }
     }
 }

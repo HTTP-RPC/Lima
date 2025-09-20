@@ -17,10 +17,10 @@ import Lima
 
 class GreetingViewController: UIViewController {
     override func loadView() {
-        let columnView = LMColumnView(
-            UIImageView(image: UIImage(named: "world.png"), contentMode: .scaleAspectFit),
+        let columnView = LMColumnView() {
+            UIImageView(image: UIImage(named: "world.png"), contentMode: .scaleAspectFit)
             UILabel(text: "Hello, World!", textAlignment: .center)
-        )
+        }
 
         view = LMScrollView(isFitToWidth: true,
             backgroundColor: .white,

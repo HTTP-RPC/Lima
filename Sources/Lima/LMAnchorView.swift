@@ -23,7 +23,8 @@ public extension LMAnchorView {
         backgroundColor: UIColor? = nil,
         weight: CGFloat = .nan,
         anchor: LMAnchor = [],
-        with: ((LMAnchorView) -> Void) = { _ in }, _ subviews: UIView...) {
+        with: ((LMAnchorView) -> Void) = { _ in },
+        @LMViewBuilder subviews: () -> [UIView]) {
         self.init(margin: margin,
             topMargin: topMargin,
             leadingMargin: leadingMargin,
@@ -35,10 +36,10 @@ public extension LMAnchorView {
         self.weight = weight
         self.anchor = anchor
 
-        for view in subviews {
+        with(self)
+
+        for view in subviews() {
             addSubview(view)
         }
-
-        with(self)
     }
 }

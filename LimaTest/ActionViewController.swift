@@ -19,15 +19,15 @@ class ActionViewController: UIViewController {
     var greetingLabel: UILabel!
 
     override func loadView() {
-        view = LMColumnView(horizontalAlignment: .center, verticalAlignment: .top, backgroundColor: .white,
+        view = LMColumnView(horizontalAlignment: .center, verticalAlignment: .top, backgroundColor: .white) {
             UIButton(configuration: .tinted(), primaryAction: UIAction(title: "Say Hello") { [unowned self] _ in
                 sayHello()
-            }),
+            })
 
             UILabel(textAlignment: .center) {
                 greetingLabel = $0
             }
-        )
+        }
     }
 
     func sayHello() {
